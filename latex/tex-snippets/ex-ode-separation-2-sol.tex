@@ -1,0 +1,38 @@
+\item
+
+Aus dem letzten Übungsblatt wissen wir, dass die DGL lautet:
+
+$$\implies V' + \frac{1}{1000} V = \sigma_z$$
+
+Die Anfangsbedingung ist:
+
+$$V(7s) = 98l$$
+
+Wir lösen zuerst die homogene DGL $V'+\frac{1}{1000\text{s}}V = 0$, etwa mittels Trennung der Variablen ($\int\frac{\d{V}}{V}=-\frac{1}{1000\text{s}}\int\d{t}$) oder charakteristischen Gleichung ($\lambda + \frac{1}{1000\text{s}}=0$). Wir erhalten als Lösung $V(t) = C e^{-\frac{t}{1000s}}$. 
+
+Nun zur partkulären Lösung der inhomogenen DGL. Wir machen den Ansatz $V_p=A$ und setzen ein:
+
+$$ V_p = A $$
+$$ V_p' = 0 $$
+$$\implies V_p'+\frac{1}{1000\text{s}}V_p = 0 = 0 + \frac{A}{1000\text{s}} = \sigma_z$$
+
+Wir erhalten daraus $A = 1000\text{s}\cdot \sigma_z$ Die allgemeine Lösung der DGL lautet mithin:
+
+$$V(t) = C_1 e^{-\frac{t}{1000s}} + 1000s\cdot\sigma_z$$
+
+Nun ist noch die Anfangsbedingung $y(7s) = 98l$ auszuwerten, um die Konstante $C_1$ zu bestimmen. Es sei daran erinnert, dass $\sigma_z = 10 \frac{l}{s}$ gegeben war.
+
+$$y(7s) = 98l = C_1 e^{-\frac{7s}{1000s}} + 1000s\cdot\sigma_z$$
+$$\implies C_1 = (98l - 1000s\cdot\sigma_z) e^{\frac{7}{1000}}$$
+$$\implies C_1 = (98l - 1000s\cdot 10 \frac{l}{s}) e^{\frac{7}{1000}}$$
+$$\implies C_1 = (98l - 1000 \cdot 10 \cdot l) e^{\frac{7}{1000}}$$
+$$\implies C_1 \approx -9972l$$
+
+Somit lautet die partikuläre Lösung:
+
+$$V(t) = -9972l \cdot e^{-\frac{t}{1000s}} + 10000l $$
+
+Anmerkung: Der Wasserstand nimmt exponentiell zu. Nach langer Wartezeit geht der Wasserstand im Grenzwert gegen
+
+$$\lim\limits_{t\to\infty}\left(-9972l \cdot e^{-\frac{t}{1000s}} + 10000l\right) = -9972l\cdot 0 + 10000l = 10000l$$.
+

@@ -1,0 +1,16 @@
+\item Als Funktion betrachten wir $f(x) = \cos(x)$ und entwickeln um $x_0=90^\circ = \frac{\pi}{2}$:
+
+$$f'(x) = -\sin(x)$$
+$$f''(x) = -\cos(x)$$
+$$f'''(x) = \sin(x)$$
+
+Wir erhalten:
+
+$\cos(x) \approx 0 + \frac{-1}{1!} (x-\frac{\pi}{2}) + \frac{0}{2!}(x-\frac{\pi}{2})^2 = -(x-\frac{\pi}{2})$
+
+$\implies \cos(89^\circ) \approx \frac{\pi}{180} \approx 0,017453$
+
+Da die zweite Ableitung $f''(\frac{\pi}{2})=0$ ist, stellt die Tangente gleichzeitig auch die Schmiegeparabel dar.
+
+Anmerkung: Mit der Restgliedabschätzung folgt unter Verwendung von $\max\limits_{\vartheta \in [89^\circ,90^\circ]}|f^{(3)}(\vartheta)| = 1$ für den Höchstfehler $|R_3(x)| \leq \frac{(\frac{\pi}{180})^3}{3!}\cdot 1 \approx 0,000001$. Also $\cos(89^\circ) \in [0,017452;0,017454]$. Der tatsächliche Wert ist $\cos(89^\circ) = 0.01745240643...$
+

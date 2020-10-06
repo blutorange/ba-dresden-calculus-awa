@@ -1,0 +1,30 @@
+\item 
+
+\begin{enumerate}
+
+\item Der Schätzer für den Widerstand ist $R=\frac{U}{I} = 230\text{V} / \text{20A} = 11{,}5\Omega$. Mit den Fehlergrenzen erhalten wir für den maximalen Fehler:
+
+\begin{itemize}
+\item $R_1 = \frac{232\text{V}}{20{,}5\text{A}} = 11{,}32\Omega$
+\item $R_2 = \frac{232\text{V}}{19{,}5\text{A}} = 11{,}90\Omega$
+\item $R_3 = \frac{228\text{V}}{20{,}5\text{A}} = 11{,}12\Omega$
+\item $R_4 = \frac{228\text{V}}{19{,}5\text{A}} = 11{,}69\Omega$
+\end{itemize}
+
+Der Widerstand liegt damit im Intervall $[11{,}12\Omega;11{,}69\Omega]$, d.h. $R = 11{,}50\Omega_{-0{,}38\Omega}^{+0{,}40\Omega}$
+
+\item Quadratische Fehlerfortpflanzung nach dem Gauß'schen Fehlerfortpflanzungsgesetz. Benötigt werden die partiellen Ableitungen:
+
+$\frac{\partial}{\partial U}R(U,I) = \frac{1}{I}$
+
+$\frac{\partial}{\partial I}R(U,I) = -\frac{U}{I^2}$
+
+Die Messunsicherheiten sind $\Delta U =2V$ und $\Delta I = 0,5A$. Jetzt können wir einsetzen:
+
+$\Delta R^2 = (\frac{\partial}{\partial U}R(230V,20A))^2 \cdot \Delta U^2 + ( \frac{\partial}{\partial I}R(230V,20A))^2 \cdot \Delta I^2 $
+
+$\implies \Delta R \approx 0.30\Omega$
+
+\end{enumerate}
+
+Es ist zu erkennen, dass durch den maximalen Fehler der eigentliche Fehler überschätzt wird: Dass beide Messgrößen gleichzeitig ihre größte Messabweichung annehmen ist unwahrscheinlicher als dass es eine Messgröße tut. Damit das Konfidenzintervall der berechneten Größe dem der einzelnen Größen entspricht, muss eine Anpassung nach Gauß'scher Fehlerfortpflanzung geschehen.

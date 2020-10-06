@@ -1,0 +1,10 @@
+\item Es ist $\int_2^3 \frac{1}{x} \d x = \lbrack \ln(|x|) \rbrack_2^3 = \ln(3) - \ln(2).$ Aus einer anderen Aufgabe haben wir eine Abschätzung hierfür erhalten:
+
+$$\ln(x) \approx \ln(3) + \frac{1}{3} (x-3) - \frac{1}{18} (x-3)^2 + \frac{1}{81} (x-3)^3$$
+
+$$\ln(3)-\ln(2) \approx -\frac{1}{3} (2-3) + \frac{1}{18} (2-3)^2 - \frac{1}{81} (2-3)^3 = \frac{1}{3}+\frac{1}{18}+\frac{1}{81} = \frac{7}{18} + \frac{1}{81}$$
+
+Mittels schriftlicher Division findet man schnell $\frac{7}{18} \approx 0,389$ und $\frac{1}{81} \approx 0,012$. Somit $\int_2^3 \ln(x) \d x \approx \frac{7}{18}+\frac{1}{81} \approx 0,401$.
+
+Anmerkung: Mit der Restgliedabschätzung aus Aufgabe lässt sich für den Fehler im Integral angeben: $|R_3(2)| \leq \frac{|2-3|^4}{4!} \frac{6}{(3-|2-3|)^4} = \frac{1}{4!} \frac{6}{2^4} = \frac{1}{2^6} \approx 0,016$. Also ist damit $\int_2^3 \ln(x) \d x \in [0,385;0,417]$. Der tatsächliche Wert ist $0,405465...$
+

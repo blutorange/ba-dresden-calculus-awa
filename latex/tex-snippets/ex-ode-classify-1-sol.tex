@@ -1,0 +1,47 @@
+\item
+
+\begin{enumerate}
+\item Ordnung 1, gewöhnlich, explizit. Inhomogen, homogener Anteil $y'=0$ hat Grad 1, also linear.
+
+Direkte Integration liefert $y = \int x \d x = \frac{1}{2}x^2+C$
+
+\item Ordnung 1, gewöhnlich, explizit. Inhomogen, homogener Anteil $y'=0$ hat Grad 1, also linear.
+
+Direkte Integration liefert $y = \int e^x \d x = e^x + C$.
+
+\item Ordnung 1, gewöhnlich, explizit. Homogen mit Grad 1, also linear.
+
+Gesucht ist eine Funktion, deren Ableitung gleich dem Doppelten der Funktion ist. Die Exponentialfunktion $y = e^x$ ändert sich nicht, wenn man sie ableitet. Multiplizieren wird das Argument mit einem Faktor, wandert dieser beim Ableiten nach der Kettenregel als Koeffizient vor die Expoentialfunktion. Also ist $y = e^{2x}$ eine Lösung der DGL. Zudem können wir die Exponentialfunktion auch mit einem beliebigen Faktor multiplizieren, dieser wird beim Ableiten übernommen. Die allgemeine Lösung ist daher $y = C\cdot e^{2x}$.
+
+\item Ordnung 2, gewöhnlich, explizit. Inhomogen mit homogenen Anteil $y''=0$, dieser hat Homogenitätsgrad 1, also linear.
+
+Zweifache direkte Integration liefert:
+
+$$y = \int \int 42 \d x \d x = \int 42x +C_1 \d x = 21x^2 + C_1 x + C_2$$
+
+\item Ordnung 2, gewöhnlich, explizit. Homogen vom Grad 1, also linear
+
+Wir suchen eine Funktion, deren zweite Ableitung der Funktion selbst entspricht. Wir wissen, dass die Exponentialfunktion $y=e^{ax}$  dies für $a=1$ erfüllt. Wir möchten wissen, ob dies auch für andere Werte von $a$ gilt. Es gilt $y'' = a^2 e^{ax}$. Durch Einsetzen des Ansatzes $y=e^{ax}$ in die DGL erhalten wir:
+
+$$a^2 e^{ax} = e^{ax}$$
+$$\implies a^2 = 1$$
+$$\implies a = \pm 1$$
+
+Somit lauten zwei Lösungen $y_1 = e^x$ und $y_2 = e^{-x}$. Die allgemeine Lösung der DGL ist gegeben durch $y = C_1 e^x + C_2 e^{-x}$ (durch Probe bestätigen!).
+
+\item Ordnung 1. gewöhnlich, explizit. Umschreiben als $y'y-1=0$. Inhomogen, der homogene Anteil ist $y'y=0$ mit Grad der Homogenität 2, also nichtlinear.
+
+Gesucht ist eine Funktion, deren Kehrwert gleich ihrer Ableitung ist. Funktionen wie $y = \ln(x)$ oder $y = \sin(x)$ scheiden aus, da sie beim Ableiten in ganz andere Funktionen übergehen. Die Ableitung der Potenzfunktion $y=x^n$ ist $y' = n x^{n-1}$. Potenzen mit negativen Exponenten lassen sich schreiben als Brüche, also $x^{-a} = \frac{1}{x^a}$
+
+Wenn wir also für $n=\frac{1}{2}$ wählen, dann ist die Ableitung auch eine Potenzfunktion mit dem betragsmäßig gleichen Exponenten: $y=x^{\frac{1}{2}}$ mit der Ableitung $y'=\frac{1}{2}\cdot\frac{1}{x^\frac{1}{2}}$.
+
+Dies erfüllt aufgrund des Vorfaktors $\frac{1}{2}$ noch nicht die DGL. Wir versuchen, den Ansatz noch mit einer Konstante zu multiplizieren: $y=a x^{\frac{1}{2}}$. Die Ableitung ist dann $y'=\frac{1}{2}ax^{-\frac{1}{2}}$. Der Kehrwert des Ansatzes beträgt $1/y = \frac{1}{a} x^{-\frac{1}{2}}$. Damit $y' = 1/y$ gilt, muss demzufolge $\frac{1}{2}a = \frac{1}{a}$ gelten, also $a^2 = 2$. Somit ist $a=\pm \sqrt{2}$ und zwei Lösungen der DGL sind $y=\pm\sqrt{2}\cdot\sqrt{x}$.
+
+Hinweis: Die allgemeine Lösung findet man durch Trennung der Variablen:
+
+$$\frac{\d y}{\d x} = \frac{1}{y}$$
+$$\implies \int y \d y = \int \d x$$
+$$\implies \frac{y^2}{2} = x + C$$
+$$\implies y = \pm\sqrt{2}\cdot\sqrt{x+C}$$
+\end{enumerate}
+

@@ -1,0 +1,22 @@
+\item Der Nenner $x^2-x$ darf nicht $0$ ergeben. Also sind $0$ und $2$ vom Definitionbereich ausgeschlossen: $\mathbb{D} = \mathbb{R} \setminus \{0,2\}$. Nun Polynomdivision durchführen:
+
+\[\polylongdiv{x^2+x-6}{x^2-2*x}\]
+
+Somit ist $p(x) = 1$ und $r(x) = \frac{3x-6}{x^2-2x}$ und es gilt die Zerlegung:
+
+$$ f(x) = p(x) + r(x) = 1 + \frac{3x-6}{x^2-2x} $$
+
+Nun Partialbruchzerlegung ansetzen:
+
+$$ \frac{3x-6}{x^2-2x} = \frac{3x-6}{x\cdot(x-2)} = \frac{A}{x} + \frac{B}{x-2} $$
+
+$$ \frac{3x-6}{x^2-2x} = \frac{A(x-2)+Bx}{x(x-2)} = \frac{(A+B)x-2A}{x(x-2)} $$
+
+Wir finden $A+B = 3$ und $-2A=-6$, also $A=3$ und $B=0$. Somit lässt sich $f$ schreiben als:
+
+$$ f(x) = 1 + \frac{3}{x} $$
+
+Daraus erkennen wir schließlich, dass bei der Definitionlücke $x=0$ eine Polstelle vorliegt.
+
+Anmerkung: Bei $x=2$ handelt es sich um eine hebbare Definitionslücke:\\
+$$\lim\limits_{x\to 2} f(x) = 1+\frac{3}{2} = \frac{5}{2}$$

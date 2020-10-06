@@ -1,0 +1,28 @@
+\item Zuerst stellen wir die rekursive Definition der Folge auf und betrachten dann den Grenzwert. Die ersten Glieder der Folge lauten:
+
+$a_0 = \sin(x)$
+
+$a_1 = \sin(x+\sin(x)) = \sin(x+a_0)$
+
+$a_2 = \sin(x+\sin(x+\sin(x))) = \sin(x+a_1)$
+
+Die rekursive Definition lautet also:
+
+$a_0 = \sin(x)$
+
+$a_{n+1} = \sin(x+a_n)$
+
+Für dem Grenzwert $\lim_{n\to\infty} = a$ gilt:
+
+$a = \sin(x+a)$
+
+Zudem soll nach Aufgabenstellung auch gelten $a = 1$. Somit erhalten wir die Gleichung:
+
+$1 = \sin(x+1)$
+
+$\implies \arcsin(1) + 2\pi k = x + 1, k \in \mathbb{Z}$
+
+$\implies x = \frac{\pi}{2} + 2\pi k - 1, k \in \mathbb{Z}$
+
+Eine Lösung ist in Dezimalschreibweise etwa $\frac{\pi}{2}-1 \approx 0,57$.
+

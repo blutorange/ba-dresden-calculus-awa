@@ -1,0 +1,36 @@
+\item Wir bringen zuerst die Brüche rechts auf einen Nenner:
+
+$$k \cdot x \cdot (1-\frac{x}{M}) = k \cdot x \cdot \frac{M-x}{m}$$
+
+Nun die Variablen trennen, dann integrieren:
+
+$$\frac{\d x}{\d t} = k \cdot x \cdot \frac{M-x}{M}$$
+$$\implies \frac{\d x}{x\cdot(M-x)} = \frac{k}{M} \d t$$
+$$\implies \int \frac{\d x}{x\cdot(M-x)} = \int \frac{k}{M} \d t$$
+
+Um das Integral auf der linken Seite zu berechnen, zerlegen wir den Integranden in Partialbrüche:
+
+$$\frac{1}{x\cdot(M-x)} = \frac{A_1}{x} + \frac{A_2}{M-x}$$
+$$\implies A_1 = \frac{1}{M-0}, A_2 = \frac{1}{M}$$
+$$\implies \frac{1}{x\cdot(M-x)} = \frac{1}{M} \left(\frac{1}{x} + \frac{1}{M-x}\right)$$
+
+Weiter mit der Berechnung des Integrals:
+
+$$\int \frac{\d x}{x\cdot(M-x)} = \int \frac{k}{M} \d t$$
+$$\implies \frac{1}{M}(\ln(x)-\ln(M-x)) = \frac{k}{M}t + C$$
+$$\implies \ln(x)-\ln(M-x) = k\cdot t + M\cdot C$$
+$$\implies e^{\ln(x)-\ln(M-x)} = e^{k\cdot t + M\cdot C}$$
+$$\implies \frac{x}{M-x} = e^{M\cdot C} e^{k\cdot t}$$
+$$\implies x = M \cdot e^{M\cdot C} e^{k\cdot t} - x \cdot e^{M\cdot C} e^{k\cdot t}$$
+$$\implies x\cdot\left(1+e^{M\cdot C} e^{k\cdot t}\right) = M \cdot e^{M\cdot C} e^{k\cdot t}$$
+
+Und somit erhalten wir schließlich die Lösung:
+
+$$x(t) = M \cdot \frac{e^{M\cdot C} e^{k\cdot t}}{1+e^{M\cdot C} e^{k\cdot t}}$$
+
+Mögliche Lösungsfunktionen sollten Sie sich graphisch darstellen lassen. Zuerst findet ein exponentielles Wachstum statt. Da es aber eine Obergrenze gibt für das Wachstum, nimmt der Zuwachs wieder ab.
+
+Zum Verständnis der Differentialgleichung $\dot x= k \cdot x \cdot (1-\frac{x}{M})$: Der Anstieg der Größe $x$ ist proportional zum momentanen Wert $x$, also umso größer, je größer der Wert $x$ ist. Dieser Teil beschreibt das exponentielle Wachstum, der Parameter $k$ bestimmt die Geschwindigkeit des Wachstums.
+
+Zudem ist der Anstieg aber auch proportional zu $1-\frac{x}{M}$. Je näher die Größe $x$ der Obergrenze $M$ kommt, desto kleiner wird diese Ausdruck. Somit wird der Anstieg für Werte nahe der Obergrenze wieder kleiner. Dieser Ausdruck sorgt also dafür, dass die Obergrenze nicht überschritten wird.
+

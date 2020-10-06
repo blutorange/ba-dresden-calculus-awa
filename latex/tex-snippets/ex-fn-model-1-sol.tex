@@ -1,0 +1,25 @@
+Sei $v(t)$ die Durchflussgeschwindigkeit in $\frac{m^3}{s}$, $t$ die Zeit in Tagen. Dann ist
+$$V(t_0) = \int\limits_{-t_0}^{t_0}v(t)\d t$$
+
+das Volumen an Wasser, welches in der Zeit zwischen $-t_0$ und $+t_0$ durchgeflossen ist. Für die Einheit ergibt sich
+
+$$[V] = [v]\cdot[t] = \frac{m^3}{s}\cdot d = \frac{1000 dm^3}{s}\cdot 86400s = 86.400.000\cdot l$$
+
+Zur Integration substituieren wir $z=0,4t$, um das Integral in Standardform zu bringen:
+
+$$\int \frac{\d t}{1+0.16t^2} = \frac{1}{0,4}\int\frac{\d z}{1+z^2} = \frac{\text{atan}(0,4t)}{0,4} + C$$
+
+Für das zu berechnende Volumen ziehen wir die Grenze der Durchflussgeschwindigkeit $\tau$ ab und erhalten für das komplette Integral:
+
+$$\int\frac{4500}{1+0,16t^2}+ (100-\tau) \d t = \frac{4500}{0,4} \text{atan}(0,4t) + (100-\tau)t + C$$
+
+Man beachte, dass $v(t)$ gerade ist und die Stammfunktion (für $C=0$) bei $t=0$ verschwindet; dies erleichtert die Rechnung.
+
+\begin{enumerate}[label=(\roman*)]
+
+\item Es ist $\tau=1710$. Gesucht ist $V(3,3) = \int_{-3,3}^{3,3} v(t) \d t$. Mit eingesetzten Werten ergibt sich für das Ergebnis der Zahlenwert  $\approx 21415$. In Einheiten entspricht dies $10129\cdot 86400000l \approx 8,8 \cdot 10^{11} \cdot l = 880 \text{ Millionen } m^3$ Dies entspricht etwa dem Volumen von $340$ Cheops-Pyramiden oder knapp dem Volumen des Bielersees ($1300 \text{ Millionen } m^3$).
+
+\item $\tau=333$. Es ergibt sich $V(10,7) = \int_{-10,7}^{10,7} v(t) \d t = 25192$. In Einheiten also $2,2\cdot10^{12}\cdot l = 2,2 km^3$. Dies entspricht knapp dem Fassungsvermögen des Starnberger Sees ($3,0 km^3$).
+
+\end{enumerate}
+

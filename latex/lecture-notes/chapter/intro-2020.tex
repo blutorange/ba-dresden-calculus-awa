@@ -1,0 +1,178 @@
+\chapter{Einführung}
+
+\section{Organisatorisches}
+
+\begin{itemize}
+	\item Kontakt: \href{mailto:wachsmuth.andre@gmx.de?subject=BA/Analysis 2020: }{wachsmuth.andre@gmx.de}
+	\item Klausur 2 Stunden, davon $\frac{1}{3}$ Analysis, $\frac{2}{3}$ Algebra
+	\item Kein Taschenrechner, jeweils 1 handbeschriebenes A4-Blatt
+	\item Online-Materialen: \href{https://drive.google.com/drive/folders/1CJ0226zg1_bnbt7IopCLwDuK2hkOgHya?usp=sharing}{drive.google.com}
+	\item Buchempfehlung: Meyers kleine Enzyklopädie der Mathematik, hrsg. von Siegried Gottwald, Meyers Lexikonverlag, \href{https://www.amazon.de/-/en/Siegfried-Gottwald/dp/3411077719}{ISBN-3 3-411-07771-9}
+	\item Buchempfehlung: Repetitorium der höheren Mathematik, Merziger / Wirth, Binomi-Verlag, \href{https://www.amazon.de/-/en/Gerhard-Merziger/dp/3923923333}{ISBN-3 3-923-923-33-3}
+\end{itemize}
+
+\section{Anwendungen der Mathematik}
+
+Mathematik stärkt die Fähigkeit zur Abstraktion und hilft bei der Lösung komplexer, auch nicht-mathematischer, Probleme. Grundlegend
+ist die Fähigkeit, ein Problem analysieren zu können, es in Unterprobleme zu teilen und eine Lösungsstrategie zu erarbeiten zu können.
+
+Auch in der Informatik und Programmierung sind mathematische Konzepte in einem breiten Umfang relevant.
+
+\begin{itemize}
+	\item In der objektorientierten Programmierung gibt es den Begriff der "Datenklassen". Um zu definieren, wie man diese vergleicht (\#equals) und ordnet (\#compareTo), werden Konzepte aus der Theorie der Relationen benötigt.
+	\item Die Graphentheorie spielt eine wichtige Rollen bei Datenstrukturen und Algorithmen. Binäre Bäume stellen eine wichtige Datenstruktur für die effiziente Berechnung dar, gewichtete Graphen sind von wichtiger Bedeutung für das Problem des Handelsreisenden (Traveling Salesman), welches Anwendung findet in der Routenplanung, der Netzwerkarchitektur oder der Schaltkreisplanung.
+	\item Grenzwertbetrachtungen und sogenannte Landau-Symbole werden genutzt, um die Laufzeit und den Speicherverbrauch von Algorithmen zu analysieren und zu beschreiben.
+	\item Die Kategorientheorie ist eine Grundlage für algebraische Datenstrukturen. Zusammen mit dem $\lambda$-Kalkül stellen Sie die Basis funktionaler Programmierung dar.
+	\item Die kontinuierliche Mathematik und die Infinitesimalrechnung stellen den Grundbaustein dar für physikalische Simulationen (Windtunnel, Crash-Test, Physics-Engine) und computergestützte Ingenieurswissenschaften (Gebäudestatik, Hydrodynamik, Schaltkreissimulation).
+\end{itemize}
+
+\section{Zahlenbereiche}
+
+Grundlage für die gesamte Analysis die Objekte, auf denen sie operiert: Zahlen und Zahlenmengen. Zahlen modellieren quantitative Zusammenhänge der realen Welt. Gleichartige Zahlen abstrahiert man als eine Menge zu Zahlenbereichen.
+
+
+\begin{definition}[Menge]
+	Eine Menge ist eine Sammlung verschiedenartiger Elemente. Irrelevant hierbei ist die Reihenfolge der Elemente.
+\end{definition}
+
+Bei obiger Definition handelt es sich um den sogenannten naiven Mengenbegriff. Es hat sich gezeigt, dass diese naive Vorstellung zu Widersprüchen führen kann,
+weshalb präzisere Formulierungen der Mengentheorie gefunden wurden (etwa Zermelo–Fraenkel-Mengenlehre). Für diese Vorlesung ist der naive Mengenbegriff allerdings
+ausreichend.
+
+Bei der Definition der Zahlenbereich beginnt man mit den natürlichen Zahlen und erweitert diese dann schrittweise.
+
+\begin{definition}[Natürliche Zahlen]
+	Die natürlichen Zahlen sind die Menge $\N$, die man erhält, wenn man mit dem Element $0$ beginnt und weitere Elemente rekursiv durch Bildung des Nachfolgers bestimmt.
+\end{definition}
+
+Präzisiert wird diese Definition durch die sogenannten \mention{Peano}-Axiome. Dabei kann man $0$ etwa mit dem Element $\setzero$ (leere Menge) identifzieren und die Nachfolgerbildung mit der Zuweisung
+$\setzero \mapsto \lbrace \setzero \rbrace$ (Menge mit der leeren Menge). Der Vollständigkeit halber seien diese Axiome hier kurz angegeben.
+
+\begin{definition}[\mention{Peano}-Axiome]
+	\mbox{}
+	\begin{enumerate}
+		\item 0 ist eine Zahl.
+		\item Jede Zahl $n$ hat genau einen Nachfolger $n'$.
+		\item $0$ ist nicht Nachfolger einer Zahl.
+		\item Jede Zahl ist Nachfolger höchstens einer Zahl.
+		\item Von allen Mengen, die die Zahl $0$ und mit der Zahl $n$ auch deren Nachfolger $n'$ enthalten, ist die Menge $\N$ der natürlichen Zahlen diejenige mit den wenigsten Elementen.
+	\end{enumerate}
+\end{definition}
+
+Natürliche Zahlen gibt es in zwei Ausprägungen. Die sogenannten \mention{Kardinalzahlen} beschreiben eine Anzahl, etwa die Anzahl von Büchern in einem Korb oder die Elemente in einem Array (Array-Länge).
+Hinzu kommen die $\mention{Ordinalzahlen}$, welche eine Ordnung oder Rangfolge beschreiben. Im Gegensatz zu den Kardinalzahlen kann der Anfang bei Ordinalzahlen beliebig gewählt werden. Man kann den Index eines
+Arrays sowohl bei $0$ als auch bei $1$ beginnen lassen, in beiden Fällen wird damit das \emph{erste} Element bezeichnet.
+
+Nun reichen die natürlichen Zahlen nicht aus, um alle Gegebenheiten zu modellieren. Etwa ist es damit umständlich, Einnahmen und Kosten zu beschreiben. Hier müsste man immer angeben, ob es sich bei einer Quantität umd Einnahmen oder Kosten handelt und Regeln festlegen, wie Einnahmen und Kosten miteinander zu verrechnen sind. Um solche Gegensätze besser beschreiben zu können, führt man die ganzen Zahlen ein.
+Kosten sind nun einfach beschreibbar als negative Einnahmen. Mathematisch motiviert werden die ganzen Zahlen, um ein inverses Element bezüglich der Addition angeben zu können. Dies wird unter dem Themengebiert siehe algebraische Strukturen im Modul Algebra näher beleuchtet.
+
+\begin{definition}[Ganze Zahlen]
+	Die ganzen Zahlen sind die Menge $\Z$, die man aus $\N$ gewinnt, wenn man zu jeder natürlichen Zahl $n$ noch ihr Inverses $n'$ hinzunimmt. Dabei gilt $n+n' = n+(-n) = 0$.
+\end{definition}
+
+Doch auch die ganzen Zahlen sind unzureichend, um Verhältnisse und Verteilungen. Um etwa die Verteilung eines Geburtstagskuchen zu beschreiben, muss man immer die Grundgesamtheit (12 Stücke) als auch den Anteil
+davon (3 Stück) angeben. Dies ist umständlich, stellt aber die Idee für die Definition der gebrochenen Zahlen dar.
+
+\begin{definition}[Gebrochene Zahlen]
+	Die gebrochenen Zahlen sind die Menge $\Q$, welche aus Paaren $(p,q) \in \Z^2$ ganzer Zahlen besteht. $p$ bezeichnet man dabei als Zähler, $q$ als Nenner. Zwei ganze Zahlen heißen äquivalent,  wenn
+	diese den gleichen Bruch darstellen, also wenn gilt: $(p,q) \equiv (p',q') \iff pq'=p'q$	
+\end{definition}
+
+Solche Brüche werden in der Informatik verwendet, um Fehler bei der Addition und Multiplikation zu vermeiden. Dies ist für einige Anwendungsbereiche wie Finanzen von wichtiger Bedeutung, um Geldbeträge
+Cent-genau berechnen zu können. Ein Spezialfall davon ist die sogenannte Festkommazahlrechnung (fixed-point arithmetics), wobei der Nenner immer fest vorgeben ist.
+
+Nun gibt es auch Rechenaufgaben, die selbst durch gebrochene Zahlen nicht gelöst werden können. Beispielsweise hat $x^2=2$ keine Lösung im Bereich der gebrochenen Zahlen. Allerdings ist es möglich,
+Näherungswerte als Brüche anzugeben: $\frac{3}{2}, \frac{17}{12},\frac{577}{408}$. Man sieht hier, dass die Näherungswerte besser werden, also näher an der gesuchten Lösung liegen. Tatsächlich kann man
+eine Formel angeben, um immer bessere Näherungswerte für $x^2=2$ zu finden. Alle diese Näherungswerte sind gebrochene Zahlen, dennoch gibt es keine gebrochene Zahl mit der Eigenschaft $x^2=2$.
+
+\begin{definition}[Fundamentalfolge]
+	Eine Fundamentalfolge (Cauchy-Folge) ist eine Zahlenfolge $a_i$, bei der der Abstand der zweier Folgenglieder beliebig klein wird: $\forall \epsilon > 0: \exists N \in \N: \forall m,q>N: |a_m-a_q|<\epsilon$
+\end{definition}
+
+Wie eben anhand des Beispiels $x^2=2$ illustriert, gibt es im Bereich der rationalen Zahlen Fundamentalfolgen, die sich zwar scheinbar einem Wert zu nähern scheinen (die also eine Cauchy-Folge darstellen),
+wobei dieser Wert selber allerdings keine gebrochene Zahl ist. Zur Lösung dieses Problems werden die reellen Zahlen definiert.
+
+\begin{definition}[Reelle Zahlen]
+	Die reellen Zahlen sind die Menge $\R$, welche aus allen Fundamentalfolgen $a_i$ ganzer Zahlen besteht. Zwei Fundamentalfolgen $a_i, b_i$ sind dabei äquivalent, wenn $|a_i-b_i$ eine Nullfolge bildet.
+\end{definition}
+
+Tatsächlich lässt sich zeigen, dass auf der Menge der reellen Zahlen $\R$ jede Cauchy-Folge konvergiert, also einen Grenzwert besitzt. Die reellen Zahlen sind im Gegensatz zu den gebrochenen Zahlen \emph{vollständig}.
+
+Als Erweiterung der reellen Zahlen gibt es noch die komplexen Zahlen $\C$, wobei ein neues Element $j$ mit der Eigenschaft $j^2=-1$ eingeführt wird, welches die sogenannte imaginäre Einheit heißt. Komplexe
+Zahlen eignen sich beispielsweise, um Schwingungen zu beschreiben oder Strom- und Spannungsberechnungen an Schaltkreisen anzustellen. Solche komplexen Zahlen werden in der Algebra genauer betrachtet. Diese Vorlesung beschränkt sich auf die reellwertige Analysis. 
+
+\section{Rechenregeln}
+
+Auf den Zahlenbereichen werden Rechenoperationen definiert, welche gewisse Regeln genügen. Die systematische Beschreibung solcher Rechenoperationen erfolgt durch das Gebiet algebraische Strukturen im Modul Algebra. Für die Analysis wird vorausgesetzt, dass elementare Rechenregeln aus Sekundarstufe I und II sowie der Umgang und die Umformung mathematischer Terme beherrscht werden. Im folgenden findet sich eine unvollständige Auflistung einiger wesentlicher Regeln: 
+
+\begin{Nequation}{Kommunikativgesetz}
+	a + b = b + a
+	\label{eq:Kommunikativgesetz}
+\end{Nequation}
+
+\begin{Nequation}{Assoziativgesetz}
+	a + ( b + c) = (a + b) + c
+	\label{eq:Assoziativgesetz}
+\end{Nequation}
+
+\begin{Nequation}{Distributivgesetz}
+	a \cdot ( b + c ) = a \cdot b + a \cdot c
+	\label{eq:Distributivgesetz}
+\end{Nequation}
+
+\begin{Nequation}{Potenzgesetze}
+	x^{p+q} = x^p \cdot x^q, x^p \cdot y^p = (x \cdot y)^p, x^{(y^z)} = x^{y \cdot z}
+	\label{eq:Potenzgesetze}
+\end{Nequation}
+
+\begin{Nequation}{Logarithmengesetze}
+	\ln(x \cdot y) = \ln(x) + \ln(y), \ln(x^y) = y \ln(x), \log_y(x) = \ln(x) / \ln(y)
+	\label{eq:Logarithmengesetze}
+\end{Nequation}
+
+\section{Schlussfolgern}
+
+Ein in der Schulmathematik häufig vernachlässigter wichtiger Bestandteil der Mathematik ist das Schlussfolgern, also dem Ziehen von Schlüssen basierend auf gewissen Grundannahmen oder Axiomen. Hierfür
+gibt es einige wichtige Techniken wie \emph{Induktion} oder \emph{reductio ad absurdum}. Auch wenn das Beweisführen in dieser Vorlesung nicht im Vordergrund steht, wird erwartet, dass zu einer Antwort
+immer eine knappe, aber fundierte Begründung (Rechenweg oder Prosa) gegeben wird. In folgenden wird anhand einiger Beispiele kurz illustriert, wie mathematische Beweise geführt werden können.
+
+\subsection{Beweis durch Widerspruch}
+
+Frage: Ist $\sqrt{2}\in\Q$?
+
+Wir nehmen an, $\sqrt{2}$ wäre eine gebrochene Zahl, also darstellbar als vollständig gekürzter Bruch $\frac{p}{q}, p,q\in\Z, p,q>0$. Dann sind $p$ und $q$ teilerfremd. Es folgt nun:
+
+\begin{eqnarray}
+  \sqrt{2} & = & p / q \\
+         2 & = & p^2 / q^2 \\
+     2 q^2 & = & p^2
+\end{eqnarray}
+
+Es ist also $p^2$ eine gerade Zahl, da es sich als das doppelte einer anderen ganzen Zahl $q^2$ darstellen lässt. Weiterhin ist damit auch $p$ eine gerade Zahl, da das Produkt zweiter ungerade Zahlen
+immer ebenfalls eine ungerade Zahl ergibt. Wir können $p$ nun schreiben als $p = 2 n, n\in \Z$. Es ergibt sich:
+
+\begin{eqnarray}
+	2q^2 & = & p^2 = p * p = (2n) \cdot (2n) \\
+	q^2 & = & 2 n^2
+\end{eqnarray}
+	
+Da $n$ eine ganze Zahl ist, so ist auch $n^2$ eine ganze Zahl. $q^2$ lässt sich schreiben als das doppelte einer ganzen Zahl und ist daher eine gerade Zahl, mithin ist also auch $q$ eine gerade Zahl.
+
+Nun haben wir damit aber gezeigt, dass sowohl $p$ als auch $q$ gerade Zahlen sind. Sie besitzen also beide den Teiler $2$. Dies widerspricht der Annahme, dass es einen vollständig gekürzten Bruch $p / q = \sqrt{2}$ gibt. Die Annahme, dass es einen solchen Bruch gibt, wurde damit zu einem Widerspruch (ad absurdum) geführt (reductio). Somit gibt es keine gebrochene Zahl $x$ mit der Eigenschaft $x^2=2$.
+
+\subsection{Nichtkonstruktiver Beweis}
+
+Frage: Gibt es zwei irrationale Zahlen $x,y\notin \Q$ so, dass deren Potenz $x^y\in \Q$ eine rationale Zahl ergibt?
+
+Wir wählen $x=y=\sqrt{2}$. Nach dem Satz vom ausgeschlossenen Dritten ist eine Aussage entweder wahr oder falsch, das heißt entweder gilt $\sqrt{2}^{\sqrt{2}} \in \Q$ oder $\sqrt{2}^{\sqrt{2}}\notin\Q$. Wir betrachten beide Fälle:
+
+\begin{itemize}
+	\item $\sqrt{2}^{\sqrt{2}}\in\Q$: $\sqrt{2}$ ist wie eben gezeigt irrational, damit ist ein Beispiel für zwei solche Zahlen gefunden.
+
+	\item $\sqrt{2}^{\sqrt{2}}\notin\Q$: Wir setzen $x' = \sqrt{2}^{\sqrt{2}}$ und $y'=\sqrt{2}$. Die Zahl $x'$ ist nach Annahme irrational und die Potenz $(\sqrt{2}^{\sqrt{2})^{\sqrt{2}}} = \sqrt{2}^{\sqrt{2}\sqrt{2}} = \sqrt{2}^2 = 2$ ist eine rationale Zahl.
+\end{itemize}
+
+Wir haben damit gezeigt, dass es wenigstens eine Paar zwei solcher Zahlen gibt, nämlich entweder $(x,y) = (\sqrt{2}, \sqrt{2})$ oder $(x,y) = (\sqrt{2}^{\sqrt{2}}, \sqrt{2})$. Dieser Beweis heißt deshalb nichtkonstruktiv, da er keine Möglichkeit bietet, zu bestimmen, welche Zahlen es tatsächlich sind.
+
+\section{Struktur von Termen}
+

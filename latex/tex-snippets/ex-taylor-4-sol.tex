@@ -1,0 +1,15 @@
+\item $1^\circ = \frac{\pi}{180}$. Wir betrachten $f(x)=\tan(x)$ und entwickeln um $30^\circ = \frac{\pi}{6}$. Es ist $\tan(30^\circ) = \frac{\sin(30^\circ)}{\cos(30^\circ)} = \frac{1/2}{\sqrt{3}/2} = \frac{\sqrt{3}}{3}$. Ableiten:
+
+$$f'(x) =  1 + \tan^2(x)$$
+$$f''(x) =  2\tan(x) \cdot (1 + \tan^2(x))$$
+
+Für die Entwicklungstelle $x_0=30^\circ$:
+
+$$f'(30^\circ) = 1 + (\frac{\sqrt{3}}{3})^2 = 1+ \frac{3}{9} = \frac{4}{3}$$
+$$f''(30^\circ) = \frac{2}{3}\sqrt{3} \cdot \frac{4}{3} = \frac{8}{9}\sqrt{3}$$
+
+Somit folgt für die Abschätzung:
+
+$$\tan(x) \approx \frac{\sqrt{3}}{3} + \frac{4}{3} (x-\frac{\pi}{6}) + \frac{8}{18}\sqrt{3}(x-\frac{\pi}{6})^2$$
+
+Der quadratische Term ist optional, für die Lösung der Aufgabe reicht auch die Taylorentwicklung 1. Grads. Für die Tangentennährerung ist $\tan(31^\circ) \approx 0,6006$, für die Schmiegeparabel ist $\tan(31^\circ) \approx 0.600856$. Der tatsächliche Wert ist $0,60086061...$.

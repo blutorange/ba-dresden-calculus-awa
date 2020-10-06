@@ -1,0 +1,26 @@
+\item Ohne Beschränkung der Allgemeinheit habe das ursprüngliche große Quadrat den Flächeninhalt 1 (sonst entsprechend skalieren). Wir betrachten die Folge $x_n$ ($n=0,1,2,...$) des im Schritt $n+1$ entfernten Flächeninhalts (s. Skizze):
+
+$$x_0 = \frac{1}{9}$$
+$$x_{n+1} = \frac{8}{9} a_n$$
+
+Damit haben wir die rekursive Angabe. Es handelt sich um eine geometrische Folge, die explizite Form ist:
+
+$$x_n = \frac{1}{9} \cdot (\frac{8}{9})^n$$
+
+Damit ist der verbleibende Flächeninhalt:
+
+$$A_n = 1 - \sum_{n=0}^{\infty} {x_n} = 1 - \frac{1}{9} \cdot \sum_{k=0}^{n} {(\frac{8}{9})^k}$$
+
+Für das langfristige Verhalten betrachten wir den Grenzwert (Formel für geometrische Reihe):
+
+$$ A_\infty = 1 - \frac{1}{9} \cdot \sum_{n=0}^{\infty} {(\frac{8}{9})^n} = 1 - \frac{1}{9} \cdot \frac{1}{1-\frac{8}{9}} = 0$$
+
+Somit wird also langfristig der gesamte Flächeninhalt ausgeschnitten.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{plot_4_1.png}
+	\caption{Skizze zu Aufgabe 1. Farbig hinterlegt sind die entfernten Bereiche.}
+	\label{fig1}
+\end{figure}
+

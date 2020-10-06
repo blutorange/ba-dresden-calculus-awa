@@ -1,0 +1,45 @@
+\item
+
+Gegeben ist die Gerade $f(x) = \frac{x}{2}+3$. Sie hat den y-Achsenschnittpunkt $f(0) = 3$ und die Nullstellen $x_0 = -6$. Ihre Ableitung (Anstieg) ist $\frac{1}{2}$.
+
+Wir suchen eine Funktion, die etwa zweimal von oben auf die Gerade eingeht. Wir setzen an mit einem Polynom $p$ vom Grade 4:
+
+$p(x) = x^4+ax^3+bx^2+cx+d$
+
+Wir betrachten die beiden Stellen $0$ und $-6$. Dort müssen die Funktionswerte und die ersten Ableitungen übereinstimmen:
+
+$p(0) = 3$
+
+$p'(0) = \frac{1}{2}$
+
+$p(-6) = 0$
+
+$p'(-6) = \frac{1}{2}$
+
+Aus der ersten Bedinung folgt $p(0) = d = 3$ und aus der zweiten $p'(0) = c = \frac{1}{2}$. Somit hat $p$ die Form
+
+$p(x) = x^4+ax^3+bx^2+\frac{x}{2}+3$
+
+$p'(x) = 4x^3+3ax^2+2b+\frac{1}{2}$
+
+Wir setzen die letzten beiden Bedinungen ein:
+
+\begin{enumerate}
+\item $p(-6) = 0 = 1296 - 216a + 36b$
+\item $p'(-6) = \frac{1}{2} = -864 + 108a -12b + \frac{1}{2}$
+\end{enumerate}
+
+Dies stellt ein lineares Gleichungsystem dar. Wir können es etwa lösen, indem wir Gleichung $(b)$ mit $3$ multiplizieren und zur Gleichung $(a)$ addieren:
+
+$-1296+108a = 0$
+$\implies a=12$
+
+Es folgt aus Gleichung $(b)$
+
+$12b = 108a-864 = 432$
+$\implies b=36$
+
+Die Funktionsgleichung lautet somit
+
+$p(x) = x^4 + 12x^3+36x^2+\frac{1}{2}x+3$
+

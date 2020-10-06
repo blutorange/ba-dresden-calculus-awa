@@ -1,0 +1,54 @@
+\item
+
+Gegeben sind die beiden Funktionen mit ihren Ableitungen:
+
+$f_1(x) = x^2$
+
+$f_2(x) = -x^2+5x-\frac{17}{4}$
+
+$f_1'(x) = 2x$
+
+$f_2'(x) = -2x+5$
+
+Wir betrachten die Tangente $t_1$ an $f_1$ an der Stelle $x_1$; und die Tangente $t_2$ an $f_2$ an der Stelle $x_2$. Wir wollen die 2 Stellen $x_1$ und $x_2$ so bestimmen, dass die Tangenten $t_1$ und $t_2$ gleich sind.
+
+Insbesonders müssen also ihre Anstiege gleich sein:
+
+$f_1'(x_1) = f_2'(x_2)$
+
+$\implies 2x_1 = -2x_2+5$
+
+$\implies x_1 = \frac{5}{2}-x_2$
+
+Diese Beziehung nutzen wir später. Wir bilden die Tangente an $f_1$:
+
+$t_1(x) = f_1(x_1) + f_1'(x_1)(x-x_1) = t_1(x) = x_1^2+2x_1(x-x_1)$
+
+Da die Tangenten gleich sein sollen, muss der Funktionswert der Tangente $t_1$ im Punkt $x_2$ gleich dem Funktionswert der Funktion $f_2$ sein, also $t_1(x_2)$ = $f_2(x_2)$. Wir betrachten zuerst $t_1(x_2)$:
+
+$t_1(x_2) = x_1^2+2x_1(x_2-x_1) =-x_1^2+2 x_1 x_2$
+
+Da nun gilt $x_1 = \frac{5}{2}-x_2$:
+
+$t_1(x_2) = -(\frac{5}{2}-x_2)^2+2(\frac{5}{2}-x_2)x_2 =-3x_2^2+10x_2-\frac{25}{4}$
+
+Wie erwähnt muss gelten $t_1(x_2)$ = $f_2(x_2)$:
+
+$t_1(x_2)$ = $f_2(x_2)$
+
+$\implies -3x_2^2+10x_2-\frac{25}{4} = -x_2^2+5x_2-\frac{17}{4}$
+
+$\implies -2x_2^2+5x_2-2 = 0$
+
+$\implies x_2^2-\frac{5}{2}x_2+1 = 0$
+
+$\implies x_2 = \frac{5}{4} \pm \sqrt {\frac{25}{16}-1} = \frac{5}{4} \pm \sqrt {\frac{9}{16}} = \frac{5}{4} \pm \frac{3}{4}$
+
+$\implies x_2 = \frac{1}{2} \lor x_2 = 2$
+
+Da $x_1 = \frac{5}{2}-x_2$, folgt auch $x_2 = \frac{1}{2} \lor x_2 = 2$. Es gibt also zwei mögliche Tangenten, diese lauten:
+
+$t_1(x) = \frac{1}{4} + (x-\frac{1}{2})$
+
+$t_2(x) = 4 + 4(x-2)$
+

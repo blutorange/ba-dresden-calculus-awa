@@ -1,0 +1,23 @@
+\item Wir gehen analog zur zweiten Aufgabe vor. Die Festplatte hat den Speicherplatz $S(x) = x^4$, mit $x=1000$. Der RAM-Speicher
+hingegen verfügt über einen Speicherplatz von $S(x+\Delta x) = (x+\Delta x)^4$, mit der Abweichung $\Delta x = 24$.
+
+Im Gegensatz zur zweiten Aufgabe interessiert uns nun nicht der absolute Unterschied $S(x+\Delta x)-S(x)$, sondern der prozentuale Unterschied.
+Dieser berechnet sich aus dem absoluten Unterschied, indem der absolute Unterschied durch durch den Speicherplatz geteilt wird:
+
+$$\text{prozentualer Unterschied} = \frac{S(x+\Delta x)-S(x)}{S(x)}$$
+
+Wir drücken nun wieder den Speicherplatz des RAM-Speichern durch die Ableitung aus, also $S(x+\Delta x) \approx S(x) + \Delta x \cdot S'(x)$. Eingesetzt
+in die Formel für den prozentualen Unterschied folgt:
+
+$$\text{prozentualer Unterschied} \approx \frac{S(x) + \Delta x \cdot S'(x)-S(x)}{S(x)} = \frac{\Delta x \cdot S'(x)}{S(x)}$$
+
+Schließlich setzen wir noch die Funktion $S(x) = x^4$ ein. Deren Ableitung ist gegeben durch $S'(x) = 4x^3$ und wir erhalten:
+
+$$\text{prozentualer Unterschied} \approx \frac{\Delta x \cdot 4x^3}{x^4} = \frac{4\Delta x}{x}$$
+
+Mit den Werten $x=1000$ und $\Delta x = 24$ ergibt sich
+
+$$\text{prozentualer Unterschied} \approx \frac{4 \cdot 24}{1000} = 0.096$$
+
+Antwortsatz: Der prozentuale Unterschied beträgt näherungsweise $9.6\%$.
+

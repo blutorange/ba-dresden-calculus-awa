@@ -1,0 +1,38 @@
+\item Zuerst alle Terme auf eine Seite bringen, dann die Definition von Homogenität anwenden.
+
+\begin{enumerate}
+
+\item $\phi(y,y',x) = y'-y = 0$ ist homogen vom Grad $1$, denn:
+
+$$\phi(ty,ty',x) = (ty)'-(ty) = t^1\cdot(y'-y) = t^1\cdot\phi(y,y',x))$$
+
+\item $\phi(y,y',x) = y'-y-\sin(x) = 0$ ist inhomogen, denn:
+
+$$\phi(ty,ty',x) = (ty)'-(ty)-\sin(x) = t^1 \cdot(y'-y) -\sin(x) \ne t^1\cdot\phi(y,y',x))$$
+
+Die zugehörige homogene DGL ist $\phi_h = y'-y = 0$, die Inhomogenität ist $\psi=-\sin(x)$.
+
+\item Die DGL $x''y''-2y'+y=0$ ist homogen vom Grad $1$, denn:
+
+$$x''(ty)''-2(ty)'+(ty) = t^1\cdot(x''y''-2y'+y)$$
+
+\item Die DGL $0=\frac{y''+2y}{y'''-3y}$ ist homogen vom Grad $0$, denn (beachte, dass $t^0=1$):
+
+$$\frac{(ty)''+2(ty)}{(ty)'''-3(ty)} = \frac{t(y''+2y)}{t(y'''-3y)} = t^0 \frac{y''+2y}{y'''-3y}$$
+
+\item Die DGL $y'-xy-1=0$ ist inhomogen, denn:
+
+$$(ty)'-x(ty)-1=t^1 (y'-xy)-1 \ne t^1 (y'-xy-1)$$
+
+Die zugehörige homogene DGL ist $\phi_h = y'-xy=0$, die Inhomogenität ist $\psi = -1$.
+
+\item Die DGL $(y'')^2-\ln(x)(yy') = 0$ ist homogen vom Grad $2$, denn:
+
+$$((ty)'')^2-\ln(x)((ty)(ty)') = t^2\cdot((y'')^2-\ln(x)(yy'))$$
+
+\item Die DGL $\sqrt{y'+y}=0$ ist homogen vom Grad $\frac{1}{2}$, denn:
+
+$$\sqrt{(ty)'+(ty)} = \sqrt{t(y'+y)} = t^{\frac{1}{2}}\sqrt{y'+y}$$
+
+\end{enumerate}
+

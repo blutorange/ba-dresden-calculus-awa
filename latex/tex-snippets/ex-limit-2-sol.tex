@@ -1,0 +1,8 @@
+\item Wir erhalten durch Ausklammern von $n^2$ im Zähler und Nenner:
+
+$\lim\limits_{n\to\infty}\frac{n\cos(n!)-5n^2}{\sqrt{3n^4+7}} = \lim\limits_{n\to\infty}\frac{n^2 \cdot (\frac{\cos(n!)}{n}-5)}{n^2 \cdot \sqrt{3+\frac{7}{n^4}}} = \lim\limits_{n\to\infty}\frac{\frac{cos(n!)}{n}-5}{\sqrt{3+\frac{7}{n^4}}}$
+
+Da $cos(n!)$ beschränkt ist im Intervall $[-1,1]$ und $\frac{1}{n}$ gegen $0$ konvergiert, ist auch $\lim\limits_{n\to\infty}\frac{cos(n!)}{n} = 0$. Somit folgt:
+
+$$\lim\limits_{n\to\infty}\frac{\frac{cos(n!)}{n}-5}{\sqrt{3+\frac{7}{n^4}}} = -\frac{5}{\sqrt{3}}$$
+

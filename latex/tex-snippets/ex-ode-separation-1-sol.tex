@@ -1,0 +1,31 @@
+\item 
+
+\begin{enumerate}
+
+\item Zuerst werden die Variablen getrennt:
+
+$$y' = \frac{\d y}{\d x} = (1+y^2)x^3$$
+$$\implies \frac{\d y}{1+y^2} = x^3 \d x$$
+
+Anschließend wird integriert und umgestellt:
+
+$$\implies \int \frac{\d y}{1+y^2} = \int x^3 \d x$$
+$$\implies \arctan(y) = \frac{x^4}{4} + C$$
+$$\implies y = \tan(\frac{x^4}{4} + C)$$
+
+\item Wir setzen die Anfangsbedingung ein und bestimmen die Konstante $C$:
+
+$$y(3) = 2 = \tan(\frac{3^4}{4} + C)$$
+$$\implies \arctan(2) + \pi n= \frac{81}{4} + C, n \in \mathbb{Z}$$
+$$\implies C = \arctan(2) - \frac{81}{4} + \pi n, n \in \mathbb{Z}$$
+
+Für $n=7$ ergibt sich etwa $C \approx 2.85$ bzw. $C \approx 163^\circ$.
+
+Die partikuläre Lösungsfunktion, welche die Anfangsbedingung erfüllt, lautet:
+
+$$y(x) = \tan(\frac{x^4}{4} + \arctan(2) - \frac{81}{4})$$
+
+(Es gibt nur eine Lösungsfunktion, da der Tangens periodisch mit Periode $p=\pi$ ist.)
+
+\end{enumerate}
+

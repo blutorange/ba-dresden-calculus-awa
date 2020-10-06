@@ -1,0 +1,28 @@
+\item Wir bezeichnen die Kantenlänge des Würfels mit $l$, wobei in dem Fall $l=10$ beträgt.
+
+Die tatsächlichen Messwerte liegen in einem Bereich von $\Delta x = 0.1$ Einheiten um den Wert $10$, also im Bereich $[x-\Delta x, x + \Delta x]$.
+
+Das Volumen eines Würfels in Abhängigkeit der Kantenlänge $l$ berechnet sich mittels der Funktion $V(l) = l^3$.
+
+Für einen Würfel mit Kanten $l=10$ ist das Volumen etwa $1000$. Uns interessiert nun, welche Werte das Volumen annehmen kann,
+wenn Messwerte zwischen $[9.9,10.1]$ für die Kantenlänge eingesetzt werden. Gesucht sind also die $V(x+\Delta x)$ und $V(x-\Delta x)$.
+
+Betrachten wir zuerst $V(x+\Delta x)$. Für kleine $\Delta x$ können wir mithilfe der Ableitung schreiben:
+
+$$V(x+\Delta x) \approx V(x) + \Delta x \cdot V'(x)$$
+
+Für $V(x)=x^3$ kennen wir die Ableitung, nämlich $V'(x) = 3x^2$. Setzen wir dies ein, so erhalten wir:
+
+$$V(x+\Delta x) \approx x^3 + \Delta x \cdot 3x^2$$
+
+Somit haben wir eine Näherungsformel für die obere Grenze des Volumen erhalten. Mit den gegebenen Werten $x=10$ und $\Delta x = 0.1$ ergibt sich
+
+$$V(10.1) \approx 10^3 + 0.1 \cdot 3 \cdot 10^2 = 1000 + 30  = 1030$$
+
+Analog erhalten wir für die untere Grenze, indem wir statt Plus ein Minus setzen:
+
+$$V(x-\Delta x) \approx x^3 - \Delta x \cdot 3x^2$$
+$$V(9.9) \approx 10^3 - 0.1 \cdot 3 \cdot 10^2 = 1000 - 30  = 970$$
+
+Antwortsatz: Die Grenzen für das Würfelvolumen betragen näherungsweise $[970, 1030]$.
+

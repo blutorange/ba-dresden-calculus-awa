@@ -1,0 +1,33 @@
+% Differential operator
+\providecommand\d{}
+\renewcommand{\d}[1]{\:\mathrm{d}{#1}} 
+
+% N-th root
+% \nroot{3}{27}
+\newcommand*{\nroot}[2]{\sqrt[\leftroot{-1}\uproot{2}#1]{#2}}
+\newcommand*{\ncroot}[4]{\sqrt[\leftroot{#1}\uproot{#2}#3]{#4}}
+
+% 2 component vector
+% \tvect{1}{-1}
+\newcommand{\tvect}[2]{%
+   \ensuremath{\Bigl(\negthinspace\begin{smallmatrix}#1\\#2\end{smallmatrix}\Bigr)}}
+
+% 2 component vector
+% \rvect{1}{-1}{0}
+\newcommand{\rvect}[3]{%
+   \ensuremath{\Bigl(\negthinspace\begin{smallmatrix}#1\\#2\\#3\end{smallmatrix}\Bigr)}}
+
+% German-style quotation marks %
+\MakeOuterQuote{"}
+
+% Number sets
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+\newcommand{\setzero}{\varnothing}
+
+% Mention (small caps)
+\newcommand{\mention}[1]{\textsc{#1}}

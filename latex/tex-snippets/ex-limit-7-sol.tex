@@ -1,0 +1,19 @@
+\item 
+
+\begin{enumerate}
+\item In der folgenden Tabelle meint $s_n$ den Weg, den die Schildkröte im $n$-ten Abschnitt zurückgelegt hat.
+
+\begin{tabular}{l|lllll}
+$n$          & $0$   & $1$   & $2$    & $3$     & $4$      \\	
+\hline
+$\Delta x_n$ in km & $100$ & $20$  & $4$    & $0{,}8$   & $0{,}16$   \\
+$\Delta t_n$ in h & $4$   & $0{,}8$ & $0{,}16$ & $0{,}032$ & $0{,}0064$ \\
+$\Delta s_n$ in km & $20$  & $4$   & $0{,}8$  & $0{,}16$  & $0{,}032$ 
+\end{tabular}
+
+\item Aus der Tabelle erkennen wir, dass in jedem Schritt durch 5 geteilt wird, also $\Delta x_n = \Delta x_0 / 5^n$ und $\Delta t_n = \Delta t_0 / 5^n$.
+\item $x = \Delta x_0 \sum_{n=0}^{\infty}(\frac{1}{5})^n = \frac{5}{4} \Delta x_0 = 125\text{km}$. Analog erhält man $t = \frac{5}{4} \Delta t_0 = 5\text{km}$.
+\item Den Koordinatenursprung setzen wir dort, wo Achilles losläuft. Dann ist $x_A(t) = 25\frac{\text{km}}{\text{h}}\cdot t$ und $x_S(t) = 100\text{km}+5\frac{\text{km}}{\text{h}}\cdot t$. Gleichsetzen und Lösen liefert $t=5\text{h}$ und $x_A(\text{5h}) = 25\frac{\text{km}}{\text{h}}\cdot \text{5h} = 125\text{km}$. Dies ist das erwartete Ergebnis.
+
+\end{enumerate}
+

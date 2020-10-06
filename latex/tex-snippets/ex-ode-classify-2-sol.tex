@@ -1,0 +1,64 @@
+\item
+
+\begin{enumerate}
+\item Ordnung 1, gewöhnlich, explizit, inhomogen, linear
+
+Direkte Integration liefert die allgemeine Lösung $y=\frac{x^2}{2}+C$. Die Anfangsbedingung ausgewertet ergibt $y(0)=\frac{0^2}{4}+C=4$, also $C=4$. Somit ist die partikuläre Lösung $y=\frac{x^2}{2}+4$.
+
+\item Ordnung 1, gewöhnlich, explizit, homogen, linear
+
+Die allgemeine Lösung lautet $y=C e^x$. Die Anfangsbedingung ergibt $y(0)=C\cdot e^0 = C = 4$. Somit ist die partikuläre Lösung $y=4e^x$.
+
+\item Ordnung 1, gewöhnlich, explizit, homogen, linear
+
+Die allgemeine Lösung lautet $y=C e^{3x}$. Die Anfangsbedingung ergibt $y(0)=C\cdot e^0 = C = 4$. Somit ist die partikuläre Lösung $y = 4 e^{3x}$.
+
+\item Ordnung 2, gewöhnlich, explizit, homogen, linear
+
+$y''-3y=0$. Die zugehörige charakteristische Gleichung lautet $\lambda^2-3 = 0$ und hat die Lösungen $\lambda = \pm \sqrt{3}$. Die allgemeine Lösung lautet mithin
+
+$$y=C_1 e^{\sqrt{3}x} + C_2 e^{-\sqrt{3}x}$$
+
+Für die Anfangsbedingungen benötigen wir noch die 1. Ableitung, diese lautet:
+
+$$y'= C_1 \sqrt{3} e^{\sqrt{3}x} - C_2 \sqrt{3} e^{-\sqrt{3}x}$$
+
+Nun können wir die Anfangsbedingungen einsetzen und erhalten:
+
+$$y(0) = 4 = C_1 + C_2$$
+$$y'(0) = 5 = C_1 \sqrt{3} - C_2 \sqrt{3}$$
+
+Dies stellt ein lineares Gleichungssystem dar. Zur Lösung multiplizieren wir die erste Gleichung mit $\sqrt{3}$ und addieren dazu die zweite Gleichung:
+
+$$\sqrt{3}y(0)+y'(0) = 4\sqrt{3} + 5 = 2\sqrt{3}C_1$$
+$$\implies C_1 = 2 + \frac{5}{2\sqrt{3}} = 2 + \frac{5}{6}\sqrt{3}$$
+
+Für die andere Konstante folgt somit
+
+$$C_2 = 4 - C_1 = 2 - \frac{5}{6}\sqrt{3}$$
+
+Damit lautet die partikuläre Lösung:
+
+$$y = (2 + \frac{5}{6}\sqrt{3}) e^{\sqrt{3}x} + (2 - \frac{5}{6}\sqrt{3}) e^{-\sqrt{3}x}$$
+
+\item Ordnung 2, gewöhnlich, explizit, homogen, linear
+
+$y''+3y = 0$. Die charakteristische Gleichung lautet $\lambda^2+3 = 0$ und hat die Lösungen $\lambda = \pm \sqrt{3} j$. Die allgemeine Lösung im Reellen lautet damit
+
+$$y = C_1 \cos(\sqrt{3}x) + C_2 \sin(\sqrt{3}x)$$
+
+Die Ableitung lautet:
+
+$$y' = - C_1 \sqrt{3} \sin(\sqrt{3}x) + C_2 \sqrt{3} \cos(\sqrt{3}x)$$
+
+Die Anfangsbedingungen ergeben:
+
+$$y(0) = 4 = C_1$$
+$$y'(0) = 5 = C_2 \sqrt{3}$$
+
+Somit ist die partikuläre Lösung:
+
+$$y = 4 \cos(\sqrt{3}x) + \frac{5}{3}\sqrt{3} \sin(\sqrt{3}x)$$
+
+\end{enumerate}
+

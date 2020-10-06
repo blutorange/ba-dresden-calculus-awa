@@ -1,0 +1,30 @@
+\item Zuerst Polynomdivision:
+
+\[\polylongdiv{x^3-3x-2}{x-2}\]
+
+Nach dem Lösen dieser quadratischen Gleichung erhalten wir die Linearfaktorzerlegung des Nenners: 
+
+$$q(x) = (x-2)(x+1)^2$$
+
+Damit können wir die Partialbruchzerlegung ansetzen:
+
+$$\frac{6x^2-4x-7}{(x-2)(x+1)^2} = \frac{A}{x-2}+\frac{B}{(x+1)}+\frac{C}{(x+1)^2}$$
+
+$$\frac{6x^2-4x-7}{(x-2)(x+1)^2} = \frac{A(x+1)^2 + B(x+1)(x-2) + C(x-2)}{(x-2)(x+1)^2}$$
+
+$$\frac{6x^2-4x-7}{(x-2)(x+1)^2} = \frac{Ax^2+2Ax+A + Bx^2-Bx-2B + Cx-2C}{(x-2)(x+1)^2}$$
+
+$$\frac{6x^2-4x-7}{(x-2)(x+1)^2} = \frac{(A+B)x^2+(2A-B+C)x+(A-2B-2C)}{(x-2)(x+1)^2}$$
+
+Wir führen einen Koeffizientenvergleich durch und erhalten ein lineares Gleichungssystem:
+
+\begin{itemize}
+\item $1A+1B+0C=+6$
+\item $2A-1B+1C=-4$
+\item $1A-2B-2C=-7$
+\end{itemize}
+
+Lösen dieses Gleichungssystems etwa mit Einsetzungs-, Gauß- oder Basisaustauschverfahren (siehe auch lineare Algebra) liefert die Lösung $A=1$, $B=5$, $C=-1$. Damit ergibt sich die Partialbruchzerlegung:
+
+$$\frac{6x^2-4x-7}{(x-2)(x+1)^2} = \frac{1}{x-2}+\frac{5}{(x+1)}-\frac{1}{(x+1)^2}$$
+

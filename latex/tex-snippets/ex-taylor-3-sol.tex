@@ -1,0 +1,25 @@
+\item Wir betrachten die Funktion $f(x) = \nroot{3}{x} = x^\frac{1}{3}$. Wir wissen, dass $f(8) = \nroot{3}{8} = 2$ gilt. Also Taylor-Entwicklung 2. Grades um $x_0=2$:
+
+$$f(x) \approx f(8) + f'(8) \cdot (x-8) + \frac{f''(8)}{2} \cdot (x-8)^2$$
+
+Die Ableitungen sind:
+
+$$f'(x) = \frac{1}{3} x^{-\frac{2}{3}}$$
+$$f''(x) = -\frac{2}{9} x^{-\frac{5}{3}} $$
+$$f^{(3)}(x) = \frac{10}{27} x^{-\frac{8}{3}} $$
+
+
+An der Stelle $x=8$ somit:
+
+$$f'(8) = \frac{1}{3} * (\nroot{3}{8})^{-2} = \frac{1}{12}$$
+$$f''(8) = - \frac{2}{9} * (\nroot{3}{8})^{-5} = -\frac{1}{144}$$
+
+Damit ergibt sich für die die Taylorentwicklung:
+
+$$f(x) \approx 2 +\frac{1}{12}(x-8) - \frac{1}{288} (x-8)^2$$
+
+Und für den gesuchten Wert:
+
+$$f(11) = \nroot{3}{11} \approx 2 + \frac{1}{4} - \frac{1}{32} = \frac{71}{32} \approx 2,219$$
+
+Anmerkung: Mit der Restgliedabschätzung folgt unter Verwendung von $\max\limits_{\vartheta \in [8,11]}|f^{(3)}(\vartheta)| = \frac{5}{3456}$ für den Höchstfehler $|R_2(x)| \leq \frac{(11-8)^3}{3!}\cdot\frac{5}{3456} = \frac{5}{768} \approx 0,007$. Also $\nroot{3}{11} \in [2,212;2,226]$. Der tatsächliche Wert ist $\nroot{3}{11} = 2.2239800905...$

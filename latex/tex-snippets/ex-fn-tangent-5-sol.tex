@@ -1,0 +1,23 @@
+\item Funktionswert an der gegebenen Stelle: $f(2,1) = 4+8-2=10$. Nun zuerst ableiten:
+
+\begin{itemize}
+\item $f_x = 2x+4y$
+\item $f_y = 4x-4y$
+\end{itemize}
+
+Nun an der Stelle $(2,1)$ auswerten:
+
+\begin{itemize}
+\item $f_x(2,1) = 4+4 = 8$
+\item $f_y(2,1) = 8-4 = 4$
+\end{itemize}
+
+Damit ergibt sich für die Tangentialebene:
+
+$$z = t(x,y) = 10 + 8(x-2) + 4(y-1)$$
+
+\begin{itemize}
+\item Hessesche Normalform: Ausklammern obiger Gleichung liefert $8x+4y-z=10$. Dies lässt sich schreiben als $\vec{n}\cdot\vec{x} = \rvect{8}{4}{-1}\cdot\rvect{x}{y}{z} = 10$. Der Normalvektor hat den Betrag $|\vec{n}| = \sqrt{8^2+4^2+1^2} = \sqrt{81} = 9$. Damit lässt sich sich Ebenengleichung umformen zu $\vec{n_0}\cdot\vec{x} = \rvect{8/9}{4/9}{-1/9}\cdot\rvect{x}{y}{z} = \frac{10}{9}$. Dies ist die Hessesche Normalform.
+\item Parametrische Form: Diese liest man direkt aus der partiellen Ableitung ab: $\vec{r}(u,v) = \rvect{2}{1}{10} + u \cdot \rvect{1}{0}{8} + v \cdot \rvect{0}{1}{4}$
+\end{itemize}
+
