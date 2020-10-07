@@ -1,0 +1,16 @@
+{
+  "name": "js-ast",
+  "version": "1.0.0",
+  "description": "Create a DOT graph of the AST of a JavaScript code snippet",
+  "main": "graph-create.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andre Wachsmuth",
+  "license": "Unlicense",
+  "dependencies": {
+    "@babel/parser": "^7.7.3",
+    "@babel/traverse": "^7.7.2",
+    "@babel/types": "^7.7.2"
+  }
+}

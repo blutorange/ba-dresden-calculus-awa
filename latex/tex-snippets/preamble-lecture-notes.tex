@@ -16,15 +16,18 @@ openany, % A chapter may start on either a recto or verso page.
 %%%------------------------------------------------------------------------------
 
 \usepackage[utf8]{inputenc} % If utf8 encoding
-% \usepackage[lantin1]{inputenc} % If not utf8 encoding, then this is probably the way to go
 \usepackage[T1]{fontenc}    %
 \usepackage[german]{babel} % German if it pleases m'lord
 \usepackage[final]{microtype} % Less badboxes
 \usepackage{csquotes} % For german quotations
+\usepackage{xcolor} % For colors
+\usepackage{listings} % For colors
 
 % \usepackage{kpfonts} %Font
 
 \usepackage{amsmath,amssymb,mathtools,polynom} % Math
+\usepackage{minted} % Programming
+
 
 % \usepackage{tikz} % Figures
 \usepackage{graphicx} % Include figures
@@ -160,11 +163,32 @@ openany, % A chapter may start on either a recto or verso page.
 
 \usepackage{hyperref}   % Internal hyperlinks
 \hypersetup{
-pdfborder={0 0 0},      % No borders around internal hyperlinks
-pdfauthor={I am the Author} % author
+pdfborder={0 0 1},      % Borders around internal hyperlinks
+pdfauthor={Andre Wachsmuth} % author
 }
 \usepackage{memhfixc}   %
 
+%%% Colors
+%%%-------------------------------------------------------------------------------
+\definecolor{LightGray}{rgb}{0.95,0.95,0.95}
+
+
+%%% SOURCE CODE
+%%%-------------------------------------------------------------------------------
+
+% Default for all source code listings
+\setminted{
+	framesep=2mm,
+	baselinestretch=1.0,
+	bgcolor=LightGray,
+	fontsize=\footnotesize,
+	linenos
+}
+
+% specific languages
+\newminted{c}{}
+\newminted{js}{}
+\newminted{text}{}
 
 %%%% Named equations
 %%%------------------------------------------------------------------------------
