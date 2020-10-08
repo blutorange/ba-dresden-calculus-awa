@@ -146,7 +146,7 @@
          id="tspan1219"
          x="41.827679"
          y="65.286652"
-         style="stroke-width:0.26458332"></tspan></text>
+         style="stroke-width:0.26458332" /></text>
     <flowRoot
        xml:space="preserve"
        id="flowRoot1135-8"
@@ -398,5 +398,5 @@
            y="319.95349"
            style="font-size:21.33333397px" /></flowRegion><flowPara
          id="flowPara1141-1-3-0-4-2"
-         style="font-size:21.33333397px">8 km/h</flowPara></flowRoot>  </g>
+         style="font-size:21.33333397px">5 km/h</flowPara></flowRoot>  </g>
 </svg>

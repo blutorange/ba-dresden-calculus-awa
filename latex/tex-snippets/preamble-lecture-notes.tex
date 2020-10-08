@@ -27,6 +27,7 @@ openany, % A chapter may start on either a recto or verso page.
 
 \usepackage{amsmath,amssymb,mathtools,polynom} % Math
 \usepackage{minted} % Programming
+\usepackage[most]{tcolorbox} % For custom example styles
 
 
 % \usepackage{tikz} % Figures
@@ -147,14 +148,35 @@ openany, % A chapter may start on either a recto or verso page.
 
 %%%% NEW THEOREMS
 
-\newtheorem{definition}{Definition}
+\newtcbtheorem{example}{Beispiel}{
+	colback=blue!5!white,
+	colbacktitle={blue!25!white},
+	coltitle={black},
+	fonttitle=\bfseries
+}{ex}
 
+
+\newtcbtheorem{definition}{Definition}{
+	colback=yellow!20!white,
+	colbacktitle={yellow!40!white},
+	coltitle={black},
+	fontupper=\slshape,
+	fonttitle=\bfseries
+}{def}
+
+\newtcbtheorem{statement}{Aussage}{
+	colback=red!5!white,
+	colbacktitle={red!25!white},
+	coltitle={black},
+	fontupper=\slshape,
+	fonttitle=\bfseries
+}{stmt}
 
 %%% TABLE OF CONTENTS
 %%%------------------------------------------------------------------------------
 
-\maxtocdepth{subsection} % Only parts, chapters and sections in the table of contents
-\settocdepth{subsection}
+\maxtocdepth{section} % Only parts, chapters and sections in the table of contents
+\settocdepth{section}
 
 \AtEndDocument{\addtocontents{toc}{\par}} % Add a \par to the end of the TOC
 

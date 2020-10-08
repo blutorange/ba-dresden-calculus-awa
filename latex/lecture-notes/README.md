@@ -1,5 +1,11 @@
-LaTex lecture notes for a calculus course at the Berufsakademie Dresden. Compile with
+LaTex lecture notes for a calculus course at the Berufsakademie Dresden. To create the PDF, cd to this dir and use
 
 ```bash
-pdflatex -shell-escape lecture-2020.tex
+./build.sh
+```
+
+To see a list of options, use
+
+```bash
+./build.sh -h
 ```

@@ -32,7 +32,7 @@ Auch in der Informatik und Programmierung sind mathematische Konzepte in einem b
 Grundlage für die gesamte Analysis die Objekte, auf denen sie operiert: Zahlen und Zahlenmengen. Zahlen modellieren quantitative Zusammenhänge der realen Welt. Gleichartige Zahlen abstrahiert man als eine Menge zu Zahlenbereichen.
 
 
-\begin{definition}[Menge]
+\begin{definition}{Menge}{Set}
 	Eine Menge ist eine Sammlung verschiedenartiger Elemente. Irrelevant hierbei ist die Reihenfolge der Elemente.
 \end{definition}
 
@@ -42,15 +42,14 @@ ausreichend.
 
 Bei der Definition der Zahlenbereich beginnt man mit den natürlichen Zahlen und erweitert diese dann schrittweise.
 
-\begin{definition}[Natürliche Zahlen]
+\begin{definition}{Natürliche Zahlen}{NatNum}
 	Die natürlichen Zahlen sind die Menge $\N$, die man erhält, wenn man mit dem Element $0$ beginnt und weitere Elemente rekursiv durch Bildung des Nachfolgers bestimmt.
 \end{definition}
 
 Präzisiert wird diese Definition durch die sogenannten \mention{Peano}-Axiome. Dabei kann man $0$ etwa mit dem Element $\setzero$ (leere Menge) identifzieren und die Nachfolgerbildung mit der Zuweisung
 $\setzero \mapsto \lbrace \setzero \rbrace$ (Menge mit der leeren Menge). Der Vollständigkeit halber seien diese Axiome hier kurz angegeben.
 
-\begin{definition}[\mention{Peano}-Axiome]
-	\mbox{}
+\begin{definition}{\mention{Peano}-Axiome}{PeanoAx}
 	\begin{enumerate}
 		\item 0 ist eine Zahl.
 		\item Jede Zahl $n$ hat genau einen Nachfolger $n'$.
@@ -67,14 +66,14 @@ Arrays sowohl bei $0$ als auch bei $1$ beginnen lassen, in beiden Fällen wird d
 Nun reichen die natürlichen Zahlen nicht aus, um alle Gegebenheiten zu modellieren. Etwa ist es damit umständlich, Einnahmen und Kosten zu beschreiben. Hier müsste man immer angeben, ob es sich bei einer Quantität umd Einnahmen oder Kosten handelt und Regeln festlegen, wie Einnahmen und Kosten miteinander zu verrechnen sind. Um solche Gegensätze besser beschreiben zu können, führt man die ganzen Zahlen ein.
 Kosten sind nun einfach beschreibbar als negative Einnahmen. Mathematisch motiviert werden die ganzen Zahlen, um ein inverses Element bezüglich der Addition angeben zu können. Dies wird unter dem Themengebiert siehe algebraische Strukturen im Modul Algebra näher beleuchtet.
 
-\begin{definition}[Ganze Zahlen]
+\begin{definition}{Ganze Zahlen}{WholeNum}
 	Die ganzen Zahlen sind die Menge $\Z$, die man aus $\N$ gewinnt, wenn man zu jeder natürlichen Zahl $n$ noch ihr Inverses $n'$ hinzunimmt. Dabei gilt $n+n' = n+(-n) = 0$.
 \end{definition}
 
 Doch auch die ganzen Zahlen sind unzureichend, um Verhältnisse und Verteilungen. Um etwa die Verteilung eines Geburtstagskuchen zu beschreiben, muss man immer die Grundgesamtheit (12 Stücke) als auch den Anteil
 davon (3 Stück) angeben. Dies ist umständlich, stellt aber die Idee für die Definition der gebrochenen Zahlen dar.
 
-\begin{definition}[Gebrochene Zahlen]
+\begin{definition}{Gebrochene Zahlen}{RatNum}
 	Die gebrochenen Zahlen sind die Menge $\Q$, welche aus Paaren $(p,q) \in \Z^2$ ganzer Zahlen besteht. $p$ bezeichnet man dabei als Zähler, $q$ als Nenner. Zwei ganze Zahlen heißen äquivalent,  wenn
 	diese den gleichen Bruch darstellen, also wenn gilt: $(p,q) \equiv (p',q') \iff pq'=p'q$	
 \end{definition}
@@ -86,14 +85,14 @@ Nun gibt es auch Rechenaufgaben, die selbst durch gebrochene Zahlen nicht gelös
 Näherungswerte als Brüche anzugeben: $\frac{3}{2}, \frac{17}{12},\frac{577}{408}$. Man sieht hier, dass die Näherungswerte besser werden, also näher an der gesuchten Lösung liegen. Tatsächlich kann man
 eine Formel angeben, um immer bessere Näherungswerte für $x^2=2$ zu finden. Alle diese Näherungswerte sind gebrochene Zahlen, dennoch gibt es keine gebrochene Zahl mit der Eigenschaft $x^2=2$.
 
-\begin{definition}[Fundamentalfolge]
+\begin{definition}{Fundamentalfolge}{CauchySeq}
 	Eine Fundamentalfolge (Cauchy-Folge) ist eine Zahlenfolge $a_i$, bei der der Abstand der zweier Folgenglieder beliebig klein wird: $\forall \epsilon > 0: \exists N \in \N: \forall m,q>N: |a_m-a_q|<\epsilon$
 \end{definition}
 
 Wie eben anhand des Beispiels $x^2=2$ illustriert, gibt es im Bereich der rationalen Zahlen Fundamentalfolgen, die sich zwar scheinbar einem Wert zu nähern scheinen (die also eine Cauchy-Folge darstellen),
 wobei dieser Wert selber allerdings keine gebrochene Zahl ist. Zur Lösung dieses Problems werden die reellen Zahlen definiert.
 
-\begin{definition}[Reelle Zahlen]
+\begin{definition}{Reelle Zahlen}{RealNum}
 	Die reellen Zahlen sind die Menge $\R$, welche aus allen Fundamentalfolgen $a_i$ ganzer Zahlen besteht. Zwei Fundamentalfolgen $a_i, b_i$ sind dabei äquivalent, wenn $|a_i-b_i$ eine Nullfolge bildet.
 \end{definition}
 
@@ -106,30 +105,35 @@ Zahlen eignen sich beispielsweise, um Schwingungen zu beschreiben oder Strom- un
 
 Auf den Zahlenbereichen werden Rechenoperationen definiert, welche gewisse Regeln genügen. Die systematische Beschreibung solcher Rechenoperationen erfolgt durch das Gebiet algebraische Strukturen im Modul Algebra. Für die Analysis wird vorausgesetzt, dass elementare Rechenregeln aus Sekundarstufe I und II sowie der Umgang und die Umformung mathematischer Terme beherrscht werden. Im folgenden findet sich eine unvollständige Auflistung einiger wesentlicher Regeln: 
 
-\begin{Nequation}{Kommunikativgesetz}
-	a + b = b + a
-	\label{eq:Kommunikativgesetz}
-\end{Nequation}
+\begin{statement}{Kommunikativgesetz}{CommLaw}
+	Für $a,b\in\R$ gilt: $a + b = b + a$
+\end{statement}
 
-\begin{Nequation}{Assoziativgesetz}
-	a + ( b + c) = (a + b) + c
-	\label{eq:Assoziativgesetz}
-\end{Nequation}
+\begin{statement}{Assoziativgesetz}{AssLaw}
+	Für $a,b\in\R$ gilt: $a + ( b + c) = (a + b) + c$
+\end{statement}
 
-\begin{Nequation}{Distributivgesetz}
-	a \cdot ( b + c ) = a \cdot b + a \cdot c
-	\label{eq:Distributivgesetz}
-\end{Nequation}
+\begin{statement}{Distributivgesetz}{DisLaw}
+	Für $a,b,c\in\R$ gilt: $a \cdot ( b + c ) = a \cdot b + a \cdot c$
+\end{statement}
 
-\begin{Nequation}{Potenzgesetze}
-	x^{p+q} = x^p \cdot x^q, x^p \cdot y^p = (x \cdot y)^p, x^{(y^z)} = x^{y \cdot z}
-	\label{eq:Potenzgesetze}
-\end{Nequation}
+\begin{statement}{Potenzgesetze}{PowerIds}
+	Für $x, y, p,q\in\R$, für welche die Potenzen erklärt sind, gelten die folgenden Rechenregeln:
+	\begin{itemize}
+		\item $x^{p+q} = x^p \cdot x^q$
+		\item $x^p \cdot y^p = (x \cdot y)^p$
+		\item $x^{(y^z)} = x^{y \cdot z}$
+	\end{itemize}
+\end{statement}
 
-\begin{Nequation}{Logarithmengesetze}
-	\ln(x \cdot y) = \ln(x) + \ln(y), \ln(x^y) = y \ln(x), \log_y(x) = \ln(x) / \ln(y)
-	\label{eq:Logarithmengesetze}
-\end{Nequation}
+\begin{statement}{Logarithmengesetze}{LogIds}
+	Für $x, y\in\R$, für welche die Logarithmen erklärt sind, gelten die folgenden Rechenregeln:
+	\begin{itemize}
+		\item $\ln(x \cdot y) = \ln(x) + \ln(y)$
+		\item $\ln(x^y) = y \ln(x)$
+		\item $\log_y(x) = \ln(x) / \ln(y)$
+	\end{itemize}
+\end{statement}
 
 Für die Operationen $+$ (Addition) und $*$ (Multiplikation) gibt es zudem eine Kurzschreibweise, wenn eine (möglicherweise variable) Anzahl von Summanden addiert oder Faktoren multipliziert werden sollen. Man gibt dabei einen Laufindex an, der innerhalb gewisser Grenzen verläuft, und einen Term, in den jeder erlaubte Wert des Laufindex eingesetzt wird. Die Werte des Terms für jeden Laufindex werden dann addiert beziehungsweise multipliziert. Geschrieben wird dies wie folgt:
 
@@ -161,21 +165,21 @@ Frage: Ist $\sqrt{2}\in\Q$?
 
 Wir nehmen an, $\sqrt{2}$ wäre eine gebrochene Zahl, also darstellbar als vollständig gekürzter Bruch $\frac{p}{q}, p,q\in\Z, p,q>0$. Dann sind $p$ und $q$ teilerfremd. Es folgt nun:
 
-\begin{eqnarray}
-  \sqrt{2} & = & p / q \\
-         2 & = & p^2 / q^2 \\
-     2 q^2 & = & p^2
-\end{eqnarray}
+\begin{align}
+  \sqrt{2} & = p / q \\
+         2 & = p^2 / q^2 \\
+     2 q^2 & = p^2 \label{eq:sqrt2-p2even}
+\end{align}
 
-Es ist also $p^2$ eine gerade Zahl, da es sich als das doppelte einer anderen ganzen Zahl $q^2$ darstellen lässt. Weiterhin ist damit auch $p$ eine gerade Zahl, da das Produkt zweiter ungerade Zahlen
+Aus Gleichung \ref{eq:sqrt2-p2even} folgt, $p^2$ ist eine gerade Zahl, da es sich als das doppelte einer anderen ganzen Zahl $q^2$ darstellen lässt. Weiterhin ist damit auch $p$ eine gerade Zahl, da das Produkt zweiter ungerade Zahlen
 immer ebenfalls eine ungerade Zahl ergibt. Wir können $p$ nun schreiben als $p = 2 n, n\in \Z$. Es ergibt sich:
 
-\begin{eqnarray}
-	2q^2 & = & p^2 = p * p = (2n) \cdot (2n) \\
-	q^2 & = & 2 n^2
-\end{eqnarray}
+\begin{align}
+	2q^2 & = p^2 = p * p = (2n) \cdot (2n) \\
+	q^2 & = 2 n^2 \label{eq:sqrt2-q2even}
+\end{align}
 	
-Da $n$ eine ganze Zahl ist, so ist auch $n^2$ eine ganze Zahl. $q^2$ lässt sich schreiben als das doppelte einer ganzen Zahl und ist daher eine gerade Zahl, mithin ist also auch $q$ eine gerade Zahl.
+Da $n$ eine ganze Zahl ist, so ist auch $n^2$ eine ganze Zahl. Wegen \ref{eq:sqrt2-q2even} lässt sich $q^2$ sich schreiben als das doppelte einer ganzen Zahl und ist daher eine gerade Zahl, mithin ist also auch $q$ eine gerade Zahl.
 
 Nun haben wir damit aber gezeigt, dass sowohl $p$ als auch $q$ gerade Zahlen sind. Sie besitzen also beide den Teiler $2$. Dies widerspricht der Annahme, dass es einen vollständig gekürzten Bruch $p / q = \sqrt{2}$ gibt. Die Annahme, dass es einen solchen Bruch gibt, wurde damit zu einem Widerspruch (ad absurdum) geführt (reductio). Somit gibt es keine gebrochene Zahl $x$ mit der Eigenschaft $x^2=2$.
 

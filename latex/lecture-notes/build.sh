@@ -36,7 +36,7 @@ done
 # Remove all generated files
 if [ "$mode" = "clean" ] 
 then
-    rm -f plots/*.png;
+    rm -f gnuplot/*.png;
     rm -f svg/*.png
     rm -f "lecture.aux" "lecture.fdb_latexmk" "lecture.fls" "lecture.log" "lecture.pdf" "lecture.out" "lecture.toc";
     rm -rf "_minted-lecture";
@@ -52,23 +52,20 @@ then
         svgimage="$(basename $svgfile .svg).png";
         inkscape -C -z --file="$svgfile" --export-png="$svgimage" --export-background=ffffff;
     done
+    cd ..;
 fi
-
-cd ..;
-
 
 # Render all gnuplot diagrams
 if [ "$mode" = "plot" ] || [ -z "$mode" ]
 then
-    cd plots;
+    cd gnuplot;
     for plotfile in $(ls *.gnuplot)
     do
         plotimage="$(basename $plotfile .gnuplot).png";
         gnuplot -e "filename='$plotimage'" "$plotfile";
     done
+    cd ..;
 fi
-
-cd ..
 
 # Render the lecture notes PDF script
 if [ "$mode" = "pdf" ] || [ -z "$mode" ]
