@@ -16,6 +16,7 @@ do
             echo "  $0  -m plot|pdf";
             echo '  -m plot : Only renders the gnuplot graphs';
             echo '  -m pdf  : Only renders the PDF via LaTeX';
+            echo '  -m svg  : Only render all SVG images';
             echo '  -m clean: Removes all generated files';
             echo 'To remove all generated files:';
             echo "  $0 -c";
@@ -35,10 +36,23 @@ done
 if [ "$mode" = "clean" ] 
 then
     rm -f plots/*.png;
-    rm -f "lecture.aux" "lecture.fdb_latexmk" "lecture.fls" "lecture.log" "lecture.out" "lecture.toc";
+    rm -f svg/*.png
+    rm -f "lecture.aux" "lecture.fdb_latexmk" "lecture.fls" "lecture.log" "lecture.pdf" "lecture.out" "lecture.toc";
     rm -rf "_minted-lecture";
     exit;
 fi
+
+# Render all SVG images
+if [ "$mode" = "svg" ] || [ -z "$mode" ]
+then
+    cd svg
+    for svgfile in $(ls *.svg)
+        svgimage="$(basename $svgfile .svg).png";
+        inkscape -C -z --file="$svgfile" --export-png="$pngfile" --export-background=ffffff;
+    do
+    done
+fi
+
 
 # Render all gnuplot diagrams
 if [ "$mode" = "plot" ] || [ -z "$mode" ]
@@ -47,7 +61,6 @@ then
     for plotfile in $(ls *.gnuplot)
     do
         plotimage="$(basename $plotfile .gnuplot).png";
-        rm  -f "$plotimage";
         gnuplot -e "filename='$plotimage'" "$plotfile";
     done
 fi
