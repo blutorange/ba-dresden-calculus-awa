@@ -41,7 +41,7 @@ then
 fi
 
 # Render all gnuplot diagrams
-if [ "$mode" = "plot" ] || [ -z "$flag" ]
+if [ "$mode" = "plot" ] || [ -z "$mode" ]
 then
     cd plots
     for plotfile in $(ls *.gnuplot)
@@ -55,7 +55,7 @@ fi
 cd ..
 
 # Render the lecture notes PDF script
-if [ "$mode" = "pdf" ] || [ -z "$flag" ]
+if [ "$mode" = "pdf" ] || [ -z "$mode" ]
 then
     latexmk -pdf -shell-escape -halt-on-error lecture.tex;
 fi
