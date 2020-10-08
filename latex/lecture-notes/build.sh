@@ -2,6 +2,7 @@
 
 set -e
 
+# CLI flags
 mode="";
 while getopts :m:hc flag
 do
@@ -45,19 +46,21 @@ fi
 # Render all SVG images
 if [ "$mode" = "svg" ] || [ -z "$mode" ]
 then
-    cd svg
+    cd svg;
     for svgfile in $(ls *.svg)
-        svgimage="$(basename $svgfile .svg).png";
-        inkscape -C -z --file="$svgfile" --export-png="$pngfile" --export-background=ffffff;
     do
+        svgimage="$(basename $svgfile .svg).png";
+        inkscape -C -z --file="$svgfile" --export-png="$svgimage" --export-background=ffffff;
     done
 fi
+
+cd ..;
 
 
 # Render all gnuplot diagrams
 if [ "$mode" = "plot" ] || [ -z "$mode" ]
 then
-    cd plots
+    cd plots;
     for plotfile in $(ls *.gnuplot)
     do
         plotimage="$(basename $plotfile .gnuplot).png";
