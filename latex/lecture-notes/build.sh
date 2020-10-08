@@ -34,9 +34,9 @@ done
 # Remove all generated files
 if [ "$mode" = "clean" ] 
 then
-    echo rm -f "plots/*.png";
-    echo rm -f "lecture.aux" "lecture.fdb_latexmk" "lecture.fls" "lecture.log" "lecture.out" "lecture.toc";
-    echo rm -rf "_minted-lecture";
+    rm -f plots/*.png;
+    rm -f "lecture.aux" "lecture.fdb_latexmk" "lecture.fls" "lecture.log" "lecture.out" "lecture.toc";
+    rm -rf "_minted-lecture";
     exit;
 fi
 
