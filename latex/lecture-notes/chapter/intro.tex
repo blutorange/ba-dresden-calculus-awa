@@ -102,7 +102,7 @@ Tatsächlich lässt sich zeigen, dass auf der Menge der reellen Zahlen $\R$ jede
 Als Erweiterung der reellen Zahlen gibt es noch die komplexen Zahlen $\C$, wobei ein neues Element $j$ mit der Eigenschaft $j^2=-1$ eingeführt wird, welches die sogenannte imaginäre Einheit heißt. Komplexe
 Zahlen eignen sich beispielsweise, um Schwingungen zu beschreiben oder Strom- und Spannungsberechnungen an Schaltkreisen anzustellen. Solche komplexen Zahlen werden in der Algebra genauer betrachtet. Diese Vorlesung beschränkt sich auf die reellwertige Analysis. 
 
-\section{Rechenregeln}
+\section{Operationen und Rechenregeln}
 
 Auf den Zahlenbereichen werden Rechenoperationen definiert, welche gewisse Regeln genügen. Die systematische Beschreibung solcher Rechenoperationen erfolgt durch das Gebiet algebraische Strukturen im Modul Algebra. Für die Analysis wird vorausgesetzt, dass elementare Rechenregeln aus Sekundarstufe I und II sowie der Umgang und die Umformung mathematischer Terme beherrscht werden. Im folgenden findet sich eine unvollständige Auflistung einiger wesentlicher Regeln: 
 
@@ -130,6 +130,24 @@ Auf den Zahlenbereichen werden Rechenoperationen definiert, welche gewisse Regel
 	\ln(x \cdot y) = \ln(x) + \ln(y), \ln(x^y) = y \ln(x), \log_y(x) = \ln(x) / \ln(y)
 	\label{eq:Logarithmengesetze}
 \end{Nequation}
+
+Für die Operationen $+$ (Addition) und $*$ (Multiplikation) gibt es zudem eine Kurzschreibweise, wenn eine (möglicherweise variable) Anzahl von Summanden addiert oder Faktoren multipliziert werden sollen. Man gibt dabei einen Laufindex an, der innerhalb gewisser Grenzen verläuft, und einen Term, in den jeder erlaubte Wert des Laufindex eingesetzt wird. Die Werte des Terms für jeden Laufindex werden dann addiert beziehungsweise multipliziert. Geschrieben wird dies wie folgt:
+
+$$
+\sum\limits_{i=1}^{10} i^2  \\
+$$
+
+$$
+\prod\limits_{i=1}^{5} i 
+$$
+
+Oben steht eine Summe ($\Sigma$ für Sigma, Summe), gesprochen: "Die Summe von i gleich 1 bis 10 über i-Quadrat." Es sollen also die ersten 10 Quadratzahlen addiert werden. Unten steht ein Produkt ($\Pi$ für Pi, Produkt), gesprochen: "Das Produkt von i gleich 1 bis 5 über i." Hier sollen also die Zahlen von $1$ bis $5$ multipliziert werden ($=5!$). Man beachte auch die Analogie zu einer \emph{For-Schleife} in der Programmierung:
+
+\begin{jscode}
+sum = 0;
+for (i = 1; i <= 10; ++i)
+	sum += i * i;
+\end{jscode}
 
 \section{Schlussfolgern}
 

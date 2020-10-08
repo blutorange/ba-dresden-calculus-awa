@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+
+set -e
+
+mode="";
+while getopts :m:hc flag
+do
+    case "${flag}" in
+        m)
+            mode=${OPTARG}
+        ;;
+        h)
+            echo 'To process all files and render the PDF from scratch, use';
+            echo "  $0.sh";
+            echo 'To process only part of the files, use:';
+            echo "  $0  -m plot|pdf";
+            echo '  -m plot : Only renders the gnuplot graphs';
+            echo '  -m pdf  : Only renders the PDF via LaTeX';
+            echo '  -m clean: Removes all generated files';
+            echo 'To remove all generated files:';
+            echo "  $0 -c";
+            echo '  This is a shortcut for "-m clean"';
+            exit;
+        ;;
+        c)
+            mode="clean";
+        ;;
+        \?)
+            echo "Illegal options, use $0 -h ";
+        ;;
+    esac
+done
+
+# Remove all generated files
+if [ "$mode" = "clean" ] 
+then
+    echo rm -f "plots/*.png";
+    echo rm -f "lecture.aux" "lecture.fdb_latexmk" "lecture.fls" "lecture.log" "lecture.out" "lecture.toc";
+    echo rm -rf "_minted-lecture";
+    exit;
+fi
+
+# Render all gnuplot diagrams
+if [ "$mode" = "plot" ] || [ -z "$flag" ]
+then
+    cd plots
+    for plotfile in $(ls *.gnuplot)
+    do
+        plotimage="$(basename $plotfile .gnuplot).png";
+        rm  -f "$plotimage";
+        gnuplot -e "filename='$plotimage'" "$plotfile";
+    done
+fi
+
+cd ..
+
+# Render the lecture notes PDF script
+if [ "$mode" = "pdf" ] || [ -z "$flag" ]
+then
+    latexmk -pdf -shell-escape -halt-on-error lecture.tex;
+fi
