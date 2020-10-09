@@ -36,7 +36,7 @@ Bevor wir den Begriff der Konvergenz näher definieren können, benötigen wir z
 Zahlenfolgen können also als Funktion $f: \N \to \R$ aufgefasst werden. Zur mathematischen Darstellung gibt es zwei Möglichkeiten:
 
 \begin{enumerate}
-	\item Explizite Darstellung: Der Wert des $n$.-ten Folgenglieds ist direkt gegeben. 
+	\item Explizite Darstellung: Der Wert des $n$.-ten Folgenglieds ist direkt gegeben.
 	\item Implizite (rekursive) Darstellung: Der Wert des nächsten Folgengliedes ($n+1$) ist gegeben in Abhängigkeit eines oder mehrerer voriger Folgenglieder. Zudem ist ein Startwert für das erste oder die ersten Folgenglieder gegeben.
 \end{enumerate}
 
@@ -84,7 +84,7 @@ Wie in Abbildung \ref{fig:ExArithSeq} und \ref{fig:ExGeoSeq} dargestellt, lässt
 
 \begin{definition}{Beschränktheit einer Zahlenfolge}{BoundSeq}
 	Eine Zahlenfolge $(a_n)$ heißt \textbf{nach unten beschränkt}, wenn alle ihre Glieder überhalb einer unteren Grenze liegen, das heißt, wenn es ein $L\in\R$ gibt, sodass $\forall n \in\N: L \ge a_n$ gilt. $L$ heißt dann untere Schranke (lower bound) der Zahlenfolge, geschrieben als $L = \inf a_n$ (Infimum).
-	
+
 	Eine Zahlenfolge $(a_n)$ heißt \textbf{nach oben beschränkt}, wenn alle ihre Glieder unterhalb einer oberen Grenze liegen, das heißt, wenn es ein $U\in\R$ gibt, sodass $\forall n \in\N: L \le a_n$ gilt. $L$ heißt dann obere Schranke (lower bound) der Zahlenfolge, geschrieben als $U = \sup a_n$ (Supremum).
 \end{definition}
 
@@ -92,10 +92,10 @@ Anmerkung: Manchmal betrachtet man auch nur die Beschränktheit einer Zahlenfolg
 
 \begin{example}{Eigenschaften der arithmetischen und geometrischen Zahlenfolge}{ArithGeoProp}
 	Die arithmetische Zahlenfolge $a_{n+1} = a_n + C, a_0 = k, C > 0$ ist streng monoton steigend, denn $a_{n+1} > a_n$ ist äquivalent zu $a_n + C > a_n$ und weiter $C > 0$, was nach Voraussetzung eine wahre Aussage ist. Weiterhin ist sie nicht nach oben beschränkt (\textbf{unbeschränkt}), da für jede noch so große Zahl $U > 0$ sich durch Umstellung der expliziten Darstellung ein Folgenglied $n'$ finden lässt, sodass $a_{n'} > U$ gilt. Allerdings ist sie nach unten beschränkt, dass alle Glieder größer oder gleich dem Startwert $k$ sind.
-	
+
 	Analog findet man für arithmetische Zahlenfolgen mit $C<0$, dass sie monoton fallend, nach oben beschränkt und nach unten unbeschränkt ist. Für $C=0$ erhält man die sogenannte konstante Folge, welche sowohl mononton steigend als auch fallend ist (aber nicht streng), und sowohl nach oben als auch nach unten beschränkt ist.
-	
-	Für die geometrische Zahlenfolge $a_{n+1} = q \cdot a_n, a_0 = p, 0 < q < 1, p > 0$ stellt wir zuerst fest, dass alle ihre Glieder positiv sind. Sie ist streng monoton fallend, denn $a_{n+1} < a_n$ ist äquivalent zu $q \cdot a_n < a_n$ und weiter (da $a_n$ positiv) $q < 1$, was nach Voraussetzung eine wahre Aussage ist. Sie ist nach oben beschränkt, da sie monoton fallend ist. Weiterhin ist sie auch nach unten beschränkt, da alle Folgeglieder positiv sind (und damit $L=0$ eine untere Schranke darstellt).	
+
+	Für die geometrische Zahlenfolge $a_{n+1} = q \cdot a_n, a_0 = p, 0 < q < 1, p > 0$ stellt wir zuerst fest, dass alle ihre Glieder positiv sind. Sie ist streng monoton fallend, denn $a_{n+1} < a_n$ ist äquivalent zu $q \cdot a_n < a_n$ und weiter (da $a_n$ positiv) $q < 1$, was nach Voraussetzung eine wahre Aussage ist. Sie ist nach oben beschränkt, da sie monoton fallend ist. Weiterhin ist sie auch nach unten beschränkt, da alle Folgeglieder positiv sind (und damit $L=0$ eine untere Schranke darstellt).
 \end{example}
 
 \section{Konvergenz und Grenzwertbegriff}
@@ -104,9 +104,9 @@ Eine weitere Eigenschaft von fundamentaler Bedeutung ist das sogenannte Konverge
 
 \begin{definition}{Konvergenz und Grenzwert}{Convergence}
 	Eine Folge $(a_n)$ heißt \textbf{konvergent} mit dem \textbf{Grenzwert} $\alpha$, wenn der Abstand der Folgenglieder zum Grenzwert beliebig klein wird und klein bleibt. Andernfalls heißt sie \textbf{divergent}.
-	
+
 	$\forall \epsilon > 0 \exists n_0\in\N: \forall n > n_0 : |a_n - \alpha| < \epsilon$
-	
+
 	Man schreibt dann: $\lim\limits_{n\to\infty} a_n = \alpha$.
 \end{definition}
 
@@ -128,7 +128,7 @@ In Beispiel \ref{ex:ConvGeoSeq} und \ref{ex:ConvConstSeq} wird gezeigt, wie man 
 	$$
 	\forall \epsilon > 0 \exists n_0 = \floor{\log_{1/2}(\epsilon)} : \forall n > n_0 : |a_n - 0| < \epsilon
 	$$
-		
+
 	Also ist die geometrische Folge $a_n = (\frac{1}{2})^n$ konvergent und hat den Grenzwert $\alpha=\lim\limits_{n\to\infty}(\frac{1}{2})^n=0$.
 \end{example}
 
@@ -139,7 +139,7 @@ In Beispiel \ref{ex:ConvGeoSeq} und \ref{ex:ConvConstSeq} wird gezeigt, wie man 
 
 
 \begin{example}{Divergenz der alternierenden Folge}{ConvAltSeq}
-	Die Folge $a_n = (-1)^n$ mit den Gliedern $1,-1,1,-1,...$ heißt alternierende Folge. Diese ist zwar nach oben und unten beschränkt (durch $L=-1$ und $U=1$), besitzt allerdings keinen Grenzwert. Wählt man etwa $\alpha=1$, erhält man für den Abstand $(d_n) = |a_n-\alpha|=(-1)^n-1| = (0, 2, 0, 2, 0, 2)$. Ist $\epsilon$ nun genügend klein, etwa $0.5$, so findet man immer wieder ein Folgenglied, dessen Abstand zum Grenzwert größer ist als $\epsilon$. Egal, welchen Grenzwertkandidaten man wählt, es ist nicht möglich, den Abstand zum Grenzwertkandidaten beliebig klein zu halten.  
+	Die Folge $a_n = (-1)^n$ mit den Gliedern $1,-1,1,-1,...$ heißt alternierende Folge. Diese ist zwar nach oben und unten beschränkt (durch $L=-1$ und $U=1$), besitzt allerdings keinen Grenzwert. Wählt man etwa $\alpha=1$, erhält man für den Abstand $(d_n) = |a_n-\alpha|=(-1)^n-1| = (0, 2, 0, 2, 0, 2)$. Ist $\epsilon$ nun genügend klein, etwa $0.5$, so findet man immer wieder ein Folgenglied, dessen Abstand zum Grenzwert größer ist als $\epsilon$. Egal, welchen Grenzwertkandidaten man wählt, es ist nicht möglich, den Abstand zum Grenzwertkandidaten beliebig klein zu halten.
 \end{example}
 
 Ist eine Folge nicht konvergent, so heißt Sie wie erwähnt divergent und besitzt folglich auch keinen Grenzwert. Nun gibt es eine besondere Art der Divergenz, bei der man gelegentlich auch davon spricht, der Grenzwert sei $\pm\infty$. Diese Aussage ist immer im Sinne der folgenden Definition zu verstehen:
@@ -150,7 +150,7 @@ Ist eine Folge nicht konvergent, so heißt Sie wie erwähnt divergent und besitz
 	$$
 	\forall R > 0 \exists n_0\in\N: \forall n > n_0 : a_n > R
 	$$
-	
+
 	$$
 	\forall R < 0 \exists n_0\in\N: \forall n > n_0 : a_n < R
 	$$
@@ -161,34 +161,262 @@ Ist eine Folge nicht konvergent, so heißt Sie wie erwähnt divergent und besitz
 
 \begin{example}{Divergenz der arithmetischen Folge}{DivArithSeq}
 	Die arithmetische Folge $a_n=2n+1$ ist bestimmt divergent gegen $\infty$. Aus $2n+1 > R$ erhalten wir $n > \frac{R-1}{2}$ Wählen wir nun $n_0 = \floor{\frac{R-1}{2}}$, so können wir schreiben:
-	
+
 	$$
 	\forall R > 0 \exists n_0 = \floor{\frac{R-1}{2}}: \forall n > n_0 : a_n > R
 	$$
-		
+
 	Es ist also $\lim\limits_{n\to\infty} 2n+1 = \infty$.
 \end{example}
 
 
 \section{Reihe}
 
-Bei einer Reihe handelt es sich um eine ganz bestimmte Form einer Zahlenfolge, die eine eigene Bezeichnung erhalten hat, das sie in der Praxis häufig vorkommt.
+Bei einer Reihe handelt es sich um eine ganz bestimmte Form einer Zahlenfolge, die eine eigene Bezeichnung erhalten hat, da sie in der Praxis häufig vorkommt. Etwa wird der von Achilles aufgeholte Vorsprung der Schildkröte in jedem Schritt durch eine geometrische Zahlenfolge beschrieben. Der gesamte zurückgelegte Weg ergibt sich durch Addition der einzelnen Teilwege und stellt eine geometrische Reihe dar.
 
 \begin{definition}{Begriff der Reihe}{Series}
-	Eine \textbf{Reihe} $(s_n)$ entsteht durch Summation der Glieder einer Zahlenfolge. Die Summe $s_n=\sum\limits_{i=0}^n a_i$ der ersten $(n+1)$-Glieder heißt \textbf{Partialsumme}. Der Grenzwert der Partialsummen $s_\infty = \lim\limits_{n\to\infty}s_n$ heißt \textbf{unendliche Reihe}.
+	Eine \textbf{Reihe} $(s_n)$ entsteht durch Summation der Glieder einer Zahlenfolge. Die Summe $s_n=\sum\limits_{i=0}^n a_i$ der ersten $(n+1)$-Glieder heißt \textbf{Partialsumme}. Der Grenzwert der Partialsummen, falls existent, $s_\infty = \lim\limits_{n\to\infty}s_n$ heißt \textbf{unendliche Reihe}.
 \end{definition}
 
+Anhand der arithmetischen und geometrischen Folge und der daraus induzierten Reihe wird der Reihenbegriff in den Beispielen \ref{ex:PartSumArithSer} und \ref{ex:PartSumGeoSer} verdeutlicht.
 
-Beispiel arith / geometr. Reihe
+\begin{example}{Partialsummen der arithmetischen Reihe}{PartSumArithSer}
+	Die arithmetische Reihe $a_n = k\cdot n+m$ mit $k,m\in\R$ ist für $k \ne 0$ unbeschränkt, die unendliche Reihe wird daher nicht existieren. Die Partialsummen lauten $s_n = \sum\limits_{i=0}^n (ki+m)$. Durch Anwendung des Assoziativ- und Distributivgesetzes können wir dies umformen zu $\left(k\cdot\sum\limits_{i=0}^n i\right) + \left(\sum\limits_{i=0}^n m\right)$. Die rechte Summenbildung stellt lediglich die Addition der $(n+1)$ konstanten Zahlen $m$ dar und beträgt mithin $m\cdot(n+1)$.
+
+	Für die linke Summe $\sum\limits_{i=0}^n i$ müssen wir die ersten $n$ natürlichen Zahlen aufaddieren. Hierzu bedienen wir uns eines Verfahrens, welches unter anderem durch \mention{Carl Friedrich Gauß} bekannt geworden ist. Um die Zahlen von $1$ bis $100$ zu addieren, teilte er die Summe auf in Paare: $1+100$, $2+99$, $3+98$, $4+97$ und so fort. Jedes Paar hat den Wert $101$, ingesamt gibt es $50$ Paare. Damit beträgt die Summe $50\cdot 101 = 5050$. Allgemein gilt, das wenn die Zahlen von $1$ bis $n$ zu addieren sind, es dann $n/2$-Paare mit jeweils dem Wert $n+1$ gibt und deren Summe $\frac{n(n+1)}{2}$ beträgt.
+
+	Man beachte dabei den Fall, wenn $n$ ungerade ist, also ein ungerade Anzahl an Zahlen zu addieren ist. Dann gibt es nur $(n-1)/2$-Paare mit der Summe $(n+1)$ und die mittlere Zahl $(n+1)/2$ bleibt übrig. Letzlich beträgt die Summe somit ebenfalls $\frac{n-1}{2}(n+1)+\frac{n+1}{2} = \frac{n(n+1)}{2}$.
+
+	Insgesamt gewinnen wir für die Partialsummen somit den Ausdruck:
+
+	\begin{equation}
+	  s_n = k \frac{n(n+1)}{2} + m\cdot(n+1) = \frac{k}{2}n^2 + \left(m+\frac{k}{2}\right)n + m
+	\end{equation}
+
+	Beispielsweise können wir anhand dieser Formel berechnen, dass die Summe der ungeraden Zahlen kleiner $100$ lautet
+
+	$$
+	  1+3+5+...+97+99 = \sum\limits_{n=0}^{49} 2n+1 = 2\frac{49\cdot 50}{2} + 50 = 2500
+	$$
+\end{example}
+
+\begin{example}{Partialsummen der geometrischen Reihe}{PartSumGeoSer}
+	Die geometrische Folge lautet $a_n = p \cdot q^n$ mit $p,q\in\R$. Um die Partialsummen $s_n = \sum\limits_{i=0}^n p\cdot q^i$ zu bestimmen, bedienen wir uns eines kleinen Umformungstricks. Die Partialsumme wird mit der konstanten $q$ multipliziert und von der ursprünglichen Partialsumme abgezogen, sodass sich fast alle Summanden wegheben:
+
+	\begin{alignat*}{4}
+		        s_n       &= p \cdot ( & q^0 + & q^1 + q^2 + q^3 + ... + q^n           &) \\
+		q \cdot s_n       &= p \cdot ( &       & q^1 + q^2 + q^3 + ... + q^n + q^{n+1} &)
+	\end{alignat*}
+	\begin{alignat*}{1}
+		s_n - q \cdot s_n &= p \cdot (1 - q^{n+1}) \\
+          s_n \cdot (1-q) &= p \cdot (1 - q^{n+1})
+	\end{alignat*}
+
+	Die letzte Gleichung können wir nun direkt nach der gesuchten Partialsumme $s_n$ umstellen und erhalten:
+
+	\begin{equation}
+	  s_n = p \frac{1 - q^{n+1}}{1 - q}
+	\end{equation}
+
+	Mithilfe dieser Formel können wir nun beispielsweise die Summe aller Inversen von Zweierpotenzen berechnen:
+
+	$$
+	 1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + ... + \frac{1}{256} = \sum\limits_{n=0}^8 (\frac{1}{2})^n = \frac{1 - (1/2)^9}{1/2} = \frac{1022}{512} = \frac{511}{256}
+	$$
+\end{example}
 
 \section{Konvergenz von Folgen}
 
-Spezielle Grenzwerte
+Wir haben bereits die formale Definition von Konvergenz kennengelernt. Auch haben wir gesehen, dass man zwar anhand dieser Definition Grenzwert bestimmen kann, dies meist aber nur recht umständlich möglich ist. Für die praktische Berechnung von Grenzwerten wollen wir uns daher noch einige Rechenregeln anschauen, welche die Rechenarbeit erleichtern.
 
-Grenzwertsätze, a+-b, a*/b, f(a_n), lhospital
+Komplexe Terme sind durch Rechenoperationen aus einfacheren Termen aufgebaut. Zuerst benötigen wir die Grenzwerte einiger spezieller Terme. Diese seien im Folgenden ohne Beweis angegeben:
+
+\begin{statement}{Grenzwerte einiger spezieller konvergenter Folgen}{LimSpecSeq}
+	Die folgenden Folgen sind konvergent und haben den angegeben Grenzwert.
+	\begin{alignat}{3}
+		& \lim\limits_{n\to\infty} & \frac{1}{n^q}  & = 0, q > 0 \label{eq:LimitInv1nq} \\
+		& \lim\limits_{n\to\infty} & q^n & = 0, |q| < 1 \\
+		& \lim\limits_{n\to\infty} & \nroot{n}{n} & = 1 \\
+		& \lim\limits_{n\to\infty} & \nroot{n}{q} & = 1, q > 0 \\
+		& \lim\limits_{n\to\infty} & \left(1+\frac{1}{n}\right)^n & = e \label{eq:LimitExp}
+	\end{alignat}
+\end{statement}
+
+Ein wichtiger Satz, der manchmal bei schwierigen Grenzwerten hilft, ist das sogenannte \emph{Sandwich-Kriterium}. Schafft man es zu zeigen, dass eine Folge zwischen zwei anderen Folgen liegt, so muss auch der Grenzwert der Folgen zwischen den Grenzwerten der anderen beiden Folgen liegen. Haben diese beiden Folgen den gleichen Grenzwert, kennt man damit den Grenzwert der zu untersuchenden Folge.
+
+\begin{statement}{Sandwich-Kriterium}{SandwichTheo}
+	Gegeben sei eine Folge $(a_n)$. Gibt es zwei konvergente Folgen $(l_n)$ und $(u_n)$, die beide gegen den gleichen Grenzwert $\alpha$ konvergieren, und gilt ab einem bestimmten Folgenglied $n_0$ die Ungleichung $l_n \le a_n \le u_n, n \ge n_0$, dann konvergiert auch die Folge $a_n$ gegen $\alpha$.
+\end{statement}
+
+\begin{example}{Anwendung des Sandwich-Kriteriums}{SandwichTheo}
+	Gesucht ist der Grenzwert der Folge $a_n = \frac{1}{n^2}\sin(n)$. Von den elementaren Eigenschaften der Sinusfunktion wissen wir, dass gilt $-1\le\sin(n)\le 1$. Wählen wir nun $l_n = -\frac{1}{n^2}$ und $u_n = \frac{1}{n^2}$, so gilt $l_n \le a_n \le u_n$. Die Folge $a_n$ wird also durch die zwei Folgen $(l_n)$ und $(u_n)$ eingeschachtelt. Für diese beiden Folgen gilt nach \ref{eq:LimitInv1nq} $\lim\limits_{n\to\infty} \pm\frac{1}{n^2} = 0$. Nach dem Sandwich-Kriterum \ref{stmt:SandwichTheo} folgt somit $\lim\limits_{n\to\infty} \frac{1}{n^2}\sin(n) = 0$.
+\end{example}
+
+Folgende Regeln gelten, wenn eine neue Folge durch Addition oder Multiplikation der Glieder zweier anderer Folgen gebildet wird:
+
+\begin{statement}{Grenzwertregeln für zusammengesetzte Folgen}{CombSeqLimit}
+	Seien $(a_n), (b_n), (c_n)$ konvergente Zahlenfolgen mit jeweils dem Grenzwert $a, b, c$ und $c_n, c \ne 0$. Sei zudem $c \in \R$ eine Konstante und $f: \R\to\R$ eine stetige Funktion. Dann gelten die folgenden Rechenregeln für Grenzwerte:
+
+	\begin{alignat}{2}
+		& \lim\limits_{n\to\infty}(a_n \pm b_n) & = a + b \label{eq:LimSum} \\
+		& \lim\limits_{n\to\infty}(a_n \cdot b_n) & = a \cdot b \label{eq:LimProd} \\
+		& \lim\limits_{n\to\infty}(a_n / c_n) & = a / c \label{eq:LimQuot} \\
+		& \lim\limits_{n\to\infty}(c \cdot a_n) & = c \cdot a \label{eq:LimCoeff} \\
+		& \lim\limits_{n\to\infty}(f(a_n)) & = f(a)	\label{eq:LimFun}
+	\end{alignat}
+\end{statement}
+
+Gleichung \ref{eq:LimSum} und \ref{eq:LimProd} sagen aus, dass bei einem Grenzwert von Summen und Produkten die Grenzwerte der Summanden und Faktoren einzeln betrachtet werden können. Gleichung \ref{eq:LimCoeff} ist eine einfache Konsequenz aus \ref{eq:LimProd}. Die letzte Gleichung \ref{eq:LimFun} sagt aus, dass bei Anwendung einer (stetigen) Funktionen auf die Glieder einer Zahlenfolge die Grenzwertbildung in das Funktionsargument gezogen werden kann.	Übrig bleibt Gleichung \ref{eq:LimQuot}, welche analog zu den ersten beiden Gleichungen aussagt, dass auch bei einer Quotientenbildung die Grenzwerte von Dividend und Divisor einzeln betrachtet werden können. Allerdings muss hier die wichtige Einschränkung beachtet werden, dass die Glieder und der Grenzwert des Divisors ungleich $0$ sind, da die Division durch $0$ nicht erklärt ist. Nun gibt es aber speziell Folgen von Quotienten, wo die Glieder des Divisors zwar ungleich $0$ sind, der Grenzwert des Divisors aber nicht.
+
+In \ref{ex:CombSeqLimit} sind einige für die ersten vier Regeln zusammengefasst.
+
+\begin{example}{Anwendung der Grenzwertregeln für zusammengesetzte Folgen}{CombSeqLimit}
+    \begin{itemize}
+        \item $\lim\limits_{n\to\infty} \frac{n^2+1}{n^3} = \lim\limits_{n\to\infty} \left(\frac{1}{n} + \frac{1}{n^3}\right) = 0 + 0 = 0$ \\
+        \item $\lim\limits_{n\to\infty} \frac{n-2}{n^2-3n+2} = \lim\limits_{n\to\infty} \frac{n(1-2/n)}{n^2(1-3/n+2/n^2)} = \lim\limits_{n\to\infty} \frac{1}{n} \cdot \frac{1-2/n}{1-3/n+2/n^2} = 0 \cdot \frac{1-0}{1-0+0} = 0$ \\
+        \item $\lim\limits_{n\to\infty} \frac{n^2+1}{n-1} = \lim\limits_{n\to\infty} \frac{n^2(1+2/n^2)}{n(1-1/n)} = \lim\limits_{n\to\infty} n \cdot \frac{1+2/n^2}{1-1/n} = \infty $
+        \item $\lim\limits_{n\to\infty} \frac{4n^3+2n}{7n^3-4n^2} = \lim\limits_{n\to\infty} \frac{n^3(4+2/n^2)}{n^3(7-4/n)} = 1 \cdot \frac{4+0}{7-0} = \frac{4}{7}$
+    \end{itemize}
+\end{example}
+
+Aus den obigen Beispielen können wir die folgende allgemeine Regel ableiten, die für den Grenzwert eines Quotienten von Polynomen gilt:
+
+\begin{statement}{Grenzwert gebrochenrationaler Funktionen}{LimRatFun}
+    Sei $f(x) = \frac{p_n(x)}{q_m(x)}$ eine gebrochenrationale Funktion, also der Quotient zweier Polynome $p_n, q_m$ vom Grad $n$ und $m$. Der Grenzwert existiert, wenn der Grad des Zählerpolynoms nicht kleiner ist als der Grad des Nennerpolynoms. Es gilt:
+
+    \begin{equation}
+        \lim\limits_{x\to\infty}\frac{p_n(x)}{q_m(x)} = \lim\limits_{x\to\infty}\frac{a_0 + a_1 x + a_2 x^2 + ... + a_n x^n}{b_0 + b_1 x + b_2 x^2 + ... + b_n x^n} = \begin{cases}
+            0 &\text{falls $n < m$} \\
+            \frac{a_n}{b_m} &\text{falls $ n = m$} \\
+            \pm \infty  &\text{falls $ n > m$}
+        \end{cases}
+    \end{equation}
+
+    Das Vorzeichen für den letzten Fall ergibt sich aus dem Vorzeichen der höchsten Koeffizienten $a_n$ und $b_n$. Sind beide positiv oder negativ, divergiert $f$ bestimmt gegen $+\infty$. Haben sie verschiedenes Vorzeichen, divergiert $f$ bestimmt gegen $-\infty$.
+\end{statement}
+
+Die Anwendung der Rechenregel \ref{eq:LimFun} wird in Beispiel \ref{ex:LimFun} verdeutlicht.
+
+Um auch Grenzwerte von Quotienten berechnen zu können, wo der Divisor gegen $0$ konvergiert, hilft die folgende Aussage. Dazu benötigen wir noch zwei Definitionen.
+
+Bisher haben wir nur Grenzwerte betrachtet, wo $n$ gegen $\infty$ lief. Es ist nun aber so, dass man Grenzwerte nicht nur für Folgen, sondern auch für Funktionen betrachten kann, wenn das Funktionsargument sich einem bestimmten Wert (nicht zwingend $\infty$) nähert.
+
+\begin{definition}{Grenzwert einer Funktion}{LimFun}
+    Sei $f:\R\to\R$ eine Funktion und $A = \left\lbrace (a_n) | \lim\limits_{n\to\infty} a_n = x_0 \right\rbrace$ die Menge aller konvergenten Zahlenfolgen mit dem Grenzwert $x_0\in\R$. Falls es ein $\alpha\in\R$ gibt, sodass $\lim\limits_{n\to\infty} f(a_n) = \alpha$ für alle solchen Zahlenfolgen gilt, so heißt $\alpha$ der \textbf{Grenzwert von $f$ gegen $x_0$}.
+
+    Man schreibt dann $\lim\limits_{x\to x_0} = \alpha$.
+\end{definition}
+
+Die Grenzwertregeln, die wir bisher kennengelernt haben, sind analog auch auf Grenzwerte von Funktionen übertragbar.
+
+\begin{example}{Grenzwertregeln für Grenzwert einer Funktion}{LimFunSumQuot}
+    Auf $\lim\limits_{x_0\to 0} \frac{n^2+n+2}{n^3+1}$ lassen sich analog die Grenzwertregeln \ref{eq:LimSum} und \ref{eq:LimQuot} anwenden und man erhält: $\frac{0^2+0+2}{0^3+1} = 2$.
+\end{example}
+
+Für die nächste Grenzwertregel benötigen wir weiterhin noch das Konzept der sogenannten \emph{unbestimmten Ausdrücke}.
+
+\begin{definition}{Unbestimmte Ausdrücke}{IndetForms}
+	Wir sprechen von einem \textbf{unbestimmten Ausdruck}, wenn eine Zahlenfolge aus zwei mit einer Rechenoperation verknüpften konvergenten oder bestimmt divergenten Einzelfolgen besteht, die obigen Grenzwertregeln aber nicht anwendbar sind.
+
+	Die \textbf{Form des unbestimmten Ausdrucks} erhält man, indem man die Grenzwerte der Einzelfolgen mit der Rechenoperation verknüpft aufschreibt.
+\end{definition}
+
+Einige Beispiele für solche unbestimmten Ausdrücke finden sich in \ref{ex:IndetForms}. An diesesr Stelle sei noch eine Anmerkung angebracht: Manchmal spricht man davon, dass $1/0$ "unendlich" sei. Dies ist so aber nicht korrekt. Zum einen ist ein Ausdruck der Form $1/0$ immer nur als unbestimmter Ausdruck zu verstehen. Zum zweiten verbirgt sich hinter einem unbestimmten Ausdruck immer ein Grenzwert. Nur, wenn jeder Grenzwert der Form $1/0$ konvergent (oder bestimmt divergent) mit dem gleichen Grenzwert wäre, ließe sich diese Aussage rechtfertigen. Nun ist aber $\lim\limits_{n\to\infty} \frac{1}{1/n} = \infty$ und $\lim\limits_{n\to\infty} \frac{1}{-1/n} = -\infty$, beide sind aber unbestimmte Ausdrücke der Form $1/0$. Gleiches gilt für den unbestimmten Ausdruck $0^0$ -- je nach Wahl der konkreten Zahlenfolgen erhält man hier verschiedene Grenzwerte.
+
+\begin{example}{Unbestimmte Ausdrücke}{IndetForms}
+	\begin{itemize}
+		\item $\lim\limits_{x\to\infty} \frac{\sin(n)}{e^x}$ ist ein unbestimmter Ausdruck der Form $\frac{\infty}{\infty}$
+		\item $\lim\limits_{x\to\infty} e^{-x} \cdot x^2$ ist ein unbestimmter Ausdruck der Form $0 \cdot \infty$.
+		\item $\lim\limits_{x\to 0} x^x$ ist ein unbestimmter Ausdruck der Form $0 ^ 0$.
+	\end{itemize}
+\end{example}
+
+Mit diesem Wissen lässt sich nun die nächste Rechenregel formulieren.
+
+\begin{statement}{Regel von L'Hôpital}{HopitalRule}
+	Seien $f,g: \R\to\R$ zwei differenzierbare Funktionen und ist $\lim\limits_{n\to x_0} \frac{f(x)}{g(x)}$ ein unbestimmter Ausdruck der Form $\frac{0}{0}$ oder $\frac{\infty}{\infty}$, dann gilt:
+
+    \begin{equation}
+        \lim\limits_{x \to x_0} \frac{f(x)}{g(x)} = \lim\limits_{x \to x_0} \frac{f'(x)}{g'(x)}
+    \end{equation}
+
+    Voraussetzung hierbei ist, dass der rechte Grenzwert existiert. Aus der Nichtexistenz des rechten Grenzwerts \textbf{darf nicht} auf die Nichtexistenz des ursprünglichen Grenzwerts geschlossen werden.
+\end{statement}
+
+\begin{example}{Anwendung der Regel von L'Hôpital}{HopitalRule}
+    \begin{itemize}
+        \item $\lim\limits_{x\to\infty} \frac{\ln(x)}{x^2} = \lim\limits_{x\to\infty} \frac{1/x}{2x} = \lim\limits_{x\to\infty} \frac{1}{2x^2} = 0$
+        \item $\lim\limits_{x\to\infty} x \cdot \ln(x) = \lim\limits_{x\to\infty} \frac{\ln(x)}{1/x} = \lim\limits_{x\to\infty} \frac{1/x}{-1/x^2} = 0$
+        \item $\lim\limits_{x\to\infty} \frac{\sin(x)}{x} = \lim\limits_{x\to\infty} \frac{\cos(x)}{1} = \cos(0) = 1$
+    \end{itemize}
+\end{example}
+
+\begin{example}{Vertauschung von Grenzwert und Funktionsanwendung}{LimFun}
+    Gesucht ist der Grenzwert $\alpha = \lim\limits_{x\to 0^+} x^x$. Dabei bedeutet $x\to 0^+$, dass nur nicht-negative Funktionsargumente betrachtet werden, da $x^x$ sonst nicht erklärt ist, dies nennt man auch \emph{rechtsseitiger Grenzwert}. Wir wenden den Logarithmus auf beide Seiten der Gleichung an, und machen dann von der Rechenregel \ref{eq:LimFun} Gebrauch:
+
+    \begin{alignat*}{1}
+    \alpha & = \lim\limits_{x\to 0^+}  x^x \\
+    \ln(\alpha) & = \ln\left(\lim\limits_{x\to 0^+}  x^x \right) \\
+    & = \lim\limits_{x\to 0^+} \ln(x^x) \\
+    & = \lim\limits_{x\to 0^+} x\ln(x)
+    \end{alignat*}
+
+    Aus dem vorigen Beispiel \ref{ex:HopitalRule} wissen wir bereits, dass der letzte Grenzwert $0$ beträgt. Damit ergibt sich $\ln(\alpha) = 0$, woraus sofort für den Grenzwert folgt:
+
+    $$
+        \lim\limits_{x\to 0^+} x^x = e^0 = 1
+    $$
+\end{example}
+
+Auf die gleiche Weise wie in Beispiel \ref{ex:LimFun} erhält man auch $\lim\limits_{x\to 0^+} x^{r / \ln(x)} = e^r$ für $r \in \R$. Dies zeigt erneut, dass man dem unbestimmten Ausdruck $0^0$ keinen einzelnen Wert zuordnen kann. Für jedes $r\in\R$ ist der Grenzwert von der Form $0^0$, doch der Grenzwert kann durch $r$ auf jede positive Zahl festgelegt werden.
 
 \section{Konvergenz von Reihen}
 
-Nullfolge
+Reihen stellen wir erwähnt eine spezielle Form von Zahlenfolge dar. Damit sind auch alle Regeln für die Konvergenz von Zahlenfolgen anwendbar. Zusätzlich gibt es speziell für Reihen noch einige weitere Regeln, die im Folgenden noch kurz angegeben werden sollen.
 
-Quotienten und Wurzelkriterium
+\begin{statement}{Notwendige Bedingung für die Konvergenz einer Reihe}{ConvSerNecc}
+    \textbf{Notwendige Bedingung} für die Konvergenz einer Reihe $s_n = \lim\limits_{n\to\infty} a_n$ ist, dass ihre Glieder eine Nullfolge bilden, also $\lim\limits_{n\to\infty} a_n = 0$ gilt.
+\end{statement}
+
+Allerdings ist diese Bedingung nicht ausreichend. Es kann sein, dass die die Glieder einer Zahlenfolge sich gegen $0$ nähern, ihre Summe aber dennoch unbeschränkt wächst. Beispielsweise stellt die Folge $a_n = \frac{1}{n}$ eine Nullfolge dar. Es lässt sich aber zeigen, dass $1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + ...$ unbeschränkt ist und bestimmt gegen $\infty$ divergiert.
+
+Zwei Kriterien, die bei der praktischen Entscheidung, ob eine Reihe konvergent ist, sind das sogenannte Quotienten- und Wurzelkriterium. Diese beruhen darauf, die zu untersuchende Reihe ähnlich zum Sandwich-Kriterium \ref{stmt:SandwichTheo} durch eine bekannt Reihe nach oben abzuschätzen, von der bekannt ist, dass sie konvergiert.
+
+\begin{statement}{Quotientenkriterium}{RatioTest}
+    Sei $a_n$ eine konvergente Nullfolge und $s_n = \lim\limits_{n\to\infty} a_n$ die zugehörige Reihe. Existiere weiterhin der Grenzwert $q = \lim\limits_{n\to\infty} |\frac{a_{n+1}}{a_n}|$ des Quotienten aufeinanderfolgender Glieder. Dann gilt:
+
+    \begin{itemize}
+        \item $s_n$ ist konvergent für $q < 1$.
+        \item $s_n$ ist divergent für $q > 1$.
+    \end{itemize}
+
+    Für $q=1$ ist keine Aussage möglich.
+\end{statement}
+
+
+\begin{statement}{Wurzelkriterium}{RootTest}
+    Sei $a_n$ eine konvergente Nullfolge und $s_n = \lim\limits_{n\to\infty} a_n$ die zugehörige Reihe. Existiere weiterhin der Grenzwert $q = \lim\limits_{n\to\infty} \nroot{n}{|a_n|}$. Dann gilt:
+
+    \begin{itemize}
+        \item $s_n$ ist konvergent für $q < 1$.
+        \item $s_n$ ist divergent für $q > 1$.
+    \end{itemize}
+
+    Für $q=1$ ist keine Aussage möglich.
+\end{statement}
+
+Diese beiden Kriterien werden später noch einmal im Zusammenhang mit Potenzreihen und der sogenannten Taylorentwicklung eine wichtige Rolle spielen.
+
+\begin{example}{Anwendung des Quotientenkriteriums}{RatioTest}
+    Untersucht werden soll, ob $s_n = \sum\limits_{i=1}^\infty \frac{n!}{n^n}$ existiert. Das Wurzelkritierum liefert (Betragsstrichte sind weggelassen, da alle Glieder positiv):
+
+    \begin{alignat*}{1}
+        q &= \lim\limits_{n\to\infty} \frac{(n+1)! \cdot n^n}{(n+1)^{n+1} \cdot n!} \\
+          &= \lim\limits_{n\to\infty} \frac{n^n}{(n+1)^n} \\
+          &= \lim\limits_{n\to\infty} \left(\frac{n}{n+1}\right)^n \\
+          &= \lim\limits_{n\to\infty} \left( \frac{1}{1+1/n} \right)^n \\
+          &= \frac{1}{e}
+    \end{alignat*}
+
+    Letzeres Gleichheitszeichen folgt aus \ref{eq:LimitExp}. Da $2\le e \le 3$ gilt, können wir für $q$ die Abschätzung vornehmen: $\frac{1}{3} \le q \le \frac{1}{2}$. Damit haben wir gezeigt, dass $q < 1$, somit ist die Reihe $s_n$ konvergent.
+\end{example}
