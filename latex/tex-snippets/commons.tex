@@ -1,6 +1,7 @@
 % Differential operator
 \providecommand\d{}
-\renewcommand{\d}[1]{\:\mathrm{d}{#1}} 
+\renewcommand{\d}[1]{\:\mathrm{d}{#1}}
+\newcommand{\pdd}[2]{\frac{\partial #1}{\partial #2}}
 
 % N-th root
 % \nroot{3}{27}
@@ -9,13 +10,19 @@
 
 % 2 component vector
 % \tvect{1}{-1}
+% \tvec{1}{-1}
 \newcommand{\tvect}[2]{%
    \ensuremath{\Bigl(\negthinspace\begin{smallmatrix}#1\\#2\end{smallmatrix}\Bigr)}}
+\newcommand{\tvec}[2]{%
+    \ensuremath{\left(\negthinspace\begin{matrix}#1\\#2\end{matrix}\right)}}
 
-% 2 component vector
+% 3 component vector
 % \rvect{1}{-1}{0}
+% \rvec{1}{-1}{0}
 \newcommand{\rvect}[3]{%
    \ensuremath{\Bigl(\negthinspace\begin{smallmatrix}#1\\#2\\#3\end{smallmatrix}\Bigr)}}
+\newcommand{\rvec}[3]{%
+    \ensuremath{\left(\negthinspace\begin{matrix}#1\\#2\\#3\end{matrix}\right)}}
 
 % German-style quotation marks %
 \MakeOuterQuote{"}
@@ -40,3 +47,6 @@
 % Floor / ceil
 \newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
 \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+
+\newcommand{\term}[2]{$\stackrel{\hbox{\tiny \textnormal{#2}}}{\hbox{#1}}$}
+% \newcommand{\term}[2]{#1}

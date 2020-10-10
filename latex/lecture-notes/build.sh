@@ -61,7 +61,7 @@ then
     cd gnuplot;
     for plotfile in $(ls *.gnuplot)
     do
-        plotimage="$(basename $plotfile .gnuplot).png";
+        plotimage="$(basename $plotfile .gnuplot)";
         gnuplot -e "filename='$plotimage'" "$plotfile";
     done
     cd ..;
