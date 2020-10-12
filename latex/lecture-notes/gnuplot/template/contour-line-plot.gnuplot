@@ -23,4 +23,4 @@ unset surface
 set contour base
 set view 0,0,1,1
 
-set terminal pngcairo dashed size 800,600
+@terminal 800 600

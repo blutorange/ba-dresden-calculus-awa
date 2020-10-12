@@ -21,7 +21,7 @@ unset surface
 set contour base
 set view 0,0,1,1
 
-set terminal pngcairo dashed size 800,800
+@terminal 800 800
 
 scaling = 0.25
 epsilon = 1E-9

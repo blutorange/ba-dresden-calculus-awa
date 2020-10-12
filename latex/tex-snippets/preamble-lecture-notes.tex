@@ -2,14 +2,14 @@
 %%%-------------------------------------------------------------------------------
 
 \documentclass[
-a4paper, % Stock and paper size.
-11pt, % Type size.
-% article,
-% oneside,
-onecolumn, % Only one column of text on a page.
-% openright, % Each chapter will start on a recto page.
-% openleft, % Each chapter will start on a verso page.
-openany, % A chapter may start on either a recto or verso page.
+    a4paper, % Stock and paper size.
+    11pt, % Type size.
+    % article,
+    % oneside,
+    onecolumn, % Only one column of text on a page.
+    % openright, % Each chapter will start on a recto page.
+    % openleft, % Each chapter will start on a verso page.
+    openany, % A chapter may start on either a recto or verso page.
 ]{memoir}
 
 %%% PACKAGES
@@ -25,20 +25,25 @@ openany, % A chapter may start on either a recto or verso page.
 
 % \usepackage{kpfonts} %Font
 
+\usepackage{bbm}
 \usepackage{amsmath,amssymb,mathtools,polynom} % Math
-\usepackage{minted} % Programming
+\usepackage{minted} % Source code highlighting
 \usepackage[most]{tcolorbox} % For custom example styles
-
+\usepackage{siunitx}
 
 % \usepackage{tikz} % Figures
 \usepackage{graphicx} % Include figures
 
+\usepackage{wrapfig} % Wrap text around figures
+
+
 %%% PAGE LAYOUT
 %%%------------------------------------------------------------------------------
 
-\setlrmarginsandblock{0.15\paperwidth}{*}{1} % Left and right margin
+\setlrmarginsandblock{0.1\paperwidth}{*}{1} % Left and right margin
 \setulmarginsandblock{0.2\paperwidth}{*}{1}  % Upper and lower margin
 \checkandfixthelayout
+
 
 %%% SECTIONAL DIVISIONS
 %%%------------------------------------------------------------------------------
@@ -70,7 +75,11 @@ openany, % A chapter may start on either a recto or verso page.
 \setsecheadstyle{\normalfont\large\bfseries}
 \setsubsecheadstyle{\normalfont\normalsize\bfseries}
 \setparaheadstyle{\normalfont\normalsize\bfseries}
-\setparaindent{0pt}\setafterparaskip{0pt}
+\setparaindent{0pt}
+\setafterparaskip{0pt}
+\setlength{\parskip}{0.8em}
+\setlength{\parindent}{0pt}
+
 
 %%% FLOATS AND CAPTIONS
 %%%------------------------------------------------------------------------------
@@ -84,8 +93,8 @@ openany, % A chapter may start on either a recto or verso page.
 \captionnamefont{\small\bfseries} % Font of the caption name
 \captiontitlefont{\small\normalfont} % Font of the caption text
 
-\changecaptionwidth          % Change the width of the caption
-\captionwidth{1\textwidth} %
+% \changecaptionwidth          % Change the width of the caption
+% \captionwidth{1\textwidth} %
 
 %%% ABSTRACT
 %%%------------------------------------------------------------------------------
@@ -109,14 +118,14 @@ openany, % A chapter may start on either a recto or verso page.
 
 \makeatletter
 \makepsmarks{standard}{
-\createmark{chapter}{both}{shownumber}{\@chapapp\ }{ \quad }
-\createmark{section}{right}{shownumber}{}{ \quad }
-\createplainmark{toc}{both}{\contentsname}
-\createplainmark{lof}{both}{\listfigurename}
-\createplainmark{lot}{both}{\listtablename}
-\createplainmark{bib}{both}{\bibname}
-\createplainmark{index}{both}{\indexname}
-\createplainmark{glossary}{both}{\glossaryname}
+    \createmark{chapter}{both}{shownumber}{\@chapapp\ }{ \quad }
+    \createmark{section}{right}{shownumber}{}{ \quad }
+    \createplainmark{toc}{both}{\contentsname}
+    \createplainmark{lof}{both}{\listfigurename}
+    \createplainmark{lot}{both}{\listtablename}
+    \createplainmark{bib}{both}{\bibname}
+    \createplainmark{index}{both}{\indexname}
+    \createplainmark{glossary}{both}{\glossaryname}
 }
 \makeatother                               %
 
@@ -140,6 +149,7 @@ openany, % A chapter may start on either a recto or verso page.
 \input{../tex-snippets/commons.tex}
 
 %%%% NEW ENVIRONMENTS
+%%%------------------------------------------------------------------------------
 
 \newenvironment{memo}
 {\begin{quote}%
@@ -147,6 +157,7 @@ openany, % A chapter may start on either a recto or verso page.
 {\end{quote}}
 
 %%%% NEW THEOREMS
+%%%------------------------------------------------------------------------------
 
 \newtcbtheorem{example}{Beispiel}{
 	colback=blue!5!white,
@@ -185,8 +196,8 @@ openany, % A chapter may start on either a recto or verso page.
 
 \usepackage{hyperref}   % Internal hyperlinks
 \hypersetup{
-pdfborder={0 0 1},      % Borders around internal hyperlinks
-pdfauthor={Andre Wachsmuth} % author
+    pdfborder={0 0 1},      % Borders around internal hyperlinks
+    pdfauthor={Andre Wachsmuth} % author
 }
 \usepackage{memhfixc}   %
 
@@ -245,4 +256,3 @@ pdfauthor={Andre Wachsmuth} % author
 	\let\theequation\savetheequation
 	\ignorespacesafterend
 }
-

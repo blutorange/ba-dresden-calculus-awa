@@ -7,17 +7,17 @@ Um die Wichtigkeit zu illustrieren, warum eine exakte Definition der Konvergenz 
 \begin{enumerate}
 	\item Damit Achilles die Schildkröte überholen kann, muss er zunächst den Vorsprung von $100\ukm$ aufholen. Dazu benötigt er $4$ Stunden.
 	\item In diesen $4$ Stunden allerdings ist die Schildkröte bereits $20\ukm$ weiter gekrochen.
-	\item Also muss Achillles im nächsten Schritt diese $20\ukm$ Vorsprung aufholen, wozu er $0.8$ Stunden benötigt. Aber nun hat die Schildkröte bereits einen neuen Vorsprung erhalten.
+	\item Also muss Achilles im nächsten Schritt diese $20\ukm$ Vorsprung aufholen, wozu er $0.8$ Stunden benötigt. Aber nun hat die Schildkröte bereits einen neuen Vorsprung erhalten.
 	\item Egal, wie oft Achilles also den Vorsprung aufholt, um die Schildkröte zu überholen, müsste er unendliche viele Vorsprünge aufholen. Also holt Achilles die Schildkröte nie ein, um kann sie somit auch nicht überholen.
 \end{enumerate}
 
-Wie lässt sich dieses Paradoxon auflösen? Der Fehler, den Zenon hier begeht, besteht darin, dass Achilles zum Aufholen "unendlicher" vieler Vorsprünge auch "unendlich" viel Zeit benötigt. Dies ist aber bei einer genauen Betrachtung mithilfe eines exakten Grenzwertbegriffs nicht der Fall, wie wir auch in einer Übungsaufgabe nachweisen werden.
+Wie lässt sich dieses Paradoxon auflösen? Der Fehler, den Zenon hier begeht, besteht darin, dass Achilles zum Aufholen "unendlich" vieler Vorsprünge auch "unendlich" viel Zeit benötigt. Dies ist aber bei einer genauen Betrachtung mithilfe eines exakten Grenzwertbegriffs nicht der Fall, wie wir auch in einer Übungsaufgabe nachweisen werden.
 
 \begin{figure}[H]
-	\caption{Zenos Paradoxon von dem Wettrennen zwischen Achilles und der Schildkröte}
 	\label{fig:ZenoAchilles}
 	\centering
 	\includegraphics[width=0.95\textwidth]{./svg/zeno-achilles.png}
+	\caption{Zenos Paradoxon von dem Wettrennen zwischen Achilles und der Schildkröte}
 \end{figure}
 
 \section{Zahlenfolgen}
@@ -62,17 +62,17 @@ vorige Folgenglied halbiert wird. Damit können wir die rekursive Darstellung an
 \end{example}
 
 \begin{figure}[p]
-	\caption{Graphische Darstellung der arithmetischen Folge aus \ref{ex:ArithSeq}}
 	\label{fig:ExArithSeq}
 	\centering
 	\includegraphics[width=0.8\textwidth]{./gnuplot/example-arithmetic-series.png}
+	\caption{Graphische Darstellung der arithmetischen Folge aus \ref{ex:ArithSeq}}
 \end{figure}
 
 \begin{figure}[p]
-	\caption{Graphische Darstellung der geometrischen Folge aus \ref{ex:GeoSeq}}
 	\label{fig:ExGeoSeq}
 	\centering
 	\includegraphics[width=0.8\textwidth]{./gnuplot/example-geometric-series.png}
+	\caption{Graphische Darstellung der geometrischen Folge aus \ref{ex:GeoSeq}}
 \end{figure}
 
 Wie in Abbildung \ref{fig:ExArithSeq} und \ref{fig:ExGeoSeq} dargestellt, lässt sich eine Zahlenfolge auch in einem Diagramm darzustellen. Hierbei ist zu beachten, dass nur Punkte, aber keine durchgehenden Linien eingezeichnet werden dürfen - denn der Definitionsbereich besteht nur aus den natürlichen Zahlen. Ebenfalls diesen beiden Abbildungen lässt sich entnehmen, dass Zahlenfolgen unterschiedlich verlaufen können. Die arithmetische Reihe steigt ohne Grenzen an, die geometrische Reihe $(a_n) = (\frac{1}{2})^n$ fällt und nähert sich immer weiter der $0$ an. Dies gibt Anlass, zwei wichtige Eigenschaften von Zahlenfolgen zu definieren.
@@ -112,10 +112,10 @@ Eine weitere Eigenschaft von fundamentaler Bedeutung ist das sogenannte Konverge
 Anders formuliert kann man auch sagen, die Folge $(a_n)$ heißt konvergent mit dem Grenzwert $\alpha$, wenn man zu jedem noch so kleinen Abstand zum Grenzwert (bezeichnet mit $\epsilon$) immer eine Position in der Zahlenfolge finden kann, sodass alle Folgenglieder rechts von dieser Position innerhalb dieses Abstands liegen. Visuell wird diese Definition durch Abbildung \ref{fig:VisLimit} illustriert.
 
 \begin{figure}[h]
-	\caption{Graphische Veranschaulichung des Grenzwertbegriffs}
 	\label{fig:VisLimit}
 	\centering
 	\includegraphics[width=0.8\textwidth]{./svg/definition-convergence.png}
+	\caption{Graphische Veranschaulichung des Grenzwertbegriffs}
 \end{figure}
 
 In Beispiel \ref{ex:ConvGeoSeq} und \ref{ex:ConvConstSeq} wird gezeigt, wie man anhand dieser Definition nachweisen kann, ob eine Folge konvergent ist und welchen Grenzwert sie hat. Ebenfalls wie in Beispiel \ref{ex:ConvAltSeq} kann man zeigen, dass eine Folge divergent ist. Für die praktische Bestimmung von Grenzwerten ist diese Definition sehr umständlich, wir werden daher in Kürze Rechenregeln kennen lernen, um die Berechnung von Grenzwerten zu vereinfachen.
@@ -200,7 +200,7 @@ Anhand der arithmetischen und geometrischen Folge und der daraus induzierten Rei
 \end{example}
 
 \begin{example}{Partialsummen der geometrischen Reihe}{PartSumGeoSer}
-	Die geometrische Folge lautet $a_n = p \cdot q^n$ mit $p,q\in\R$. Um die Partialsummen $s_n = \sum\limits_{i=0}^n p\cdot q^i$ zu bestimmen, bedienen wir uns eines kleinen Umformungstricks. Die Partialsumme wird mit der konstanten $q$ multipliziert und von der ursprünglichen Partialsumme abgezogen, sodass sich fast alle Summanden wegheben:
+	Die geometrische Folge lautet $a_n = p \cdot q^n$ mit $p,q\in\R$. Um die Partialsummen $s_n = \sum\limits_{i=0}^n p\cdot q^i$ zu bestimmen, bedienen wir uns eines kleinen Umformungstricks. Die Partialsumme wird mit der konstanten $q$ multipliziert und von der ursprünglichen Partialsumme abgezogen, sodass sich fast alle Summanden aufheben:
 
 	\begin{alignat*}{4}
 		        s_n       &= p \cdot ( & q^0 + & q^1 + q^2 + q^3 + ... + q^n           &) \\
@@ -407,7 +407,7 @@ Zwei Kriterien, die bei der praktischen Entscheidung, ob eine Reihe konvergent i
 Diese beiden Kriterien werden später noch einmal im Zusammenhang mit Potenzreihen und der sogenannten Taylorentwicklung eine wichtige Rolle spielen.
 
 \begin{example}{Anwendung des Quotientenkriteriums}{RatioTest}
-    Untersucht werden soll, ob $s_n = \sum\limits_{i=1}^\infty \frac{n!}{n^n}$ existiert. Das Wurzelkritierum liefert (Betragsstrichte sind weggelassen, da alle Glieder positiv):
+    Untersucht werden soll, ob $s_n = \sum\limits_{i=1}^\infty \frac{n!}{n^n}$ existiert. Das Wurzelkriterium liefert (Betragsstriche sind weggelassen, da alle Glieder positiv):
 
     \begin{alignat*}{1}
         q &= \lim\limits_{n\to\infty} \frac{(n+1)! \cdot n^n}{(n+1)^{n+1} \cdot n!} \\
@@ -417,5 +417,5 @@ Diese beiden Kriterien werden später noch einmal im Zusammenhang mit Potenzreih
           &= \frac{1}{e}
     \end{alignat*}
 
-    Letzeres Gleichheitszeichen folgt aus \ref{eq:LimitExp}. Da $2\le e \le 3$ gilt, können wir für $q$ die Abschätzung vornehmen: $\frac{1}{3} \le q \le \frac{1}{2}$. Damit haben wir gezeigt, dass $q < 1$, somit ist die Reihe $s_n$ konvergent.
+    Letzteres Gleichheitszeichen folgt aus \ref{eq:LimitExp}. Da $2\le e \le 3$ gilt, können wir für $q$ die Abschätzung vornehmen: $\frac{1}{3} \le q \le \frac{1}{2}$. Damit haben wir gezeigt, dass $q < 1$, somit ist die Reihe $s_n$ konvergent.
 \end{example}
