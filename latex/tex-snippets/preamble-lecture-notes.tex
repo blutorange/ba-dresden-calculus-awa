@@ -26,6 +26,7 @@
 % \usepackage{kpfonts} %Font
 
 \usepackage{bbm}
+\usepackage{makecell} % tables cells with line breaks etc.
 \usepackage{amsmath,amssymb,mathtools,polynom} % Math
 \usepackage{minted} % Source code highlighting
 \usepackage[most]{tcolorbox} % For custom example styles
@@ -40,6 +41,7 @@
 %%% PAGE LAYOUT
 %%%------------------------------------------------------------------------------
 
+\raggedbottom
 \setlrmarginsandblock{0.1\paperwidth}{*}{1} % Left and right margin
 \setulmarginsandblock{0.2\paperwidth}{*}{1}  % Upper and lower margin
 \checkandfixthelayout
@@ -222,6 +224,13 @@
 \newminted{c}{}
 \newminted{js}{}
 \newminted{text}{}
+
+% polynomial long division
+\polyset{%
+    style=C,
+    delims={\big(}{\big)},
+    div=:
+}
 
 %%%% Named equations
 %%%------------------------------------------------------------------------------

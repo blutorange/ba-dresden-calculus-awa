@@ -13,11 +13,11 @@ Um die Wichtigkeit zu illustrieren, warum eine exakte Definition der Konvergenz 
 
 Wie lässt sich dieses Paradoxon auflösen? Der Fehler, den Zenon hier begeht, besteht darin, dass Achilles zum Aufholen "unendlich" vieler Vorsprünge auch "unendlich" viel Zeit benötigt. Dies ist aber bei einer genauen Betrachtung mithilfe eines exakten Grenzwertbegriffs nicht der Fall, wie wir auch in einer Übungsaufgabe nachweisen werden.
 
-\begin{figure}[H]
-	\label{fig:ZenoAchilles}
+\begin{figure}
 	\centering
-	\includegraphics[width=0.95\textwidth]{./svg/zeno-achilles.png}
+	\includegraphics[width=0.75\textwidth]{./svg/zeno-achilles.png}
 	\caption{Zenos Paradoxon von dem Wettrennen zwischen Achilles und der Schildkröte}
+	\label{fig:ZenoAchilles}
 \end{figure}
 
 \section{Zahlenfolgen}
@@ -61,18 +61,18 @@ dass ein Folgenglied immer um $2$ größer ist als das vorige. Die rekursive Dar
 vorige Folgenglied halbiert wird. Damit können wir die rekursive Darstellung angeben als $a_{n+1} = \frac{1}{2}a_n$ mit dem Startwert $a_0=1$. Für die explizite Darstellung erhalten wir nach etwas Nachdenken $a_n = {\frac{1}{2}}^n$. Wichtig zu betonen ist hier, dass es keine allgemein gültige Vorgehensweise gibt, die rekursive Darstellung in die explizite Darstellung umzuwandeln, hier ist wie in vielen Teilen der Mathematik kreatives Nachdenken erforderlich.
 \end{example}
 
-\begin{figure}[p]
-	\label{fig:ExArithSeq}
+\begin{figure}
 	\centering
 	\includegraphics[width=0.8\textwidth]{./gnuplot/example-arithmetic-series.png}
 	\caption{Graphische Darstellung der arithmetischen Folge aus \ref{ex:ArithSeq}}
+	\label{fig:ExArithSeq}
 \end{figure}
 
-\begin{figure}[p]
-	\label{fig:ExGeoSeq}
+\begin{figure}
 	\centering
 	\includegraphics[width=0.8\textwidth]{./gnuplot/example-geometric-series.png}
 	\caption{Graphische Darstellung der geometrischen Folge aus \ref{ex:GeoSeq}}
+	\label{fig:ExGeoSeq}
 \end{figure}
 
 Wie in Abbildung \ref{fig:ExArithSeq} und \ref{fig:ExGeoSeq} dargestellt, lässt sich eine Zahlenfolge auch in einem Diagramm darzustellen. Hierbei ist zu beachten, dass nur Punkte, aber keine durchgehenden Linien eingezeichnet werden dürfen - denn der Definitionsbereich besteht nur aus den natürlichen Zahlen. Ebenfalls diesen beiden Abbildungen lässt sich entnehmen, dass Zahlenfolgen unterschiedlich verlaufen können. Die arithmetische Reihe steigt ohne Grenzen an, die geometrische Reihe $(a_n) = (\frac{1}{2})^n$ fällt und nähert sich immer weiter der $0$ an. Dies gibt Anlass, zwei wichtige Eigenschaften von Zahlenfolgen zu definieren.
@@ -111,11 +111,11 @@ Eine weitere Eigenschaft von fundamentaler Bedeutung ist das sogenannte Konverge
 
 Anders formuliert kann man auch sagen, die Folge $(a_n)$ heißt konvergent mit dem Grenzwert $\alpha$, wenn man zu jedem noch so kleinen Abstand zum Grenzwert (bezeichnet mit $\epsilon$) immer eine Position in der Zahlenfolge finden kann, sodass alle Folgenglieder rechts von dieser Position innerhalb dieses Abstands liegen. Visuell wird diese Definition durch Abbildung \ref{fig:VisLimit} illustriert.
 
-\begin{figure}[h]
-	\label{fig:VisLimit}
+\begin{figure}
 	\centering
 	\includegraphics[width=0.8\textwidth]{./svg/definition-convergence.png}
 	\caption{Graphische Veranschaulichung des Grenzwertbegriffs}
+	\label{fig:VisLimit}
 \end{figure}
 
 In Beispiel \ref{ex:ConvGeoSeq} und \ref{ex:ConvConstSeq} wird gezeigt, wie man anhand dieser Definition nachweisen kann, ob eine Folge konvergent ist und welchen Grenzwert sie hat. Ebenfalls wie in Beispiel \ref{ex:ConvAltSeq} kann man zeigen, dass eine Folge divergent ist. Für die praktische Bestimmung von Grenzwerten ist diese Definition sehr umständlich, wir werden daher in Kürze Rechenregeln kennen lernen, um die Berechnung von Grenzwerten zu vereinfachen.
@@ -301,7 +301,7 @@ Um auch Grenzwerte von Quotienten berechnen zu können, wo der Divisor gegen $0$
 Bisher haben wir nur Grenzwerte betrachtet, wo $n$ gegen $\infty$ lief. Es ist nun aber so, dass man Grenzwerte nicht nur für Folgen, sondern auch für Funktionen betrachten kann, wenn das Funktionsargument sich einem bestimmten Wert (nicht zwingend $\infty$) nähert.
 
 \begin{definition}{Grenzwert einer Funktion}{LimFun}
-    Sei $f:\R\to\R$ eine Funktion und $A = \left\lbrace (a_n) | \lim\limits_{n\to\infty} a_n = x_0 \right\rbrace$ die Menge aller konvergenten Zahlenfolgen mit dem Grenzwert $x_0\in\R$. Falls es ein $\alpha\in\R$ gibt, sodass $\lim\limits_{n\to\infty} f(a_n) = \alpha$ für alle solchen Zahlenfolgen gilt, so heißt $\alpha$ der \textbf{Grenzwert von $f$ gegen $x_0$}.
+    Sei $f: \R \to \R$ eine Funktion und $A = \left\lbrace (a_n) | \lim\limits_{n\to\infty} a_n = x_0 \right\rbrace$ die Menge aller konvergenten Zahlenfolgen mit dem Grenzwert $x_0\in\R$. Falls es ein $\alpha\in\mathbb{\R}$ gibt, sodass $\lim\limits_{n\to\infty} f(a_n) = \alpha$ für alle solchen Zahlenfolgen gilt, so heißt $\alpha$ der \textbf{Grenzwert von $f$ gegen $x_0$}.
 
     Man schreibt dann $\lim\limits_{x\to x_0} = \alpha$.
 \end{definition}

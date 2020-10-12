@@ -49,6 +49,9 @@
 \newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
 \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
 
-\newcommand{\term}[2]{$\stackrel{\hbox{\tiny \textnormal{#2}}}{\hbox{#1}}$}
-% \newcommand{\term}[2]{#1}
-
+% Circle characters
+\newcommand*\circled[1]{
+    \tikz[baseline=(char.base)]{
+        \node[shape=circle,draw,inner sep=2pt] (char) {#1};
+    }
+}

@@ -30,11 +30,11 @@ Sie wird auch geschrieben als $\mathbbm{1}_M$ geschrieben, oder, wenn die Menge 
 
 Unabhängig der Art der Elemente besteht eine Möglichkeit zur Veranschaulichung von Funktionen in der Darstellung als Wertetafel oder Pfeildarstellung wie in Abbildung \ref{fig:FunAsArrows}. Links in der Abbildung ist eine Funktion $f: \N \to \N$ dargestellt, die jeder natürlichen Zahl ihre Quadratzahl zuweist. Rechts ist der boolesche Operator \emph{Exklusives Oder} abgebildet, der eine Funktion zwischen einem Paar von Wahrheitswerten zu einem Wahrheitswert ist.
 
-\begin{figure}[h]
-    \label{fig:FunAsArrows}
+\begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{./svg/function-as-arrows}
     \caption{Darstellung von Funktionen als Pfeildiagramm}
+    \label{fig:FunAsArrows}
 \end{figure}
 
 Für diese Vorlesung beschränken wir uns auf Funktionen zwischen reellen Zahlen. Hier unterscheiden wir zwei Arten, je nachdem, ob der Funktionswert nur von einer reellen Zahl oder von mehreren abhängt.
@@ -59,7 +59,7 @@ Nun ist es für das praktische Rechnen auch erforderlich, Funktionen aufzuschrei
     Eine Funktion liegt in \textbf{impliziter Form} vor, wenn eine Beziehung (Gleichung) zwischen dem Funktionswert und den Argumenten angegeben ist.
 \end{definition}
 
-\begin{definition}{Parametrische Form einer einstelligen Funktion}{FunImplicit}
+\begin{definition}{Parametrische Form einer einstelligen Funktion}{FunParam}
     Eine einstellige Funktion liegt in \textbf{Parameterdarstellung} vor, wenn sowohl das Argument als auch der Funktionswert jeweils als Funktion in Abhängigkeit eines Laufparameters $t$ angegeben sind:
     \begin{alignat*}{1}
       x &: t \mapsto u(t) \\
@@ -70,12 +70,12 @@ Nun ist es für das praktische Rechnen auch erforderlich, Funktionen aufzuschrei
 
 Je nach Anwendungsfall eignet sich eine Form besser als eine andere Form. Beispielsweise durch $f: x \mapsto x^2$ eine Funktion in expliziter Form gegeben. Formt man dies um zu $y-x^2=0$, erhält man eine mögliche implizite Form dieser Funktion. Ebenso ist $x^2+y^2=1$ eine implizite Form, welche eine Kreislinie beschreibt. Hierbei ist zu beachten, dass sich diese nicht global in explizite Form auflösen lässt, da zu den meisten Argumenten ein Funktionswert sowohl im oberen als auch im unteren Halbkreis existiert. Die Kreislinie lässt sich auch in parametrischer Form ausdrücken als $u(t) = \cos(t)$ und $v(t) = \sin(t)$ mit $t\in[0,2\pi)$.
 
-\begin{figure}[h]
-    \label{fig:ImplFun}
+\begin{figure}
     \centering
     \includegraphics[width=0.45\textwidth]{./gnuplot/implicit-fun-circle}
     \includegraphics[width=0.45\textwidth]{./gnuplot/implicit-fun-cross}
     \caption{Graphen implizit gegebener Funktionen. Man beachte, dass immer nur ein Teil des Kreises und des Kreuzes als explizite Abbildung von Argumenten nach Funktionswerten aufgefasst werden kann.}
+    \label{fig:ImplFun}
 \end{figure}
 
 Neben dem Pfeildiagramm gibt es noch weitere Möglichkeiten, ein- und mehrstellige Funktionen graphisch darzustellen.
@@ -94,21 +94,21 @@ Ein kleiner Hinweis zum Zeichnen von Graphen. \href{http://www.gnuplot.info/}{gn
 
 Für einstellige Funktionen ist der Graph zweidimensional und in einem $x-y$-Koordinatensystem wie in Abbildung \ref{fig:GraphUnivarFun} gut überschaubar. Für zweistellige Funktionen benötigt man bereits ein dreidimensionalen Koordinatensystem, in dem die Form des Graphen bereits schwerer zu überschauen ist, da der Graph meist auf eine zweidimensionale Bildschirmebene projiziert wird. Drei- und mehrstellige Funktionen sind auf diese Weise nur kaum bis gar nicht zur veranschaulichen. Die meisten Beispiele dieser Vorlesung werden sich daher auf ein- und zweidimensionale Funktionen beschränken. In Abbildung \ref{fig:GraphUnivarFun} ist der Graph einer einstelligen Funktion dargestellt. Abbildung \ref{fig:GraphMultivarFun} zeigt den Graph einer zweistelligen Funktion aus vier verschiedenen Blickwinkeln. Man beachte hierbei besonders die Seitensicht: Wird eines der beiden Argumente konstant gehalten und nur das anderen variiert, erhält man eine einstellige Funktion. Je nachdem, auf welchem Wert man das eine Argument konstant hält, ergeben sich verschiedene Funktionen.
 
-\begin{figure}[h]
-    \label{fig:GraphUnivarFun}
+\begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{./gnuplot/example-univariate-function.png}
     \caption{Graph einer einstelligen Funktion}
+    \label{fig:GraphUnivarFun}
 \end{figure}
 
-\begin{figure}[h]
-    \label{fig:GraphMultivarFun}
+\begin{figure}
     \centering
     \includegraphics[width=0.45\textwidth]{./gnuplot/example-multivariate-function-1}
     \includegraphics[width=0.45\textwidth]{./gnuplot/example-multivariate-function-2}
     \includegraphics[width=0.45\textwidth]{./gnuplot/example-multivariate-function-3}
     \includegraphics[width=0.45\textwidth]{./gnuplot/example-multivariate-function-4}
     \caption{Graph einer zweistelligen Funktion}
+    \label{fig:GraphMultivarFun}
 \end{figure}
 
 Für zweistellige Funktionen gibt es auch noch weitere Darstellungsformen, die manchmal übersichtlichen und einfacher zu erfassen sind. Die erste Darstellungsweise, die sogenannte \emph{Konturdarstellung}, wird etwa bei Wanderkarten für Abbildung zweidimensionaler Punkte der Erdoberfläche zur Höhe über Normalnull verwendet. Die Höhe an jedem Punkt wird farbig markiert, Kurven gleicher Höhe werden mit einer Linie dargestellt (Höhenlinien).
@@ -125,11 +125,11 @@ Für zweistellige Funktionen gibt es auch noch weitere Darstellungsformen, die m
     Gesucht sind die Konturlinien der zweistelligen Funktion $f: (x,y) \mapsto x^2+y^2$. Offensichtlich kann die Funktion keine negativen Werte annehmen. Wir bezeichnen die Konturlinienkonstante mit $R^2$. Nach Definition sind nun die Punkte $(x,y)\in\R^2$ gesucht, für die $x^2+y^2=R^2$ gilt. Unter Beachtung des Satzes von Pythagoras erkennen wir, dass es sich um alle Punkte handelt, deren Abstand zum Koordinatenursprung $R$ beträgt. Mithin handelt es sich bei den Konturlinien von $f$ also um zum Ursprung konzentrische Kreislinien. Diese sind in Abbildung \ref{fig:ExContLine} dargestellt.
 \end{example}
 
-\begin{figure}[h]
-    \label{fig:ExContLine}
+\begin{figure}
     \centering
     \includegraphics[width=0.6\textwidth]{./gnuplot/example-contour-plot}
     \caption{Konturlinien der Funktion aus Beispiel \ref{ex:ContLine}}
+    \label{fig:ExContLine}
 \end{figure}
 
 Ein Beispiel für die Konturlinien mit farbiger Hervorhebung für eine komplexere Funktion findet sich in Abbildung \ref{fig:ContourComplexFun}.
@@ -161,21 +161,91 @@ Als zweite Darstellungsform gibt es noch das sogenannte Gradientenfeld, wobei du
     Die Richtung des stärksten Anstiegs verläuft wie in Abbildung \ref{fig:ExGradField} zu sehen also immer radial weg vom Koordinatenursprung. Aus der Anschauung ist dies unmittelbar klar, bei dem Graphen von $f$ handelt es sich um einen nach oben geöffnete Kesselform.
 \end{example}
 
-\begin{figure}[h]
-    \label{fig:ExGradField}
+\begin{figure}
     \centering
     \includegraphics[width=0.65\textwidth]{./gnuplot/example-gradient-field}
     \caption{Gradientenfeld der Funktion aus Beispiel \ref{ex:GradField}}
+    \label{fig:ExGradField}
 \end{figure}
 
 An dieser Stelle noch eine kurze Anmerkung zum sogenannten \emph{Feld}. Speziell in der Physik bezeichnet man mit einem Feld eine Größe, welche an jedem Punkt des Raums einen anderen Wert haben kann. Diese stellen mehrstellige Funktionen dar. Etwa ist der Luftdruck ein Feld, wo jedem Raumpunkt ein Luftdruckwert zugeordnet wird. Da der Luftdruck nur ein einzelne Zahl (=Skalar) ist, nennt man solche Felder auch skalare Felder. Das elektrische Feld ist ein vektorielles Feld und weist jedem Raumpunkt einen Vektor (Richtung und Betrag) zu, der angibt, welche Kraft eine geladene Masse an diesem Raumpunkt erfährt.
 
 \section{Transformation von Funktionen}
 
-TODO!!
+Hat man Funktionen gegeben, kann man aus diesen neue Funktionen gewinnen, indem man diese geeignet kombiniert.
 
-Transformationen (Verschiebung, Skalierung)
-Verkettung
+Zum Einen lassen sich zwei Funktionen $f$ und $g$ verketten, indem man sie hintereinander ausführt.
+
+\begin{definition}{Komposition von Funktionen}{CompFun}
+    Seien $f: B \to C$ und $g: A \to B$ zwei Funktionen mit den Rechenvorschriften $f: x \mapsto u(x)$ und $g: x \mapsto v(x)$. Die durch $h = f \circ g: A \to C$ definierte Funktion heißt \textbf{Komposition} (\emph{Verkettung}) von $f$ mit $g$ und ist gegeben durch:
+    $$
+        h: x \mapsto u(v(x))
+    $$
+    $f$ heißt dabei äußere Funktion und $g$ innere Funktion.
+\end{definition}
+
+\begin{example}{Verkettete Funktionen}{CompFun}
+    Die Verkettung $f \circ g$ der Funktionen $f: x \mapsto -x$ und $g: x \mapsto x-3$ lautet $x \mapsto -(x-3) = 3-x$. Man beachte hierbei, dass beide Vorzeichen umgedreht werden. Zudem ist die Reihenfolge der Verkettung wichtig. Vertauscht man die Operanden, erhält man die verkettete Funktion $g \circ f: x \mapsto -x-3$.
+
+    Die Funktion $f: x \to \sin(x^2)$ lässt sich darstellen als verkette Funktion, indem man für die innere Funktion $v(x) = x^2$ wählt und für die äußere Funktion $u(x) = \sin(x)$. Damit gilt $\sin(x^2) = u(v(x)) = u(x^2) = \sin(v(x))$.
+\end{example}
+
+Zum Zweiten kann man den Graphen einstelliger Funktionen entlang der Abszisse oder der Ordinate verschieben und stauchen. Diesen geometrischen Transformationen lassen sich durch einfache Modifikation an der Rechenvorschrift der Funktion erreichen und sind in der folgenden Tabelle zusammengefasst und in Abbildung \ref{fig:TransformFunTrans} sowie \ref{fig:TransformFunScale} graphisch veranschaulicht.
+
+\begin{center}
+    \begin{tabular}{ c | c | c }
+        - & \textbf{x-Achse} & \textbf{y-Achse} \\
+        \hline
+        \textbf{Verschiebung} & \makecell{$f(x+c)$: nach links \\ $f(x-c)$: nach rechts} & \makecell{$f(x)+c$: nach oben \\ $f(x)-c$: nach unten} \\
+        \hline
+        \textbf{Skalierung} & \makecell{$f(a \cdot x)$ \\ $|a| > 1$: Stauchen \\ $|a| < 1$: Strecken \\ Für $a<0$ findet zusätzlich \\ Spiegelung an der y-Achse statt.} & \makecell{$a \cdot f(x)$ \\ $|a| > 1$: Strecken \\ $|a| < 1$: Stauchen \\ Für $a<0$ findet zusätzlich \\ Spiegelung an der x-Achse statt.}
+    \end{tabular}
+\end{center}
+
+Die Skalierung erfolgt dabei immer bezüglich des Koordinatenursprungs. Bei solchen Transformationen einer Funktion ist unbedingt auf die Reihenfolge der Operationen zu achten. Es ist beispielsweise ein Unterschied, ob eine Funktion erst mit dem Faktor $2$ gestreckt wird und dann um $2$ nach rechts verschoben wird; oder erst verschoben und dann gestreckt wird, siehe auch Abbildung \ref{fig:TransformOrder}.
+
+\begin{example}{Transformation von Funktionen durch Verschiebung und Skalierung}{TransformFunTranslScale}
+    \begin{itemize}
+        \item Die Funktion $x \mapsto (x-2)^2+3$ ist gegenüber $x \mapsto x^2$ um $2$ Einheiten nach rechts und um $3$ Einheiten nach oben verschoben. Der Scheitelpunkt liegt daher bei $(2,3)$.
+        \item Die Funktion $x \mapsto 3\sin(2x)$ ist gegenüber $x \mapsto \sin(x)$ skaliert. Entlang der x-Achse ist mit dem Faktor $2$ gestaucht und hat daher die Periode $\frac{1}{2}\cdot 2\pi = \pi$. Entlang der y-Achse ist sie mit dem Faktor $3$ gestreckt und hat daher die Amplitude $3$.
+        \item Wir betrachten die Funktion mit der Gleichung $f(x)$. Verschieben wir diese entlang der x-Achse um $c$ Einheiten, erhalten wir $g(x) = f(x-c)$. Skalieren wir weiterhin die so entstandene Funktion $g$ mit dem Faktor $a$ entlang der x-Achse, erhalten wir $h(x) = g(ax) = f(ax-c)$.
+        \item Wenn wir andererseits zuerst entlang der x-Achse skalieren, erhalten wir $g(x) = f(ax)$. Nach Verschiebung entlang der x-Achse erhalten wir $h(x) = g(x-c) = f(a(x-c)) = f(ax-ac)$.
+    \end{itemize}
+\end{example}
+
+Aus den letzten beiden Beispielen leitet sich die folgende Aussage ab:
+
+\begin{statement}{Hintereinanderausführung von Verschiebung und Skalierung}{CombTranslScale}
+    Sei $f$ eine einstellige Funktion und seien $a,c\in\R$ Konstanten. Dann ist
+    \begin{enumerate}
+        \item die Funktion $f(ax-c)$ gegenüber $f$ zuerst an der x-Achse um $c$ verschoben und dann entlang der x-Achse mit dem Faktor $a$ skaliert.
+        \item die Funktion $f(a(x-c))$ gegenüber $f$ zuerst entlang der x-Achse mit dem Faktor $a$ skaliert und dann an der x-Achse um $c$ verschoben .
+    \end{enumerate}
+\end{statement}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.45\textwidth]{./gnuplot/transform-fun-translate}
+    \caption{Verschiebung einer Funktion entlang der x- und y-Achse}
+    \label{fig:TransformFunTrans}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.45\textwidth]{./gnuplot/transform-fun-scale-x}
+    \includegraphics[width=0.45\textwidth]{./gnuplot/transform-fun-scale-y}
+    \caption{Skalierung einer Funktion entlang der x- und y-Achse}
+    \label{fig:TransformFunScale}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.65\textwidth]{./gnuplot/transform-translate-scale-order}
+    \caption{Abhängig der Reihenfolge von Verschiebung und Skalierung erhält man unterschiedliche Funktionen.}
+    \label{fig:TransformOrder}
+\end{figure}
+
+
 
 \section{Eigenschaften von Funktionen}
 
@@ -215,11 +285,18 @@ Bezüglich der Notation beachte man, dass $f^{-1}$ nicht das Reziproke $\frac{1}
 
 Rechnerisch erhält man die Umkehrfunktion aus der Funktionsgleichung $y = f(x)$, indem man diese nach $x = f^{-1}(y)$ umstellt. Man vertauscht dabei also $x$ und $y$. Graphisch entspricht das Bilden der Umkehrfunktion der Spiegelung an der Hauptgeraden $y=x$.
 
-\begin{figure}[h]
-    \label{fig:InjectSurject}
+\begin{figure}
     \centering
     \includegraphics[width=0.95\textwidth]{./svg/injective-surjective}
-    \caption{Graphische Darstellung der Definition von Injektivität und Surjektivität. Es ist jeweils eine Beispiel für eine Abbildung dargestellt, welche die Bedingung erfüllt, und ein Beispiel, wo sie die Bedingung nicht erfüllt. Die Bedingung, dass sich die Identitätsfunktion ergeben soll, bedeutet graphisch, dass man an einem Punkt anfängt, den Pfeilen folgt, und schließlich wieder am Ausgangspunkt ankommt. Das ist bei dem nicht-injektiven beziehungsweise nicht-surjektiven Beispiel nicht möglich.}
+    \caption{Visuelle Darstellung der Definition von Injektivität und Surjektivität. Es ist jeweils eine Beispiel für eine Abbildung dargestellt, welche die Bedingung erfüllt, und ein Beispiel, wo sie die Bedingung nicht erfüllt. Die Bedingung, dass sich die Identitätsfunktion ergeben soll, bedeutet graphisch, dass man an einem Punkt anfängt, den Pfeilen folgt, und schließlich wieder am Ausgangspunkt ankommt. Das ist bei dem nicht-injektiven beziehungsweise nicht-surjektiven Beispiel nicht möglich.}
+    \label{fig:InjectSurject}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{./gnuplot/inverse-function-reflection}
+    \caption{Graphische Bedeutung der Umkehrfunktion. Man erhält die Umkehrfunktion $\ln(x)$ durch Spiegelung der Funktion $e^x$ an der Hauptdiagonalen $y=x$.}
+    \label{fig:InvFunRefl}
 \end{figure}
 
 \begin{example}{}{}
@@ -279,25 +356,25 @@ Man beachte hierbei, dass die Wahl der Begriffe \emph{achsensymmetrisch} und \em
     \end{itemize}
 \end{example}
 
-\begin{figure}[h]
-    \label{fig:ExAxisSymFun}
+\begin{figure}
     \centering
     \includegraphics[width=0.45\textwidth]{./svg/axis-symmetric-fun}
     \includegraphics[width=0.45\textwidth]{./svg/point-symmetric-fun}
     \caption{Links: Achsensymmetrische Funktion. Der rechte Teile der Parabel geht unter Spiegelung an der Ordinate in den linken Teil über. Rechts: Punktsymmetrische Funktion: Der rechte Teil der kubischen Parabel geht unter Punktspiegelung am Ursprung in den linken Teil über.}
+    \label{fig:ExAxisSymFun}
 \end{figure}
 
 Von besonderer Bedeutung sind diese beiden Symmetrieeigenschaften, da sich alle Funktionen, sofern sie denn für positive und negative Argumente überhaupt definiert sind, zerlegen lassen in die Summe aus einem geraden und einem ungerade Anteil.
 
-\begin{statement}{Gerader und ungerade Anteil einer Funktion}{SplitEvenOddFun}
-    Sei $f: \R \to \R$ eine einstellige reellwertige Funktion mit einem Definitionsbereich $\mathbb{D}$ derart, dass $x\in\mathbb{R} \iff -x\in\mathbb{D}$ gilt, also zu jedem Argument auch sein Negiertes zum Definitionsbereich gehört. Seien weiterhin $e$ und $o$ wie folgt definierte Funktionen:
+\begin{statement}{Gerader und ungerader Anteil einer Funktion}{SplitEvenOddFun}
+    Sei $f: \R \to \R$ eine einstellige reellwertige Funktion mit einem Definitionsbereich $\mathbb{D}$ derart, dass $x\in\mathbb{D} \iff -x\in\mathbb{D}$ gilt, also zu jedem Argument auch sein Negiertes zum Definitionsbereich gehört. Seien weiterhin $e$ und $o$ wie folgt definierte Funktionen:
 
     \begin{alignat*}{1}
         e(x) &= \frac{f(x) + f(-x)}{2} \\
         o(x) &= \frac{f(x) - f(-x)}{2}
     \end{alignat*}
 
-    Dann ist $e$ eine gerade (\emph{event}) Funktion und $o$ eine ungerade (\emph{odd}) Funktion; und es gilt: $f(x) = e(x) + o(x)$.
+    Dann ist $e$ eine gerade (\emph{even}) Funktion und $o$ eine ungerade (\emph{odd}) Funktion; und es gilt: $f(x) = e(x) + o(x)$.
 \end{statement}
 
 Dass die Funktionen $e$ und $o$ gerade beziehungsweise ungerade sind, zeigt man leicht anhand der Definition. Durch Aufaddieren beider Funktionen und Zusammenfassen des Bruches zeigt man, dass man so die ursprüngliche Funktion $f$ erhält. Dieser Zerlegung kommt unter anderem deswegen Bedeutung zu, weil sie eine Definition der trigonometrischen und hyperbolischen Funktionen über die Exponentialfunktion erlaubt, wie wir im nächsten Abschnitt zu speziellen Funktionen sehen werden.
@@ -311,7 +388,7 @@ Dass die Funktionen $e$ und $o$ gerade beziehungsweise ungerade sind, zeigt man 
 Die Periodizität ist eine Eigenschaft von periodischen Funktionen, deren Funktionswerte sich nach einer bestimmten Periode immer wiederholen. Die Sinus- und Kosinusfunktionen sind ein bekanntes Beispiel für periodische Funktionen.
 
 \begin{definition}{Periode einer einstelligen Funktion}{PeriodUnivarFun}
-    Sei $f: \R \to \R$ eine einstellige reellwertige Funktion mit Definitionsbereich $\mathbb{D}$. $f$ heißt \textbf{periodisch}, wenn es eine reelle Zahl $p>0$ gibt, sodass gilt:
+    Sei $f: \R \to \R$ eine einstellige reellwertige Funktion mit Definitionsbereich $\mathbb{D}$. $f$ heißt \textbf{periodisch}, wenn es eine reelle Zahl $p>0$ derart gibt, dass gilt:
     $$
         \forall x \in \mathbb{D}: f(x) = f(x+p)
     $$
@@ -327,15 +404,201 @@ Aus dieser Definition erkennt man sofort, dass wenn $p$ eine Periode der Funktio
     \end{enumerate}
 \end{example}
 
+\subsection{Stetigkeit}
 
-Stetigkeit, stetige Erägnzung
+In der Analysis wollen wir Funktionen mittels der Infinitesimalrechnung analysieren. Eine wesentliche Voraussetzung dafür ist, dass eine Funktion ausreichend "glatt" verläuft und ihre Funktionswerte nicht plötzlich springen. Graphisch kann man sich dies so vorstellen, dass man den Graphen der Funktion zeichnen kann, ohne den Stift absetzen zu müssen. Diese Eigenschaft, welche eine solche Funktionen erfüllen muss, nennt man die \emph{Stetigkeit}. Um diese mathematisch fassen zu können, müssen wir zunächst noch den Begriff der Grenzwertbildung für mehrstellige Funktonen erweitern. Dies geschieht analog zu einstelligen Funktionen und sei daher nur kurz angegeben:
 
-Verhalten im Unendlichen
+\begin{definition}{Grenzwert einer mehrstelligen Funktion}{LimMultivarFun}
+    Sei $f: \R^n \to \R$ eine $n$-stellige Funktion und $A = \left\lbrace (a_n) | \lim\limits_{n\to\infty} a_n = x_0 \right\rbrace$ die Menge aller konvergenten Zahlenfolgen mit dem Grenzwert $x_0\in\R^n$.
 
+    Falls es ein $\alpha\in\mathbb{R}$ gibt, sodass $\lim\limits_{n\to\infty} f(a_n) = \alpha$ für alle solchen Zahlenfolgen gilt, so heißt $\alpha$ der \textbf{Grenzwert von $f$ gegen $x_0$}.
 
-Nulstelle, y-AchsenSchnittpkt. Polstelle sprungstelle
+    Man schreibt dann $\lim\limits_{x\to x_0} = \alpha$.
+\end{definition}
 
-Globale Extreme, Lokale Extrema
+\begin{example}{Untersuchen des Grenzwert einer zweistelligen Funktion}{CheckLimMultivarFun}
+    Die mehrstellige Funktion $f: (x,y) \mapsto \frac{x^2-y^2}{x^2+y^2}$ hat keinen Grenzwert für $(x_0,y_0)=(0,0)$. Je nachdem, auf welchem Weg wir uns $(0,0)$ annähern, erhalten wir verschiedene Grenzwerte. Wenn wir uns dem Koordinatenursprung etwa nähern, indem wir erst zur x-Achse $y=0$ gehen, erhalten wir:
+    $$
+    \lim\limits_{x\to 0} \lim\limits_{y\to 0} \frac{x^2-y^2}{x^2+y^2} = \lim\limits_{x\to 0} \frac{x^2}{x^2} = 1
+    $$
+    Andererseits gilt, wenn wir erst zur y-Achse $x=0$ gehen:
+    $$
+    \lim\limits_{y\to 0} \lim\limits_{x\to 0} \frac{x^2-y^2}{x^2+y^2} = \lim\limits_{y\to 0} \frac{-y^2}{y^2} = -1
+    $$
+\end{example}
+
+Damit lässt sich nun allgemein die Stetigkeit wie folgt definieren:
+
+\begin{definition}{Stetigkeit einer reellwertigen Funktion}{ContFun}
+    Sei $f: \R^n \to \R$ eine $n$-stellige, reellwertige Funktion mit Definitionsbereich $\mathbb{D}$. $f$ heißt \textbf{stetig} an der Stelle $x_0\in\mathbb{D}$, wenn der Grenzwert für diese Stelle existiert und dem dem Funktionswert gleich ist, also gilt:
+    $$
+        \lim\limits_{x_0\to x} f(x) = f(x_0)
+    $$
+    Falls $f$ für alle Werte des Definitionsbereichs stetig ist, heißt $f$ eine \textbf{stetige Funktion}.
+\end{definition}
+
+Im engen Zusammenhang mit der Stetigkeit steht die sogenannte stetige Ergänzung einer Funktion. Manche Funktionen sind aufgrund ihrer Struktur (Quotient) für einen einzelne Stelle (Definitionslücke) nicht erklärt. Dennoch kann es vorkommen, dass die Funktionen für alle Argumente in der Nähe der Definitionslücke Funktionswerte besitzt, die nahe beieinander liegen. Man kann dann die Definitionslücke schließen, in dem man als Funktionswert für diese Stelle den Grenzwert nimmt.
+
+\begin{definition}{Stetige Ergänzung einer Funktion}{ContinousContinuation}
+    Sei $f: \R^n\to\R$ eine mehrstellige Funktion mit Definitionsbereich $\mathbb{D}\subseteq\R^n$ und $x_0\notin\mathbb{D}$ eine Stelle außerhalb des Definitionsbereichs (\textbf{Definitionslücke}). Falls der Grenzwert $\lim\limits_{x\to x_0} = \alpha$ existiert, heißt die Funktion $\bar{f}$, welche durch Hinzunahme des Grenzwert aus $f$ entsteht, die \textbf{stetige Ergänzung} von $f$:
+    $$
+        \bar{f}: x \to \begin{cases}
+            f(x) & , x \in \mathbb{D} \\
+            \alpha & , x = x_0
+        \end{cases}
+    $$
+    $\bar{f}$ hat somit nun den Definitionsbereich $\mathbb{D} \cup \lbrace x_0 \rbrace$.
+\end{definition}
+
+\begin{example}{Untersuchen der Stetigkeit einstelliger Funktionen}{ExamContUnivarFun}
+    \begin{itemize}
+        \item Die meisten aus der Schulmathematik, bekannten Funktion sind im jeweiligen Definitionsbereich stetig. Dazu gehören lineare Funktion, quadratische Funktionen, Potenz-, Exponential, und Logarithmusfunktionen sowie trigonometrische Funktionen.
+        \item Die Funktion $x\mapsto 1/x$ ist nicht stetig in $x_0=0$, da für diese Stelle gar kein Funktionswert erklärt ist. Zudem ist sie auch nicht stetig ergänzbar, da der Grenzwert $\lim\limits_{x\to 0}$ nicht existiert.
+        \item Die Funktion $x \mapsto \frac{\sin(x)}{x}$ ist nicht stetig in $x_0=0$, da für diese Stelle ebenfalls keine Funktionswert erklärt ist. Allerdings ist sie stetig ergänzbar, denn mit der Regel von L'Hôpital folgt $\lim\limits{x\to 0} \frac{\sin(x)}{x} = \lim\limits{x\to 0} \frac{\cos(x)}{1} = 1$. Die durch $\bar{f} = \begin{cases} \sin(x)/x & , x \ne 0 \\ 1 & , x = 0 \end{cases}$ erklärte Funktion ist die (nun auf ganz $\R$ erklärte) stetige Ergänzung von $f$.
+        \item Die sogenannte Signum-Funktion (Vorzeichenfunktion) $\text{sgn}: x \to \begin{cases} -1 &, x < 0 \\ 0 &, x = 0 \\ 1 &, \ge 0 \end{cases}$ ist nicht stetig in $x_0=0$. Während zwar ein Funktionswert an der Stelle existiert, existiert der Grenzwert nicht, da der linksseitige Grenzwert $\lim\limits_{x\to 0^-} \text{sgn}(x) = -1$ beträgt, während der rechtsseitige Grenzwert $\lim\limits_{x\to 0^+} \text{sgn}(x) = +1$ lautet.
+    \end{itemize}
+\end{example}
+
+In Abbildung \ref{fig:NonContFun} sind zwei unstetige Funktionen abgebildet. Bei der Funktion links liegt eine Sprungstelle bei $0$ vor, da die Funktion dort plötzlich von einem Funktionswert zu einem anderen springt. Rechts liegt eine hebbare Definitionslücke vor, die durch stetige Ergänzung geschlossen werden kann.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.45\textwidth]{./gnuplot/example-non-continous-function-1}
+    \includegraphics[width=0.45\textwidth]{./gnuplot/example-non-continous-function-2}
+    \caption{Beispiele für unstetige Funktionen}
+    \label{fig:NonContFun}
+\end{figure}
+
+\subsection{Spezielle Stellen}
+
+Es gibt einige Punkte und Stellen von Funktionen, die von besonderem Interesse sind:
+
+\begin{definition}{Besondere Stellen einer reellwertigen Funktion}{SpecValues}
+    Sei $f: \R^n\to\R$ eine Funktion mit Definitionsbereich $\mathbb{D}$. Dann heißt
+    \begin{itemize}
+        \item $x_0\in\mathbb{D}$ eine \textbf{Nullstelle}, wenn gilt $f(x_0) = 0$.
+        \item $(0, f(0))$ der \textbf{y-Achsenschnittpunkt}, falls $0$ zum Definitionsbereich gehört.
+        \item $x_0 \in\mathbb{D}$ eine \textbf{hebbare Definitionslücke}, wenn $f$ stetig ist in $x_0$.
+        \item $x_0 \in\mathbb{D}$ eine \textbf{Sprungstelle}, wenn $f$ nicht stetig ist in $x_0$.
+        \item $x_0 \notin \mathbb{D}$ eine \textbf{Polstelle}, wenn der links- oder rechtsseitige Grenzwert bestimmt divergent ist.
+    \end{itemize}
+\end{definition}
+
+Eine Nullstelle ist eine Stelle, wo der Funktionswert identisch $0$ ist. Rechnerisch ermittelt man Nullstellen, indem man die Rechenvorschrift für die Funktionswert gleich $0$ setzt und nach dem Argument umstellt. Der Frage, ob und welche Nullstellen eine Funktion hat, kommt besondere Bedeutung bei, da die Lösung von Gleichungen sich immer formulieren lässt als die Suche nach Nullstellen. Falls etwa $\sin(xy) = x+y$ gelöst werden soll, kann man dies auch formulieren als die Suche nach Nullstellen der zweistelligen Funktion $f: (x,y) \mapsto \sin(xy)-x-y$.
+
+Eine Polstelle kann man sich vorstellen als eine vertikale Achse, an die sich der Graph der Funktion annähert. Ein Sprungstelle bedeutet graphisch, dass man dort den Stift absetzen muss, um den Graph zu zeichnen.
+
+Ein Beispiel für eine hebbare Definitionslücke und eine Sprungstelle ist bereits in Abbildung \ref{fig:NonContFun} dargestellt. Abbildung \ref{fig:SpecValFun} zeigt graphisch die Bedeutung einer Nullstelle, einer Polstelle, und eines y-Achsen-Schnittpunkts.
+
+\begin{example}{Nullstellen einer quadratischen Funktionen}{RootQuadFun}
+    Sei $f: x \to ax^2 + bx +c$ eine quadratische Funktion mit $a,b,c\in\R$. Die Nullstellen ergeben sich durch Lösen der Gleichung $f(x) = 0$. Wir formen zuerst die Rechenvorschrift durch quadratische Ergänzung um: $ax^2 + bx +c = a\left(x + \frac{b}{a}x^2 + \frac{c}{a}\right) = a\left(\left(x+u\right)^2+v\right)$, wobei sich $u=\frac{b}{2a}$ ergibt und daraus dann $v=\frac{c}{a}-\left(\frac{b}{2a}\right)^2$. Somit müssen wir nun $a\left((x+\frac{b}{2a})^2+\frac{c}{a}-\left(\frac{b}{2a}\right)^2\right) = 0$ lösen. Es ergibt sich die Formel für die Lösung quadratischer Gleichungen:
+    \begin{equation}
+        x_{1,2} = -\frac{b}{2a} \pm \sqrt{\left(\frac{b}{2a}\right)^2 - \frac{c}{a}} \label{eq:RootQuadGen}
+    \end{equation}
+    Mit den Abkürzungen $p=\frac{b}{a}$ und $q=\frac{c}{a}$ folgt daraus die bekannte p-q-Formel:
+    \begin{equation}
+        x_{1,2} = -\frac{p}{2} \pm \sqrt{\frac{p^2}{4}-q} \label{eq:RootQuadSpec}
+    \end{equation}
+\end{example}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{./gnuplot/example-special-points}
+    \caption{Beispiel einer Funktion mit Nullstelle, y-Achsenschnittpunkt und Polstelle}
+    \label{fig:SpecValFun}
+\end{figure}
+
+\subsection{Extremwerte}
+
+In der Praxis ist es oft von Bedeutung, herauszufinden, wann eine abhängige Größe ihren kleinsten oder größten Wert annimmt. Etwa will man die zu produzierende Stückzahl bestimmen, wo der zu erwartende Gewinn maximiert ist. Bei der Herstellung von Cola-Dosen will man diese so dimensionieren, dass das Verhältnis von Oberfläche zu Volumen besonders klein ist, damit man möglichst wenig Material verbraucht.
+
+Um den Extremwertbegriff genau fassen zu können, benötigen wir noch den Begriff einer offenen Umgebung:
+
+\begin{definition}{Offene Umgebung eines Punktes}{OpenNeighborhood}
+    Sei $x \in \R^n$ ein $n$-dimensionaler Vektor. Eine offene Menge $M_x \subseteq \R^n$ mit $x\in M$ heißt \textbf{offene Umgebung} von $x$.
+\end{definition}
+
+Eine offene Menge ist anschaulich eine Menge, welche keine Rand hat. Zu jedem Punkt der Menge gibt es noch eine kleine Kugel, welche vollständig in der Menge enthalten ist, siehe hierzu auch Abbildung \ref{fig:OpenSet}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{./svg/open-set}
+    \caption{Definition einer offenen Menge. Zu jedem Elemente der Menge gibt es eine kleine Kugel, die vollständig in der Menge enthalten ist.}
+    \label{fig:OpenSet}
+\end{figure}
+
+\begin{definition}{Extremstelle einer reellwertigen Funktion}{ExtrFun}
+    Sei $f: \R^n \to \R$ eine $n$-stellige reellwertige Funktion. Eine Stelle $x_0\in\mathbb{D}$ ein \textbf{Maximum} (\textbf{Minimum}) von $f$ bezüglich $M$, falls es eine offene Umgebung $U_{x_0}$ um diese Stelle gibt, in der alle Funktionswerte kleiner oder gleich (größer oder gleich) dem Funktionswert an dieser Stelle sind:
+    $$
+        \forall x \in U_{x_0}: f(x) \le f(x_0)
+    $$
+    $$
+        (\forall x \in U_{x_0}: f(x) \ge f(x_0))
+    $$
+    Eine Extremstelle $x_0 \in \mathbb{D}$ heißt \textbf{globales Extremstelle} in $M\subseteq\mathbb{D}$, wenn für die Umgebung die gesamte Menge $M$ gewählt werden kann. Ansonsten heißt sie \textbf{lokale Extremstelle}.
+\end{definition}
+
+Diese Definition ist in Abbildung \ref{fig:ExtrValFun} veranschaulicht. Dort ist eine Funktion $f$ mit Definitionsbereich $\mathbb{D} = [-4.5, 4.5]$ dargestellt. Bei den Stellen \circled{1} und \circled{5} handelt es sich um globale Minima, denn im gesamten Definitionsbereich $[-4.5,4.5]$ gibt es keinen kleineren Funktionswert. Analog dazu handelt es sich bei den Stellen \circled{2} und \circled{4} um globale Maxima, denn im gesamten Definitionsbereich $[-4.5,4.5]$ gibt es keinen größeren Funktionswert. Die Stelle \circled{3} ist keine globale Extremstelle, denn im Definitionsbereich existieren sowohl kleinere als auch größere Funktionswerte. Allerdings handelt es sich um eim lokales Minimum, denn der Funktionswert ist etwa in der offenen Umgebung $(-1:1)$ der kleinste. Schließlich sind die mit \circled{x} markierten Stellen bei $x=\pm 2$ gar keine Extremstellen, denn in jeder noch so kleinen Umgebung um $2$ beziehungsweise $-2$ gibt es sowohl größere als auch kleinere Funktionswerte.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.45\textwidth]{./gnuplot/extreme-values-function}
+    \caption{Lokale und globale Extremstellen einer Funktion}
+    \label{fig:ExtrValFun}
+\end{figure}
+
+Eine wichtige Aussage über die Existenz von Extremstellen liefert der folgende Satz. Im nächsten Kapitel zur Infinitesimalrechnung werden wir noch Möglichkeiten kennenlernen, stetige Funktionen auf Extremstellen zu untersuchen.
+
+\begin{statement}{Satz von Weierstraß}{WeierstrassExtrem}
+    Jede stetige Funktion $f$ mit einem Definitionsbereich, der beschränkt und abgeschlossen ist, hat dort ein absolutes Maxima und ein absolutes Minima.
+\end{statement}
+
+Eine beschränkte Menge ist eine solche, in der es für den Abstand aller Paare von zwei Punkten eine endliche Obergrenze gibt. Abgeschlossen ist eine Menge, wenn sie einen Rand hat. Etwa sind alle abgeschlossenen Intervalle wie $[-3,5]$ oder $[-2,2]\times[-2,2]$ beschränkte Mengen.
+
+\subsection{Verhalten im Unendlichen}
+
+Manchmal ist es nicht von Interesse, wie sich eine Funktion für konkrete Werte verhält, sonder nur, was passiert, wenn man sehr große oder sehr kleine Werte einsetzt. Beispielsweise interessiert in der Informatik bei der Analyse von Algorithmen die sogenannte asymptotische Laufzeit oder der asymptotische Speicherverbrauch. Diese beschreiben, wie lange beziehungsweise wieviel Speicher ein Computerprogramm in Abhängigkeit der Größe der Eingabedaten benötigt.
+
+\begin{definition}{Horizontale Asymptote einer einstelligen Funktion}{AsymptUnivar}
+    Eine horizontale Asymptote $y=c$ einer Funktion $f: \R \to R$ liegt vor, wenn sich die Funktion der Zahl $c\in\R$ für große oder kleine Argumente annähert: $\lim\limits_{x\to\pm\infty} f(x) = c$.
+\end{definition}
+
+Oft ist es auch interessant zu betrachten, wie sich eine Funktion $f$ \emph{im Vergleich zu einer anderen} Funktion $g$ verhält. Man betrachtet dazu das Verhältnis $\frac{f(x)}{g(x)}$ und schaut, wie sich dieses Verhältnis für große Werte verhält.
+
+\begin{definition}{Landau-Symbole}{LanSymb}
+    Seien $f,g: \R \to \R$ zwei reellwertige Funktionen und $q(x) = \frac{f(x)}{g(x)}$ ihr Quotient. Dann heißt
+    \begin{enumerate}
+        \item $f \in \mathcal{O}(g)$, wenn der Quotient $q$ für große Werte endlich bleibt: $\lim\limits_{x\to\infty} |q(x)| < \infty$.
+        \item $f \in o(g)$, wenn der Quotient $q$ für große Werte gegen $0$ strebt: $\lim\limits_{x\to\infty} |q(x)| = 0$.
+        \item $f \sim g$, wenn der Quotient $q$ für große Werte gegen $1$ strebt: $\lim\limits_{x\to\infty} q(x) = 1$.
+    \end{enumerate}
+    Analog dazu kann man auch das Verhalten für $-\infty$ betrachten.
+\end{definition}
+
+Anschaulich bedeutet $f \in \mathcal{O}(g)$, dass die Funktion $f$ nicht wesentlich schneller wächst als $g$. $f \in o(g)$ bedeutet, dass $f$ sogar wesentlich langsamer wächst als $g$. $f \sim g$ bedeutet, dass $f$ genauso schnell wächst wie $g$ und für große Werte in der selben Größenordnung liegt wie $g$. Ein einfache Implementierung des Punktprodukt zweier $n$-dimensionaler Vektoren iteriert über alle $n$-Komponenten, multipliziert diese miteinander und addiert diese anschließend auf. Die Anzahl der Rechenschritte wird daher linear von der Dimension $n$ abhängen und man schreibt, die Zeitkomplexität des Algorithmus sei $\mathcal{O}(n)$.
+
+Mit der letzten Definition lässt sich nun der Begriff einer diagonalen Asymptote definieren, wenn eine Funktion sich für große Werte wie eine lineare Funktion verhält:
+
+\begin{definition}{Diagonale Asymptote}
+    Eine Gerade mit der Gleichung $g: x \mapsto mx+n$ heißt \textbf{diagonale Asymptote} einer Funktion $f: \R \to \R$, wenn gilt: $f \sim g$.
+\end{definition}
+
+\begin{example}{Verhalten von Funktionen im Unendlichen}{ExamBehLarge}
+    \begin{enumerate}
+        \item Die Funktion $x \mapsto 1/x$ hat die horizontale Asymptote $y=0$, da die Funktionswerte für $x \to \pm\infty$ gegen $0$ streben.
+        \item Die Funktion $f: x \mapsto 10x$ wächst nicht wesentlich schneller als $g: x \mapsto 0.1x$, da $f \in \mathcal{O}(g)$, denn es gilt: $\lim\limits_{x\to\infty} \frac{10x}{0.1x} = 100 < \infty$. Dies mag auf den ersten Blick verwirrend erscheinen. Man führe sich aber vor Augen, dass beide Funktionen das gleiche Wachstumsverhalten zeigen: Eine Verdoppelung des Arguments für sowohl bei $f$ als auch bei $g$ zu einer Verdoppelung des Funktionswerts.
+        \item Jede Polynomfunktion $f: x \mapsto x^n, n \in \N^+$ wächst langsamer als jede Exponentialfunktion $g: x \mapsto e^{ax}, a > 0$, also $f \in o(g)$. Dies zeigt man leicht durch Betrachtung des Grenzwerts $\lim\limits_{x\to\infty} \frac{x^n}{e^{ax}}$. Dieser ergibt $0$, wie sich durch $n$-faches Anwenden der Regeln von L'Hôpital zeigen lässt. Algorithmen mit polynomielle Laufzeit sind also solchen mit expoentieller Laufzeit gegenüber zu bevorzugen. Wenn das Argument nur ausreichend groß ist, wird die Exponentialfunktion größere Werte annehmen als das Polynom, siehe hierzu auch Abbildung \ref{fig:BehLargeValFun}.
+        \item Die Funktion $f: x \mapsto \frac{16x^2-16x-2}{10x+2}$ lässt sich mittels \emph{Polynomdivision} umformen zu $f(x) = \frac{8}{5}x - \frac{48}{25} + \frac{46/25}{10x+2}$. Daraus lies man ab, dass $g: x \mapsto \frac{8}{5}x - \frac{48}{25}$ eine diagonale Asymptote darstellt, also $f \sim g$, denn es gilt: $\lim\limits_{x\to\infty} \frac{f(x)}{g(x)} = \lim\limits_{x\to\infty} 1 + \frac{46/25}{(10x+2)\cdot(\frac{8}{5}x - \frac{48}{25})} = 1$.
+    \end{enumerate}
+\end{example}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.45\textwidth]{./gnuplot/diagonal-asymptote}
+    \includegraphics[width=0.45\textwidth]{./gnuplot/example-little-o}
+    \caption{Beispiele für das Verhalten von Funktionen im Unendlichen. Links: Diagonale Asymptote. Rechts: Eine Polynom ist in Klein-O jeder Exponentialfunktion.}
+    \label{fig:BehLargeValFun}
+\end{figure}
 
 \section{Spezielle Funktionen}
 
@@ -343,117 +606,259 @@ In diesem Abschnitt betrachten wir zuerst einige grundlegende Funktionen und sch
 
 \begin{minipage}[t]{1\textwidth}
     \begin{wrapfigure}{L}{6cm}
-        \label{fig:ExBaseFunLin}
         \centering
         \includegraphics[width=6cm]{./gnuplot/base-function-linear}
         \caption{Graph einer linearen Funktion}
+        \label{fig:ExBaseFunLin}
     \end{wrapfigure}
     \textbf{Lineare Funktionen} beschreiben ein konstantes Wachstum oder ein konstantes Gefälle und haben eine \textbf{Gerade} als Graphen. In der Darstellung $x \to mx+n, m\ne 0$ werden sie charakterisiert durch 2 wesentliche Parameter. Der Anstieg $m$ gibt an, um wieviel der Funktionswert zu- oder abnimmt, wenn das Argument um eine Einheit erhöht wird. Der Startwert $n$ gibt, welcher initiale Funktionswert dem Argument $0$ zugeordnet ist und ist gleichzeitig der Schnittpunkt mit der Ordinate. Lineare Funktionen sind definiert für alle reellen Zahlen und können alle reellen Werte annehmen. Lineare Funktionen werden auch verwendet, um zwischen zwei Punkten $(x_1,y_1)$ und ($x_2,y_2)$ zu interpolieren. Die Gerade, welche durch diese beiden Punkte verläuft, lautet dann $x \to y_1 + \frac{x-x1}{x_2-x_1} \cdot (y_2-y_1)$.
 \end{minipage}
 
 \begin{minipage}[t]{1\textwidth}
     \begin{wrapfigure}{R}{6cm}
-        \label{fig:ExBaseFunHyperbola}
         \centering
         \includegraphics[width=6cm]{./gnuplot/base-function-hyperbola}
         \caption{Graph einer Hyperbelfunktion}
+        \label{fig:ExBaseFunHyperbola}
     \end{wrapfigure}
     Die \textbf{Hyperbel} ist der Graph von Funktionen der Form $x \to \frac{a}{x}$. Solche Funktionen beschreiben indirekt proportionale Zusammenhänge, wobei das Verdoppeln des Arguments in einer Halbierung des Funktionswerts resultiert. Aufgrund der Tatsache, dass eine Division durch $0$ nicht erklärt ist, muss diese Zahl auch vom Definitionsbereich ausgeschlossen werden. Zudem ist die $0$ auch nicht für den Wertebereich möglich. Wenn das Argument sich $0$ nähert, wächst der Funktionswert über alle Grenzen, es liegt eine Polstelle vor. Dabei ist es entscheiden, ob man sich von links oder von rechts der Polstelle nähert: $\lim\limits_{n\to 0^-} 1/x = -\infty$, $\lim\limits_{n\to 0^+} 1/x = +\infty$ Für betragsmäßig große Werte nähert sich der Funktionswert $0$, es gilt also $\lim\limits_{x\to\pm\infty} 1/x = 0$.
 \end{minipage}
 
 \begin{minipage}[t]{1\textwidth}
     \begin{wrapfigure}{L}{6cm}
-        \label{fig:ExBaseFunQuad}
         \centering
         \includegraphics[width=6cm]{./gnuplot/base-function-quadratic}
         \caption{Graph einer quadratischen Funktion}
+        \label{fig:ExBaseFunQuad}
     \end{wrapfigure}
     \textbf{Quadratische Funktionen} ergeben in der graphischen Darstellung eine \textbf{Parabel}. In der Form $x \to a(x-x_0)^2+y_0, a\ne 0$ wird diese beschrieben durch ihren Scheitelpunkt, der bei $(x_0,y_0)$ liegt, und ihre Krümmung, die durch $a$ beschrieben wird. Für $a<0$ ist die Parabel nach unten geöffnet, für $a>0$ ist sie nach oben geöffnet. Quadratische Funktionen sind für alle reellen Werte definiert. Ihre Wertebereich ist nach oben ($a<0$) beziehungsweise nach unten ($a>0$) durch den Scheitelpunkt beschränkt. Sie sind zudem achsensymmetrisch zur vertikalen Spiegelachse durch den Scheitelpunkt. Physikalisch beschreiben Parabeln unter Anderem Verläufe von Größen, deren Zuwachs oder Abfall konstant ist. Etwa nimmt bei einer gleichmäßigen Beschleunigung die Geschwindigkeit konstant zu oder ab.
 \end{minipage}
 
 \begin{minipage}[t]{1\textwidth}
     \begin{wrapfigure}{R}{6cm}
-        \label{fig:ExBaseFunRoot}
         \centering
         \includegraphics[width=6cm]{./gnuplot/base-function-root}
         \caption{Graph zweier Wurzelfunktionen}
+        \label{fig:ExBaseFunRoot}
     \end{wrapfigure}
     \textbf{Wurzelfunktionen} $x \to \sqrt{x}$ sind die Umkehrung quadratischer Funktionen, deren Graph eine \textbf{gekippte Parabel} darstellt. Da eine Parabel manche Funktionswerte doppelt annimmt, muss bei der Umkehrung der Definitionsbereich auf den linken oder rechten Parabelast eingeschränkt werden. Links in der Abbildung sind zwei Funktionen dargestellt, zusammen ergeben sie eine vollständige Parabel. Der Definitionsbereich von Wurzelfunktionen ist dadurch beschränkt, dass im Argument der Wurzel nur nichtnegative Argument stehen dürfen. Auch der Wertebereich ist eingeschränkt, da die Wurzeloperation keine negativen Werte zurückliefern kann.
 \end{minipage}
 
 \begin{minipage}[t]{1\textwidth}
     \begin{wrapfigure}{L}{6cm}
-        \label{fig:ExBaseFunExpo}
         \centering
         \includegraphics[width=6cm]{./gnuplot/base-function-expo}
         \caption{Graph einer Exponentialfunktion}
+        \label{fig:ExBaseFunExpo}
     \end{wrapfigure}
-    \textbf{Exponentialfunktionen} beschreiben ein exponentielles Wachstum, welches sich etwa in der Zinseszinsrechnung findet, bei radioaktiven Zerfällen eine Rolle spielt oder auch die der Vermehrung von Bakterienkulturen beschreibt. In der Form $x \to a^x, a>0$ stellt der Parameter $a$ ein Maß für den Zuwachs ($a>1$) oder Abfall ($0<a<1$) dar. Etwa bedeutet $x \to 3^x$, dass ein Größe $x$ sich verdreifacht, wenn das Argument $x$ um eine Einheit größer wird. Oft werden Exponentialfunktionen auch mit der Basis $e$ (\mention{Eulersche Zahl}) geschrieben. Dies ist aufgrund der Umformung $a^x = e^{\ln(a)x}$ immer möglich. Exponentialfunktionen sind für alle reellen Zahlen definiert, ihr Wertebereich aber ist dadurch eingeschränkt, dass das Potenzieren nur positive Zahlen liefert. Das Verhalten im Unendlichen hängt vom Parameter $a$ ab. Für den Fall $0<a<1$ näheren sich die Funktionswerte der $0$ für kleine Argumente und steigen unbegrenzt an für große Argumente. Umgedreht verhält es sich für $a>1$. Es gilt $\lim\limits_{x\to-\infty} a^x = \begin{cases} \infty & a \in (0,1)  \\ 0 & a \in (1, \infty) \end{cases}$ und $\lim\limits_{x\to\infty} a^x = \begin{cases} 0 & a \in (0,1)  \\ \infty & a \in (1, \infty) \end{cases}$.
+    \textbf{Exponentialfunktionen} beschreiben ein exponentielles Wachstum, welches sich etwa in der Zinseszinsrechnung findet, bei radioaktiven Zerfällen eine Rolle spielt oder auch die der Vermehrung von Bakterienkulturen beschreibt. In der Form $x \to a^x, a>0$ stellt der Parameter $a$ ein Maß für den Zuwachs ($a>1$) oder Abfall ($0<a<1$) dar. Etwa bedeutet $x \to 3^x$, dass ein Größe $x$ sich verdreifacht, wenn das Argument $x$ um eine Einheit größer wird. Oft werden Exponentialfunktionen auch mit der Basis $e$ (\mention{Eulersche Zahl}) geschrieben. Dies ist aufgrund der Umformung $a^x = e^{\ln(a)x}$ immer möglich. Exponentialfunktionen sind für alle reellen Zahlen definiert, ihr Wertebereich aber ist dadurch eingeschränkt, dass das Potenzieren nur positive Zahlen liefert. Das Verhalten im Unendlichen hängt vom Parameter $a$ ab. Für den Fall $0<a<1$ näheren sich die Funktionswerte der $0$ für kleine Argumente und steigen unbegrenzt an für große Argumente. Umgedreht verhält es sich für $a>1$. Es gilt $\lim\limits_{x\to-\infty} a^x = \begin{cases} \infty & , a \in (0,1)  \\ 0 & , a \in (1, \infty) \end{cases}$ und $\lim\limits_{x\to\infty} a^x = \begin{cases} 0 & , a \in (0,1)  \\ \infty & , a \in (1, \infty) \end{cases}$.
 \end{minipage}
 
 \begin{minipage}[t]{1\textwidth}
     \begin{wrapfigure}{R}{6cm}
-        \label{fig:ExBaseFunLog}
         \centering
         \includegraphics[width=6cm]{./gnuplot/base-function-log}
         \caption{Graph zweier logarithmischer Funktionen}
+        \label{fig:ExBaseFunLog}
     \end{wrapfigure}
     \textbf{Logarithmische Funktionen} sind die Umkehrung von Exponentialfunktionen und haben entsprechend ähnliche Eigenschaften. Da das Potenzieren nur positive Zahlen liefert, dürfen im Argument des Logarithmus ebenfalls nur positive Zahlen stehen. Da die Exponentialfunktion beliebige Argument erlaubt, ist der Wertebereich der logarithmischer Funktionen unbeschränkt. In der Form $x \to \log_a{x}$ stellt der Parameter $a$ die Basis des Logarithmus dar, welche ein Maß für die Krümmung der Kurve ist. Für $a>1$ ist die Logarithmusfunktion steigend, für $0<a<1$ fallend. Oft wird sie analog zu Exponentialfunktionen auch mit der Basis $e$ geschrieben, was ebenfalls aufgrund der Umformung $\log_a(x) = \frac{\ln x}{\ln a}$ immer möglich ist. Eine Anwendung von Logarithmen sind sogenannte logarithmische Skalen, die etwa bei der Einheit \emph{Dezibel} oder bei der logarithmischen Achseneinteilung eines Diagramms (siehe \ref{fig:LogScalePlot} und \ref{fig:UniLogScale}) verwendet wird.
 \end{minipage}
 
 \begin{minipage}[t]{1\textwidth}
     \begin{wrapfigure}{L}{7cm}
-        \label{fig:ExBaseFunExpo}
         \centering
         \includegraphics[width=7cm]{./gnuplot/base-function-sine}
         \caption{Graph einer Sinusfunktion}
+        \label{fig:ExBaseFunSine}
     \end{wrapfigure}
     \textbf{Trigonometrische Funktionen} (Winkelfunktion) beschreiben Zusammenhänge am Kreis und Dreieck (Verhältnis von An- bzw. Gegenkathete und Abszisse) und in der Physik sogenannte harmonische Schwingungen. Es handelt sich um periodische Funktionen mit beschränktem Wertebereich. In der Form $x \to A\sin(2 \pi f (x-p)) + R$ wird die Schwingung durch vier wesentliche Parameter beschrieben. $R$ gibt die Ruhelage an, um welche sich die Schwingung vollzieht. $A$ bezeichnet die Amplitude, welche die maximale Auslenkung aus der Ruhelage angibt. Der Parameter $f$ stellt die Frequenz der Schwingung dar und ist ein Maß dafür, wieviele Perioden (Schwingungen) in einer Einheit des Arguments $x$ vollzogen werden. Daraus abgeleitet wird auch häufig die sogenannte Kreisfrequenz $w=2\pi f$ und die Periodendauer $T = 1 / f$ verwendet. Schließlich beschreibt $p$ die Phase der Schwingung, also zu welchem Zeitpunkt die Ruhelage durchlaufen wird. Durch Ändern der Phase wird der Graph nach links oder rechts verschoben, dadurch lässt sich eine Sinusfunktion und eine Kosinusfunktion ineinander transformieren. Die Phase spielt eine entscheidende Rolle bei dem physikalischen Phänomenen \emph{Interferenz}.
 \end{minipage}
 
 \begin{minipage}[t]{1\textwidth}
     \begin{wrapfigure}{R}{7cm}
-        \label{fig:ExBaseFunTan}
         \centering
         \includegraphics[width=7cm]{./gnuplot/base-function-tan}
         \caption{Graph der Tangensfunktion}
+        \label{fig:ExBaseFunTan}
     \end{wrapfigure}
     Die \textbf{Tangensfunktion} ist eine spezielle trigonometrische Funktion, welche sich aus der Sinus- und Kosinusfunktion ableitet: $\tan(x) := \frac{\sin(x)}{\cos(x)}$. Seine Periode ist halb so groß wie die der Sinus- und Kosinusfunktion. Durch den Quotienten wird der Definitionsbereich der Tangensfunktion eingeschränkt, wodurch nur Argument erlaubt sind, bei denen der Kosinus ungleich $0$ ist ($\degrees{90}, \degrees{270}, \degrees{450}, ...$). Manchmal wird auch der sogenannte Kotangens verwendet, welcher sich als Inverses des Tangens ergibt: $\cot(x) := \frac{1}{\tan(x)} = \frac{\sin(x)}{\cos(x)}$. Der Wertebereich hat keine Einschränkung, der Tangens kann jede reelle Zahl annehmen.
 \end{minipage}
 
 \begin{minipage}[t]{1\textwidth}
     \begin{wrapfigure}{L}{7cm}
-        \label{fig:ExBaseFunArc}
         \centering
         \includegraphics[width=7cm]{./gnuplot/base-function-arc}
         \caption{Graph zweier zyklometrischen Funktionen}
+        \label{fig:ExBaseFunArc}
     \end{wrapfigure}
     \textbf{Zyklometrische Funktionen} (Arkusfunktion) sind die Umkehrung der trigonometrischen Funktionen. Der Definitionsbereich muss eingeschränkt werden, da die trigonometrischen Funktionen aufgrund ihrere Periodizität sonst nicht umkehrbar sind. Diese treten in der Praxis häufig auf, wenn Gleichungen mit trigonometrischen Funktionen zu lösen sind. Dabei ist unbedingt darauf zu achten, dass Lösungen nicht vergessen werden. Soll etwa $\sin(x)=1$ gelöst werden, liefert die naive Anwendung der Arkussinusfunktion $\text{asin}(1) = \degrees{90}$ und lässt die Lösungen $\dots, \degrees{-270}, \degrees{450}, \dots$ außen vor. Notiert werden sie als $\text{asin}$, $\text{acos}$ und $\text{atan}$, wobei das \emph{a} für \emph{arcus} oder \emph{Ark} (Bogen) steht. Die Funktionswerte sind Winkel, welche als Länge eines Kreisbogens mit diesem Winkel interpretiert werden können. Manchmal werden diese Funktionen auch als $\sin^{-1}$, $\cos^{-1}$ und $\tan^{-1}$ notiert. Dies ist immer im Sinne der Umkehrfunktion und nie als Reziprokenbildung zu verstehen.
 \end{minipage}
 
 \begin{minipage}[t]{1\textwidth}
     \begin{wrapfigure}{R}{7cm}
-        \label{fig:ExBaseFunTan}
         \centering
         \includegraphics[width=7cm]{./gnuplot/base-function-hyp}
         \caption{Graph der hyperbolischen Funktionen}
+        \label{fig:ExBaseFunHyperbolic}
     \end{wrapfigure}
     Die trigonometrischen Funktionen Sinus und Kosinus lassen sich mithilfe komplexer Zahlen und der Exponentialfunktion darstellen als $\cos(x) = \frac{e^{jx}+e^{-jx}}{2}$ und $j\cdot \sin(x) = \frac{e^{jx}-e^{-jx}}{2}$. Anders ausgedrückt können Sinus- und Kosinusfunktion also als gerader (achsensymmetrischer) und ungerader (punktsymmetrischer) Anteil der Exponentialfunktion für imaginäre Argumente betrachtet werden. Analog dazu werden die \textbf{hyberbolischen Funktionen} definiert als gerade und ungerader Anteil der Exponentialfunktion für reelle Argumente: $\text{cosh}(x) = \frac{e^x+e^{-x}}{2}$ (Hyperbelkosinus, \emph{cosinus hyperbolicus}) und $\text{sinh}(x) = \frac{e^x-e^{-x}}{2}$ (Hyperbelsinus, \emph{sinus hyberbolicus}).
 \end{minipage}
 
 
-\begin{figure}[h]
-    \label{fig:LogScalePlot}
+\begin{figure}
     \centering
-    \includegraphics[width=0.6\textwidth]{./gnuplot/log-scale-plot}
+    \includegraphics[width=0.45\textwidth]{./gnuplot/log-scale-plot}
     \caption{Graph von $10^x$ mit logarithmischer Einteilung der Ordinate}
+    \label{fig:LogScalePlot}
 \end{figure}
 
 \clearpage
 
-Polynome
-Gebrochenrat. Fkt.
+\section{Polynome und Quotienten von Polynomen}
 
-\section{Polynomdivision und Partialbruchzerlegung}
+\subsection{Polynome}
 
-TOOD
+\begin{definition}
+    Ein \textbf{Polynom} in einer Variablen $x\in \R$ ist eine Summe aus ganzzahligen positiven Potenzen (Monomen) von $x$ mit Vorfaktor, genannt Koeffizient. Die höchste vorkommende Potenz $x^n$ heißt Grad $n$ des Polynoms.
+    $$
+        p_n(x) = \sum\limits_{i=0}^n a_i x^i = a_0 + a_1 x + a_2 x^2 + a_3 x^3 + \dots + a_n x^n, a_i \in \R, a_n \ne 0
+    $$
+\end{definition}
+
+So ist etwa $x^3+2x$ ein Polynom dritten Grads mit den Koeffizienten $a_3 = 1, a_2 = 0, a_1 = 2, a_0=0$.
+
+Polynome sind für alle rellen Zahlen erklärt und immer stetig. Sie sind gerade (achsensymmetrisch), wenn sie nur aus gerade Potenzen bestehen und ungerade (punktsymmetrisch), wenn sie nur aus ungerade Potenzen bestehen. Dieser Zusammenhang ist auch eine Motivation für die Bezeichnung "gerade" und "ungerade" Funktion. Ihr Verhalten im Unendlichen bestimmt sich alleine durch ihren Grad $n$ und das Vorzeichen des höchsten Koeffizienten $a_n$. Ist der Grad des Polynoms gerade, dann streben die Funktionswerte für $x\to\pm\infty$ beide gegen $+\infty$ bei $a_n > 0$ beziehungsweise beide gegen $-\infty$ bei $a_n < 0$. Für Polynome, deren Grad ungerade ist, streben die Funktionswerte für $x \to -\infty$ gegen $-\infty$ bei $a_n > 0$ ($\infty$ bei $a_n < 0$) und für $x \to \infty$ gegen $+\infty$ bei $a_n > 0$ ($-\infty$ bei $a_n < 0$).
+
+Eine Aussage über die Gleichheit zweier Polynome macht der folgende Satz:
+
+\begin{statement}{Gleicheit zweier Polynome}{EqPoly}
+    Zwei Polynome $p_n(x) = \sum\limits_{i=0}^n a_i x^i$ und $q_m(x) = \sum\limits_{i=0}^m b_i x^i$ sind dann und nur genau dann gleich, wenn sie den gleichen Grad haben und all ihre Koeffizienten gleich sind, also wenn gilt: $n=m$ und $a_i = b_i$ für $i=0,1,2,\dots,n$.
+\end{statement}
+
+Das Prüfen, ob die Koeffizienten paarweise gleich sind, nennt man einen sogenannten \textbf{Koeffizientenvergleich}.
+
+Eine weitere Darstellung von Polynomen ist durch die sogenannte Linearfaktorzerlegung gegeben. Diese steht im Zusammenhang mit der Existenz von Nullstellen, der durch den folgenden Satz gegeben wird.
+
+\begin{statement}{Fundamentalsatz der Algebra}{FundAlg}
+    Jedes Polynom $p_n$ lässt sich im Bereich der komplexen Zahlen schreiben als Produkt von Linearfaktoren.
+    $$
+        p_n(x) = a_n \cdot (x-x_1) \cdot (x-x_2) \cdot \dots \cdot (x-x_n)
+    $$
+    Tritt eine Nullstelle $x_i$ $k$-fach auf, heißt sie $k$-fache Nullstelle und $k$ heißt Vielfachheit der Nullstelle. Die Summe der Vielfachheiten aller Nullstellen beträgt damit $n$.
+\end{statement}
+
+Jedes Polynom vom Grad $n$ hat daher in den komplexen Zahlen $n$-Nullstellen. Im reellen ist dadurch eine Höchstgrenze gesetzt, ein reelles Polynom kann höchstens so viele Nullstellen haben, wie sein Grad ist.  Polynome mit geraden Grad können im reellen gar keine Lösung haben, beispielsweise ist $x^2+1=0$ nicht lösbar. Andererseits hat jedes ungerade Polynom wenigstens eine Nullstelle. Dies ist anschaulich klar, da solche Polynome unterschiedliches Vorzeichen bezüglich des Verhalten im Unendlichen aufweisen.
+
+Weiterhin kann anhand der Vielfachheit einer Nullstelle eine Aussage über die Art der Nullstelle getroffen werden:
+
+\begin{enumerate}
+    \item Ist die Vielfachheit der Nullstelle ungerade, so schneidet das Polynom dort die x-Achse.
+    \item Ist die Vielfachheit der Nullstelle gerade, so berührt das Polynom dort die x-Achse nur.
+\end{enumerate}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.55\textwidth]{./gnuplot/polynom-root-multiplicity}
+    \caption{Nullstelle mit ungerader Vielfachheit (links) und gerader Vielfachheit (rechts)}
+    \label{fig:PolyRootMulti}
+\end{figure}
+
+\subsection{Gebrochenrationale Funktionen}
+
+\begin{definition}{Gebrochenrationale Funktion}{RatFun}
+    Unter einer \textbf{gebrochenrationalen Funktion} versteht man den Quotienten zweier Polynome $p_n$ und $q_m$ vom Grad $n$ und $m$:
+    $$
+        f(x) = \frac{p_n(x)}{q_m(x)}
+    $$
+    Ist der Grad des Zählerpolynoms größer oder gleich dem Grad des Nennerpolynoms ($n \ge m$), spricht man von einer unecht gebrochenrationalen Funktion. Andernfalls ($n < m$) heißt sie echt gebrochenrationale Funktion.
+\end{definition}
+
+Durch das Zählerpolynom werden die Nullstellen der gebrochenrationalen durch $p_n(x)$ festgelegt. Durch das Nennerpolynom wird der Definitionsbereich (und damit auch Definitionslücken beziehungsweise Polstellen) durch $q_m(x) = 0$ festgelegt. Falls sowohl das Zählerpolynom als auch das Nennerpolynom für das gleiche Argument $x_0$ den Wert $0$ ergeben, muss eine Grenzwertbetrachtung für dieses Argument durchgeführt werden. Dabei ist es hilfreich, den Linearfaktor $x-x_0$ abzuspalten.
+
+\begin{example}{Untersuchung einer gebrochenrationalen Funktion}{ExamRationalFun}
+    \begin{itemize}
+        \item Untersucht werden soll die gebrochenrationale Funktion $\frac{x^2-x-2}{x^3-2x^2-4x+8}$. Für $x_0=2$ wird sowohl der Nenner als auch der Zähler $0$. Zerlegt man Nenner und Zähler in Linearfaktoren, erhält man $\frac{(x-2)(x+1)}{(x-2)(x-2)(x+2)} = \frac{x+1}{(x-2)(x+2)}$. Der Faktor $x-2$ kommt nur noch im Nenner vor, damit divergiert der Quotient bestimmt für $x\to 2$. Bei $x_0=2$ liegt also eine Polstelle vor. Für $x_0=-1$ wird nur der Zähler $0$, jedoch nicht der Nenner, daher liegt hier eine Nullstelle vor. Für $x_0=-2$ wird nur der Nenner $0$, jedoch nicht der Zähler, daher liegt hier eine Polstelle vor.
+        \item Wir betrachten noch die gebrochenrationale Funktion $\frac{x^3-3x^2+4}{x^2-4}$. Für $x_0=2$ wird ebenfalls Nenner als auch Zähler $0$. Die Linearfaktorzerlegung allerdings ergibt $\frac{(x-2)(x-2)(x+1)}{(x-2)(x+2)} = \frac{(x-2)(x+1)}{x+2}$. Im Grenzwert $x \to 2$ erhält man so $0$. Also liegt bei $x_0=-2$ eine Definitionslücke vor, die durch stetige Ergänzung mit $f(2)=0$ schließbar ist.
+    \end{itemize}
+\end{example}
+
+Abschließend wollen wir uns noch anschauen, wie man gebrochenrationale Funktionen umformen kann. Diese Rechenverfahren erleichtern oft die Arbeit und sollten daher gut beherrscht werden.
+
+\subsection{Polynomdivision}
+
+\begin{statement}{Zerlegbarkeit einer unecht gebrochenrationalen Funktion}{PolyDiv}
+    Mittels der sogenannten \textbf{Polynomdivision} lässt sich eine unecht gebrochenrationale Funktion zerlegen in die \textbf{Summe aus einem Polynom und einer echt gebrochenrationalen Funktion} (dem Rest):
+    $$
+        \frac{p_n(x)}{q_m(x)} = \underbrace{p(x)}_{\text{Polynom}} + \underbrace{\frac{r(x)}{p_m(x)}}_{\text{Rest (echt gebrochenrational)}}
+    $$
+\end{statement}
+
+Bei der Polynomdivision werden Zähler- und Nennerpolynom zuerst so sortiert, dass die Monome von der höchsten Potenz zur niedrigsten Potenz geordnet sind. Anschließend wird der Zählerkoeffzient der höchsten Potenz durch den Nennerkoeffizienten der höchsten Potenz geteilt und als erster Summand des Ergebnisses aufgeschrieben. Nun wird dieser Summand mit dem Nennerpolynom multipliziert, und vom Zählerpolynom abgezogen. Dadurch entsteht ein neues Polynom $p'$. Der Algorithmus wird nun mit dem neuen Polynom $p'$ anstelle des ursprünglichen Zählerpolynoms erneut ausgeführt. Dies wird so lange getan, bis der Grad des neu enstandenen Polynom kleiner ist als der Grad des Nennerpolynoms. Das zuletzt erhalten Polynom ist dann der Rest $r$, die bis dahin notierten Summanden sind das Polynom $p$.
+
+\begin{example}{Durchführung der Polynomdivision}{PolyDiv}
+    Die unecht gebrochenrationale Funktion $\frac{x^3-4x^2+2x-3}{x+2}$ soll zerlegt werden. Dazu wenden wir die Polynomdivision an:
+
+    \polylongdiv{x^3-4x^2+2x-3}{x+2}
+\end{example}
+
+\begin{example}{Abspalten eines Linearfaktors per Polynomdivision}{PolyRemLinFac}
+    Gesucht sind die Nullstellen des Polynoms $p_3(x) = 27x^3-111x^2+100x+28$. Durch Probieren wurde bereits herausgefunden, dass $x_1 =2$ eine Nullstelle ist. Aufgrund des Fundamentalsatz der Algebra wissen wir, dass sich das Polynom daher schreiben lässt als $p_3(x) = (x-2) \cdot p_2(x)$, wobei $p_2$ ein Polynom zweiten Grads ist. Dies ergibt sich durch Umstellen als $p_2(x) = \frac{p_3(x)}{x-2}$ und kann per Polynomdivision ermitteln werden. Man erhält:
+
+    \polylongdiv{27x^3-111x^2+100x+28}{x-2}
+
+    Die Nullstellen des quadratischen Polynoms $p_2(x) = 27x^2-57x-14$ lassen sich mit der bekannten Formel aus \ref{eq:RootQuadGen} lösen und wir erhalten die letzten beiden Nullstellen zu $x_2=-\frac{2}{9}$ und $x_3=\frac{7}{3}$.
+\end{example}
+
+\subsection{Partialbruchzerlegung}
+
+Hat man durch Polynomdivision eine echt gebrochenrationale Funktion gewonnen und hat diese im Nenner noch ein Polynom, dessen Grad größer als $1$ ist, kann man diese mittels der Partialbruchzerlegung noch weiter zerlegen in eine Summe aus sogenannten \textbf{Partialbrüchen}. Dieses Verfahren spielt etwa eine Rolle bei der Bestimmung einer Stammfunktion oder bei Differentialgleichungen.
+
+Wie man dabei vorgeht, soll anhand des Beispiels $f(x) = \frac{x}{x^2-1}$ illustriert werden.
+
+\begin{enumerate}
+    \item Schritt 1: Nennerpolynom faktorisieren. Es ist
+    $$
+        \frac{x}{x^2-1} = \frac{x}{(x-1)(x+1)}
+    $$
+    \item Schritt 2: Partialbrüche mit zunächst noch unbekannten Koeffizienten ansetzen.
+    $$
+        \frac{x}{(x-1)(x+1)} = \frac{A}{(x-1)} + \frac{B}{(x+1)}
+    $$
+    \item Schritt 3: Summe von Brüchen auf einen Nenner bringen.
+    $$
+        \frac{A}{(x-1)} + \frac{B}{(x+1)} = \frac{A(x+1) + B(x-1)}{(x-1)(x+1)}
+    $$
+    \item Schritt 4: Zähler nach Potenzen von $x$ zusammenfassen.
+    $$
+        \frac{A(x+1) + B(x-1)}{(x-1)(x+1)} = \frac{(A+B)x+(A-B)}{(x-1)(x+1)}
+    $$
+    \item Schritt 5: Koeffizienten durch Koeffizientenvergleich bestimmen.
+    $$
+        A+B=1, A-B=0, \text{ damit } A=B=\frac{1}{2}
+    $$
+\end{enumerate}
+
+Koeffizientenvergleich hier bedeutet, dass die Zählerpolynome im Nenner gleich sein müssen, was nur genau dann der Fall ist, wenn alle Koeffizienten der Polynome gleich sind.
+
+Für unser Beispiel erhalten wird damit eine Summe aus zwei Partialbrüchen:
+
+$$
+    f(x) = \frac{x}{x^2-1} = \frac{1/2}{x-1} + \frac{1/2}{x+1}
+$$
+
+Man sieht hier sofort einen Anwendungsfall der Partialbruchzerlegung: Falls eine Stammfunktion von $f$ gesucht ist, sind die Partialbrüche nun einfach zu integrieren.
+
+
+Bisher sind wir davon ausgegangen, dass das Zählerpolynom faktorisierbar ist und nur einfache Nullstellen hatte. Die letzten beiden Anmerkungen betreffen den Fall, wenn dies nicht gegeben ist:
+
+\begin{enumerate}
+    \item Anmerkung 1: Tritt eine Nullstelle im Zählerpolynom $k$-fach auf, müssen $k$ Partialbrüche in den Ansatz einfließen:
+    $$
+        \frac{p(x)}{\dots * (x-x_0)^k * \dots} = \dots + \frac{A_1}{x-x_0} + \frac{A_2}{(x-x_0)^2} + \dots + \frac{A_k}{(x-x_0)^k} + \dots
+    $$
+    \item Anmerkung 2: Arbeitet man in den reellen Zahlen und kann das Zählerpolynom nicht vollständig faktorisiert werden, muss der Zähler des Partialbruchs ein Polynom, dessen Grad um eins niedriger ist als der Faktor im Nenner:
+    $$
+        \frac{p(x)}{\dots * (x^2+1) * \dots} = \dots + \frac{A_1x+A_2}{x^2+1} + \dots
+    $$
+\end{enumerate}

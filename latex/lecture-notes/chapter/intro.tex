@@ -207,9 +207,7 @@ Um mathematische Ideen zu kommunizieren, ist eine Notation notwendig, die gewiss
 
 Man beachte die Analogie zu Programmiersprachen, auch diese stellen eine solche formale Sprache dar. Genauso wie ein Programm dargestellt werden kann als \emph{Syntaxbaum} ist dies auch mit einem mathematischen Ausdruck möglich. Ein Syntaxbaum beginnt immer an der Spitze mit der hauptsächlichen Operation, und verzweigt dann in die einzelnen Unteroperation. Wir betrachten als Beispiel zuerst das folgende Computerprogramm zur Berechnung der $n$.-ten Fibonacci-Zahl in Listing \ref{lst:JsFibonacci}.
 
-\begin{listing}[H]
-\caption{JavaScript-Programm zur Berechnung der n.-ten Fibonacci-Zahl}
-\label{lst:JsFibonacci}
+\begin{listing}
 \begin{jscode}
 function fibonacci(n) {
 	let n_0 = 0;
@@ -222,52 +220,45 @@ function fibonacci(n) {
 	return n_0;
 }
 \end{jscode}
+\caption{JavaScript-Programm zur Berechnung der n.-ten Fibonacci-Zahl}
+\label{lst:JsFibonacci}
 \end{listing}
 
 
-In oberster Ebene ist die Struktur dieses Programms eine \emph{Function Declaration}, bestehend aus einem Funktionsnamen, einem Argument und einem Funktionskörper. Der Funktionskörper selbst ist zuallererst ein \emph{Block Statement}, bestehend aus einer \emph{Statement List}. Das Statement auf Zeile 5, \lstinline{const sum = n_0 + n_1}, wiederum ist ein \emph{Variable Declaration}-Statement, bestehend aus einem \emph{Identifier} für den Variablennamen und einem \emph{Initializer} für den Wert der Variablen. Der \emph{Initializer} ist eine \emph{Sum Expression} (Summen-Ausdruck), der wiederum aus 2 Summanden besteht. Jeder Summand ist in diesem Fall ein \emph{Identifier} für den jeweiligen Variablennamen. Verbal formuliert mag diese Struktur nur schwer vorstellbar sein. Graphisch ist der Syntaxbaum auszugsweise in Abbildung \ref{fig:JsFibinacciBaumPart} dargestellt. Der vollständige Syntaxbaum findet sich in Abbildung \ref{fig:JsFibinacciBaum}.
+In oberster Ebene ist die Struktur dieses Programms eine \emph{Function Declaration}, bestehend aus einem Funktionsnamen, einem Argument und einem Funktionskörper. Der Funktionskörper selbst ist zuallererst ein \emph{Block Statement}, bestehend aus einer \emph{Statement List}. Das Statement auf Zeile 5, \lstinline{const sum = n_0 + n_1}, wiederum ist ein \emph{Variable Declaration}-Statement, bestehend aus einem \emph{Identifier} für den Variablennamen und einem \emph{Initializer} für den Wert der Variablen. Der \emph{Initializer} ist eine \emph{Sum Expression} (Summen-Ausdruck), der wiederum aus 2 Summanden besteht. Jeder Summand ist in diesem Fall ein \emph{Identifier} für den jeweiligen Variablennamen. Verbal formuliert mag diese Struktur nur schwer vorstellbar sein. Graphisch ist der Syntaxbaum auszugsweise in Abbildung \ref{fig:JsFibonacciBaumPart} dargestellt. Der vollständige Syntaxbaum findet sich in Abbildung \ref{fig:JsFibonacciBaum}.
 
-
-\begin{figure}[h]
-	\caption{Syntaxbaum zum JavaScript-Programm für Fibonacci-Zahlen (Auszug)}
-	\label{fig:JsFibinacciBaumPart}
+\begin{figure}
 	\centering
 	\includegraphics[width=0.5\textwidth]{./img/js-tree-fibonacci-part.png}
-\end{figure}
-
-
-\begin{figure}[p]
-	\caption{Syntaxbaum zum JavaScript-Programm für Fibonacci-Zahlen}
-	\label{fig:JsFibinacciBaum}
-	\centering
-	\includegraphics[width=0.95\textwidth]{./img/js-tree-fibonacci.png}
+	\caption{Syntaxbaum zum JavaScript-Programm für Fibonacci-Zahlen (Auszug)}
+	\label{fig:JsFibonacciBaumPart}
 \end{figure}
 
 Für die mathematische Notation besonders relevant sind die Ausdrücke (\emph{Expression}), also Rechenoperationen. Einen mathematischer Term lässt wie erwähnt als Syntaxbaum darstellen. Solch ein Syntaxbaum lässt sich schriftlich auf verschiedene Weisen schreiben. Die mathematische Notation lehnt sich an der sogenannten Infix-Notation an, wobei die Operatoren zwischen die Operanden geschrieben werden. Eine weitere Notation stellt die Polnische Notation dar, die etwa in manchen Taschenrechner verwendet wird und auch die Grundlage für \mention{Ldap}-Filter darstellt (Lightweight Directory Access Protocol). Wir wollen dies kurz am Beispiel $(a+b)\cdot(c+d)$ illustrieren. Der Syntaxbaum dazu ist zu finden in Abbildung \ref{fig:JsAbcdBaum}.
 
-\begin{figure}[H]
-	\caption{Syntaxbaum für $(a+b)(c+d)$}
-	\label{fig:JsAbcdBaum}
+\begin{figure}
 	\centering
 	\includegraphics[width=0.5\textwidth]{./img/js-tree-abcd.png}
+	\caption{Syntaxbaum für $(a+b)(c+d)$}
+	\label{fig:JsAbcdBaum}
 \end{figure}
 
 Aus dem Syntaxbaum lesen wir ab, dass der Term aus der Hauptoperation \emph{Multiplikation} besteht. Die beiden Faktoren bestehen jeweils aus einer Unteroperation, hier einen Summenbildung. Die Infix-Notation $(a+b)\cdot(c+d)$ beginnt daher mit einem Multiplikationszeichen, zu dessen beiden Seiten Summenzeichen stehen. Um die Rangfolge zu wahren, welche durch den Syntaxbaum vorgegeben ist, erfordert die Infix-Notation die Verwendung von Klammerzeichen. Eine Alternative zur Infix-Notation ist die polnische Notation, welche keine Klammerzeichen benutzt und so etwa einfacher von Computerprogramme verstanden werden kann. Dies erreicht sie dadurch, indem sie zuerst für jeden Operator definiert, welche Arität (Anzahl von Operanden) er hat. Anschließend wird der Operator nicht zwischen die Operanden, sondern vor die Operanden geschrieben. Zusätzlich gibt es noch die sogenannte umgekehrte polnische Notation, wobei der Operator nicht vor, sondern nach den Operanden notiert wird. Für unser Beispiel $(a+b)(c+d)$ ist die polnische Notation dargestellt in Listing \ref{lst:PolAbcd}.
 
-\begin{listing}[H]
-	\caption{Polnische Notation (oben) und umgekehrte polnische Notation (unten)}
-	\label{lst:PolAbcd}
+\begin{listing}
 \begin{textcode}
 * + a b + c d
 a b + c d + *
 \end{textcode}
+	\caption{Polnische Notation (oben) und umgekehrte polnische Notation (unten)}
+	\label{lst:PolAbcd}
 \end{listing}
 
 Schließlich sei noch angemerkt, dass Rechenregeln sich darstellen lassen als Transformationen auf einem Syntaxbaum. Dies stellt die Grundlage dar für Computer-Algebra-System, welche auf symbolischen Ausdrücken arbeiten und diese umformen können. Dies ist in Abbildung \ref{fig:TreeTransformKommutativ} am Beispiel des Kommutativgesetzes dargestellt. Dieses besagt, dass bei einer \emph{Sum Expression} die beiden Unterbäume der beiden Summanden vertauscht werden können. Man beachte, dass die Summanden im Allgemeinen nicht Zahlen oder Variablen, sondern wiederum komplexe Baumstrukturen sind.
 
-\begin{figure}[H]
-	\caption{Syntaxbaumtransformation für das Kommutativgesetz}
-	\label{fig:TreeTransformKommutativ}
+\begin{figure}
 	\centering
 	\includegraphics[width=0.8\textwidth]{./img/tree-transform.png}
+	\caption{Syntaxbaumtransformation für das Kommutativgesetz}
+	\label{fig:TreeTransformKommutativ}
 \end{figure}
