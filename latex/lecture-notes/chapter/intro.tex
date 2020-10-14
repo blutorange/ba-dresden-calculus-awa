@@ -27,18 +27,73 @@ Auch in der Informatik und Programmierung sind mathematische Konzepte in einem b
 	\item Die kontinuierliche Mathematik und die Infinitesimalrechnung stellen den Grundbaustein dar für physikalische Simulationen (Windtunnel, Crash-Test, Physics-Engine) und computergestützte Ingenieurswissenschaften (Gebäudestatik, Hydrodynamik, Schaltkreissimulation).
 \end{itemize}
 
+\section{Menge}
+
+Selten betrachtet man nur eine konkrete Zahl, meist bespricht man von Mengen von Zahlen wie das Interval $[-3,3]$.  Als erstes benötigen wir eine genauere Vorstellung davon, was eine Menge ist.
+
+\begin{definition}{Menge}{Set}
+    Eine \textbf{Menge} ist eine Sammlung verschiedenartiger Elemente. Irrelevant hierbei ist die Reihenfolge der Elemente.
+\end{definition}
+
+Bei obiger Definition handelt es sich um den sogenannten naiven Mengenbegriff. Es hat sich gezeigt, dass diese naive Vorstellung zu Widersprüchen führen kann, weshalb präzisere Formulierungen der Mengentheorie gefunden wurden (etwa Zermelo–Fraenkel-Mengenlehre). Für diese Vorlesung ist der naive Mengenbegriff allerdings ausreichend.
+
+Mengen kann man aus allen möglichen Elementen bilden. In dieser Vorlesung betrachten wir hauptsächlich Mengen aus Zahlen oder Vektoren. Für jeweils zwei Elemente solcher Mengen kann man einen Abstand definieren.
+
+\begin{definition}{Norm}{Norm}
+    Sei $M \subseteq \R^n$ eine Teilmenge von $n$-Tupeln reeller Zahlen (Punkte) und seien $x,y\in M$ zwei Punkte der Menge. Durch die Zuordnung
+    $$
+        m(x,y) = |x-y| = \sqrt{(x_1-y_1)^2 + \dots + (x_n-y_n)^2}
+    $$
+    wird eine \textbf{Norm} definiert, welche den Abstand oder die Distanz der beiden Punkte voneinander beschreibt.
+\end{definition}
+
+Damit lassen sich noch einige wichtige Arten von Mengen definieren:
+
+\begin{definition}{Epsilon-Kugel um einen Punkt}{EpsilonSphere}
+    Sei $x_0\in\R^n$ ein Punkt und $\epsilon > 0$. Dann heißt die Menge
+    $$
+        S_\epsilon(x_0) = \lbrace x \in M \hspace{3mm} | \hspace{3mm} |x-x_0| < \epsilon \rbrace
+    $$
+    eine (offene) \textbf{Epsilon-Kugel} um den Punkt $x_0$.
+\end{definition}
+
+\begin{definition}{Offene Menge}{OpenSet}
+    Eine Teilmenge $M \subseteq \R^n$ der reellen Zahlen heißt \textbf{offene Menge}, wenn es für jeden Punkt der Menge eine Epsilon-Kugel gibt, die vollständig in der Menge liegt:
+    $$
+        \forall x \in M \exists \epsilon > 0: S_\epsilon(x) \subseteq M
+    $$
+\end{definition}
+
+Anschaulich gesprochen hat eine offene Menge keinen Rand, siehe hierzu auch Abbildung \ref{fig:OpenClosedSet}.
+
+\begin{definition}{Geschlossene Menge}{ClosedSet}
+    Eine Teilmenge $M \subseteq \R^n$ der reellen Zahlen heißt \textbf{geschlossene Menge}, wenn ihr Komplement $\R^n \setminus M$ eine offene Menge ist.
+\end{definition}
+
+Anschaulich gesprochen unterscheiden sich eine offenen und eine geschlossene Menge nur dadurch, dass die geschlossene Menge einen Rand hat, der der offenen Menge fehlt.
+
+\begin{definition}{Offene Umgebung eines Punktes}{OpenNeighborhood}
+    Eine offene Menge $U(x) \subseteq \R^n$ heißt \textbf{offene Umgebung} des Punkts $x \in \R^n$ , wenn sie den Punkt $x$ enthält.
+\end{definition}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.55\textwidth]{./svg/open-set}
+    \includegraphics[width=0.35\textwidth]{./svg/closed-set}
+    \caption{Definition einer offenen und geschlossenen Menge. Links: Zu jedem Elemente der Menge gibt es eine kleine Kugel, die vollständig in der Menge enthalten ist. Rechts: Die Grundgesamtheit ohne die geschlossene Menge ist ihrerseits eine offene Menge.}
+    \label{fig:OpenClosedSet}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.3\textwidth]{./svg/open-neighborhood}
+    \caption{Definitions der offenen Umgebung eines Punkts. Die Umgebung kann eine beliebige Form annehmen.}
+    \label{fig:OpenNeighborhood}
+\end{figure}
+
 \section{Zahlenbereiche}
 
 Grundlage für die gesamte Analysis die Objekte, auf denen sie operiert: Zahlen und Zahlenmengen. Zahlen modellieren quantitative Zusammenhänge der realen Welt. Gleichartige Zahlen abstrahiert man als eine Menge zu Zahlenbereichen.
-
-
-\begin{definition}{Menge}{Set}
-	Eine \textbf{Menge} ist eine Sammlung verschiedenartiger Elemente. Irrelevant hierbei ist die Reihenfolge der Elemente.
-\end{definition}
-
-Bei obiger Definition handelt es sich um den sogenannten naiven Mengenbegriff. Es hat sich gezeigt, dass diese naive Vorstellung zu Widersprüchen führen kann,
-weshalb präzisere Formulierungen der Mengentheorie gefunden wurden (etwa Zermelo–Fraenkel-Mengenlehre). Für diese Vorlesung ist der naive Mengenbegriff allerdings
-ausreichend.
 
 Bei der Definition der Zahlenbereich beginnt man mit den natürlichen Zahlen und erweitert diese dann schrittweise.
 

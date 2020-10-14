@@ -136,15 +136,15 @@ Ein Beispiel für die Konturlinien mit farbiger Hervorhebung für eine komplexer
 
 Als zweite Darstellungsform gibt es noch das sogenannte Gradientenfeld, wobei durch Pfeile angezeigt wird, in welcher Richtung die Funktionswerte am stärksten zunehmen. Dies ist etwa bekannt aus Wetterkarten, wo die Windrichtung (näherungsweise) als Gradient des Luftdruckes eingezeichnet ist.
 
-\begin{definition}{Gradientenfeld einer zweistelligen Funktion}{GradField}
-    Unter dem Gradientenfeld einer $n$-stelligen Funktion $f: \R^n \to R$ versteht man die Funktion $G_f: \R^n \to \R^n$, welche jedem Punkt $\vec{r}=(x_1,x_2,...,x_n)$ des Definitionsbereichs von $f$ eine Richtung (einen $n$-dimensionalen Vektor) zuordnet, welcher in Richtung des stärksten Anstiegs von $f$ im Punkt $\vec{r}$ zeigt.
+\begin{definition}{Richtungsfeld einer mehrstelligen Funktion}{GradField}
+    Unter dem \textbf{Richtungsfeld} (Gradientenfeld) einer $n$-stelligen Funktion $f: \R^n \to  \R$ versteht man die Funktion $G_f: \R^n \to \R^n$, welche jedem Punkt $\vec{r}=(x_1,x_2,...,x_n)$ des Definitionsbereichs von $f$ eine Richtung (einen $n$-dimensionalen Vektor) zuordnet, welcher in Richtung des stärksten Anstiegs von $f$ im Punkt $\vec{r}$ zeigt.
 
     $$
         G_f(\vec{r}) = \vec\nabla f(\vec{r}) = \rvec{\pdd{f}{x_1}(\vec{r})}{\vdots}{\pdd{f}{x_n}(\vec{r})}
     $$
 \end{definition}
 
-\begin{example}{Konturlinien einer Funktion}{GradField}
+\begin{example}{Richtungsfeld einer Funktion}{GradField}
     Gesucht ist das Gradientenfeld der zweistelligen Funktion $f: (x,y) \mapsto x^2+y^2$. Gemäß Definition müssen wir zuerst die beiden partiellen Ableitungen nach $x$ und $y$ berechnen:
 
     \begin{alignat*}{1}
@@ -152,7 +152,7 @@ Als zweite Darstellungsform gibt es noch das sogenannte Gradientenfeld, wobei du
         \pdd{}{y} x^2+y^2 &= 2y
     \end{alignat*}
 
-    Damit lässt sich das Gradientenfeld $G: \R^2 \to \R$ nun angeben als:
+    Damit lässt sich das Gradientenfeld $G: \R^2 \to \R^2$ nun angeben als:
 
     $$
         G(x,y) = \tvec{2x}{2y}
@@ -190,17 +190,21 @@ Zum Einen lassen sich zwei Funktionen $f$ und $g$ verketten, indem man sie hinte
     Die Funktion $f: x \to \sin(x^2)$ lässt sich darstellen als verkette Funktion, indem man für die innere Funktion $v(x) = x^2$ wählt und für die äußere Funktion $u(x) = \sin(x)$. Damit gilt $\sin(x^2) = u(v(x)) = u(x^2) = \sin(v(x))$.
 \end{example}
 
-Zum Zweiten kann man den Graphen einstelliger Funktionen entlang der Abszisse oder der Ordinate verschieben und stauchen. Diesen geometrischen Transformationen lassen sich durch einfache Modifikation an der Rechenvorschrift der Funktion erreichen und sind in der folgenden Tabelle zusammengefasst und in Abbildung \ref{fig:TransformFunTrans} sowie \ref{fig:TransformFunScale} graphisch veranschaulicht.
+Zum Zweiten kann man den Graphen einstelliger Funktionen entlang der Abszisse oder der Ordinate verschieben und stauchen. Diesen geometrischen Transformationen lassen sich durch einfache Modifikation an der Rechenvorschrift der Funktion erreichen und sind in Tabelle  \ref{lst:TranslateScaleFun} zusammengefasst und in Abbildung \ref{fig:TransformFunTrans} sowie \ref{fig:TransformFunScale} graphisch veranschaulicht.
 
-\begin{center}
-    \begin{tabular}{ c | c | c }
-        - & \textbf{x-Achse} & \textbf{y-Achse} \\
-        \hline
-        \textbf{Verschiebung} & \makecell{$f(x+c)$: nach links \\ $f(x-c)$: nach rechts} & \makecell{$f(x)+c$: nach oben \\ $f(x)-c$: nach unten} \\
-        \hline
-        \textbf{Skalierung} & \makecell{$f(a \cdot x)$ \\ $|a| > 1$: Stauchen \\ $|a| < 1$: Strecken \\ Für $a<0$ findet zusätzlich \\ Spiegelung an der y-Achse statt.} & \makecell{$a \cdot f(x)$ \\ $|a| > 1$: Strecken \\ $|a| < 1$: Stauchen \\ Für $a<0$ findet zusätzlich \\ Spiegelung an der x-Achse statt.}
-    \end{tabular}
-\end{center}
+\begin{listing}
+    \begin{center}
+        \begin{tabular}{ c | c | c }
+            - & \textbf{x-Achse} & \textbf{y-Achse} \\
+            \hline
+            \textbf{Verschiebung} & \makecell{$f(x+c)$: nach links \\ $f(x-c)$: nach rechts} & \makecell{$f(x)+c$: nach oben \\ $f(x)-c$: nach unten} \\
+            \hline
+            \textbf{Skalierung} & \makecell{$f(a \cdot x)$ \\ $|a| > 1$: Stauchen \\ $|a| < 1$: Strecken \\ Für $a<0$ findet zusätzlich \\ Spiegelung an der y-Achse statt.} & \makecell{$a \cdot f(x)$ \\ $|a| > 1$: Strecken \\ $|a| < 1$: Stauchen \\ Für $a<0$ findet zusätzlich \\ Spiegelung an der x-Achse statt.}
+        \end{tabular}
+    \end{center}
+    \caption{Verschiebung und Skalierung einer Funktion durch Modifikation der Funktionsgleichung}
+    \label{lst:TranslateScaleFun}
+\end{listing}
 
 Die Skalierung erfolgt dabei immer bezüglich des Koordinatenursprungs. Bei solchen Transformationen einer Funktion ist unbedingt auf die Reihenfolge der Operationen zu achten. Es ist beispielsweise ein Unterschied, ob eine Funktion erst mit dem Faktor $2$ gestreckt wird und dann um $2$ nach rechts verschoben wird; oder erst verschoben und dann gestreckt wird, siehe auch Abbildung \ref{fig:TransformOrder}.
 
@@ -406,28 +410,7 @@ Aus dieser Definition erkennt man sofort, dass wenn $p$ eine Periode der Funktio
 
 \subsection{Stetigkeit}
 
-In der Analysis wollen wir Funktionen mittels der Infinitesimalrechnung analysieren. Eine wesentliche Voraussetzung dafür ist, dass eine Funktion ausreichend "glatt" verläuft und ihre Funktionswerte nicht plötzlich springen. Graphisch kann man sich dies so vorstellen, dass man den Graphen der Funktion zeichnen kann, ohne den Stift absetzen zu müssen. Diese Eigenschaft, welche eine solche Funktionen erfüllen muss, nennt man die \emph{Stetigkeit}. Um diese mathematisch fassen zu können, müssen wir zunächst noch den Begriff der Grenzwertbildung für mehrstellige Funktonen erweitern. Dies geschieht analog zu einstelligen Funktionen und sei daher nur kurz angegeben:
-
-\begin{definition}{Grenzwert einer mehrstelligen Funktion}{LimMultivarFun}
-    Sei $f: \R^n \to \R$ eine $n$-stellige Funktion und $A = \left\lbrace (a_n) | \lim\limits_{n\to\infty} a_n = x_0 \right\rbrace$ die Menge aller konvergenten Zahlenfolgen mit dem Grenzwert $x_0\in\R^n$.
-
-    Falls es ein $\alpha\in\mathbb{R}$ gibt, sodass $\lim\limits_{n\to\infty} f(a_n) = \alpha$ für alle solchen Zahlenfolgen gilt, so heißt $\alpha$ der \textbf{Grenzwert von $f$ gegen $x_0$}.
-
-    Man schreibt dann $\lim\limits_{x\to x_0} = \alpha$.
-\end{definition}
-
-\begin{example}{Untersuchen des Grenzwert einer zweistelligen Funktion}{CheckLimMultivarFun}
-    Die mehrstellige Funktion $f: (x,y) \mapsto \frac{x^2-y^2}{x^2+y^2}$ hat keinen Grenzwert für $(x_0,y_0)=(0,0)$. Je nachdem, auf welchem Weg wir uns $(0,0)$ annähern, erhalten wir verschiedene Grenzwerte. Wenn wir uns dem Koordinatenursprung etwa nähern, indem wir erst zur x-Achse $y=0$ gehen, erhalten wir:
-    $$
-    \lim\limits_{x\to 0} \lim\limits_{y\to 0} \frac{x^2-y^2}{x^2+y^2} = \lim\limits_{x\to 0} \frac{x^2}{x^2} = 1
-    $$
-    Andererseits gilt, wenn wir erst zur y-Achse $x=0$ gehen:
-    $$
-    \lim\limits_{y\to 0} \lim\limits_{x\to 0} \frac{x^2-y^2}{x^2+y^2} = \lim\limits_{y\to 0} \frac{-y^2}{y^2} = -1
-    $$
-\end{example}
-
-Damit lässt sich nun allgemein die Stetigkeit wie folgt definieren:
+In der Analysis wollen wir Funktionen mittels der Infinitesimalrechnung analysieren. Eine wesentliche Voraussetzung dafür ist, dass eine Funktion ausreichend "glatt" verläuft und ihre Funktionswerte nicht plötzlich springen. Graphisch kann man sich dies so vorstellen, dass man den Graphen der Funktion zeichnen kann, ohne den Stift absetzen zu müssen. Diese Eigenschaft, welche eine solche Funktionen erfüllen muss, nennt man die \emph{Stetigkeit}. Um diese mathematisch fassen zu können, benötigen wir erneut den Begriff der Grenzwertbildung für mehrstellige Funktonen, den wir bereits in \ref{def:LimFun} kennengelernt haben.
 
 \begin{definition}{Stetigkeit einer reellwertigen Funktion}{ContFun}
     Sei $f: \R^n \to \R$ eine $n$-stellige, reellwertige Funktion mit Definitionsbereich $\mathbb{D}$. $f$ heißt \textbf{stetig} an der Stelle $x_0\in\mathbb{D}$, wenn der Grenzwert für diese Stelle existiert und dem dem Funktionswert gleich ist, also gilt:
@@ -512,21 +495,6 @@ Ein Beispiel für eine hebbare Definitionslücke und eine Sprungstelle ist berei
 
 In der Praxis ist es oft von Bedeutung, herauszufinden, wann eine abhängige Größe ihren kleinsten oder größten Wert annimmt. Etwa will man die zu produzierende Stückzahl bestimmen, wo der zu erwartende Gewinn maximiert ist. Bei der Herstellung von Cola-Dosen will man diese so dimensionieren, dass das Verhältnis von Oberfläche zu Volumen besonders klein ist, damit man möglichst wenig Material verbraucht.
 
-Um den Extremwertbegriff genau fassen zu können, benötigen wir noch den Begriff einer offenen Umgebung:
-
-\begin{definition}{Offene Umgebung eines Punktes}{OpenNeighborhood}
-    Sei $x \in \R^n$ ein $n$-dimensionaler Vektor. Eine offene Menge $M_x \subseteq \R^n$ mit $x\in M$ heißt \textbf{offene Umgebung} von $x$.
-\end{definition}
-
-Eine offene Menge ist anschaulich eine Menge, welche keine Rand hat. Zu jedem Punkt der Menge gibt es noch eine kleine Kugel, welche vollständig in der Menge enthalten ist, siehe hierzu auch Abbildung \ref{fig:OpenSet}.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.6\textwidth]{./svg/open-set}
-    \caption{Definition einer offenen Menge. Zu jedem Elemente der Menge gibt es eine kleine Kugel, die vollständig in der Menge enthalten ist.}
-    \label{fig:OpenSet}
-\end{figure}
-
 \begin{definition}{Extremstelle einer reellwertigen Funktion}{ExtrFun}
     Sei $f: \R^n \to \R$ eine $n$-stellige reellwertige Funktion. Eine Stelle $x_0\in\mathbb{D}$ ein \textbf{Maximum} (\textbf{Minimum}) von $f$ bezüglich $M$, falls es eine offene Umgebung $U_{x_0}$ um diese Stelle gibt, in der alle Funktionswerte kleiner oder gleich (größer oder gleich) dem Funktionswert an dieser Stelle sind:
     $$
@@ -535,10 +503,10 @@ Eine offene Menge ist anschaulich eine Menge, welche keine Rand hat. Zu jedem Pu
     $$
         (\forall x \in U_{x_0}: f(x) \ge f(x_0))
     $$
-    Eine Extremstelle $x_0 \in \mathbb{D}$ heißt \textbf{globales Extremstelle} in $M\subseteq\mathbb{D}$, wenn für die Umgebung die gesamte Menge $M$ gewählt werden kann. Ansonsten heißt sie \textbf{lokale Extremstelle}.
+    Eine Extremstelle $x_0 \in \mathbb{D}$ heißt \textbf{globale Extremstelle} in $M\subseteq\mathbb{D}$, wenn für die Umgebung die gesamte Menge $M$ gewählt werden kann. Ansonsten heißt sie \textbf{lokale Extremstelle}.
 \end{definition}
 
-Diese Definition ist in Abbildung \ref{fig:ExtrValFun} veranschaulicht. Dort ist eine Funktion $f$ mit Definitionsbereich $\mathbb{D} = [-4.5, 4.5]$ dargestellt. Bei den Stellen \circled{1} und \circled{5} handelt es sich um globale Minima, denn im gesamten Definitionsbereich $[-4.5,4.5]$ gibt es keinen kleineren Funktionswert. Analog dazu handelt es sich bei den Stellen \circled{2} und \circled{4} um globale Maxima, denn im gesamten Definitionsbereich $[-4.5,4.5]$ gibt es keinen größeren Funktionswert. Die Stelle \circled{3} ist keine globale Extremstelle, denn im Definitionsbereich existieren sowohl kleinere als auch größere Funktionswerte. Allerdings handelt es sich um eim lokales Minimum, denn der Funktionswert ist etwa in der offenen Umgebung $(-1:1)$ der kleinste. Schließlich sind die mit \circled{x} markierten Stellen bei $x=\pm 2$ gar keine Extremstellen, denn in jeder noch so kleinen Umgebung um $2$ beziehungsweise $-2$ gibt es sowohl größere als auch kleinere Funktionswerte.
+Diese Definition ist in Abbildung \ref{fig:ExtrValFun} veranschaulicht. Dort ist eine Funktion $f$ mit Definitionsbereich $\mathbb{D} = [-4.5, 4.5]$ dargestellt. Bei den Stellen \circled{1} und \circled{5} handelt es sich um globale Minima, denn im gesamten Definitionsbereich $[-4.5,4.5]$ gibt es keinen kleineren Funktionswert. Analog dazu handelt es sich bei den Stellen \circled{2} und \circled{4} um globale Maxima, denn im gesamten Definitionsbereich $[-4.5,4.5]$ gibt es keinen größeren Funktionswert. Die Stelle \circled{3} ist keine globale Extremstelle, denn im Definitionsbereich existieren sowohl kleinere als auch größere Funktionswerte. Allerdings handelt es sich um ein lokales Minimum, denn der Funktionswert ist etwa in der offenen Umgebung $(-1:1)$ der kleinste. Schließlich sind die mit \circled{x} markierten Stellen bei $x=\pm 2$ gar keine Extremstellen, denn in jeder noch so kleinen Umgebung um $2$ beziehungsweise $-2$ gibt es sowohl größere als auch kleinere Funktionswerte.
 
 \begin{figure}
     \centering
@@ -579,7 +547,7 @@ Anschaulich bedeutet $f \in \mathcal{O}(g)$, dass die Funktion $f$ nicht wesentl
 
 Mit der letzten Definition lässt sich nun der Begriff einer diagonalen Asymptote definieren, wenn eine Funktion sich für große Werte wie eine lineare Funktion verhält:
 
-\begin{definition}{Diagonale Asymptote}
+\begin{definition}{Diagonale Asymptote}{DiagAsympt}
     Eine Gerade mit der Gleichung $g: x \mapsto mx+n$ heißt \textbf{diagonale Asymptote} einer Funktion $f: \R \to \R$, wenn gilt: $f \sim g$.
 \end{definition}
 
@@ -588,7 +556,7 @@ Mit der letzten Definition lässt sich nun der Begriff einer diagonalen Asymptot
         \item Die Funktion $x \mapsto 1/x$ hat die horizontale Asymptote $y=0$, da die Funktionswerte für $x \to \pm\infty$ gegen $0$ streben.
         \item Die Funktion $f: x \mapsto 10x$ wächst nicht wesentlich schneller als $g: x \mapsto 0.1x$, da $f \in \mathcal{O}(g)$, denn es gilt: $\lim\limits_{x\to\infty} \frac{10x}{0.1x} = 100 < \infty$. Dies mag auf den ersten Blick verwirrend erscheinen. Man führe sich aber vor Augen, dass beide Funktionen das gleiche Wachstumsverhalten zeigen: Eine Verdoppelung des Arguments für sowohl bei $f$ als auch bei $g$ zu einer Verdoppelung des Funktionswerts.
         \item Jede Polynomfunktion $f: x \mapsto x^n, n \in \N^+$ wächst langsamer als jede Exponentialfunktion $g: x \mapsto e^{ax}, a > 0$, also $f \in o(g)$. Dies zeigt man leicht durch Betrachtung des Grenzwerts $\lim\limits_{x\to\infty} \frac{x^n}{e^{ax}}$. Dieser ergibt $0$, wie sich durch $n$-faches Anwenden der Regeln von L'Hôpital zeigen lässt. Algorithmen mit polynomielle Laufzeit sind also solchen mit expoentieller Laufzeit gegenüber zu bevorzugen. Wenn das Argument nur ausreichend groß ist, wird die Exponentialfunktion größere Werte annehmen als das Polynom, siehe hierzu auch Abbildung \ref{fig:BehLargeValFun}.
-        \item Die Funktion $f: x \mapsto \frac{16x^2-16x-2}{10x+2}$ lässt sich mittels \emph{Polynomdivision} umformen zu $f(x) = \frac{8}{5}x - \frac{48}{25} + \frac{46/25}{10x+2}$. Daraus lies man ab, dass $g: x \mapsto \frac{8}{5}x - \frac{48}{25}$ eine diagonale Asymptote darstellt, also $f \sim g$, denn es gilt: $\lim\limits_{x\to\infty} \frac{f(x)}{g(x)} = \lim\limits_{x\to\infty} 1 + \frac{46/25}{(10x+2)\cdot(\frac{8}{5}x - \frac{48}{25})} = 1$.
+        \item Die Funktion $f: x \mapsto \frac{16x^2-16x-2}{10x+2}$ lässt sich mittels \emph{Polynomdivision} umformen zu $f: x \mapsto \frac{8}{5}x - \frac{48}{25} + \frac{46/25}{10x+2}$. Daraus lies man ab, dass $g: x \mapsto \frac{8}{5}x - \frac{48}{25}$ eine diagonale Asymptote darstellt, also $f \sim g$, denn es gilt: $\lim\limits_{x\to\infty} \frac{f(x)}{g(x)} = \lim\limits_{x\to\infty} 1 + \frac{46/25}{(10x+2)\cdot(\frac{8}{5}x - \frac{48}{25})} = 1$.
     \end{enumerate}
 \end{example}
 
@@ -701,7 +669,7 @@ In diesem Abschnitt betrachten wir zuerst einige grundlegende Funktionen und sch
         \caption{Graph der hyperbolischen Funktionen}
         \label{fig:ExBaseFunHyperbolic}
     \end{wrapfigure}
-    Die trigonometrischen Funktionen Sinus und Kosinus lassen sich mithilfe komplexer Zahlen und der Exponentialfunktion darstellen als $\cos(x) = \frac{e^{jx}+e^{-jx}}{2}$ und $j\cdot \sin(x) = \frac{e^{jx}-e^{-jx}}{2}$. Anders ausgedrückt können Sinus- und Kosinusfunktion also als gerader (achsensymmetrischer) und ungerader (punktsymmetrischer) Anteil der Exponentialfunktion für imaginäre Argumente betrachtet werden. Analog dazu werden die \textbf{hyberbolischen Funktionen} definiert als gerade und ungerader Anteil der Exponentialfunktion für reelle Argumente: $\text{cosh}(x) = \frac{e^x+e^{-x}}{2}$ (Hyperbelkosinus, \emph{cosinus hyperbolicus}) und $\text{sinh}(x) = \frac{e^x-e^{-x}}{2}$ (Hyperbelsinus, \emph{sinus hyberbolicus}).
+    Die trigonometrischen Funktionen Sinus und Kosinus lassen sich mithilfe komplexer Zahlen und der Exponentialfunktion darstellen als $\cos(x) = \frac{e^{jx}+e^{-jx}}{2}$ und $j\cdot \sin(x) = \frac{e^{jx}-e^{-jx}}{2}$. Anders ausgedrückt können Sinus- und Kosinusfunktion also als gerader (achsensymmetrischer) und ungerader (punktsymmetrischer) Anteil der Exponentialfunktion für imaginäre Argumente betrachtet werden. Analog dazu werden die \textbf{hyberbolischen Funktionen} definiert als gerader und ungerader Anteil der Exponentialfunktion für reelle Argumente: $\text{cosh}(x) = \frac{e^x+e^{-x}}{2}$ (Hyperbelkosinus, \emph{cosinus hyperbolicus}) und $\text{sinh}(x) = \frac{e^x-e^{-x}}{2}$ (Hyperbelsinus, \emph{sinus hyberbolicus}).
 \end{minipage}
 
 
@@ -718,7 +686,7 @@ In diesem Abschnitt betrachten wir zuerst einige grundlegende Funktionen und sch
 
 \subsection{Polynome}
 
-\begin{definition}
+\begin{definition}{Polynom}{Polynom}
     Ein \textbf{Polynom} in einer Variablen $x\in \R$ ist eine Summe aus ganzzahligen positiven Potenzen (Monomen) von $x$ mit Vorfaktor, genannt Koeffizient. Die höchste vorkommende Potenz $x^n$ heißt Grad $n$ des Polynoms.
     $$
         p_n(x) = \sum\limits_{i=0}^n a_i x^i = a_0 + a_1 x + a_2 x^2 + a_3 x^3 + \dots + a_n x^n, a_i \in \R, a_n \ne 0

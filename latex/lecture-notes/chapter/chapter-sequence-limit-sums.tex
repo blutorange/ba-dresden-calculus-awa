@@ -278,22 +278,6 @@ In \ref{ex:CombSeqLimit} sind einige für die ersten vier Regeln zusammengefasst
     \end{itemize}
 \end{example}
 
-Aus den obigen Beispielen können wir die folgende allgemeine Regel ableiten, die für den Grenzwert eines Quotienten von Polynomen gilt:
-
-\begin{statement}{Grenzwert gebrochenrationaler Funktionen}{LimRatFun}
-    Sei $f(x) = \frac{p_n(x)}{q_m(x)}$ eine gebrochenrationale Funktion, also der Quotient zweier Polynome $p_n, q_m$ vom Grad $n$ und $m$. Der Grenzwert existiert, wenn der Grad des Zählerpolynoms nicht kleiner ist als der Grad des Nennerpolynoms. Es gilt:
-
-    \begin{equation}
-        \lim\limits_{x\to\infty}\frac{p_n(x)}{q_m(x)} = \lim\limits_{x\to\infty}\frac{a_0 + a_1 x + a_2 x^2 + ... + a_n x^n}{b_0 + b_1 x + b_2 x^2 + ... + b_n x^n} = \begin{cases}
-            0 &\text{falls $n < m$} \\
-            \frac{a_n}{b_m} &\text{falls $ n = m$} \\
-            \pm \infty  &\text{falls $ n > m$}
-        \end{cases}
-    \end{equation}
-
-    Das Vorzeichen für den letzten Fall ergibt sich aus dem Vorzeichen der höchsten Koeffizienten $a_n$ und $b_n$. Sind beide positiv oder negativ, divergiert $f$ bestimmt gegen $+\infty$. Haben sie verschiedenes Vorzeichen, divergiert $f$ bestimmt gegen $-\infty$.
-\end{statement}
-
 Die Anwendung der Rechenregel \ref{eq:LimFun} wird in Beispiel \ref{ex:LimFun} verdeutlicht.
 
 Um auch Grenzwerte von Quotienten berechnen zu können, wo der Divisor gegen $0$ konvergiert, hilft die folgende Aussage. Dazu benötigen wir noch zwei Definitionen.
@@ -301,16 +285,63 @@ Um auch Grenzwerte von Quotienten berechnen zu können, wo der Divisor gegen $0$
 Bisher haben wir nur Grenzwerte betrachtet, wo $n$ gegen $\infty$ lief. Es ist nun aber so, dass man Grenzwerte nicht nur für Folgen, sondern auch für Funktionen betrachten kann, wenn das Funktionsargument sich einem bestimmten Wert (nicht zwingend $\infty$) nähert.
 
 \begin{definition}{Grenzwert einer Funktion}{LimFun}
-    Sei $f: \R \to \R$ eine Funktion und $A = \left\lbrace (a_n) | \lim\limits_{n\to\infty} a_n = x_0 \right\rbrace$ die Menge aller konvergenten Zahlenfolgen mit dem Grenzwert $x_0\in\R$. Falls es ein $\alpha\in\mathbb{\R}$ gibt, sodass $\lim\limits_{n\to\infty} f(a_n) = \alpha$ für alle solchen Zahlenfolgen gilt, so heißt $\alpha$ der \textbf{Grenzwert von $f$ gegen $x_0$}.
-
+    Sei $f: \R^n \to \R$ eine Funktion, welche $n$-dimensionale Punkte auf reelle Zahlen abbildet, und sei $x_0\in\R^n$ eine Stelle des Definitionsbereichs. Die Zahl $\alpha\in\R$ heißt Grenzwert von $f$ gegen $x_0$, wenn es für jede noch so kleine Epsilon-Kugel um $\alpha$ eine Delta-Kugel um $x_0$ gibt, sodass die Funktionswerte der Delta-Kugel in der Epsilon-Kugel liegen.
+    $$
+        \forall \epsilon > 0 \exists \delta > 0 : f(S_\delta(x_0)) \subset S_\epsilon(\alpha)
+    $$
     Man schreibt dann $\lim\limits_{x\to x_0} = \alpha$.
 \end{definition}
+
+Graphisch ist diese Definition dargestellt in Abbildung \ref{fig:LimFun} und bedeutet anschaulich, dass kleine Änderungen des Arguments immer nur kleine Änderungen des Funktionswerts zur Folge haben. Äquivalent zu dieser Definition ist, dass für jede gegen $x_0$ konvergent Folgen $a_n$ auch die Folge $f(a_n)$ der Funktionswerte gegen $\alpha$ konvergieren muss. Wenn der Grenzwert existiert, dann kann man ihn dadurch bestimmen, indem man die Grenzwertbildung für die einzelnen Variablen ($x_1, x_2, \dots$) der Reihe nach ausführt.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.55\textwidth]{./svg/definition-convergence-point}
+    \caption{Grenzwert einer Funktion an einer Stelle $x_0$}
+    \label{fig:LimFun}
+\end{figure}
 
 Die Grenzwertregeln, die wir bisher kennengelernt haben, sind analog auch auf Grenzwerte von Funktionen übertragbar.
 
 \begin{example}{Grenzwertregeln für Grenzwert einer Funktion}{LimFunSumQuot}
-    Auf $\lim\limits_{x_0\to 0} \frac{n^2+n+2}{n^3+1}$ lassen sich analog die Grenzwertregeln \ref{eq:LimSum} und \ref{eq:LimQuot} anwenden und man erhält: $\frac{0^2+0+2}{0^3+1} = 2$.
+    Auf $\lim\limits_{x\to 0} \frac{x^2+x+2}{x^3+1}$ lassen sich analog die Grenzwertregeln \ref{eq:LimSum} und \ref{eq:LimQuot} anwenden und man erhält: $\frac{0^2+0+2}{0^3+1} = 2$.
 \end{example}
+
+\begin{example}{Nichtexistenz des Grenzwerts einer einstelligen Funktion}{CheckLimUnivarFun}
+    Die einstellige Funktion $f: x \mapsto \sin(1/x)$ hat keinen Grenzwert für $x \to 0$. Je nachdem, wir wir uns $0$ nähern, erhält man verschiedene Ergebnisse. Beispielsweise können wir die Folgen $a_n = \frac{2}{\pi+4\pi n}$ und $b_n = \frac{1}{\pi n}$. Diese konvergieren beiden gegen $0$. Allerdings gilt für die Folgen der Funktionswerte:
+    \begin{alignat}{1}
+       \lim\limits_{n\to\infty} f(a_n) &= \lim\limits_{n\to\infty} \sin\left(1 / \frac{2}{\pi+4\pi n}\right) = \lim\limits_{n\to\infty} \sin(\frac{\pi}{2} + 2\pi n) = 1 \\
+       \lim\limits_{n\to\infty} f(b_n) &= \lim\limits_{n\to\infty} \sin\left(1 / \frac{1}{\pi n}\right) = \lim\limits_{n\to\infty} \sin(\pi n) = 0 \\
+    \end{alignat}
+    Wir erhalten verschiedene Werte, somit existiert der Grenzwert nicht.
+\end{example}
+
+\begin{example}{Nichtexistenz des Grenzwerts einer mehrstelligen Funktion}{CheckLimMultivarFun}
+    Die mehrstellige Funktion $f: (x,y) \mapsto \frac{x^2-y^2}{x^2+y^2}$ hat keinen Grenzwert für $(x_0,y_0) \to (0,0)$. Je nachdem, auf welchem Weg wir uns $(0,0)$ annähern, erhalten wir verschiedene Grenzwerte. Wenn wir uns dem Koordinatenursprung etwa nähern, indem wir erst zur x-Achse $y=0$ gehen, erhalten wir:
+    $$
+    \lim\limits_{x\to 0} \lim\limits_{y\to 0} \frac{x^2-y^2}{x^2+y^2} = \lim\limits_{x\to 0} \frac{x^2}{x^2} = 1
+    $$
+    Andererseits gilt, wenn wir erst zur y-Achse $x=0$ gehen:
+    $$
+    \lim\limits_{y\to 0} \lim\limits_{x\to 0} \frac{x^2-y^2}{x^2+y^2} = \lim\limits_{y\to 0} \frac{-y^2}{y^2} = -1
+    $$
+    Wir erhalten verschiedene Werte, somit existiert der Grenzwert nicht.
+\end{example}
+
+\begin{statement}{Grenzwert gebrochenrationaler Funktionen}{LimRatFun}
+    Aus den bisherigen Beispielen können wir die folgende allgemeine Regel ableiten, die für den Grenzwert eines Quotienten von Polynomen gilt:
+    Sei $f(x) = \frac{p_n(x)}{q_m(x)}$ eine gebrochenrationale Funktion, also der Quotient zweier Polynome $p_n, q_m$ vom Grad $n$ und $m$. Der Grenzwert existiert, wenn der Grad des Zählerpolynoms nicht kleiner ist als der Grad des Nennerpolynoms. Es gilt:
+
+    \begin{equation}
+    \lim\limits_{x\to\infty}\frac{p_n(x)}{q_m(x)} = \lim\limits_{x\to\infty}\frac{a_0 + a_1 x + a_2 x^2 + ... + a_n x^n}{b_0 + b_1 x + b_2 x^2 + ... + b_n x^n} = \begin{cases}
+    0 &\text{falls $n < m$} \\
+    \frac{a_n}{b_m} &\text{falls $ n = m$} \\
+    \pm \infty  &\text{falls $ n > m$}
+    \end{cases}
+    \end{equation}
+
+    Das Vorzeichen für den letzten Fall ergibt sich aus dem Vorzeichen der höchsten Koeffizienten $a_n$ und $b_n$. Sind beide positiv oder negativ, divergiert $f$ bestimmt gegen $+\infty$. Haben sie verschiedenes Vorzeichen, divergiert $f$ bestimmt gegen $-\infty$.
+\end{statement}
 
 Für die nächste Grenzwertregel benötigen wir weiterhin noch das Konzept der sogenannten \emph{unbestimmten Ausdrücke}.
 
