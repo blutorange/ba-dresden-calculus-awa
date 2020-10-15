@@ -4,7 +4,7 @@ Die Infinitesimalrechnung beschäftigt sich mit der Analyse stetiger Funktionen.
 
 \section{Begriff der Ableitung}
 
-Motivation für den Ableitungsbegriff war es, beschreiben zu können, in welcher Art und wie schnell sich Funktionswerte an verschiedenen Stellen des Definitionsbereich ändern. Ein Auto, welches mit konstanter Geschwindigkeit fährt,  wird durch eine Gerade im Weg-Zeit-Diagramm beschrieben. Die Geschwindigkeit kann man jetzt auffassen als die Änderungsrate des Wegs bezüglich der Zeit, also wieviele Kilometer das Auto pro Stunde zurücklegt. Jetzt betrachten wir aber ein Auto, welches nicht mehr mit konstanter Geschwindigkeit fährt, sondern aus dem Stand von $0$ auf $100 \ukmh$ beschleunigt. Wie können wir nun die Geschwindigkeit definieren und messen? Aus der Erfahrung ist klar (wenn man auf das Tachometer schaut), dass die Geschwindigkeit zu jedem Zeitpunkt eine andere ist. Wir benötigen also eine Definition für die Geschwindigkeit zu \emph{einem Zeitpunkt}. Zu sagen, die Momentangeschwindigkeit sei die \emph{momentane Änderungsrate} des Wegs lässt zu wünschen übrig, denn wie kann sich der Weg zu einem Zeitpunkt ändern? Wir können uns diesem Problem nähern, indem wir uns zuerst klar machen, wie man die Geschwindigkeit in der Praxis messen würde. Wir würden messen, wie weit sich das Auto innerhalb eines kleinen Zeitintervalls, etwa $1$ Sekunde, fortbewegt hat und dann den zurückgelegten Weg durch die Zeit teilen. Wir erhielten damit einen Schätzwert für die Momentangeschwindigkeit innerhalb gewissen Fehlergrenzen. Um die Momentangeschwindigkeit besser zu messen, könnten wir das Zeitintervall verkleinern. Diese Idee, erst mit einem endlichen Zeitintervall zu beginnen und dieses dann zu verkleinern, ist die Grundidee für die mathematische Definition der Ableitung. Mittels des Grenzwertsbegriffs können wir das Zeitintervall bis auf $0$ verkleinern und erhalten so die Geschwindigkeit als Ableitung der Weg-Zeit-Funktion.
+Motivation für den Ableitungsbegriff war es, beschreiben zu können, in welcher Art und wie schnell sich Funktionswerte an verschiedenen Stellen des Definitionsbereich ändern. Ein Auto, welches mit konstanter Geschwindigkeit fährt,  wird durch eine Gerade im Weg-Zeit-Diagramm beschrieben. Die Geschwindigkeit kann man jetzt auffassen als die Änderungsrate des Wegs bezüglich der Zeit, also wie viele Kilometer das Auto pro Stunde zurücklegt. Jetzt betrachten wir aber ein Auto, welches nicht mehr mit konstanter Geschwindigkeit fährt, sondern aus dem Stand von $0$ auf $100 \ukmh$ beschleunigt. Wie können wir nun die Geschwindigkeit definieren und messen? Aus der Erfahrung ist klar (wenn man auf das Tachometer schaut), dass die Geschwindigkeit zu jedem Zeitpunkt eine andere ist. Wir benötigen also eine Definition für die Geschwindigkeit zu \emph{einem Zeitpunkt}. Zu sagen, die Momentangeschwindigkeit sei die \emph{momentane Änderungsrate} des Wegs lässt zu wünschen übrig, denn wie kann sich der Weg zu einem Zeitpunkt ändern? Wir können uns diesem Problem nähern, indem wir uns zuerst klar machen, wie man die Geschwindigkeit in der Praxis messen würde. Wir würden messen, wie weit sich das Auto innerhalb eines kleinen Zeitintervalls, etwa $1$ Sekunde, fortbewegt hat und dann den zurückgelegten Weg durch die Zeit teilen. Wir erhielten damit einen Schätzwert für die Momentangeschwindigkeit innerhalb gewissen Fehlergrenzen. Um die Momentangeschwindigkeit besser zu messen, könnten wir das Zeitintervall verkleinern. Diese Idee, erst mit einem endlichen Zeitintervall zu beginnen und dieses dann zu verkleinern, ist die Grundidee für die mathematische Definition der Ableitung. Mittels des Grenzwertbegriffs können wir das Zeitintervall bis auf $0$ verkleinern und erhalten so die Geschwindigkeit als Ableitung der Weg-Zeit-Funktion.
 
 \subsection{Ableitung einstelliger Funktionen}
 
@@ -22,6 +22,8 @@ Motivation für den Ableitungsbegriff war es, beschreiben zu können, in welcher
 \end{definition}
 
 Analog dazu definiert man auch die zweite Ableitung einer Funktion als die Ableitung der Ableitungsfunktion, die dritte Ableitung wieder als deren Ableitung und so weiter. Man schreibt $f''$ oder $\ddn{2}{f}{x}$ für die zweite Ableitung, $f'''$ oder $\ddn{3}{f}{x}$ für die dritte Ableitung. Für die $n$-te Ableitungen schreibt man statt den Strichen auch $f^{(n)}$ (man beachte die Klammern!).
+
+\textbf{Anmerkung}: In der Physik schreibt man manchmal auch $\dot{f}$ für die \textbf{Ableitung einer Funktion nach der Zeit}.
 
 \begin{figure}
     \centering
@@ -74,6 +76,10 @@ Für viele Zusammenhänge ist es erforderlich, dass auch Ableitung selbst wieder
     Eine Funktion $f$ heißt stetig differenzierbar, wenn sie differenzierbar ist und ihre Ableitung eine stetige Funktion ist.
 \end{definition}
 
+\begin{example}{Physikalische Anwendung der Ableitung}{}
+    Eine Kreisbewegung in der $x$-$y$-Ebene mit konstanter Winkelgeschwindigkeit $\omega$ wird beschrieben durch $x(t) = r \cos(\omega t)$ und $y(t) = r \sin(\omega t)$, wobei $t$ die Zeit und $r$ den Radius des Kreises meint. Die erste Ableitung nach der Zeit lautet $v_x(t) = \dot{x}(t) = -r \omega \sin(\omega t)$, $v_y(t) = \dot{y}(t) = r \omega \cos(\omega t)$. Dabei handelt es sich um die x- und y-Komponenten der Geschwindigkeit $\vec v$, deren Betrag durch $|\vec v| = \sqrt{v_x^2+v_y^2} = r \omega$ gegeben ist. Damit haben wir die Formel für die Geschwindigkeit einer kreisförmigen Bewegung erhalten: $v = \omega r = 2\pi f r = \frac{2\pi r}{T}$ ($f\dots$Frequenz, $T\dots$ Periodendauer). Weiter können wir die zweite Ableitung bilden: $a_x(t) = \ddot{x}(t) = -r\omega^2 \sin(\omega t)$, $a_y(t) = \ddot{y}(t) = -r \omega^2 \sin(\omega t)$. Wir erhalten die x- und y-Komponenten der Beschleunigung $\vec a$, deren Betrag $|\vec a| = r \omega^2$ lautet. Das ist die Formel für die Beschleunigung bei einer Kreisbewegung: $a = \omega^2 r = \frac{v^2}{r}$. Die Zentripetalkraft (beziehungsweise Zentrifugalkraft in einem mitbewegten Inertialsystem) beträgt dann $F_Z = m \cdot a = m \frac{v^2}{r}$.
+\end{example}
+
 \subsection{Ableitung mehrstelliger Funktion}
 
 Bisher haben wir die Ableitung nur für einstellige Funktionen betrachtet. Für mehrstellige Funktionen gibt es ein analoges Konzept, welches man die partielle Ableitung nennt. Der Funktionswert einer mehrstelligen Funktion wie etwa $f(x,y) = x^2+y^2$ hängt von mehreren Argumenten ab. Wir können aber alle Argumente bis auf eines festhalten (auf einen konstanten Wert setzen) und erhalten so wieder eine einstellige Funktion. Also beispielsweise $f(x,2) = x^2+4$. Diese einstellige Funktion entspricht einem Querschnitt durch den Graphen der zweistelligen Funktion, in diesem Fall dem Querschnitt durch die Ebene parallel zur $x$-$z$-Ebene. Ebenso hätten wir auch $x$ festhalten können und würden etwa $f(3, y) = y^2+9$ erhalten. Diese einstelligen Funktionen kann man nun ableiten und erhält die sogenannten partiellen Ableitungen, welche die Änderungsrate einer mehrstelligen Funktion in einer bestimmten Richtung beschreiben.
@@ -114,7 +120,7 @@ Für mehrstellige Funktionen definiert man noch den sogenannten \mention{Nabla}-
 
 Dieser Operator ist nützlich, da er viele Formeln der Infinitesimalrechnung mehrstelliger Funktionen vereinfacht. Im letzten Kapitel haben wir bereits gesehen, dass man das Gradientenfeld einer mehrstelligen Funktion damit bündig schreiben kann als $\vec\nabla f$. Besonders bei Funktionen $\R^n \to \R^n$ wird der Nabla-Operator häufig verwendet. Da wir uns in dieser Vorlesung auf Funktionen $\R^n\to\R$ beschränken, werden wir den Nabla-Operator im Rahmen dieser Vorlesung kaum brauchen.
 
-Schließlich können wir analog zur Tangenten für einstellige Funktionen noch eine sogenannten \emph{Tangentialebene} für zweistellige Funktionen definieren, also eine Ebene, die sich an die Funktion in einem Punkt anschmiegt. Diese Tangentialebene erhalten wir, wenn wir eine Ebene aufspannen, welche in $x$- und$y$-Richtung jeweils den Anstieg der Funktion in dieser Richtung hat. Dieser Anstieg ist durch die partiellen Ableitungen gegeben. sDieses Vorgehen lässt sich allgemein auf $n$-stellige Funktionen erweitern.
+Schließlich können wir analog zur Tangenten für einstellige Funktionen noch eine sogenannten \emph{Tangentialebene} für zweistellige Funktionen definieren, also eine Ebene, die sich an die Funktion in einem Punkt anschmiegt. Diese Tangentialebene erhalten wir, wenn wir eine Ebene aufspannen, welche in $x$- und$y$-Richtung jeweils den Anstieg der Funktion in dieser Richtung hat. Dieser Anstieg ist durch die partiellen Ableitungen gegeben. Dieses Vorgehen lässt sich allgemein auf $n$-stellige Funktionen erweitern.
 
 \begin{definition}{Lineare Näherung einer mehrstelligen Funktion}{LinApproxMultivarFun}
     Sei $f: \R^n\to\R$ ein $n$-stellige, partiell differenzierbare Funktion. Dann heißt $t$ die \textbf{lineare Näherung} der Funktion in einer kleinen Umgebung um einen Punkt $\vec{r_0}\in\R^n$ und ist gegeben durch:
@@ -277,7 +283,7 @@ Der Fall für eine rechteckige Fläche ist dargestellt in Abbildung \ref{fig:Are
     \centering
     \includegraphics[width=0.48\textwidth]{./svg/integral-2d-cartesian}
     \includegraphics[width=0.48\textwidth]{./svg/integral-2d-cartesian-perspective}
-    \caption{Graphische Interpretation eines Gebietsintegrals in kartesischen Koordinaten}
+    \caption{Graphische Interpretation eines Gebietsintegrals in kartesischen Koordinaten. Der Funktionswert an jedem kleinen schwarzen Punkt wird mit dem Flächeninhalt des Rechtecks multipliziert.}
     \label{fig:AreaIntegCartesian}
 \end{figure}
 
@@ -321,7 +327,8 @@ Das letzte Gleichheitszeichen folgt aus der Definition des bestimmten Integrals 
 
 Abschließend wollen wir die gleiche Betrachtung noch einmal durchführen, aber mit dem Unterschied, dass die zu integrierende Fläche diesmal ein Kreis ist und wir sie nicht in kleine Rechtecke, sondern in kleine Kreissegmente zerlegen. Dies ist einfacher, als die Fläche in Rechtecke zu zerlegen. Bei der Zerlegung in Rechtecke würden im im Integral Wurzeln erscheinen, die sich meist nur schwer integrieren lassen.
 
-Wir gehen davon aus, dass der Kreis seinen Mittelpunkt im Koordinatenursprung besitzt und den Radius $R$ aufweist. Unsere Funktion hängt nun nicht mehr von $x$ und $y$ ab, sondern vom Abstand zum Ursprung $r$ und von Winkel mit der Abszisse $alpha$.
+
+In Abbildung \ref{fig:AreaIntegPolar} ist dieser Fall dargestellt. Wir gehen davon aus, dass der Kreis seinen Mittelpunkt im Koordinatenursprung besitzt und den Radius $R$ aufweist. Unsere Funktion hängt nun nicht mehr von $x$ und $y$ ab, sondern vom Abstand zum Ursprung $r$ und von Winkel mit der Abszisse $alpha$.
 
 Das Vorgehen ist analog zum Vorgehen für Rechtecke. Wir zerlegen den Kreis mit $r\in[0,R]$ und $\alpha\in[0,,2\pi]$ in $n\cdot m$ kleine Kreissegmente mit Radius $[r_i, r_{i+1}]$ einem Winkel $[\alpha_j, \alpha_{j+1}]$. Jedes kleine Kreissegment kann näherungsweise als Rechteck aufgefasst werden mit den Seitenlängen $\Delta a = \Delta r_n$ und $\Delta b = r \Delta \alpha_n$ (siehe Skizze). Der Flächeninhalt des Kreissemgents ist daher etwa $A_{nm} = r \Delta r \Delta \alpha$. Die Stützpunkte lauten $r_i = 0 + i \Delta r_n$ und $y_j = j \Delta \alpha_m$. Wir multiplizieren den Flächeninhalt des Kreissegment mit dem Funktionswert und bilden die Summe. Es ergibt sich:
 
@@ -336,12 +343,19 @@ Analog kann man das Gebietsintegral auch für andere Flächen und Koordinatensys
 
 Wir können nun auch wieder statt festen Grenzen für $r$ diese von $\alpha$ abhängig machen. Der Vollständigkeit halber sei noch das Gebietsintegral in Polarkoordinaten analog zu den kartesischen Koordinaten definiert.
 
-\begin{definition}{Gebietsintegral in Polarkoordinaten Koordinaten}{AreaIntPolar}
+\begin{definition}{Gebietsintegral in Polarkoordinaten}{AreaIntPolar}
     Seien $u,v$ zwei einstellige Funktionen und $\alpha_1,\alpha_2\in\R$ zwei feste Zahlen. Dann wird durch $A = \left\lbrace (r,\alpha) \in \R^2 | \alpha \in [\alpha_1,\alpha_2] \land r \in [l(\alpha), u(\alpha)] \right\rbrace$ eine zweidimensionale Fläche beschrieben. Das Gebietsintegral einer Funktion $f$ über diese Fläche $A$ berechnet sich dann als:
     $$
     \int\limits_{A} f(r,\alpha) \diff{A} = \int\limits_{\alpha_1}^{\alpha_2} \int\limits_{l(\alpha)}^{u(\alpha)} f(r,\alpha) \cdot r \diff{r} \diff{\alpha}
     $$
 \end{definition}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.95\textwidth]{./svg/integral-2d-polar}
+    \caption{Graphische Interpretation eines Gebietsintegrals in Polarkoordinaten. Der Funktionswert an jedem kleinen schwarzen Punkt wird mit dem Flächeninhalt des Kreissegments multipliziert.}
+    \label{fig:AreaIntegPolar}
+\end{figure}
 
 \begin{example}{Flächeninhalt des Kreises}{AreaIntPolarCircArea}
     Mithilfe des Gebietsintegral können wir auch den Flächeninhalt eines Kreises mit Radius $R$ berechnen, indem wir $f(r,\alpha) = 1$ setzen und über die Kreisfläche $r=0\dots R$ und $\alpha = 0\dots 2\pi$ integrieren:
@@ -429,7 +443,16 @@ Um eine Komposition (Verknüpfung) zweier Funktionen abzuleiten, hilft die sogen
     \end{alignat*}
 \end{example}
 
-Schließlich gibt es noch eine Regel für die Ableitung einer Umkehrfunktion:
+Wenn eine Funktion $f(x)$ eine Umkehrfunktion $g(y) = f^{-1}(y)$ besitzt, können wir mithilfe der Kettenregel eine Formel für die Ableitung der Umkehrfunkion herleiten. Es gilt $g(f(x)) = x$, da $g$ die Umkehrfunktion zu $f$ ist. Es folgt:
+
+\begin{alignat*}{1}
+    g(f(x)) &= x \\
+    \dd{}{x} g(f(x)) &= \dd{}{x} x \\
+    g'(f(x)) \cdot f'(x) &= 1 \\
+    g'(y) \cdot f'(x) &= 1
+\end{alignat*}
+
+Dies ist im folgenden Satz zusammengefasst:
 
 \begin{statement}{Ableitung der Umkehrfunktion}{InverseFunDiffRule}
     Sei $f$ eine differenzierbare Funktion mit der Umkehrfunktion $f^{-1}$. Zwischen der Ableitung von $f$ und seiner Umkehrfunktion gilt dann folgende Beziehung:
@@ -561,15 +584,16 @@ Allerdings ist dies noch keine hinreichende Bedingung. Es ist möglich, eine hin
 
 Für einstellige Funktionen muss man die zweite Ableitung untersuchen. Ist diese positiv, liegt ein Minimum vor, ist sie negativ, ein Maxima. Wenn sie gleich $0$ ist, kann man die folgende Verallgemeinerung nutzen:
 
-\begin{statement}{Lokaler Extremwert einer einstelligen Funktion}{CondExSingleVar}
-    Sei $n$ eine gerade Zahl. An der Stelle $x_0$ liegt eine lokale Extremstelle der einstelligen Funktion $f$ vor, wenn gilt:
+\begin{statement}{Kritische Stellen einer einstelligen Funktion}{CondExSingleVar}
+    Sei $n>1$ eine natürliche Zahl. An der Stelle $x_0$ liegt eine kritische Stelle der einstelligen Funktion $f$ vor, wenn gilt:
     $$
         f^{(1)}(x_0) = f^{(2)}(x_0) = \dots = f^{(n-1)}(x_0) = 0, f^{(n)}(x_0) \ne 0
     $$
-    Zudem handelt es sich bei der Extremstelle um
+    Zudem handelt es sich bei der kritischen Stelle um
     \begin{itemize}
-        \item ein Minimum, wenn $f^{(n)}(x_0) > 0$ gilt.
-        \item ein Maximum, wenn $f^{(n)}(x_0) < 0$ gilt.
+        \item ein lokales Minimum, wenn $n$ gerade ist und $f^{(n)}(x_0) > 0$ gilt.
+        \item ein lokales Maximum, wenn $n$ gerade ist und $f^{(n)}(x_0) < 0$ gilt.
+        \item eine Sattelstelle, wenn $n$ ungerade ist.
     \end{itemize}
 \end{statement}
 
