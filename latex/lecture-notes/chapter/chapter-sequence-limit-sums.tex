@@ -224,6 +224,14 @@ Anhand der arithmetischen und geometrischen Folge und der daraus induzierten Rei
 	$$
 \end{example}
 
+\begin{example}{Grenzwert der geometrischen Reihe}{LimGeoSer}
+    Die Partialsummen der geometrischen Reihe lauten $s_n = p \frac{1 - q^{n+1}}{1 - q}$. Für welche Werte von $p$ und $q$ konvergieren diese bei $n\to\infty$. Die meisten Terme in der Partialsumme sind unabhängig von $n$, der einzige von $n$ abhängige Term lautet $q^{n+1}$ und ist selbst wieder eine geometrische Folge. Diese konvergiert für $|q| < 1$ gegen $0$. Für $q=1$ ist die geometrische Reihe $1+1+1+\dots$ offensichtlich divergent. Somit ist die geometrische Reihe konvergent für $|q|<1$ und hat den Grenzwert:
+    $$
+        s_\infty = \lim\limits_{n\to\infty} \sum\limits_{i=0}^n p\cdot q^i = \frac{p}{1-q}
+    $$
+    Es ergibt sich also beispielsweise $1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + ... = \frac{1}{1/2} = 2$.
+\end{example}
+
 \section{Konvergenz von Folgen}
 
 Wir haben bereits die formale Definition von Konvergenz kennengelernt. Auch haben wir gesehen, dass man zwar anhand dieser Definition Grenzwert bestimmen kann, dies meist aber nur recht umständlich möglich ist. Für die praktische Berechnung von Grenzwerten wollen wir uns daher noch einige Rechenregeln anschauen, welche die Rechenarbeit erleichtern.
@@ -237,6 +245,7 @@ Komplexe Terme sind durch Rechenoperationen aus einfacheren Termen aufgebaut. Zu
 		& \lim\limits_{n\to\infty} & q^n & = 0, |q| < 1 \\
 		& \lim\limits_{n\to\infty} & \nroot{n}{n} & = 1 \\
 		& \lim\limits_{n\to\infty} & \nroot{n}{q} & = 1, q > 0 \\
+		& \lim\limits_{n\to\infty} & \frac{a^n}{n!} & = 0, a \in \R \label{eq:LimitPowerFactorial} \\
 		& \lim\limits_{n\to\infty} & \left(1+\frac{1}{n}\right)^n & = e \label{eq:LimitExp}
 	\end{alignat}
 \end{statement}
@@ -383,14 +392,12 @@ Mit diesem Wissen lässt sich nun die nächste Rechenregel formulieren.
 
 \begin{example}{Vertauschung von Grenzwert und Funktionsanwendung}{LimFun}
     Gesucht ist der Grenzwert $\alpha = \lim\limits_{x\to 0^+} x^x$. Dabei bedeutet $x\to 0^+$, dass nur nicht-negative Funktionsargumente betrachtet werden, da $x^x$ sonst nicht erklärt ist, dies nennt man auch \emph{rechtsseitiger Grenzwert}. Wir wenden den Logarithmus auf beide Seiten der Gleichung an, und machen dann von der Rechenregel \ref{eq:LimFun} Gebrauch:
-
     \begin{alignat*}{1}
-    \alpha & = \lim\limits_{x\to 0^+}  x^x \\
-    \ln(\alpha) & = \ln\left(\lim\limits_{x\to 0^+}  x^x \right) \\
-    & = \lim\limits_{x\to 0^+} \ln(x^x) \\
-    & = \lim\limits_{x\to 0^+} x\ln(x)
+        \alpha      & = \lim\limits_{x\to 0^+}  x^x \\
+        \ln(\alpha) & = \ln\left(\lim\limits_{x\to 0^+}  x^x \right) \\
+                    & = \lim\limits_{x\to 0^+} \ln(x^x) \\
+                    & = \lim\limits_{x\to 0^+} x\ln(x)
     \end{alignat*}
-
     Aus dem vorigen Beispiel \ref{ex:HopitalRule} wissen wir bereits, dass der letzte Grenzwert $0$ beträgt. Damit ergibt sich $\ln(\alpha) = 0$, woraus sofort für den Grenzwert folgt:
 
     $$

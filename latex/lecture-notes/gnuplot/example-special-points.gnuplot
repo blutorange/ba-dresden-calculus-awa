@@ -13,7 +13,7 @@ $data << EOD
  1 0
 EOD
 
-set arrow from -0.2, graph 0 to -0.2, graph 1 nohead lw 3 lc "#33aa33"
+set arrow from -0.2, graph 0 to -0.2, graph 1 nohead front lw 3 lc "#33aa33"
 
 plot \
   ((4*x-2)**2-6) / (10*x+2) lc 0 lw 5 title "y=((4x-2)^2-6) / (10x+2)", \

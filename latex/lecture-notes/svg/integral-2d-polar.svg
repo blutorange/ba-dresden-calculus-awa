@@ -385,9 +385,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.7114206"
-     inkscape:cx="450.84754"
-     inkscape:cy="256.3988"
+     inkscape:zoom="2.4203142"
+     inkscape:cx="629.48862"
+     inkscape:cy="239.20551"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -1413,5 +1413,17 @@
    style="font-size:64.99999762%;baseline-shift:super"
    id="flowSpan13940-1">Δα</flowSpan>/<flowSpan
    style="font-size:64.99999762%;baseline-shift:sub"
-   id="flowSpan13942-3">2</flowSpan></flowPara></flowRoot>  </g>
+   id="flowSpan13942-3">2</flowSpan></flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot1135-8-6-8-8-2-6-9-5-0-4"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.26458333,0,0,0.26458333,93.005782,45.840612)"><flowRegion
+         id="flowRegion1137-8-4-8-0-9-0-4-3-2-3"><rect
+           id="rect1139-3-3-9-2-9-4-2-4-17-3"
+           width="121.72338"
+           height="64.649765"
+           x="28.789347"
+           y="319.95349" /></flowRegion><flowPara
+         id="flowPara1141-1-3-7-1-0-1-2-9-5-3"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.33333397px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start">r</flowPara></flowRoot>  </g>
 </svg>

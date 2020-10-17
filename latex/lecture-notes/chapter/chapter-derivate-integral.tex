@@ -135,7 +135,7 @@ Schließlich können wir analog zur Tangenten für einstellige Funktionen noch e
 
 Man beachte besonders, dass diese Formel für die lineare Näherung einer mehrstelligen Funktion identisch mit der Formel für die Tangentengleichung einer einstelligen Funktion ist, wenn man $n=1$ setzt.
 
-\begin{example}{Bestimmung der Tangentialebene einer Funktion}{CompTangPlane}
+\begin{example}{Bestimmung der linearen Näherung einer Funktion}{CompTangPlane}
     Gegeben sei die Funktion $f(x,y,z) =x^2+y^2+z$. Wir suchen die Gleichung der linearen Näherung an der Stelle $\vec{r_0} = (2,4,1)$. Um die Formel \ref{def:LinApproxMultivarFun} anwenden zu können, berechnen wir zuerst $\vec\nabla f$:
     $$
         \vec\nabla (x^2+y^2+z^2) = \rvec{\pdd{}{x} (x^2+y^2+z)}{\pdd{}{y} (x^2+y^2+z)}{\pdd{}{z} (x^2+y^2+z)} = \rvec{2x}{2y}{1}
@@ -620,5 +620,12 @@ Für zweistellige Funktionen muss man die zweiten partiellen Ableitungen an der 
 \end{statement}
 
 \begin{example}{Extremwert einer zweistelligen Funktion}{CompBivarEx}
-    Gesucht sind die Extremstellen von $f(x,y) = xy + \frac{1}{x} + \frac{1}{y}$. Wir berechnen zuerst die partiellen Ableitungen: $f_x = y-\frac{1}{x^2}$, $f_y = x-\frac{1}{y^2}$, $f_{xx} = \frac{2}{x^3}$, $f_{yy} = \frac{2}{y^3}$, $f_{xy} = 1$. Als Kandidaten für Extremstellen kommen Stellen in Betracht, wo beide ersten partiellen Ableitung verschwinden. Aus $f_x = f_y = 0$ folgt $y=\frac{1}{x^2}$ sowie $x=\frac{1}{y^2}$. Setzen wir erste Gleichung in zweitere ein, erhalten wir $y=\frac{1}{\left(1/y^2\right)^2} = y^4$ und daraus $y=1$. Damit ist $x=1/1^2 = 1$. Die einzige Kandidatenstelle ist $(x,y) =(1,1)$. Um herauszufinden, ob dort tatsächlich eine Extremstelle vorliegt, berechnen wir die Größe $\Delta = f_{xx}(1,1)f_{yy}(1,1) - f_{xy}(1,1)^2 = 2\cdot2 - 1^2 = 3$. Da $\Delta \ne 0$, liegt eine Extremstelle vor. Da zudem $f_{xx}(1,1) = 2 > 0$ gilt, handelt es sich um ein lokales Minimum.
+    Gesucht sind die Extremstellen von $f(x,y) = xy + \frac{1}{x} + \frac{1}{y}$. Wir berechnen zuerst die partiellen Ableitungen: $f_x = y-\frac{1}{x^2}$, $f_y = x-\frac{1}{y^2}$, $f_{xx} = \frac{2}{x^3}$, $f_{yy} = \frac{2}{y^3}$, $f_{xy} = 1$. Als Kandidaten für Extremstellen kommen Stellen in Betracht, wo beide ersten partiellen Ableitung verschwinden. Aus $f_x = f_y = 0$ folgt $y=\frac{1}{x^2}$ sowie $x=\frac{1}{y^2}$. Setzen wir erste Gleichung in zweitere ein, erhalten wir $y=\frac{1}{\left(1/y^2\right)^2} = y^4$ und daraus $y=1$. Damit ist $x=1/1^2 = 1$. Die einzige Kandidatenstelle ist $(x,y) =(1,1)$. Um herauszufinden, ob dort tatsächlich eine Extremstelle vorliegt, berechnen wir die Größe $\Delta = f_{xx}(1,1)f_{yy}(1,1) - f_{xy}(1,1)^2 = 2\cdot2 - 1^2 = 3$. Da $\Delta \ne 0$, liegt eine Extremstelle vor. Da zudem $f_{xx}(1,1) = 2 > 0$ gilt, handelt es sich um ein lokales Minimum. In Abbildung \ref{fig:ExCompBivarEx} sieht man die Extremstelle auch deutlich in der Konturliniendarstellung.
 \end{example}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.65\textwidth]{./gnuplot/contour-field-extrem-values}
+    \caption{Konturlinien der zweistelligen Funktion aus Beispiel \ref{ex:CompBivarEx}. Man erkennt die Extremstelle deutlich an der geschlossenen Konturlinie.}
+    \label{fig:ExCompBivarEx}
+\end{figure}
