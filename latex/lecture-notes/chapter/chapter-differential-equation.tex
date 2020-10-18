@@ -1,13 +1,118 @@
-\chapter{Differntialgleichungen}
+\chapter{Differentialgleichungen}
 
-Definition von DGL
+TODO: Einführende Beispiele, Näherungslösung einer DGL
 
-Eigenschaften von DGL
+Differentialgleichungen sind eines der wichtigsten Fundamente für die Beschreibung von Zusammenhängen in der Natur. Sie stellen einen Zusammenhang her zwischen einer Größe und ihrer Änderungsrate. In der klassischen Mechanik etwa stellt man sich die Frage, wie sich ein Körper und Einfluss einer Kraft bewegt. Die gesamte Bahn des Körpers anzugeben, ist nicht einfach. Einfacher ist es zu betrachten, was lokal zu einem konkreten Zeitpunkt an einem konkreten Ort passiert. Dann stellt man fest, dass die Änderungsrate der Geschwindigkeit des Körpers zu jedem Zeitpunkt proportional ist zur Kraft, die in diesem Moment auf den Körper wirkt, geteilt durch seine Masse. Dieser Zusammenhang wird durch die Differentialgleichung $F=m\cdot a = m \cdot \ddot{x}(t)$ ausgedrückt. Wenn man jetzt die Änderungsraten der Geschwindigkeiten zu jedem Zeitpunkt aufaddiert, erhält man die gesamte Bahn, auf der sich der Körper bewegt -- man hat die Differentialgleichung gelöst. Oft ist es so, dass man zwar die vollständige Lösung nicht direkt angeben kann, aber mithilfe von Änderungen und Ableitungen einfach beschreiben kann, was lokal zu einem konkreten Zeitpunkt passiert.
 
-Einfach Lösungsmethoden
+\begin{itemize}
+    \item Naturgesetze: Viele Gesetze in der Physik werden durch Differentialgleichungen beschrieben, wie etwa die Newtonsche Grundgleichung aus der klassischen Mechanik, die Navier-Stokes-Gleichung aus der Fluiddynamik, die Maxwell-Gleichungen aus der Elektrodynamik oder die Schrödinger- und Dirac-Gleichung aus der Quantenmechanik.
+    \item Auch zur Modellierung von Zusammenhängen sind Differentialgleichung nützlich. Etwa lassen sich damit die Rate chemischer Reaktionen oder die Dynamik einer Population beschreiben.
+    \item Differentialgleichungen aus der klassischen Mechanik werden auch zur nummerischen Simulation verwendet, etwa um die Eigenschaften und die Stabilität eines geplanten Bauwerks zu berechnen oder um in einer \emph{Physics Engine} die Bewegung von Körpern zu simulieren.
+\end{itemize}
+
+\section{Begriff der Differentialgleichung}
+
+Zuerst müssen wir klären, was wir unter einer Differentialgleichung verstehen und was es bedeutet, eine Differentialgleichung zu lösen.
+
+\begin{definition}{Differentialgleichung}{Deq}
+    Eine Gleichung, welche eine Funktion sowie einer oder mehrere ihrer Ableitung enthält, nennt man \textbf{Differentialgleichung} (\textbf{DGL}).
+\end{definition}
+
+\begin{definition}{Ordnung einer DGL}{DeqOrder}
+    Unter der \textbf{Ordnung $n$} einer DGL versteht man die höchste vorkommende Ableitung.
+\end{definition}
+
+So sind etwa folgende Gleichungen alle DGL:
+
+\begin{itemize}
+    \item $y' = y$ beziehungsweise $\dd{}{x} y = y$. Diese hat die Ordnung $1$, da $y'$ die höchste vorkommende Ableitung ist.
+    \item $(y')^2 + 3 y' = \sin(y)$. Diese hat ebenfalls die Ordnung $1$.
+    \item $y''+y'+4y=x^2$. Diese hat die Ordnung $2$, da $y''$ die höchste vorkommende Ableitung ist.
+    \item $\pdd{f}{x} = \pdd{f}{y}$. Diese hat die Ordnung $1$, da nur erste partielle Ableitung nach $x$ und $y$ vorkommen.
+\end{itemize}
+
+Anmerkung zur Schreibweise: Um Schreibarbeit zu sparen, lässt man in oft das Argument der Funktion aus, also etwa $y'=y$ statt $y'(x) = y(x)$.
+
+Im letzten Beispiel kamen partielle Ableitungen vor. Man unterscheidet allgemein zwischen DGL mit einstelligen Funktionen und DGL mit mehrstelligen Funktionen.
+
+\begin{definition}{Ordinäre und partielle DGL}{OrdPartDGL}
+    Eine DGL für eine einstellige Funktion nennt man \textbf{ordinäre DGL} (gewöhnliche DGL). Bei einer DGL mit einer zwei- oder mehrstelligen Funktionen spricht man von einer \textbf{partiellen DGL}.
+\end{definition}
+
+\begin{example}{Ordinäre und partielle DGL}{}
+    \begin{itemize}
+        \item $y''+2y=0$ ist eine gewöhnliche DGL.
+        \item $\pdd{B_x}{x} + \pdd{B_y}{y} + \pdd{B_z}{z} = 0$ ist eine partielle DGL. Dabei ist $B$ das Magnetfeld. Diese DGL ist eine Teil der Maxwell-Gleichungen aus der Elektrodynamik und beschreibt die Tatsache, dass es keine magnetischen Monopole (Ladungen) gibt.
+        \item $\pdd{u}{t} = k \cdot (\pddn{2}{u}{x} + \pddn{2}{u}{y} + \pddn{2}{u}{z})$ ist ebenfalls eine partielle DGL. Dabei ist $u$ die Temperatur an einem Punkt $(x,y,z)$ im Raum zu einem bestimmten Zeitpunkt $t$. Diese sogenannte Wärmeleitungsgleichung beschreibt, wie sich die Temperatur im Laufe der Zeit verändert. $k$ ist eine materialabhängige Konstante, welche ein Maß für die Temperaturleitfähigkeit ist.
+    \end{itemize}
+\end{example}
+
+In dieser Vorlesung werden wir uns auf DGL mit einstelligen Funktionen beschränken.
+
+\begin{definition}{Lösungen einer DGL}{DeqSol}
+    Eine \textbf{Lösung} einer DGL $n$-ter Ordnung ist eine Funktion derart, dass die Gleichung für alle Argumente aus dem Definitionsbereich erfüllt ist. Die Menge aller Lösungen nenn man \textbf{allgemeine Lösung}, welche eine Kurvenschar mit $n$ willkürlichen wählbaren Parametern darstellt. Eine konkrete Lösungsfunktion aus dieser Schar entsteht durch eine konkrete Wahl der $n$ Parameter und wird \textbf{partikuläre Lösung} genannt. Eine Lösungsfunktion, welche nicht aus der allgemeinen Lösung durch Wahl durch eine bestimmte Belegung der Parameter entsteht, nennt man \textbf{singuläre Lösung}.
+\end{definition}
+
+\begin{example}{Arten von Lösungen einer DGL}{DeqSolType}
+    \begin{itemize}
+        \item Die DGL $y'=y$ etwa beschreibt Funktionen, die identisch mit ihrer Ableitung sind. Eine solche Funktion kennen wir bereits: die Exponentialfunktion $y=e^x$. Setzen wir dieses $y$ in $y'=y$ ein, so erhalten wir $(e^x)'=e^x$. Das ist eine wahre Aussage, also ist $y=e^x$ eine \emph{partikuläre} Lösung der DGL. Gibt es noch mehrere Lösungen? Wir wissen, dass ein konstanter Vorfaktor in der Ableitung einfach mitgezogen wird. Also sind alle Funktionen der Form $y=C\cdot e^x$ mit beliebigen $C\in\R$ die allgemeine Lösung der DGL $y'y$. Eine weitere partikuläre Lösungen erhalten wir, in dem wir beispielsweise $C=-3$ setzen: $y(x) = -3 e^x$.
+        \item Die DGL $y'^2 + y^2 = 1$ hat die allgemeine Lösung $y(x) = \pm \sin(C+x)$. Eine partikuläre Lösung ist beispielsweise $y(x) = \sin(3+x)$. Zudem ist aber auch $y(x) = \pm 1$ eine Lösung, was man durch Einsetzen in die DGL nachprüfen kann. Da diese beiden Lösungen nicht durch wahl von $C$ aus  $y(x) = \pm \sin(C+x)$ entstehen, handelt es sich um \emph{singuläre Lösungen}.
+    \end{itemize}
+\end{example}
+
+Im obigen Beispiel \ref{ex:DeqSolType} haben wir gesehen, dass die allgemeine Lösung eine Funktionsgleichung mit einer frei wählbaren Konstante ist, also eine parametrisierte Kurvenschar darstellt. Für die meisten DGL wird das der Fall sein, die allgemeine Lösung enthält in der Regel eine oder mehrere Konstanten. Diese Konstanten entstehen unter Anderem durch die Integrationskonstante des unbestimmten Integrals. Daher ist es wichtig, diese nicht zu vergessen, da man sonst statt der allgemeinen Lösung nur eine partikuläre Lösung erhält.
+
+Um nun eine Lösung einer DGL zu finden, gibt es gewissen Rechenverfahren, die wir später kennen lernen werden. Zuerst wollen wir uns aber mit einfachen DGL vertraut machen und uns anschauen, wie man diese graphisch lösen kann. Diese graphische Lösung stellt auch die Idee für nummerische Lösungsmethoden dar, die man anwenden kann, wenn sich eine DGL nicht mehr geschlossen lösen lässt.
+
+\begin{definition}{Richtungsfeld einer DGL}{SlopeField}
+    Eine DGL der Form $y'(x) = \phi(y,x)$, in der nur eine einstellige Funktion und deren erste Ableitung vorkommt, kann graphisch durch ein \textbf{Richtungsfeld} dargestellt werden. Das Richtungsfeld weist jedem zweidimensionalen Punkt $(x,y)$ einen \textbf{Richtungspfeil} in Richtung des Anstieg $y'$ und frei wählbaren Betrag zu. Ausgehend von einem Startpunkt lässt sich dann durch Folgen der Pfeile graphisch eine partikuläre Lösung ermitteln.
+\end{definition}
+
+\begin{example}{Ermittlung des Richtungsfelds}{CompSlopeField}
+    Wir wollen graphisch die Lösung von $-x \cdot y'=y$ bestimmen. Um das Richtungsfeld zeichnen zu können, müssen wir sie zuerst in die Form $y'(x) = \phi(y,x)$ umformen -- also nach $y'$ umstellen. Für $x \ne 0$ gilt $y' = -y/x$. Das Richtungsfeld ergibt sich also, indem wir in einem zweidimensionalen Koordinatensystem an jedem Punkt $(x,y)$ einen Pfeil in Richtung des Anstieg einzeichnen. Wenn wir etwa $\Delta x$ Einheiten nach rechts gehen, müssen wir $y' \cdot \Delta x = -\frac{y}{x} \cdot \Delta x$ Einheiten nach oben gehen. Etwa für $Delta x = 1$ ergibt sich, dass der Richtungspfeil am Punkt $(x,y)$ lauten muss: $(1,-frac{y}{x})$. Zweckmäßigerweise normiert man alle Richtungspfeilen so, dass sie die gleiche Länge haben und sich gegenseitig nicht überlappen.
+    Um die Arbeit beim Zeichnen des Richtungsfelds zu verringern, können wir uns noch überlegen, wo sich Linien gleichen Anstieg befinden. Damit $y'=const.$ gilt, muss der Quotient $y/x$ konstant sein, $y$ muss also ein Vielfaches von $x$ sind. Daher gilt, dass auf allen Geraden durch den Ursprung (etwa $y=2x$ oder $y=-5x$) die Richtungspfeile in die gleiche Richtung zeigen. Solche Linien gleichen Anstieg nennt man auch Isokline, von \emph{ísos} ("gleich") und \emph{inclination} ("Neigung").
+\end{example}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.65\textwidth]{./gnuplot/example-slope-field}
+    \caption{Richtungsfeld der DGL $y'=-y/x$ und mögliche Anfangswerte der partikulären Lösungen}
+    \label{fig:ExSlopField}
+\end{figure}
+
+In Abbildung \ref{fig:ExSlopField} ist solch ein Richtungsfeld dargestellt. Wir erkennen in dieser Abbildung auch noch etwa anderes. Um im Richtungsfeld eine partikuläre Lösungen einzuzeichnen, müssen wir den Pfeilen folgen. Doch dazu benötigen wir einen Startpunkt. Je nachdem, welchen Startpunkt wir wählen, erhalten wir eine andere Kurve. Oder anders ausgedrückt: das Richtungsfeld zeigt alle möglichen Lösungen (\emph{allgemeine Lösung}), eine konkrete Lösung (\emph{partikuläre Lösung}) wird dadurch ausgewählt, dass wir einen Punkt $(x,y)$ vorgeben, durch den die Kurve verlaufen soll.
+
+\begin{definition}{Anfangs- und Randbedingungen}{InitBoundCond}
+    Um eine partikuläre Lösung einer DGL $n$-ter Ordnung eindeutig zu bestimmen, werden neben der DGL noch zusätzliche Einschränkungen (im allgemeinen $n$ Stück) an die Lösungsfunktion benötigt. Dabei gibt es zwei wesentliche Arten von Bedingungen:
+    \begin{itemize}
+        \item Bei einem \textbf{Anfangswertproblem} sind \textbf{Anfangsbedingungen} gegeben, also der Wert der Funktion oder ihrer Ableitungen an einer Stelle.
+        \item Bei einem \textbf{Randwertproblem} sind \textbf{Randbedingungen} gegeben, also der Wert der Funktion oder ihrer Ableitung am Rande eines betrachteten Gebiets.
+    \end{itemize}
+\end{definition}
+
+Ein physikalisches Beispiel für ein Anfangswertproblem ist etwa der freie Fall, wenn Anfangsort x und Anfangsgeschwindigkeit $\dot{x} = \dd{x}{t}$ zum Zeitpunkt $t_0$ vorgegeben ist. Randwertprobleme treten meist bei partiellen Differentialgleichungen auf, beispielsweise kann man in der Elektrostatik das elektrische Potential $\varphi$ am Rand eines geerdeten Leiters vorgeben. Ein weiteres Beispiel für ein Randwertproblem ist Seil, welches an zwei Enden eingespannt ist. Damit ist die Position des Seils am Rand fest vorgeben, die Bewegung des Seils zwischen beiden Enden wird dann durch die Schwingungsgleichung beschrieben.
+
+\section{Homogenität und Linearität}
+
+Explizit/Implizite Form
+Kanonishce Form 0 = phi(y'', y', ..., x)
+Homogenität
+Linearität
+
+\section{Direkte Integration}
+
   Direkte Integration
-  Trennung der Variables
+
+\section{Trennung der Variablen}
+
+  Trennung der Variablen
+
+\section{Variation der Konstanten}
+
   Variation der Konstanten
+
+\section{Lineare Differentialgleichungen}
+
   Struktur der Lsg. von lin. DGL
   Charakt. Gleichung für homog. Anteil
   Ansatz für inhomog. Anteil
