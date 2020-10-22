@@ -65,11 +65,11 @@ Im obigen Beispiel \ref{ex:DeqSolType} haben wir gesehen, dass die allgemeine L�
 Um nun eine Lösung einer DGL zu finden, gibt es gewissen Rechenverfahren, die wir später kennen lernen werden. Zuerst wollen wir uns aber mit einfachen DGL vertraut machen und uns anschauen, wie man diese graphisch lösen kann. Diese graphische Lösung stellt auch die Idee für nummerische Lösungsmethoden dar, die man anwenden kann, wenn sich eine DGL nicht mehr geschlossen lösen lässt.
 
 \begin{definition}{Richtungsfeld einer DGL}{SlopeField}
-    Eine DGL der Form $y'(x) = \phi(y,x)$, in der nur eine einstellige Funktion und deren erste Ableitung vorkommt, kann graphisch durch ein \textbf{Richtungsfeld} dargestellt werden. Das Richtungsfeld weist jedem zweidimensionalen Punkt $(x,y)$ einen \textbf{Richtungspfeil} in Richtung des Anstieg $y'$ und frei wählbaren Betrag zu. Ausgehend von einem Startpunkt lässt sich dann durch Folgen der Pfeile graphisch eine partikuläre Lösung ermitteln.
+    Eine DGL der Form $y'(x) = g(y,x)$, in der nur eine einstellige Funktion und deren erste Ableitung vorkommt, kann graphisch durch ein \textbf{Richtungsfeld} dargestellt werden. Das Richtungsfeld weist jedem zweidimensionalen Punkt $(x,y)$ einen \textbf{Richtungspfeil} in Richtung des Anstieg $y'$ und frei wählbaren Betrag zu. Ausgehend von einem Startpunkt lässt sich dann durch Folgen der Pfeile graphisch eine partikuläre Lösung ermitteln.
 \end{definition}
 
 \begin{example}{Ermittlung des Richtungsfelds}{CompSlopeField}
-    Wir wollen graphisch die Lösung von $-x \cdot y'=y$ bestimmen. Um das Richtungsfeld zeichnen zu können, müssen wir sie zuerst in die Form $y'(x) = \phi(y,x)$ umformen -- also nach $y'$ umstellen. Für $x \ne 0$ gilt $y' = -y/x$. Das Richtungsfeld ergibt sich also, indem wir in einem zweidimensionalen Koordinatensystem an jedem Punkt $(x,y)$ einen Pfeil in Richtung des Anstieg einzeichnen. Wenn wir etwa $\Delta x$ Einheiten nach rechts gehen, müssen wir $y' \cdot \Delta x = -\frac{y}{x} \cdot \Delta x$ Einheiten nach oben gehen. Etwa für $Delta x = 1$ ergibt sich, dass der Richtungspfeil am Punkt $(x,y)$ lauten muss: $(1,-frac{y}{x})$. Zweckmäßigerweise normiert man alle Richtungspfeilen so, dass sie die gleiche Länge haben und sich gegenseitig nicht überlappen.
+    Wir wollen graphisch die Lösung von $-x \cdot y'=y$ bestimmen. Um das Richtungsfeld zeichnen zu können, müssen wir sie zuerst in die Form $y'(x) = g(y,x)$ umformen -- also nach $y'$ umstellen. Für $x \ne 0$ gilt $y' = -y/x$. Das Richtungsfeld ergibt sich also, indem wir in einem zweidimensionalen Koordinatensystem an jedem Punkt $(x,y)$ einen Pfeil in Richtung des Anstieg einzeichnen. Wenn wir etwa $\Delta x$ Einheiten nach rechts gehen, müssen wir $y' \cdot \Delta x = -\frac{y}{x} \cdot \Delta x$ Einheiten nach oben gehen. Etwa für $Delta x = 1$ ergibt sich, dass der Richtungspfeil am Punkt $(x,y)$ lauten muss: $(1,-frac{y}{x})$. Zweckmäßigerweise normiert man alle Richtungspfeilen so, dass sie die gleiche Länge haben und sich gegenseitig nicht überlappen.
     Um die Arbeit beim Zeichnen des Richtungsfelds zu verringern, können wir uns noch überlegen, wo sich Linien gleichen Anstieg befinden. Damit $y'=const.$ gilt, muss der Quotient $y/x$ konstant sein, $y$ muss also ein Vielfaches von $x$ sind. Daher gilt, dass auf allen Geraden durch den Ursprung (etwa $y=2x$ oder $y=-5x$) die Richtungspfeile in die gleiche Richtung zeigen. Solche Linien gleichen Anstieg nennt man auch Isokline, von \emph{ísos} ("gleich") und \emph{inclination} ("Neigung").
 \end{example}
 
@@ -94,14 +94,135 @@ Ein physikalisches Beispiel für ein Anfangswertproblem ist etwa der freie Fall,
 
 \section{Homogenität und Linearität}
 
-Explizit/Implizite Form
-Kanonishce Form 0 = phi(y'', y', ..., x)
-Homogenität
-Linearität
+Zwei wichtige Eigenschaften von DGL sind die sogenannten Homogenität und Linearität. Wir werden sehen, dass speziell lineare DGL einfacher lösbar sind als nichtlineare DGL. Die Navier-Stokes-Gleichung beschreibt wie bereits erwähnt Phänomene der Fluiddynamik. Es handelt es sich dabei um eine partielle und nichtlineare DGL. Aufgrund ihrer Nichtlinearität ist diese bisher noch nicht vollständig gelöst. Eines der sieben Millennium-Problem des \href{http://www.claymath.org/millennium-problems}{Clay Mathematics Institute} betrifft diese DGL:
+
+\begin{quotation}
+    \textbf{Navier–Stokes Equation}. This is the equation which governs the flow of fluids such as water and air. However, there is no proof for the most basic questions one can ask: do solutions exist, and are they unique? Why ask for a proof? Because a proof gives not only certitude, but also understanding.
+\end{quotation}
+
+Um die eben erwähnten Begriffe genau zu definieren, benötigen wir zunächst erstmal die kanonische Darstellungsform einer gewöhnlichen DGL. Kanonisch leitet sich ab vom Lateinischen \emph{canon} (\emph{Norm}, \emph{Regel}) und meint in der Mathematik eine konkrete Darstellungsweise aus vielen möglichen Darstellungsweisen.
+
+\begin{definition}{Formen der Gleichung einer DGL}{DeqForms}
+    Die Gleichung einer DGL $n$-ter Ordnung kann in verschiedene Formen umgestellt werden. Eine konkrete Form der Gleichung einer DGL heißt
+    \begin{itemize}
+        \item \textbf{explizit}, wenn die höchste Ableitung $y^{(n)}$ alleine auf der linken oder rechten Seite der Gleichung steht.
+        \item \textbf{implizit}, wenn sie nicht explizit ist.
+        \item \textbf{kanonisch}, wenn alle Glieder auf einer Seite der Gleichung stehen, also sich schreiben lässt als $\Phi(y,y',y'',y''',\dots,y^{(n)},x) = 0$
+    \end{itemize}
+\end{definition}
+
+\begin{example}{DGL in expliziter und impliziter Form}{ExExplImplDeq}
+    \begin{itemize}
+        \item $\sin(y'+x^2) = y''$ ist explizit, da $y''$ alleine auf der rechten Seite steht.
+        \item $\sin(y''+x^2) = y'$ ist implizit, da $y''$ innerhalb des Terms auf der linken Seite vorkommt.
+        \item $\sin(y''+x^2) = y''$ ist implizit, da $y''$ auf beiden Seiten der Gleichung vorkommt.
+        \item $y''+x=0$ ist implizit, umgeformt zu $y''=-x$ erhält man die explizite Form.
+    \end{itemize}
+\end{example}
+
+\begin{example}{Kanonische Form einer DGL}{ExCanonDeq}
+    \begin{itemize}
+        \item Die DGL $y''+2y'-y=2x$ lässt sich umstellen zu $-y+2y'+y''-2x=0$. Das ist eine kanonische Form, sich lässt sich schreiben als $\Phi(y,y',y'',x)=-y+2y'+y''-2x=0$.
+        \item Im Allgemeinen lässt sich jede DGL $\dots = \dots$ auf kanonische Form bringen, indem man durch Subtraktion die rechte Seite auf die linke Seite bringt.
+    \end{itemize}
+\end{example}
+
+Mithilfe der Notation $\Phi(y,y',y'',y''',\dots,y^{(n)},x) = 0$, also dass wir die DGL als einen Term auffassen können, in dem das Argument, die Funktion und ihre Ableitungen vorkommen, können wir nun die nächste Eigenschaft einer DGL formulieren.
+
+\begin{definition}{Homogenität}{HomogenousDeq}
+    Eine DGL $n$-ter Ordnung $\Phi(y,y',y'',y''',\dots,y^{(n)},x) = 0$ heißt \textbf{homogen}, falls sie eine homogene Gleichung in der gesuchten Funktion $y$ und ihren Ableitung ist, das heißt, falls es ein $\alpha\in¸N_0$ gibt, sodass gilt:
+    $$
+        \forall t: \Phi(ty,ty',ty'',ty''',\dots,ty^{(n)},x) = t^\alpha \cdot \Phi(y,y',y'',y''',\dots,y^{(n)},x)
+    $$
+    $\alpha$ heißt dann \textbf{Grad der Homogenität}.
+\end{definition}
+
+Anders formuliert bedeutet die Gleichung in obiger Definition, dass wir, wenn wir alle $y$ mit einer Konstante multiplizieren, diese Konstante aus der gesamten Gleichung ausklammern können. Der Begriff der Homogenität ("Gleichförmigkeit") geht auf die Definition sogenannten \emph{homogener Funktionen} zurück. Eine Funktion heißt beispielsweise homogen, falls sich ihr Funktionswert verdoppelt, wenn man das Argument verdoppelt -- der Funktionswert also gleichmäßig mit dem Argument skaliert. Lineare Gleichungen der Form $y=mx$ sind homogen (vom Grad 1). Ein anderes Beispiel für homogene Funktionen sind Parabeln $y=ax^2$. Wenn wir das Argument verdoppeln, vervierfacht sich der Funktionswert. Allgemeiner können wir sagen, dass wenn wir das Argument mit $t$ multiplizieren (skalieren), der Funktionswert mit $t^2$ multipliziert wird: $f(tx)=t^2f(x)$. Noch allgemeiner heißt eine Funktion $f$ homogen vom Grad $\alpha$, wenn $f(tx) = t^\alpha f(x)$ gilt. Bei einer homogenen Funktionen steht also die Skalierung entlang der Abszisse (x-Achse) in einem Zusammenhang mit der Skalierung entlang der Ordinate (y-Achse). Wenn wir jetzt nochmal an die Definition für homogene DGL zurückdenken, so stellen wir fest, dass sie der Definition einer homogenen Funktion ähnelt, nur mit dem Unterschied, dass wir jetzt mehrere Argumente gleichzeitig skalieren.
+
+\begin{example}{Überprüfung der Homogenität}{ExHomoDeq}
+    \begin{itemize}
+        \item $y''+xy=0$ ist homogen, denn wenn wir alle $y$ mit $t$ multiplizieren, erhalten wir $ty''+xty$, und hier können wir $t$ vollständig aus allen Summanden ausklammern: $t^1 \cdot (y''+xy)$. Der Grad der Homogenität ist wegen $t^1$ gleich 1.
+        \item $y''+xy-3=0$ ist inhomogen. Wenn wir alle $y$ mit $t$ multiplizieren, erhalten wir $ty''+xty-3$. Da im letzten Summanden $-3$ kein $t$ vorkommt, können wir es nicht vollständig ausklammern. Anders betrachtet ist es uns also nicht möglich, in der Gleichung $ty''+xty-3 = t^n \cdot (y''+xy-3)$ einen Wert für $n$ zu finden, sodass daraus eine wahre Aussage wird.
+        \item $y''+xy-3x=0$ ist inhomogen. Wenn wir alle $y$ mit $t$ multiplizieren, erhalten wir $ty''+xty-3x$. Da im letzten Summanden $-3x$ kein $t$ vorkommt, können wir es nicht vollständig ausklammern.
+        \item $y''+xy^2=0$ ist inhomogen. Nach Multiplikation mit $t$ erhalten wir $ty''+xt^2y^2$. Im ersten Summanden kommt $t$ zur Potenz $1$ vor, im zweiten Summanden zur Potenz $2$. Wir können daher weder $t$ noch $t^2$ auf beiden Seiten ausklammern.
+        \item $(y')^2+y^2=0$ ist homogen vom Grad $2$. Wir setzen an $(ty')^2+(ty)^2=t^2\cdot\left[(y')^2+y^2\right]$. Da $t^2$ in beiden Summanden vorkommt, konnten wir es vollständig ausklammern. Wegen $t^2$ ist der Grad der Homogenität $2$.
+        \item $\sin(x)y'''+x^2y=0$ ist homogen vom Grad $1$, denn $\sin(x)ty'''+x^2 t y = t^1 \cdot \left(\sin(x)y''+x^2y\right)$.
+        \item $\frac{y'}{y}+x=0$ ist homogen vom Grad $0$, denn $\frac{ty'}{ty}+x = t^0 \cdot \left(\frac{y'}{y}+x\right)$.
+   \end{itemize}
+\end{example}
+
+Anhand der obigen Beispiel können wir einige Beobachtungen machen, welche uns das Überprüfen der Homogenität erleichtern. Kommt in der Funktionsgleichung ein Summand (ungleich 0) vor, in dem kein $y$ oder eine Ableitung von $y$ steht, ist die DGL in der Regeln inhomogen. Die einzige Ausnahme tritt auf, wenn die restlichen Terme Quotienten von $y$ sind, sodass sich ein Grad der Homogenität $0$ ergibt. Im folgenden werden wir hauptsächlich DGL betrachten, wo der Grad der Homogenität $1$ ist, daher ist diese Faustregel sehr hilfreich.  Weiterhin stellen wir noch fest, dass eine homogene DGL mit Grad der Homogenität $1$ vorliegt, wenn $y$ in allen weiteren Summanden ohne weitere Rechenoperation (Quadrieren, Sinusbildung, \dots) vorkommt und höchstens noch einen Vorfaktor hat. Solche Arten von DGL nennt man lineare homogene DGL, welche wir in einem der nächsten Abschnitte noch genauer betrachten werden.
+
+Des Weiteren können wir noch eine Feststellung machen, wenn wir uns die ersten drei Beispiele noch einmal genauer anschauen: $y''+xy=0$ ist homogen, $y''+xy-3=0$ bzw. $y''+xy-3x=0$ jedoch nicht. Der Unterschied besteht im Summanden $-3$ beziehungsweise $-3x$. Während die letzten beiden DGL zwar nicht homogen sind, können wir sie zerlegen in eine Summe aus einer homogenen DGL ($y''+xy=0$) und einem Inhomogenitäts-Term ($-3$ beziehungsweise $-3x$).
+
+\begin{definition}{Homogener und inhomogener Anteil}{HomInhomPart}
+    Einige inhomogene DGL $n$-ter Ordnung lassen sich zerlegen in einen homogenen und einen inhomogenen Anteil:
+    $$
+        \Phi(y,y',y'',y''',\dots,y^{(n)},x) = 0 = \underbrace{H(y,y',y'',y''',\dots,y^{(n)},x)}_{Homogener Anteil} + \underbrace{F(x)}_{\text{Inhomogenität}}
+    $$
+    Ist dies möglich, so heißt $H$ der \textbf{inhomogene Anteil} der DGL und $H(y,y',y'',y''',\dots,y^{(n)},x) = 0$ die zur DGL \textbf{zugehörige homogene DGL}. Weiterhin heißt $F$ die \textbf{Inhomogenität} der DGL.
+\end{definition}
+
+Kleiner Hinweis zur Notation: Oft bringt man den inhomogenen Anteil $F(x)$ auch auf die rechte Seite der Gleichung und nennt dann $-F(x)$ die Inhomogenität:
+
+$$
+    H(y,y',y'',y''',\dots,y^{(n)},x) = \underbrace{-F(x)}_{\text{Inhomogenität}}
+$$
+
+\begin{example}{Zerlegung einer inhomogenen DGL}{ExHomInhomPart}
+    \begin{itemize}
+        \item Die zu $y''+xy=3x$ zugehörige homogene DGL lautet $y''+xy=0$, die Inhomogenität ist $3x$.
+        \item Die DGL $y''+y = \sin(2 \pi x)$ beschreibt physikalisch ein schwingendes Pendel. Die zugehörige homogene DGL $y''y=0$ stellt eine freischwingendes Pendel dar, die Inhomogenität $\sin(2 \pi x)$ ergibt sich, wenn man das Pendel etwa mit einem Motor sinusförmig mit der Frequenz $1$ antreibt (erzwungene Schwingung).
+        \item Die DLG $y''+xy=0$ ist bereits homogen und stellt damit selbst ihre zugehörige homogene DGL dar, die Inhomogenität ist $0$.
+        \item Die DGL $\sin(y)=x$ ist inhomogen und lässt sich nicht in einen homogenen und inhomogenen Anteil zerlegen.
+    \end{itemize}
+\end{example}
+
+Wie erwähnt sind lineare DGL von besonderem Interesse, nicht nur, da sie sich leicht lösen lassen, sondern auch zur Modellierung vieler Phänomene verwendet werden können. Die Linearität ist eine spezielle Form der Homogenität:
+
+\begin{definition}{Lineare DGL}{LinDeq}
+    Eine DGL $n$-ter Ordnung nennt man \textbf{linear}, wenn sie einen homogenen Anteil $H(y,y',y'',y''',\dots,y^{(n)},x)$ besitzt und dieser den Grad der Homogenität $1$ besitzt. Andernfalls heißt sie \textbf{nichtlinear}.
+\end{definition}
+
+Um eine Homogenität vom Grad $1$ zu erreichen, dürfen die gesuchte Funktion $y$ und alle ihre Ableitungen nur als lineare Summanden mit Vorfaktor (Koeffizient) in der DGL vorkommen. Wir man sich überlegen kann, ist die allgemeine Form solcher linearen DGL $n$-ter Ordnung:
+
+$$
+    \sum\limits_{i=0}^{n} a_i(x) y^{(i)}(x) = F(x)
+$$
+
+Wobei die Koeffizienten $a_i(x)$ beliebige, nur von $x$ abhängige Funktionen sind und $F(x)$ die Inhomogenität ist. Einige Beispiele für solche linearen DGL sind etwa:
+
+\begin{itemize}
+    \item $y'=0$
+    \item $y'''-7y''+2y''+y'-5y=\sin(x)\cdot e^x$
+    \item $\sin(x)x^2y'''+4e^x y = x$
+\end{itemize}
+
+Für nichtlineare DGL sind einige Beispiel etwa:
+
+\begin{itemize}
+    \item $\sin(y')=y$
+    \item $\frac{y''}{y'} = y^2$
+    \item $(y')^2+y=0$
+\end{itemize}
 
 \section{Direkte Integration}
 
-  Direkte Integration
+In den verbleibenden Abschnitten wollen wir uns noch einige übliche Lösungsmethoden für DGL anschauen. Aufgrund der Knappheit der Zeit müssen wir uns dabei auf einige grundlegende Verfahren beschränken. Auf die Theorie der Lösung von Differentialgleichungssystem mit mehr als einer Funktion $y$ können wir hier gar nicht eingehen.
+
+Die vermutlich einfachste Lösungsmethode einer DGL besteht in ihrer direkten Integration. Falls die DGL $n$-ter Ordnung in der Form $y^{(n)} = f(x)$ vorliegt, so müssen wir nur $n$-mal das unbestimmte Integral bilden und erhalten so die allgemeine Lösung der DGL mit $n$ Konstanten.
+
+\begin{example}{Freier Fall}{FreeFall}
+    Das Newtonsche Grundgesetz lautet $\ddot{x} = \frac{1}{m}\cdot F(x,t)$. Dabei ist $\ddot{x} = \ddn{2}{x}{t}$ die zweite Ableitung des Ortes eines Körpers $x$ nach der Zeit $t$, $F$ die auf den Körper wirkende Kraft und $m$ seine Masse. Durch Lösen dieser DGL erhält man die Bahnkurve des Körpers. Für einen frei fallenden Körper nahe der Erdoberfläche gilt $F(x,t)=m \cdot g$ mit der Fallbeschleunigung $g\approx 9.8\umss$. Damit lautet die Bewegungsgleichung für einen frei fallenden Körper $\ddot{x} = g$. Diese DGL können wir durch zweifache direkte Integration lösen. Die erste Integration liefert:
+    $$
+        v(t) = \dot{x}(t) = \int g \diff{x} = gt +v_0
+    $$
+    Dabei ist $v$ die Geschwindigkeit, welche per Definition die erste Ableitung des Ortes nach der Zeit ist. Die Integrationskonstante $v_0$ hat eine physikalische Bedeutung, nämlich die Anfangsgeschwindigkeit des Körpers zum Zeitpunkt $t=0$. Erneute Integration liefert:
+    $$
+        x(t) = \int gt + v_0 \diff{x} = \frac{1}{2} g t^2 + v_0 t + s_0
+    $$
+    Dabei ist $s_0$ der Anfangsort des Körpers zum Zeitpunkt $t=0$. Die DGL hat die Ordnung $2$, insgesamt haben wir wie erwartet die $2$ Integrationskonstanten $v_0$ und $s_0$ gewonnen. Durch Lösen der Bewegungsgleichung für den freien Fall haben wir somit die bekannte Formel für den freien Fall erhalten.
+\end{example}
 
 \section{Trennung der Variablen}
 
@@ -111,8 +232,24 @@ Linearität
 
   Variation der Konstanten
 
+  y'+P(x)y=Q(x)
+
 \section{Lineare Differentialgleichungen}
 
-  Struktur der Lsg. von lin. DGL
-  Charakt. Gleichung für homog. Anteil
-  Ansatz für inhomog. Anteil
+\subsection{Lösungsstruktur}
+
+Linearkombination von n linear unabhängigen Fundamentallösungen  + 1 partikuläre Lösung
+
+\subsection{Lineare DGL mit konstanten Koeffizienten}
+
+Ansatz e^ax für homogene
+Multiplikation mit x wenn mehrfache Nst.
+
+partikuläre Lsg. ist Linearkomb. aller lin. unabhängigen Ableitungen der Inhomogenität
+e^x,sin(x),cos(x),Polynome
+
+Erwähnung Variation der Konst. für partik. Lsg.
+
+Alternative: (D-1)(D-2)...(D+3) y = F(x) ist jeweils von der Form y'+P(x)y=Q(x)
+
+Beispiel harm. Schwingung
