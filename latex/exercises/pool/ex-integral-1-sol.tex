@@ -2,18 +2,18 @@
 
 \begin{enumerate}
 
-\item $\int \frac{1}{x} + \frac{1}{x^2}\d x = \ln(|x|)-\frac{1}{x}+C$
+\item $\int \frac{1}{x} + \frac{1}{x^2}\diff{x} = \ln(|x|)-\frac{1}{x}+C$
 
-\item $\int \cos(10x)\d x = \frac{1}{10}\sin(10x) + C$
+\item $\int \cos(10x)\diff{x} = \frac{1}{10}\sin(10x) + C$
 
-\item $\int x\cdot \sin(x^2)\d x \stackrel{\text{Substitution } z=x^2}{=} \frac{1}{2}\int \sin(z)\d z = -\frac{1}{2}\cos(x^2)+C$
+\item $\int x\cdot \sin(x^2)\diff{x} \stackrel{\text{Substitution } z=x^2}{=} \frac{1}{2}\int \sin(z)\diff{z} = -\frac{1}{2}\cos(x^2)+C$
 
-\item Mit der Substitution $u=x^2$, $\d{x} = \frac{\d{u}}{2x}$ ergibt sich \\
-$\int \frac{x}{\sqrt{2+x^2}} \d x = \int \frac{x/(2x)}{\sqrt{2+u}} \d u = \frac{1}{2} \int \frac{1}{\sqrt{2+u}} \d u = \frac{1}{2} \cdot 2 \cdot \sqrt{u+2} + C = \sqrt{x^2+2} + C$
+\item Mit der Substitution $u=x^2$, $\diff{x} = \frac{\diff{u}}{2x}$ ergibt sich \\
+$\int \frac{x}{\sqrt{2+x^2}} \diff{x} = \int \frac{x/(2x)}{\sqrt{2+u}} \diff{u} = \frac{1}{2} \int \frac{1}{\sqrt{2+u}} \diff{u} = \frac{1}{2} \cdot 2 \cdot \sqrt{u+2} + C = \sqrt{x^2+2} + C$
 
-\item $\int x \cdot e^x \d x = x e^x - \int e^x = x e^x - e^x = (x-1)\cdot e^x$
+\item $\int x \cdot e^x \diff{x} = x e^x - \int e^x = x e^x - e^x = (x-1)\cdot e^x$
 
-\item $\int x^2 \ln(x) \d x = \frac{x^3}{3}\ln(x) - \int \frac{x^3}{3}\cdot \frac{1}{x} \d x = \frac{x^3}{3}\ln(x) - \int \frac{x^2}{3} \d x$ \\
+\item $\int x^2 \ln(x) \diff{x} = \frac{x^3}{3}\ln(x) - \int \frac{x^3}{3}\cdot \frac{1}{x} \diff{x} = \frac{x^3}{3}\ln(x) - \int \frac{x^2}{3} \diff{x}$ \\
 $ = \frac{x^3}{3}\ln(x) - \frac{x^3}{9} + C = \frac{1}{9}x^3 \cdot (3\ln(x)-1) + C$
 
 \end{enumerate}

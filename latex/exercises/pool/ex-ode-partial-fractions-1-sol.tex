@@ -4,9 +4,9 @@ $$k \cdot x \cdot (1-\frac{x}{M}) = k \cdot x \cdot \frac{M-x}{m}$$
 
 Nun die Variablen trennen, dann integrieren:
 
-$$\frac{\d x}{\d t} = k \cdot x \cdot \frac{M-x}{M}$$
-$$\implies \frac{\d x}{x\cdot(M-x)} = \frac{k}{M} \d t$$
-$$\implies \int \frac{\d x}{x\cdot(M-x)} = \int \frac{k}{M} \d t$$
+$$\dd{x}{t} = k \cdot x \cdot \frac{M-x}{M}$$
+$$\implies \frac{\diff{x}}{x\cdot(M-x)} = \frac{k}{M} \diff{t}$$
+$$\implies \int \frac{\diff{x}}{x\cdot(M-x)} = \int \frac{k}{M} \diff{t}$$
 
 Um das Integral auf der linken Seite zu berechnen, zerlegen wir den Integranden in Partialbrüche:
 
@@ -16,7 +16,7 @@ $$\implies \frac{1}{x\cdot(M-x)} = \frac{1}{M} \left(\frac{1}{x} + \frac{1}{M-x}
 
 Weiter mit der Berechnung des Integrals:
 
-$$\int \frac{\d x}{x\cdot(M-x)} = \int \frac{k}{M} \d t$$
+$$\int \frac{\diff{x}}{x\cdot(M-x)} = \int \frac{k}{M} \diff{t}$$
 $$\implies \frac{1}{M}(\ln(x)-\ln(M-x)) = \frac{k}{M}t + C$$
 $$\implies \ln(x)-\ln(M-x) = k\cdot t + M\cdot C$$
 $$\implies e^{\ln(x)-\ln(M-x)} = e^{k\cdot t + M\cdot C}$$

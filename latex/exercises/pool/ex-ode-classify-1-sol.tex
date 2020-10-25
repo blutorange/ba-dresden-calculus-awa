@@ -3,11 +3,11 @@
 \begin{enumerate}
 \item Ordnung 1, gewöhnlich, explizit. Inhomogen, homogener Anteil $y'=0$ hat Grad 1, also linear.
 
-Direkte Integration liefert $y = \int x \d x = \frac{1}{2}x^2+C$
+Direkte Integration liefert $y = \int x \diff{x} = \frac{1}{2}x^2+C$
 
 \item Ordnung 1, gewöhnlich, explizit. Inhomogen, homogener Anteil $y'=0$ hat Grad 1, also linear.
 
-Direkte Integration liefert $y = \int e^x \d x = e^x + C$.
+Direkte Integration liefert $y = \int e^x \diff{x} = e^x + C$.
 
 \item Ordnung 1, gewöhnlich, explizit. Homogen mit Grad 1, also linear.
 
@@ -17,7 +17,7 @@ Gesucht ist eine Funktion, deren Ableitung gleich dem Doppelten der Funktion ist
 
 Zweifache direkte Integration liefert:
 
-$$y = \int \int 42 \d x \d x = \int 42x +C_1 \d x = 21x^2 + C_1 x + C_2$$
+$$y = \int \int 42 \diff{x} \diff{x} = \int 42x +C_1 \diff{x} = 21x^2 + C_1 x + C_2$$
 
 \item Ordnung 2, gewöhnlich, explizit. Homogen vom Grad 1, also linear
 
@@ -39,8 +39,8 @@ Dies erfüllt aufgrund des Vorfaktors $\frac{1}{2}$ noch nicht die DGL. Wir vers
 
 Hinweis: Die allgemeine Lösung findet man durch Trennung der Variablen:
 
-$$\frac{\d y}{\d x} = \frac{1}{y}$$
-$$\implies \int y \d y = \int \d x$$
+$$\frac{\diff{y}}{\diff{x}} = \frac{1}{y}$$
+$$\implies \int y \diff{y} = \int \diff{x}$$
 $$\implies \frac{y^2}{2} = x + C$$
 $$\implies y = \pm\sqrt{2}\cdot\sqrt{x+C}$$
 \end{enumerate}
