@@ -1,4 +1,4 @@
-load "template/fourier-transform-plot.gnuplot"
+load "../../gnuplot-snippets/fourier-transform-plot.gnuplot"
 
 set key outside above
 

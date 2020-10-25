@@ -92,7 +92,7 @@ Anmerkung: Manchmal betrachtet man auch nur die Beschränktheit einer Zahlenfolg
 \begin{example}{Eigenschaften der arithmetischen und geometrischen Zahlenfolge}{ArithGeoProp}
 	Die arithmetische Zahlenfolge $a_{n+1} = a_n + C, a_0 = k, C > 0$ ist streng monoton steigend, denn $a_{n+1} > a_n$ ist äquivalent zu $a_n + C > a_n$ und weiter $C > 0$, was nach Voraussetzung eine wahre Aussage ist. Weiterhin ist sie nicht nach oben beschränkt (\textbf{unbeschränkt}), da für jede noch so große Zahl $U > 0$ sich durch Umstellung der expliziten Darstellung ein Folgenglied $n'$ finden lässt, sodass $a_{n'} > U$ gilt. Allerdings ist sie nach unten beschränkt, dass alle Glieder größer oder gleich dem Startwert $k$ sind.
 
-	Analog findet man für arithmetische Zahlenfolgen mit $C<0$, dass sie monoton fallend, nach oben beschränkt und nach unten unbeschränkt ist. Für $C=0$ erhält man die sogenannte konstante Folge, welche sowohl mononton steigend als auch fallend ist (aber nicht streng), und sowohl nach oben als auch nach unten beschränkt ist.
+	Analog findet man für arithmetische Zahlenfolgen mit $C<0$, dass sie monoton fallend, nach oben beschränkt und nach unten unbeschränkt ist. Für $C=0$ erhält man die sogenannte konstante Folge, welche sowohl monoton steigend als auch fallend ist (aber nicht streng), und sowohl nach oben als auch nach unten beschränkt ist.
 
 	Für die geometrische Zahlenfolge $a_{n+1} = q \cdot a_n, a_0 = p, 0 < q < 1, p > 0$ stellt wir zuerst fest, dass alle ihre Glieder positiv sind. Sie ist streng monoton fallend, denn $a_{n+1} < a_n$ ist äquivalent zu $q \cdot a_n < a_n$ und weiter (da $a_n$ positiv) $q < 1$, was nach Voraussetzung eine wahre Aussage ist. Sie ist nach oben beschränkt, da sie monoton fallend ist. Weiterhin ist sie auch nach unten beschränkt, da alle Folgeglieder positiv sind (und damit $L=0$ eine untere Schranke darstellt).
 \end{example}
@@ -257,7 +257,7 @@ Ein wichtiger Satz, der manchmal bei schwierigen Grenzwerten hilft, ist das soge
 \end{statement}
 
 \begin{example}{Anwendung des Sandwich-Kriteriums}{SandwichTheo}
-	Gesucht ist der Grenzwert der Folge $a_n = \frac{1}{n^2}\sin(n)$. Von den elementaren Eigenschaften der Sinusfunktion wissen wir, dass gilt $-1\le\sin(n)\le 1$. Wählen wir nun $l_n = -\frac{1}{n^2}$ und $u_n = \frac{1}{n^2}$, so gilt $l_n \le a_n \le u_n$. Die Folge $a_n$ wird also durch die zwei Folgen $(l_n)$ und $(u_n)$ eingeschachtelt. Für diese beiden Folgen gilt nach \ref{eq:LimitInv1nq} $\lim\limits_{n\to\infty} \pm\frac{1}{n^2} = 0$. Nach dem Sandwich-Kriterum \ref{stmt:SandwichTheo} folgt somit $\lim\limits_{n\to\infty} \frac{1}{n^2}\sin(n) = 0$.
+	Gesucht ist der Grenzwert der Folge $a_n = \frac{1}{n^2}\sin(n)$. Von den elementaren Eigenschaften der Sinusfunktion wissen wir, dass gilt $-1\le\sin(n)\le 1$. Wählen wir nun $l_n = -\frac{1}{n^2}$ und $u_n = \frac{1}{n^2}$, so gilt $l_n \le a_n \le u_n$. Die Folge $a_n$ wird also durch die zwei Folgen $(l_n)$ und $(u_n)$ eingeschachtelt. Für diese beiden Folgen gilt nach \ref{eq:LimitInv1nq} $\lim\limits_{n\to\infty} \pm\frac{1}{n^2} = 0$. Nach dem Sandwich-Kriterium \ref{stmt:SandwichTheo} folgt somit $\lim\limits_{n\to\infty} \frac{1}{n^2}\sin(n) = 0$.
 \end{example}
 
 Folgende Regeln gelten, wenn eine neue Folge durch Addition oder Multiplikation der Glieder zweier anderer Folgen gebildet wird:

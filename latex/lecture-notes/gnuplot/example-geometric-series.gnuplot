@@ -1,4 +1,4 @@
-load "template/data-plot.gnuplot"
+load "../../gnuplot-snippets/data-plot.gnuplot"
 
 set xlabel "Index n"
 set ylabel "Folgenglied a_n"

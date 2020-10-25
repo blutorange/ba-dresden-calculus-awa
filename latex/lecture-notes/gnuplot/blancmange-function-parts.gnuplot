@@ -1,4 +1,4 @@
-load "template/function-plot.gnuplot"
+load "../../gnuplot-snippets/function-plot.gnuplot"
 
 set title "Teile der Blancmange-Funktion" font ",22"
 

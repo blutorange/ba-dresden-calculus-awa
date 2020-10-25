@@ -1,4 +1,4 @@
-load "template/gradient-field-plot.gnuplot"
+load "../../gnuplot-snippets/gradient-field-plot.gnuplot"
 
 set xrange [-4:4]
 set yrange [-4:4]

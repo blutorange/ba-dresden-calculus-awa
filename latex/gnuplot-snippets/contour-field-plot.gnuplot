@@ -1,8 +1,8 @@
 # Default for plotting a contour field with colors
 
-load "template/common.gnuplot"
-contourdata='call "template/create-contour-data.gnuplot"'
-contourlines='call "template/create-contour-lines.gnuplot"'
+load "../../gnuplot-snippets/common.gnuplot"
+contourdata='call "../../gnuplot-snippets/create-contour-data.gnuplot"'
+contourlines='call "../../gnuplot-snippets/create-contour-lines.gnuplot"'
 
 set samples samples
 set isosamples isosamples
@@ -42,8 +42,8 @@ set view 0,0,1,1
 set palette rgbformulae 33,13,10
 set palette maxcolors colorsteps
 
-labels = '<./template/contour-plot-labels.sh contour-lines.dat 0 '.labelspace.' 0 '.labelround
-lines = '<./template/contour-plot-labels.sh contour-lines.dat 1 '.labelspace.' 0 '.labelround
+labels = '<../../gnuplot-snippets/contour-plot-labels.sh contour-lines.dat 0 '.labelspace.' 0 '.labelround
+lines = '<../../gnuplot-snippets/contour-plot-labels.sh contour-lines.dat 1 '.labelspace.' 0 '.labelround
 
 @contourlines
 

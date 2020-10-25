@@ -14,7 +14,7 @@ labelround = 1
 
 set title "z = xy+1/x+1/y"
 
-load "template/contour-field-plot.gnuplot"
+load "../../gnuplot-snippets/contour-field-plot.gnuplot"
 
 plot \
   'contour-data.dat' with image, \

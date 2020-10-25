@@ -1,4 +1,4 @@
-load "template/function-plot.gnuplot"
+load "../../gnuplot-snippets/function-plot.gnuplot"
 
 set xrange [0:9]
 set yrange [-3:5]

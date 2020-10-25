@@ -1,4 +1,4 @@
-load "template/function-plot.gnuplot"
+load "../../gnuplot-snippets/function-plot.gnuplot"
 
 set key right
 

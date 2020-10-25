@@ -3,9 +3,10 @@
 Differentialgleichungen sind eines der wichtigsten Fundamente für die Beschreibung von Zusammenhängen in der Natur. Sie stellen einen Zusammenhang her zwischen einer Größe und ihrer Änderungsrate. In der klassischen Mechanik etwa stellt man sich die Frage, wie sich ein Körper und Einfluss einer Kraft bewegt. Die gesamte Bahn des Körpers anzugeben, ist nicht einfach. Einfacher ist es zu betrachten, was lokal zu einem konkreten Zeitpunkt an einem konkreten Ort passiert. Dann stellt man fest, dass die Änderungsrate der Geschwindigkeit des Körpers zu jedem Zeitpunkt proportional ist zur Kraft, die in diesem Moment auf den Körper wirkt, geteilt durch seine Masse. Dieser Zusammenhang wird durch die Differentialgleichung $F=m\cdot a = m \cdot \ddot{x}(t)$ ausgedrückt. Wenn man jetzt die Änderungsraten der Geschwindigkeiten zu jedem Zeitpunkt aufaddiert, erhält man die gesamte Bahn, auf der sich der Körper bewegt -- man hat die Differentialgleichung gelöst. Oft ist es so, dass man zwar die vollständige Lösung nicht direkt angeben kann, aber mithilfe von Änderungen und Ableitungen einfach beschreiben kann, was lokal zu einem konkreten Zeitpunkt passiert.
 
 \begin{itemize}
-    \item Naturgesetze: Viele Gesetze in der Physik werden durch Differentialgleichungen beschrieben, wie etwa die Newtonsche Grundgleichung aus der klassischen Mechanik, die Navier-Stokes-Gleichung aus der Fluiddynamik, die Maxwell-Gleichungen aus der Elektrodynamik oder die Schrödinger- und Dirac-Gleichung aus der Quantenmechanik.
+    \item Naturgesetze: Viele Gesetze in der Physik werden durch Differentialgleichungen beschrieben, wie etwa die Newtonsche Grundgleichung aus der klassischen Mechanik, die \mention{Navier-Stokes}-Gleichung aus der Fluiddynamik, die Maxwell-Gleichungen aus der Elektrodynamik oder die \mention{Schrödinger}-Gleichung sowie die \mention{Dirac}-Gleichung aus der Quantenmechanik.
     \item Auch zur Modellierung von Zusammenhängen sind Differentialgleichung nützlich. Etwa lassen sich damit die Rate chemischer Reaktionen oder die Dynamik einer Population beschreiben.
     \item Differentialgleichungen aus der klassischen Mechanik werden auch zur nummerischen Simulation verwendet, etwa um die Eigenschaften und die Stabilität eines geplanten Bauwerks zu berechnen oder um in einer \emph{Physics Engine} die Bewegung von Körpern zu simulieren.
+    \item Auch in der Finanzmathematik werden beispielsweise Prozesse am Aktienmarkt durch Differentialgleichungen modelliert. Die \mention{Black-Scholes}-Differentialgleichung etwa beschreibt unter vereinfachendes Annahmen die Entwicklung des Aktienkurs.
 \end{itemize}
 
 \section{Modellierung eines physikalischen Sachverhalts und nummerische Lösung}
@@ -16,7 +17,7 @@ $$
     \ddot{x}(t) = F(t,x,\dot{x}) / m
 $$
 
-Die Kraft entspricht der Federkraft und ist nach dem Hookschen Gesetzt proportional zur Auslenkung mit der Proportionalitätskonstante $k$:
+Die Kraft entspricht der Federkraft und ist nach dem Hookschen Gesetz proportional zur Auslenkung mit der Proportionalitätskonstante $k$:
 
 $$
     F(t,x,\dot{x}) = -\frac{k}{m} x(t)
@@ -258,7 +259,7 @@ Anders formuliert bedeutet die Gleichung in obiger Definition, dass wir, wenn wi
 
 Anhand der obigen Beispiel können wir einige Beobachtungen machen, welche uns das Überprüfen der Homogenität erleichtern. Kommt in der Funktionsgleichung ein Summand (ungleich 0) vor, in dem kein $y$ oder eine Ableitung von $y$ steht, ist die DGL in der Regeln inhomogen. Die einzige Ausnahme tritt auf, wenn die restlichen Terme Quotienten von $y$ sind, sodass sich ein Grad der Homogenität $0$ ergibt. Im folgenden werden wir hauptsächlich DGL betrachten, wo der Grad der Homogenität $1$ ist, daher ist diese Faustregel sehr hilfreich.  Weiterhin stellen wir noch fest, dass eine homogene DGL mit Grad der Homogenität $1$ vorliegt, wenn $y$ in allen weiteren Summanden ohne weitere Rechenoperation (Quadrieren, Sinusbildung, \dots) vorkommt und höchstens noch einen Vorfaktor hat. Solche Arten von DGL nennt man lineare homogene DGL, welche wir in einem der nächsten Abschnitte noch genauer betrachten werden.
 
-Des Weiteren können wir noch eine Feststellung machen, wenn wir uns die ersten drei Beispiele noch einmal genauer anschauen: $y''+xy=0$ ist homogen, $y''+xy-3=0$ bzw. $y''+xy-3x=0$ jedoch nicht. Der Unterschied besteht im Summanden $-3$ beziehungsweise $-3x$. Während die letzten beiden DGL zwar nicht homogen sind, können wir sie zerlegen in eine Summe aus einer homogenen DGL ($y''+xy=0$) und einem Inhomogenitäts-Term ($-3$ beziehungsweise $-3x$).
+Des Weiteren können wir noch eine Feststellung machen, wenn wir uns die ersten drei Beispiele noch einmal genauer anschauen: $y''+xy=0$ ist homogen, $y''+xy-3=0$ bzw. $y''+xy-3x=0$ jedoch nicht. Der Unterschied besteht im Summanden $-3$ beziehungsweise $-3x$. Während die letzten beiden DGL zwar nicht homogen sind, können wir sie zerlegen in eine Summe aus einer homogenen DGL ($y''+xy=0$) und einem Inhomogenitätsterm ($-3$ beziehungsweise $-3x$).
 
 \begin{definition}{Homogener und inhomogener Anteil}{HomInhomPart}
     Einige inhomogene DGL $n$-ter Ordnung lassen sich zerlegen in einen homogenen und einen inhomogenen Anteil:
@@ -277,8 +278,8 @@ $$
 \begin{example}{Zerlegung einer inhomogenen DGL}{ExHomInhomPart}
     \begin{itemize}
         \item Die zu $y''+xy=3x$ zugehörige homogene DGL lautet $y''+xy=0$, die Inhomogenität ist $3x$.
-        \item Die DGL $y''+y = \sin(2 \pi x)$ beschreibt physikalisch ein schwingendes Pendel. Die zugehörige homogene DGL $y''y=0$ stellt eine freischwingendes Pendel dar, die Inhomogenität $\sin(2 \pi x)$ ergibt sich, wenn man das Pendel etwa mit einem Motor sinusförmig mit der Frequenz $1$ antreibt (erzwungene Schwingung).
-        \item Die DLG $y''+xy=0$ ist bereits homogen und stellt damit selbst ihre zugehörige homogene DGL dar, die Inhomogenität ist $0$.
+        \item Die DGL $y''+y = \sin(2 \pi x)$ beschreibt physikalisch ein schwingendes Pendel. Die zugehörige homogene DGL $y''y=0$ stellt ein freischwingendes Pendel dar, die Inhomogenität $\sin(2 \pi x)$ ergibt sich, wenn man das Pendel etwa mit einem Motor sinusförmig mit der Frequenz $1$ antreibt (erzwungene Schwingung).
+        \item Die DGL $y''+xy=0$ ist bereits homogen und stellt damit selbst ihre zugehörige homogene DGL dar, die Inhomogenität ist $0$.
         \item Die DGL $\sin(y)=x$ ist inhomogen und lässt sich nicht in einen homogenen und inhomogenen Anteil zerlegen.
     \end{itemize}
 \end{example}
@@ -326,7 +327,7 @@ Die vermutlich einfachste Lösungsmethode einer DGL besteht in ihrer direkten In
     $$
         x(t) = \int gt + v_0 \diff{x} = \frac{1}{2} g t^2 + v_0 t + s_0
     $$
-    Dabei ist $s_0$ der Anfangsort des Körpers zum Zeitpunkt $t=0$. Die DGL hat die Ordnung $2$, insgesamt haben wir wie erwartet die $2$ Integrationskonstanten $v_0$ und $s_0$ gewonnen. Durch Lösen der Bewegungsgleichung für den freien Fall haben wir somit die bekannte Formel für den freien Fall erhalten.
+    Dabei ist $s_0$ der Anfangsort des Körpers zum Zeitpunkt $t=0$. Die DGL hat die Ordnung $2$, insgesamt haben wir wie erwartet die $2$ Integrationskonstanten $v_0$ und $s_0$ gewonnen. Durch Lösen der Bewegungsgleichung für den freien Fall haben wir somit die bekannte Formel für den freien Fall, oder allgemeiner für eine gleichmäßig beschleunigte Bewegung mit Beschleunigung $g$, erhalten.
 \end{example}
 
 \section{Trennung der Variablen}
@@ -760,7 +761,7 @@ $$
     y(x) = C(x) e^{\lambda_n x} = c_{k-1} x^{k-1} e^{\lambda_n x} + \dots + c_2 x^2 e^{\lambda_n x} + c_1 x e^{\lambda_n x} + c_0 e^{\lambda_n x}
 $$
 
-Der rechte Summand $c_0 e^{\lambda_n x}$ entspricht der uns bereits bekannten Fundamentallösung $e^{\lambda_n x}$. Die anderen Summanden sind neue Lösungen, nämlich $e^{\lambda_n x}$ multipliziert mit Potenzen von $x$. Diese sind linear unabhängig. Insgesamt haben wir $k-1$ neue Lösungen gefunden. Zusammen mit der bereits bekannten Lösungen sind das $k$ Lösungen. Anders ausgedrückt erhalten wir also für jede $k$-fache Nullstelle $k$ linear unabhängige Lösungen. Und da nach dem Fundamentalsatz der Algebra die Summe der Vielfachenheiten $n$ beträgt, haben wir damit $n$ unabhängige Lösungen gefunden und die lineare homogene DGL mit konstanten Koeffizienten vollständig gelöst.
+Der rechte Summand $c_0 e^{\lambda_n x}$ entspricht der uns bereits bekannten Fundamentallösung $e^{\lambda_n x}$. Die anderen Summanden sind neue Lösungen, nämlich $e^{\lambda_n x}$ multipliziert mit Potenzen von $x$. Diese sind linear unabhängig. Insgesamt haben wir $k-1$ neue Lösungen gefunden. Zusammen mit der bereits bekannten Lösungen sind das $k$ Lösungen. Anders ausgedrückt erhalten wir also für jede $k$-fache Nullstelle $k$ linear unabhängige Lösungen. Und da nach dem Fundamentalsatz der Algebra die Summe der Vielfachheiten $n$ beträgt, haben wir damit $n$ unabhängige Lösungen gefunden und die lineare homogene DGL mit konstanten Koeffizienten vollständig gelöst.
 
 \begin{statement}{Fundamentallösungen und charakteristische Gleichung}{FundSolCharEq}
     Jeder linearen homogenen DGL der Ordnung $n$ mit konstanten Koeffizienten $\sum\limits_{i=0}^n a_i y^{(i)} = 0$ wird eine sogenannte \textbf{charakteristische Gleichung} zugeordnet:
@@ -781,7 +782,7 @@ Der rechte Summand $c_0 e^{\lambda_n x}$ entspricht der uns bereits bekannten Fu
         \item $y''-3y'+2y=0$. Die charakteristische Gleichung ist $\lambda^2-3\lambda+2=0$. Die Nullstellen sind $\lambda_{1,2} = \frac{3}{2} \pm \sqrt{\frac{9}{4} - 2} = \frac{3}{2} \pm \frac{1}{2}$, also $\lambda_1 = 1$ und $\lambda_2 = 2$. Die allgemeine Lösung ist $y_A(x) = C_1 e^x + C_2 e^{2x}$
         \item $y''+4y'+4=0$. Die charakteristische Gleichung lautet $\lambda^2+4\lambda+4=(\lambda+2)^2=0$. Es gibt nur eine Nullstelle $\lambda=-2$, diese tritt allerdings doppelt auf. Eine Fundamentallösung ist daher $e^{-2x}$, für die andere müssen wir mit $x^1$ multiplizieren: $xe^{-2x}$. Die allgemeine Lösung ist dann $y_A(x) = C_1 e^{-2x} + C_2 x e^{-2x}$
         \item $y^{(5)}-3y^{(4)}-18y'''+54y''+81y'-243y'=0$. Die charakteristische Gleichung ist $\lambda^5-3\lambda^4-18\lambda^3+54\lambda^2+81\lambda-243 = 0$. Die Nullstellen, die man etwa mit nummerischen Verfahren berechnen kann, sind $(\lambda-3)^3\cdot(\lambda+3)^2 = 0$. Die Nullstelle $3$ tritt also dreimal auf, die Nullstelle $-3$ zweimal. Demzufolge müssen wir bei der ersten Nullstellen 3 Fundamentallösungen finden, in dem wir mit $x^1$ und $x^2$ multiplizieren, und bei der zweiten Nullstelle zwei Fundamentallösungen, indem wir mit $x^1$ multiplizieren. Die allgemeine Lösung ergibt sich dann zu $y_A(x) = C_1 e^{3x} + C_2 x e^{3x} + C_3 x^2 e^{3x} + C_4 e^{-3x} + C_5 x e^{-3x}$
-        \item $y''+4y=0$. Die charakteristische Gleichung lautet $\lambda^2+4=0$. Die beiden Nullstellen sind $\lambda_1 = - 2j$ und $\lambda_2 = + 2j$, wobei $j$ die imaginäre Einheit mit $j^2=-1$ darstellt. Die allgemeine Lösung lautet damit erstmal $y_A(x) = C_1 e^{-2jx} + C_2 e^{2jx}$. Allerdings ist diese Lösung noch problematisch. Diese Art von DGL beschreibt physikalisch eine Schwingung, etwa die Bewegung eines Federpendels oder eines Fadenpendels bei kleinen Auslenkungen. Die Auslenkung eines Pendels wird physikalisch gemessen in Metern oder als Winkel im Bogenmaß. In unserer Lösung allerdings treten komplexe Zahlen auf, die wir physikalisch nicht interpretieren können. (Was bedeutet eine Auslenkung von $1+2j$ Metern?) Über die eulersche Formel $e^{jx} = \cos(x) + j \sin(x)$ können wir die allgemeine Lösung noch umformen, sodass nur reelle Zahlen auftreten:
+        \item $y''+4y=0$. Die charakteristische Gleichung lautet $\lambda^2+4=0$. Die beiden Nullstellen sind $\lambda_1 = - 2j$ und $\lambda_2 = + 2j$, wobei $j$ die imaginäre Einheit mit $j^2=-1$ darstellt. Die allgemeine Lösung lautet damit vorerst $y_A(x) = C_1 e^{-2jx} + C_2 e^{2jx}$. Allerdings ist diese Lösung noch problematisch. Diese Art von DGL beschreibt physikalisch eine Schwingung, etwa die Bewegung eines Federpendels oder eines Fadenpendels bei kleinen Auslenkungen. Die Auslenkung eines Pendels wird physikalisch gemessen in Metern oder als Winkel im Bogenmaß. In unserer Lösung allerdings treten komplexe Zahlen auf, die wir physikalisch nicht interpretieren können. (Was bedeutet eine Auslenkung von $1+2j$ Metern?) Über die eulersche Formel $e^{jx} = \cos(x) + j \sin(x)$ können wir die allgemeine Lösung noch umformen, sodass nur reelle Zahlen auftreten:
         $$
             y_A(x) = C_1 \cos(2x) + C_2 \sin(2x)
         $$
@@ -809,7 +810,7 @@ Auch wenn diese Aussage auf den ersten Blick schwer verständlich erscheinen mag
     $$
         y_P(x) = Ax^2+Bx+C+De^x
     $$
-    Um den Ansazu in die DGL einzusetzen, bestimmen wir die Ableitungen $y_P'=2Ax+B+De^x$ und $y_P''=2A+De^x$. Wir setzen diese in die DGL ein, fassen zusammen und erhalten
+    Um den Ansatz in die DGL einzusetzen, bestimmen wir die Ableitungen $y_P'=2Ax+B+De^x$ und $y_P''=2A+De^x$. Wir setzen diese in die DGL ein, fassen zusammen und erhalten
     $$
         4Ax^2+(8A+4B)x+(2A+4B+4C)+9De^x = 4x^2 + 6e^x
     $$
@@ -889,7 +890,7 @@ Abschließend seien noch zwei Bemerkungen gemacht:
     $$
         (D-\lambda_2) (D-\lambda_3) \dots (D-\lambda_n) y = u_2(x)
     $$
-    Das ist eine neue DGL für y, allerdings mit einem Differenzialoperatorfaktor weniger. Wir können nun erneut $u_3(x) = (D-\lambda_3) \dots (D-\lambda_n) y$ setzen und erhalten für $u_3$ die DGL:
+    Das ist eine neue DGL für y, allerdings mit einem Differentialoperator weniger. Wir können nun erneut $u_3(x) = (D-\lambda_3) \dots (D-\lambda_n) y$ setzen und erhalten für $u_3$ die DGL:
     $$
         (D-\lambda_2) u_3 = u_2(x)
     $$

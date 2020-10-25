@@ -14,7 +14,7 @@ labelround = 0
 
 set title "z=x^2+y^2"
 
-load "template/contour-field-plot.gnuplot"
+load "../../gnuplot-snippets/contour-field-plot.gnuplot"
 
 load labels
 

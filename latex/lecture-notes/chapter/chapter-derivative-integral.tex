@@ -32,7 +32,7 @@ Analog dazu definiert man auch die zweite Ableitung einer Funktion als die Ablei
     \label{fig:DiffFun}
 \end{figure}
 
-\begin{definition}{Tangentenäherung einer Funktion}{}
+\begin{definition}{Lineare Näherung einer Funktion}{}
     Wenn eine Funktion $f$ an der Stelle $x_0$ differenzierbar ist, kann sie für kleine Abstände um diese Stelle herum durch eine Gerade $t$ genähert werden, welche man \textbf{Tangente} nennt und die gegeben ist durch:
     $$
         t: x \mapsto f(x_0) + f'(x_0) \cdot (x-x_0)
@@ -153,7 +153,7 @@ Man beachte besonders, dass diese Formel für die lineare Näherung einer mehrst
 
 \subsection{Einstellige Funktionen}
 
-Die Ableitung kann man sich graphisch vorstellen als das Anlegen einer Tangente an eine Funktion. Ebenso kann man sich dem Integralbegriff über eine geometrische Fragestellung nähern. Wir betrachten zunächst einmal die Funktion $f(x) = \sin(x)$. Diese hat jeweils bei $0$ und bei $\pi$ eine Nullstelle. Wir stellen uns nun die Frage, wie groß der Flächeninhalt ist, den die Sinuskurve zwischen $0$ und $\pi$ mit der x-Achse einnimmt.
+Die Ableitung können wir uns graphisch vorstellen als das Anlegen einer Tangente an eine Funktion. Ebenso könnten wir uns dem Integralbegriff über eine geometrische Fragestellung nähern. Wir betrachten zunächst einmal die Funktion $f(x) = \sin(x)$. Diese hat jeweils bei $0$ und bei $\pi$ eine Nullstelle. Wir stellen uns nun die Frage, wie groß der Flächeninhalt ist, den die Sinuskurve zwischen $0$ und $\pi$ mit der x-Achse einnimmt.
 
 Um uns dieser Frage zu nähern, gehen wir auf ähnliche Weise zur Ableitung vor. Dort hatten wir zuerst Sekanten betrachtet und dann eine Grenzwertbildung vorgenommen, um die exakte Tangente zu erhalten. Genauso können wir für den Flächeninhalt mit einer Näherung anfangen, indem wir den Flächeninhalt unter der Sinuskurve durch kleine Rechtecke annähern, wie dies in Abbildung \ref{fig:ApproxAreaUnivarFun} dargestellt ist.
 
@@ -164,7 +164,7 @@ Um uns dieser Frage zu nähern, gehen wir auf ähnliche Weise zur Ableitung vor.
     \label{fig:ApproxAreaUnivarFun}
 \end{figure}
 
-Wir zerlegen das Interval $[a, b] = [0,\pi]$, für dem wir in den Flächeninhalt berechnen wollen, in die $n$ Teilintervalle $[x_i, x_{i+1}]$ ($0\le i \le n)$ mit der Länge $\Delta x_n = \frac{b-a}{n}$ . Dabei sind $x_i$ die Stützpunkte, welche sich ergeben zu $x_i = a + i\cdot\frac{b-a}{n} \cdot b$. Der Flächeninhalt $A_i$ ($1\le i \le n$) des $i$-ten Rechtecks berechnet sich als Breite mal Höhe. Die Breite ist gleich $\Delta x$, die Höhe entspricht dem Funktionswert $f(x_i)$ am $i$-ten Stützpunkt: $A_i = \Delta x \cdot f(x_i)$. Den gesamten Flächeninhalt $A$ erhalten wir, indem wir nun den Flächeninhalt aller Rechtecke aufaddieren:
+Wir zerlegen das Intervall $[a, b] = [0,\pi]$, für dem wir in den Flächeninhalt berechnen wollen, in die $n$ Teilintervalle $[x_i, x_{i+1}]$ ($0\le i \le n)$ mit der Länge $\Delta x_n = \frac{b-a}{n}$ . Dabei sind $x_i$ die Stützpunkte, welche sich ergeben zu $x_i = a + i\cdot\frac{b-a}{n} \cdot b$. Der Flächeninhalt $A_i$ ($1\le i \le n$) des $i$-ten Rechtecks berechnet sich als Breite mal Höhe. Die Breite ist gleich $\Delta x$, die Höhe entspricht dem Funktionswert $f(x_i)$ am $i$-ten Stützpunkt: $A_i = \Delta x \cdot f(x_i)$. Den gesamten Flächeninhalt $A$ erhalten wir, indem wir nun den Flächeninhalt aller Rechtecke aufaddieren:
 
 \begin{alignat*}{1}
   A_n = \sum_{i=0}^{n-1} A_i &= \sum_{i=1}^{n} \frac{b-a}{n} f(a + i\cdot\frac{b-a}{n}) \\
@@ -205,7 +205,7 @@ Wir sehen, je größer wir die Anzahl der Teilintervalle wählen, desto besser w
 
 \begin{example}{Berechnung des bestimmten Integrals}{CompDefInteg}
     \begin{itemize}
-        \item Gesucht ist der Flächeninhalt zwischen $f(x) = x^2$ unter der x-Achse im Intervall $[0,1]$. Die Intervalllänge lautet $\Delta x_n = \frac{b-a}{n} = \frac{1}{n}$. Die Funktionswerte an der Stützstelle $x_i = a + i \Delta x = \frac{i}{n}$ lauten $f(x_i) = \frac{i^2}{n^2}$. Eingesetzt in die Definition erhalten wir damit:
+        \item Gesucht ist der Flächeninhalt zwischen $f(x) = x^2$ unter der x-Achse im Intervall $[0,1]$. Die Intervallänge lautet $\Delta x_n = \frac{b-a}{n} = \frac{1}{n}$. Die Funktionswerte an der Stützstelle $x_i = a + i \Delta x = \frac{i}{n}$ lauten $f(x_i) = \frac{i^2}{n^2}$. Eingesetzt in die Definition erhalten wir damit:
         \begin{alignat*}{1}
             A &= \lim\limits_{n\to\infty} \sum_{i=1}^{n} \Delta x_n f(a + i\cdot\Delta x) \\
               &= \lim\limits_{n\to\infty} \sum_{i=1}^{n} \frac{1}{n} \frac{i^2}{n^2} \\
@@ -558,7 +558,7 @@ Bringt man jetzt noch den rechten Summanden auf die linke Seite, erhält man die
     $$
 \end{definition}
 
-Im Gegensatz zur Produktregel gibt es einen bedeutsamen Unterschied. Die Produktregel reduziert das Problem, ein Produkt zweier Funktionen abzuleiten darauf, die beiden Einzelfunktionen abzuleiten. Das gleiche gilt für andere Ableitungsregeln. Durch sukzessive Anwendung der Ableitungsregeln kann daher die Ableitung einer zusammengesetzten Funktion immer auf die Ableitung der Grundfunktionen reduziert werden. Dies ist bei der partiellen Integration nicht der Fall. Um die Regeln erfolgreich anwenden zu können, müssen wir das Integral auf der rechten Seite bestimmen können. Im Integranden steht nun aber das Produkt der Stammfunktion und der Ableitung der anderen Funktionen. Im Allgemeinen gibt es keine Garantie dafür, dass dieses Integral einfacher zu bestimmen ist als das ursprüngliche Integral. Tatsächlich ist es so, dass selbst einfache Kombinationen von Grundfunktionen nicht mehr elementar integriebar sind. Beispielsweise ist es nicht möglich, $\int \frac{\sin(x)}{x} \diff{x}$ nur mittels Grundfunktionen zu schreiben.
+Im Gegensatz zur Produktregel gibt es einen bedeutsamen Unterschied. Die Produktregel reduziert das Problem, ein Produkt zweier Funktionen abzuleiten darauf, die beiden Einzelfunktionen abzuleiten. Das gleiche gilt für andere Ableitungsregeln. Durch sukzessive Anwendung der Ableitungsregeln kann daher die Ableitung einer zusammengesetzten Funktion immer auf die Ableitung der Grundfunktionen reduziert werden. Dies ist bei der partiellen Integration nicht der Fall. Um die Regeln erfolgreich anwenden zu können, müssen wir das Integral auf der rechten Seite bestimmen können. Im Integranden steht nun aber das Produkt der Stammfunktion und der Ableitung der anderen Funktionen. Im Allgemeinen gibt es keine Garantie dafür, dass dieses Integral einfacher zu bestimmen ist als das ursprüngliche Integral. Tatsächlich ist es so, dass selbst einfache Kombinationen von Grundfunktionen nicht mehr elementar integrierbar sind. Beispielsweise ist es nicht möglich, $\int \frac{\sin(x)}{x} \diff{x}$ nur mittels Grundfunktionen zu schreiben.
 
 Bei der Anwendung der Produktregel sollte man daher vorher immer nachdenken, ob das auf der rechten Seite entstehende Integral lösbar sein wird. Da es sich um Produkt zweier Funktionen handelt, hat man zudem zwei Möglichkeiten für die Wahl, welche Funktion man ableitet und von welcher man die Stammfunktion bildet. Oft führt nur eine Wahl zum Ziel.
 
@@ -687,7 +687,7 @@ Für zweistellige Funktionen muss man die zweiten partiellen Ableitungen an der 
 \end{statement}
 
 \begin{example}{Extremwert einer zweistelligen Funktion}{CompBivarEx}
-    Gesucht sind die Extremstellen von $f(x,y) = xy + \frac{1}{x} + \frac{1}{y}$. Wir berechnen zuerst die partiellen Ableitungen: $f_x = y-\frac{1}{x^2}$, $f_y = x-\frac{1}{y^2}$, $f_{xx} = \frac{2}{x^3}$, $f_{yy} = \frac{2}{y^3}$, $f_{xy} = 1$. Als Kandidaten für Extremstellen kommen Stellen in Betracht, wo beide ersten partiellen Ableitung verschwinden. Aus $f_x = f_y = 0$ folgt $y=\frac{1}{x^2}$ sowie $x=\frac{1}{y^2}$. Setzen wir erste Gleichung in zweitere ein, erhalten wir $y=\frac{1}{\left(1/y^2\right)^2} = y^4$ und daraus $y=1$. Damit ist $x=1/1^2 = 1$. Die einzige Kandidatenstelle ist $(x,y) =(1,1)$. Um herauszufinden, ob dort tatsächlich eine Extremstelle vorliegt, berechnen wir die Größe $\Delta = f_{xx}(1,1)f_{yy}(1,1) - f_{xy}(1,1)^2 = 2\cdot2 - 1^2 = 3$. Da $\Delta \ne 0$, liegt eine Extremstelle vor. Da zudem $f_{xx}(1,1) = 2 > 0$ gilt, handelt es sich um ein lokales Minimum. In Abbildung \ref{fig:ExCompBivarEx} sieht man die Extremstelle auch deutlich in der Konturliniendarstellung.
+    Gesucht sind die Extremstellen von $f(x,y) = xy + \frac{1}{x} + \frac{1}{y}$. Wir berechnen zuerst die partiellen Ableitungen: $f_x = y-\frac{1}{x^2}$, $f_y = x-\frac{1}{y^2}$, $f_{xx} = \frac{2}{x^3}$, $f_{yy} = \frac{2}{y^3}$, $f_{xy} = 1$. Als Kandidaten für Extremstellen kommen Stellen in Betracht, wo beide ersten partiellen Ableitung verschwinden. Aus $f_x = f_y = 0$ folgt $y=\frac{1}{x^2}$ sowie $x=\frac{1}{y^2}$. Setzen wir die erste Gleichung in die zweite ein, erhalten wir $y=\frac{1}{\left(1/y^2\right)^2} = y^4$ und daraus $y=1$. Damit ist $x=1/1^2 = 1$. Die einzige Kandidatenstelle ist $(x,y) =(1,1)$. Um herauszufinden, ob dort tatsächlich eine Extremstelle vorliegt, berechnen wir die Größe $\Delta = f_{xx}(1,1)f_{yy}(1,1) - f_{xy}(1,1)^2 = 2\cdot2 - 1^2 = 3$. Da $\Delta \ne 0$, liegt eine Extremstelle vor. Da zudem $f_{xx}(1,1) = 2 > 0$ gilt, handelt es sich um ein lokales Minimum. In Abbildung \ref{fig:ExCompBivarEx} sieht man die Extremstelle auch deutlich in der Konturliniendarstellung.
 \end{example}
 
 \begin{figure}

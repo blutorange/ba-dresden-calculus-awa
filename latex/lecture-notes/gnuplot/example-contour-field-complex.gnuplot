@@ -14,7 +14,7 @@ labelround = 1
 
 set title "z = sin(1.3x)cos(0.9y)\n+cos(0.8x)sin(1.9y)+cos(0.2xy)"
 
-load "template/contour-field-plot.gnuplot"
+load "../../gnuplot-snippets/contour-field-plot.gnuplot"
 
 plot \
   'contour-data.dat' with image, \

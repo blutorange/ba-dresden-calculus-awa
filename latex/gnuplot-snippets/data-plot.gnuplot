@@ -1,6 +1,6 @@
 # Default for plotting a set of data points
 
-load "template/common.gnuplot"
+load "../../gnuplot-snippets/common.gnuplot"
 
 set key font ",24"
 set tics font ",22" 

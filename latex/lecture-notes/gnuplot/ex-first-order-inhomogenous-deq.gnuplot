@@ -18,7 +18,7 @@ plot f(x, +1)
 # plot f(x, 3)
 unset table
 
-load "template/slope-field-plot.gnuplot"
+load "../../gnuplot-snippets/slope-field-plot.gnuplot"
 
 set samples 40
 set isosamples 40

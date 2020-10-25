@@ -1,6 +1,6 @@
 # Default for plotting a contour lines
 
-load "template/common.gnuplot"
+load "../../gnuplot-snippets/common.gnuplot"
 
 set key font ",24"
 set tics font ",22" 

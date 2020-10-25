@@ -1,6 +1,6 @@
 # Default for plotting a slope field y'=f(x,y)
 
-load "template/common.gnuplot"
+load "../../gnuplot-snippets/common.gnuplot"
 
 set key font ",24" tmargin
 set border back

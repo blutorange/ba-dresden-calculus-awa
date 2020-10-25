@@ -1,6 +1,6 @@
 # Default for plotting a univariate function
 
-load "template/common.gnuplot"
+load "../../gnuplot-snippets/common.gnuplot"
 
 set key font ",24" opaque
 set tics font ",22" 

@@ -1,4 +1,4 @@
-load "template/contour-line-plot.gnuplot"
+load "../../gnuplot-snippets/contour-line-plot.gnuplot"
 
 set xrange [-4:4]
 set yrange [-4:4]

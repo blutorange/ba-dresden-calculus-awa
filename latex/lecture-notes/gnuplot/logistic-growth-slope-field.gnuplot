@@ -18,7 +18,7 @@ set table 'slope-sol-4.dat'
 plot f(x, 3)
 unset table
 
-load "template/slope-field-plot.gnuplot"
+load "../../gnuplot-snippets/slope-field-plot.gnuplot"
 
 set samples 40
 set isosamples 40

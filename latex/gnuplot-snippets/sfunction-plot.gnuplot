@@ -1,6 +1,6 @@
 # Default for plotting a function of two variables
 
-load "template/common.gnuplot"
+load "../../gnuplot-snippets/common.gnuplot"
 
 set key font ",24"
 set tics font ",22" 

@@ -1,4 +1,4 @@
-load "template/sfunction-plot.gnuplot"
+load "../../gnuplot-snippets/sfunction-plot.gnuplot"
 
 set xrange [-3:3]
 set yrange [-3:3]

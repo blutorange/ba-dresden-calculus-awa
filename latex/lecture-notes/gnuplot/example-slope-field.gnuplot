@@ -14,7 +14,7 @@ set table 'slope-sol-4.dat'
 plot f(x, -9)
 unset table
 
-load "template/slope-field-plot.gnuplot"
+load "../../gnuplot-snippets/slope-field-plot.gnuplot"
 
 set xtics 1
 set ytics 1
