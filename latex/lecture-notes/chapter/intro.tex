@@ -7,7 +7,7 @@
 	\item Hilfsmaterialen: Kein Taschenrechner, jeweils 1 handbeschriebenes A4-Blatt
 	\item Online-Materialen: \href{https://drive.google.com/drive/folders/1CJ0226zg1_bnbt7IopCLwDuK2hkOgHya?usp=sharing}{drive.google.com}
 	\item \LaTeX-Quellcode und weiteres: \href{https://github.com/blutorange/ba-dresden-calculus-awa}{github:blutorange/ba-dresden-calculus-awa}
-	\item Kontakt: \href{mailto:wachsmuth.andre@gmx.de?subject=BA/Analysis 2020: }{wachsmuth.andre@gmx.de}
+	\item Kontakt: \href{mailto:wachsmuth.andre@gmx.de?subject=BA/Analysis 2020: }{wachsmuth.andre@gmx.de} und \href{tel:4915730344472}{+49 157 303 444 72}
 	\item Buchempfehlung: "Meyers kleine Enzyklopädie der Mathematik", hrsg. von Siegried Gottwald, Meyers Lexikonverlag, \href{https://www.amazon.de/-/en/Siegfried-Gottwald/dp/3411077719}{ISBN-3 3-411-07771-9}
 	\item Buchempfehlung: "Repetitorium der höheren Mathematik", Merziger / Wirth, Binomi-Verlag, \href{https://www.amazon.de/-/en/Gerhard-Merziger/dp/3923923333}{ISBN-3 3-923-923-33-3}
     \item Buchempfehlung: "Ordinary Differential Equations", Tenenbaum / Pollard, \href{https://www.lehmanns.de/shop/mathematik-informatik/1860759-9780486649405-ordinary-differential-equations}{ISBN 978-0-486-64940-5}
@@ -81,14 +81,14 @@ Anschaulich gesprochen unterscheiden sich eine offenen und eine geschlossene Men
     \centering
     \includegraphics[width=0.55\textwidth]{./svg/open-set}
     \includegraphics[width=0.35\textwidth]{./svg/closed-set}
-    \caption{Definition einer offenen und geschlossenen Menge. Links: Zu jedem Elemente der Menge gibt es eine kleine Kugel, die vollständig in der Menge enthalten ist. Rechts: Die Grundgesamtheit ohne die geschlossene Menge ist ihrerseits eine offene Menge.}
+    \caption[Offene und geschlossene Menge]{Definition einer offenen und geschlossenen Menge. Links: Zu jedem Elemente der Menge gibt es eine kleine Kugel, die vollständig in der Menge enthalten ist. Rechts: Die Grundgesamtheit ohne die geschlossene Menge ist ihrerseits eine offene Menge.}
     \label{fig:OpenClosedSet}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=0.3\textwidth]{./svg/open-neighborhood}
-    \caption{Definitions der offenen Umgebung eines Punkts. Die Umgebung kann eine beliebige Form annehmen.}
+    \caption[Offene Umgebung]{Definition der offenen Umgebung eines Punkts. Die Umgebung kann eine beliebige Form annehmen.}
     \label{fig:OpenNeighborhood}
 \end{figure}
 
@@ -159,7 +159,7 @@ wobei dieser Wert selber allerdings keine gebrochene Zahl ist. Zur Lösung diese
 Tatsächlich lässt sich zeigen, dass auf der Menge der reellen Zahlen $\R$ jede Cauchy-Folge konvergiert, also einen Grenzwert besitzt. Die reellen Zahlen sind im Gegensatz zu den gebrochenen Zahlen \emph{vollständig}.
 
 Als Erweiterung der reellen Zahlen gibt es noch die komplexen Zahlen $\C$, wobei ein neues Element $j$ mit der Eigenschaft $j^2=-1$ eingeführt wird, welches die sogenannte imaginäre Einheit heißt. Komplexe
-Zahlen eignen sich beispielsweise, um Schwingungen zu beschreiben oder Strom- und Spannungsberechnungen an Schaltkreisen anzustellen. Solche komplexen Zahlen werden in der Algebra genauer betrachtet. Diese Vorlesung beschränkt sich auf die reellwertige Analysis.
+Zahlen eignen sich beispielsweise, um Schwingungen zu beschreiben oder Strom- und Spannungsberechnungen an Schaltkreisen anzustellen. Solche komplexen Zahlen werden in der Algebra genauer betrachtet. Diese Vorlesung beschränkt sich im Wesentlichen auf die reellwertige Analysis -- am Ende der Vorlesung werden wir für sogenannten lineare homogene Differentialgleichungen mit konstanten Koeffizienten kurz von den komplexen Zahlen Gebrauch machen.
 
 \section{Operationen und Rechenregeln}
 
@@ -276,7 +276,7 @@ function fibonacci(n) {
 	return n_0;
 }
 \end{jscode}
-\caption{JavaScript-Programm zur Berechnung der n.-ten Fibonacci-Zahl}
+\caption[Code Fibonacci-Zahl-Programm]{JavaScript-Programm zur Berechnung der n.-ten Fibonacci-Zahl}
 \label{lst:JsFibonacci}
 \end{listing}
 
@@ -286,7 +286,7 @@ In oberster Ebene ist die Struktur dieses Programms eine \emph{Function Declarat
 \begin{figure}
 	\centering
 	\includegraphics[width=0.5\textwidth]{./img/js-tree-fibonacci-part.png}
-	\caption{Syntaxbaum zum JavaScript-Programm für Fibonacci-Zahlen (Auszug)}
+	\caption[Syntaxbaum Fibonacci-Zahl-Programm]{Syntaxbaum zum JavaScript-Programm für Fibonacci-Zahlen (Auszug)}
 	\label{fig:JsFibonacciBaumPart}
 \end{figure}
 
@@ -306,7 +306,7 @@ Aus dem Syntaxbaum lesen wir ab, dass der Term aus der Hauptoperation \emph{Mult
 * + a b + c d
 a b + c d + *
 \end{textcode}
-	\caption{Polnische Notation (oben) und umgekehrte polnische Notation (unten)}
+	\caption[Polnische Notation]{Polnische Notation (oben) und umgekehrte polnische Notation (unten)}
 	\label{lst:PolAbcd}
 \end{listing}
 

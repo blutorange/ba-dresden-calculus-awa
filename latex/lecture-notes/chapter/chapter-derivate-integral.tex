@@ -189,7 +189,7 @@ In Tabelle \ref{lst:ApproxIntegral} sind die Näherungswerte für einige $n$ ang
             9 & 1.97965\dots
         \end{tabular}
     \end{center}
-    \caption{Näherungswerte für den Flächeninhalt eingeschlossen durch den Graphen von $\sin(x)$ mit der x-Achse zwischen $0$ und $pi$.}
+    \caption[Näherungsweise Berechnung eines bestimmen Integrals]{Näherungswerte für den Flächeninhalt eingeschlossen durch den Graphen von $\sin(x)$ mit der x-Achse zwischen $0$ und $pi$.}
     \label{lst:ApproxIntegral}
 \end{listing}
 
@@ -283,7 +283,7 @@ Der Fall für eine rechteckige Fläche ist dargestellt in Abbildung \ref{fig:Are
     \centering
     \includegraphics[width=0.48\textwidth]{./svg/integral-2d-cartesian}
     \includegraphics[width=0.48\textwidth]{./svg/integral-2d-cartesian-perspective}
-    \caption{Graphische Interpretation eines Gebietsintegrals in kartesischen Koordinaten. Der Funktionswert an jedem kleinen schwarzen Punkt wird mit dem Flächeninhalt des Rechtecks multipliziert.}
+    \caption[Gebietsintegral in kartesischen Koordinaten]{Graphische Interpretation eines Gebietsintegrals in kartesischen Koordinaten. Der Funktionswert an jedem kleinen schwarzen Punkt wird mit dem Flächeninhalt des Rechtecks multipliziert.}
     \label{fig:AreaIntegCartesian}
 \end{figure}
 
@@ -353,7 +353,7 @@ Wir können nun auch wieder statt festen Grenzen für $r$ diese von $\alpha$ abh
 \begin{figure}
     \centering
     \includegraphics[width=0.95\textwidth]{./svg/integral-2d-polar}
-    \caption{Graphische Interpretation eines Gebietsintegrals in Polarkoordinaten. Der Funktionswert an jedem kleinen schwarzen Punkt wird mit dem Flächeninhalt des Kreissegments multipliziert.}
+    \caption[Gebietsintegral in Polarkoordinaten]{Graphische Interpretation eines Gebietsintegrals in Polarkoordinaten. Der Funktionswert an jedem kleinen schwarzen Punkt wird mit dem Flächeninhalt des Kreissegments multipliziert.}
     \label{fig:AreaIntegPolar}
 \end{figure}
 
@@ -391,7 +391,7 @@ Um ein Produkt oder Quotienten zweier Funktionen $h(x) = f(x) \cdot g(x)$ abzule
                &= \lim\limits_{\epsilon \to 0} \frac{f(x+\epsilon)g(x+\epsilon) \overbrace{-f(x)g(x+\epsilon) + f(x)g(x+\epsilon)}^{=0} - f(x)g(x)}{\epsilon} \\
                &= \lim\limits_{\epsilon \to 0} \frac{[f(x+\epsilon)-f(x)]\cdot g(x+\epsilon) + f(x) \cdot [g(x+\epsilon) - g(x)]}{\epsilon} \\
                &= \underbrace{\lim\limits_{\epsilon \to 0} \frac{f(x+\epsilon)-f(x)}{\epsilon}}_{=f'(x)} \underbrace{\lim\limits_{\epsilon\to 0} g(x+\epsilon)}_{=g(x)\text{, da g stetig}} + f(x) \underbrace{\lim\limits_{\epsilon \to 0} \frac{g(x+\epsilon)-g(x)}{\epsilon}}_{=g'(x)} \\
-               &= f'(x)g(x) + f(x) g(x)
+               &= f'(x)g(x) + f(x) g'(x)
 \end{alignat*}
 
 Damit haben wir die sogenannte Produktregel erhalten:
@@ -407,7 +407,7 @@ Damit haben wir die sogenannte Produktregel erhalten:
     Die Ableitung der Funktion $f(x) = x^2 \sin(x)$ berechnet sich mittels der Produktregel zu $f'(x) = \dd{}{x} (x^2) \cdot  \sin(x) + x^2 \dd{}{x} \sin(x) = 2x\sin(x) + x^2\cos(x)$.
 \end{example}
 
-Um eine Komposition (Verknüpfung) zweier Funktionen abzuleiten, hilft die sogenannte Kettenregel:
+Um eine Komposition (Verknüpfung) zweier Funktionen abzuleiten, hilft die Kettenregel, welche wir hier ohne Herleitung angeben:
 
 \begin{statement}{Kettenregel}{ChainRule}
     Sind $f$ und $g$ zwei differenzierbare Funktionen, dann berechnet sich die Ableitung der Komposition der beiden Funktionen mittels der \textbf{Kettenregel}:
@@ -422,6 +422,18 @@ Um eine Komposition (Verknüpfung) zweier Funktionen abzuleiten, hilft die sogen
         \item Um $h(x) = (3x^2+5)^4$ abzuleiten, setzen wir $f(g) = g^4$ und $g(x) = 3x^2+5$. Deren Ableitungen sind $f'(g) = 4g^3$ (äußere Ableitung) und $g'(x) = 6x$ (innere Ableitung). Wir erhalten: $h'(x) = 4g^3 \cdot 6x = 24x(3x^2+5)^3$
         \item Die Ableitung der Funktion $h(x) = \sin(x^2)$ berechnet sich mit der äußeren Ableitung $\cos(g)$ und der inneren Ableitung $2x$ zu $h'(x) = 2x\cos(x^2)$.
     \end{itemize}
+\end{example}
+
+\begin{example}{Ableiten des Hyperbelsinus und Hyperbelkosinus}{CompDerSinh}
+    Der Hyperbelsinus ist definiert als $\frac{1}{2} (e^x - e^{-x})$, der Hyperbelkosinus als $\frac{1}{2} (e^x + e^{-x})$. Mithilfe der Kettenregel finden wir $\dd{}{x}e^{-x} = -e^{-x}$ und erhalten damit für die Ableitung des Hyperbelsinus:
+    $$
+        \dd{}{x} \text{sinh}(x) = \frac{1}{2} (e^x-(-e^{-x})) = \text{cosh(x)}
+    $$
+    Analog erhält man für den Hyperbelkosinus:
+    $$
+        \dd{}{x} \text{cosh}(x) = \frac{1}{2} (e^x+(-e^{-x})) = \text{sinh(x)}
+    $$
+    Im Gegensatz zu den trigonometrische Funktionen, wo bei der Ableitung des Kosinus auf das Minuszeichen zu achten ist ($\sin(x)' = \cos(x)$, $\cos(x)' = -\sin(x)$), sind die hyperbolischen Funktionen in dieser Hinsicht symmetrisch: $\text{sinh}(x)' = \text{cosh}(x)$, $\text{cosh}(x)' = \text{sinh}(x)$.
 \end{example}
 
 \begin{example}{Ableiten eines Quotienten zweier Funktionen}{CompDiffQuotFun}
@@ -455,24 +467,61 @@ Wenn eine Funktion $f(x)$ eine Umkehrfunktion $g(y) = f^{-1}(y)$ besitzt, könne
 Dies ist im folgenden Satz zusammengefasst:
 
 \begin{statement}{Ableitung der Umkehrfunktion}{InverseFunDiffRule}
-    Sei $f$ eine differenzierbare Funktion mit der Umkehrfunktion $f^{-1}$. Zwischen der Ableitung von $f$ und seiner Umkehrfunktion gilt dann folgende Beziehung:
+    Sei $f$ eine differenzierbare Funktion mit der Umkehrfunktion $f^{-1}$. Zwischen der Ableitung von $f$ und ihrer Umkehrfunktion gilt dann folgende Beziehung:
     $$
         f' \cdot (f^{-1})' = 1
     $$
 \end{statement}
 
 \begin{example}{Ableitung des Arkustangens}{CompDiffArctan}
-    Die Ableitung der Arkustangensfunktion können wir mithilfe der Regel zum Ableitung von Umkehrfunktionen berechnen. Wir setzen $y = f(x) = \tan(x)$. Dann gilt:
-    \begin{alignat}{1}
+    Die Ableitung der Arkustangensfunktion können wir mithilfe der Regel zur Ableitung von Umkehrfunktionen berechnen. Wir setzen $y = f(x) = \tan(x)$. Dann gilt:
+    \begin{alignat*}{1}
         \dd{}{y} \arctan(y) &= \frac{1}{\dd{}{x} \tan(x)} \\
                             &= \frac{1}{\underbrace{\tan^2(x)}_{=y^2}} \\
                             &= \frac{1}{1+y^2}
-    \end{alignat}
+    \end{alignat*}
 \end{example}
+
+\begin{example}{Ableitung des Arkussinus}{CompDiffArcsin}
+    Die Ableitung der Arkussinusfunktion können wir ebenfalls mit der Regel zur Ableitung von Umkehrfunktionen berechnen. Wir erhalten:
+    \begin{alignat*}{1}
+        & \dd{}{x} \sin(x) \dd{}{y} \text{asin}(y) = 1 \\
+        & \dd{}{y} \text{asin}(y) = \frac{1}{\cos(x)} = \frac{1}{\cos(\text{asin}(y))}
+    \end{alignat*}
+    Diesen Ausdruck können wir noch vereinfachen. Nach dem Satz des Pythagoras gilt $\sin^2(x) + \cos^2(x) = 1$ und damit können wir umformen:
+    \begin{alignat*}{1}
+        \cos(\text{asin}(x)) &= \sqrt{1 -  \sin^2(\text{asin}(x))} \\
+                             & = \sqrt{1 - x^2}
+    \end{alignat*}
+    Also gilt für die Ableitung des Arkussinus:
+    $$
+        \dd{}{x} \text{asin}(x) = \frac{1}{\sqrt{1-x^2}}
+    $$
+\end{example}
+
+\begin{example}{Ableitung des Arkuskosinus}{CompDiffArccos}
+    Für die Ableitung der Arkuskosinusfunktion erhalten wir analog $\dd{}{y} \text{acos}(y) = -\frac{1}{\sin(\text{acos}(x))}$. Mittels $\sin(\text{acos}(x)) = \sqrt{1 - \cos^2(\text{acos}(x))}$ wird daraus:
+    $$
+        \dd{}{x} \text{acos}(x) = -\frac{1}{\sqrt{1-x^2}}
+    $$
+\end{example}
+
 
 \section{Rechenregeln zum Integrieren}
 
-Um nun auch praktisch Stammfunktionen berechnen zu können, benötigen wir Zweierlei. Zum Einen müssen wir wissen, wie die Stammfunktion von Grundfunktionen lautet. Diese kennt man entweder auswendig oder schlägt diese in Tafelwerken nach. Zum Zweiten benötigen wir noch Rechenregeln, mit denen wir auch Stammfunktionen für aus Grundfunktionen zusammengesetzte Funktionen bilden können. Diese sind in diesem Abschnitt kurz für einstellige Funktionen zusammengefasst.
+Um nun auch praktisch Stammfunktionen berechnen zu können, benötigen wir Zweierlei. Zum Einen müssen wir wissen, wie die Stammfunktion von Grundfunktionen lautet. Diese kennt man entweder auswendig oder schlägt diese in Tafelwerken nach. Auf eine Stammfunktion sei aber noch einmal explizit hingewiesen, da es bei dieser oft ein Teil vergessen wird:
+
+\begin{statement}{Stammfunktion der Hyperbel}{AntiDerHyp}
+    Die Menge aller Stammfunktionen von $f(x) = \frac{1}{x}$ ist gegeben durch $F(x) = \ln(|x|) + C$
+\end{statement}
+
+Nicht vergessen werden darf der Betrag im Logarithmus -- denn $1/x$ ist sowohl für positive als auch für negative Werte definiert, $\ln(x)$ aber nur für positive Werte. Eine Weitere Stammfunktion, die manchmal hilfreich ist, lautet:
+
+\begin{statement}{Stammfunktion der Betragsfunktion}{AntiDerSignum}
+    Die Menge aller Stammfunktionen der Betragsfunktion $f(x) = \text{sgn}(x)$ ist gegeben durch $F(x) = |x| = \sqrt{x^2} + C$
+\end{statement}
+
+Zum Zweiten benötigen wir noch Rechenregeln, mit denen wir auch Stammfunktionen für aus Grundfunktionen zusammengesetzte Funktionen bilden können. Diese sind in diesem Abschnitt kurz für einstellige Funktionen zusammengefasst.
 
 \textbf{Bei der Bildung des unbestimmten Integrals ist unbedingt auf die Integrationskonstante zu achten.} Später im Kapitel zu Differentialgleichungen werden wir feststellen, dass diese Integrationskonstante wichtig ist, da sonst viele Lösungen einer Differentialgleichung "übersehen" werden.
 
@@ -538,16 +587,34 @@ Bei der Anwendung der Produktregel sollte man daher vorher immer nachdenken, ob 
     $$
 \end{example}
 
-Analog zur Kettenregel zum Ableiten gibt es auch eine Entsprechung für das unbestimmte Integral, die sogenannte Integration durch Substitution.
+Analog zur Kettenregel zum Ableiten gibt es auch eine Entsprechung für das unbestimmte Integral. Um diese herzuleiten, betrachten wir zwei Funktion $f$ und $u$ und bezeichnen mit $F$ eine Stammfunktion von $f$. Für die Komposition $F \circ u$ beider Funktionen gilt nun einerseits:
+
+$$
+    (F\circ u)' = F' \cdot u' = f \cdot u'
+$$
+
+Wobei $(\dots)'$ die Ableitung nach $x$ bezeichnet. Es folgt
+
+\begin{equation}
+    \int (F \circ u)' \diff{x} = \int f \cdot u' \diff{x} \label{eq:IntPartsProof1}
+\end{equation}
+
+Andererseits gilt aber auch:
+
+\begin{equation}
+    \int (F \circ u)' \diff{x} = F \circ u = F(u) = \int f(u) \diff{u} \label{eq:IntPartsProof2}
+\end{equation}
+
+Durch Gleichsetzen von \ref{eq:IntPartsProof1} und \ref{eq:IntPartsProof1} erhalten wir die sogenannte Integration durch Substitution:
 
 \begin{statement}{Integration durch Substitution}{IntSubst}
-    Sei $f$ eine integrierbare Funktion und $g$ eine sogenannte Substitutionsfunktion. Dann gilt:
+    Sei $f$ eine integrierbare Funktion und $u$ eine sogenannte Substitutionsfunktion. Dann gilt:
     $$
-        \int f(x) \diff{x} = \int f(g(t)) g'(t) \diff{t}
+        \int f(u) \diff{u} = \int f(u(t)) u'(t) \diff{t}
     $$
 \end{statement}
 
-Für die tatsächliche Berechnung ist meist das folgende Vorgehen praktikabler:
+Bei Anwendung der obigen Regel müssen wir beachten, dass wir bei einem der beiden unbestimmten Integrale die Integrationskonstante nicht vergessen. Für die tatsächliche Berechnung ist meist das folgende Vorgehen praktikabler. Dazu müssen wir uns noch einmal daran erinnern, dass die Ableitung über den Anstieg einer Tangente definiert war. Die Tangente ist eine Gerade und der Anstieg von Gerade ist gegeben als der Quotient $\frac{\Delta y}{\Delta x}$ der Änderung des Funktionswerts und der Änderung des Arguments. Die symbolische Schreibweise $\dd{y}{x}$ können wir auch auffassen als Quotient zweier \emph{infinitesimalen} Größen $\diff{y}$ und $\diff{x}$. Diese Schreibweise nennt man \textbf{Leibniz-Notation}. Wenn wir $\dd{y}{x}$ als Bruch betrachten und damit rechnen, als wäre es ein Bruch, sind einige Formeln manchmal einfacher verständlich. Die Regel zur Ableitung der Umkehrfunktion (siehe \ref{stmt:InverseFunDiffRule}) lautet in dieser Schreibweise etwa $\dd{y}{x} \dd{x}{y} = 1$, was nach den Regeln der Bruchrechnung offensichtlich korrekt ist. Wir erhalten dann das folgende alternative Verfahren für die Integration durch Substitution:
 
 \begin{enumerate}
     \item Wähle aufgrund der Form der zu integrierenden Funktion $f$ eine Substitution $u(x)$.
@@ -626,6 +693,6 @@ Für zweistellige Funktionen muss man die zweiten partiellen Ableitungen an der 
 \begin{figure}
     \centering
     \includegraphics[width=0.65\textwidth]{./gnuplot/contour-field-extrem-values}
-    \caption{Konturlinien der zweistelligen Funktion aus Beispiel \ref{ex:CompBivarEx}. Man erkennt die Extremstelle deutlich an der geschlossenen Konturlinie.}
+    \caption[Extremwertbestimmung mittels Konturlinien]{Konturlinien der zweistelligen Funktion aus Beispiel \ref{ex:CompBivarEx}. Man erkennt die Extremstelle deutlich an der geschlossenen Konturlinie.}
     \label{fig:ExCompBivarEx}
 \end{figure}

@@ -74,7 +74,7 @@ Je nach Anwendungsfall eignet sich eine Form besser als eine andere Form. Beispi
     \centering
     \includegraphics[width=0.45\textwidth]{./gnuplot/implicit-fun-circle}
     \includegraphics[width=0.45\textwidth]{./gnuplot/implicit-fun-cross}
-    \caption{Graphen implizit gegebener Funktionen. Man beachte, dass immer nur ein Teil des Kreises und des Kreuzes als explizite Abbildung von Argumenten nach Funktionswerten aufgefasst werden kann.}
+    \caption[Graphen impliziter Funktionen]{Graphen implizit gegebener Funktionen. Man beachte, dass immer nur ein Teil des Kreises und des Kreuzes als explizite Abbildung von Argumenten nach Funktionswerten aufgefasst werden kann.}
     \label{fig:ImplFun}
 \end{figure}
 
@@ -128,7 +128,7 @@ Für zweistellige Funktionen gibt es auch noch weitere Darstellungsformen, die m
 \begin{figure}
     \centering
     \includegraphics[width=0.6\textwidth]{./gnuplot/example-contour-plot}
-    \caption{Konturlinien der Funktion aus Beispiel \ref{ex:ContLine}}
+    \caption[Konturlinien einer zweistelligen Funktion]{Konturlinien der Funktion aus Beispiel \ref{ex:ContLine}}
     \label{fig:ExContLine}
 \end{figure}
 
@@ -164,7 +164,7 @@ Als zweite Darstellungsform gibt es noch das sogenannte Gradientenfeld, wobei du
 \begin{figure}
     \centering
     \includegraphics[width=0.65\textwidth]{./gnuplot/example-gradient-field}
-    \caption{Gradientenfeld der Funktion aus Beispiel \ref{ex:GradField}}
+    \caption[Gradientenfeld einer zweistelligen Funktion]{Gradientenfeld der Funktion aus Beispiel \ref{ex:GradField}}
     \label{fig:ExGradField}
 \end{figure}
 
@@ -202,7 +202,7 @@ Zum Zweiten kann man den Graphen einstelliger Funktionen entlang der Abszisse od
             \textbf{Skalierung} & \makecell{$f(a \cdot x)$ \\ $|a| > 1$: Stauchen \\ $|a| < 1$: Strecken \\ Für $a<0$ findet zusätzlich \\ Spiegelung an der y-Achse statt.} & \makecell{$a \cdot f(x)$ \\ $|a| > 1$: Strecken \\ $|a| < 1$: Stauchen \\ Für $a<0$ findet zusätzlich \\ Spiegelung an der x-Achse statt.}
         \end{tabular}
     \end{center}
-    \caption{Verschiebung und Skalierung einer Funktion durch Modifikation der Funktionsgleichung}
+    \caption[Verschiebung und Skalierung einer Funktion]{Verschiebung und Skalierung einer Funktion durch Modifikation der Funktionsgleichung}
     \label{lst:TranslateScaleFun}
 \end{listing}
 
@@ -245,7 +245,7 @@ Aus den letzten beiden Beispielen leitet sich die folgende Aussage ab:
 \begin{figure}
     \centering
     \includegraphics[width=0.65\textwidth]{./gnuplot/transform-translate-scale-order}
-    \caption{Abhängig der Reihenfolge von Verschiebung und Skalierung erhält man unterschiedliche Funktionen.}
+    \caption[Verschiebung und Skalierung in unterschiedlicher Reihenfolge]{Abhängigkeit der Reihenfolge von Verschiebung und Skalierung erhält man unterschiedliche Funktionen.}
     \label{fig:TransformOrder}
 \end{figure}
 
@@ -292,18 +292,18 @@ Rechnerisch erhält man die Umkehrfunktion aus der Funktionsgleichung $y = f(x)$
 \begin{figure}
     \centering
     \includegraphics[width=0.95\textwidth]{./svg/injective-surjective}
-    \caption{Visuelle Darstellung der Definition von Injektivität und Surjektivität. Es ist jeweils eine Beispiel für eine Abbildung dargestellt, welche die Bedingung erfüllt, und ein Beispiel, wo sie die Bedingung nicht erfüllt. Die Bedingung, dass sich die Identitätsfunktion ergeben soll, bedeutet graphisch, dass man an einem Punkt anfängt, den Pfeilen folgt, und schließlich wieder am Ausgangspunkt ankommt. Das ist bei dem nicht-injektiven beziehungsweise nicht-surjektiven Beispiel nicht möglich.}
+    \caption[Injektivität und Surjektivität]{Visuelle Darstellung der Definition von Injektivität und Surjektivität. Es ist jeweils eine Beispiel für eine Abbildung dargestellt, welche die Bedingung erfüllt, und ein Beispiel, wo sie die Bedingung nicht erfüllt. Die Bedingung, dass sich die Identitätsfunktion ergeben soll, bedeutet graphisch, dass man an einem Punkt anfängt, den Pfeilen folgt, und schließlich wieder am Ausgangspunkt ankommt. Das ist bei dem nicht-injektiven beziehungsweise nicht-surjektiven Beispiel nicht möglich.}
     \label{fig:InjectSurject}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=0.5\textwidth]{./gnuplot/inverse-function-reflection}
-    \caption{Graphische Bedeutung der Umkehrfunktion. Man erhält die Umkehrfunktion $\ln(x)$ durch Spiegelung der Funktion $e^x$ an der Hauptdiagonalen $y=x$.}
+    \caption[Graphische Bedeutung der Umkehrfunktion]{Graphische Bedeutung der Umkehrfunktion. Man erhält die Umkehrfunktion $\ln(x)$ durch Spiegelung der Funktion $e^x$ an der Hauptdiagonalen $y=x$.}
     \label{fig:InvFunRefl}
 \end{figure}
 
-\begin{example}{}{}
+\begin{example}{Untersuchung einer Funktion auf Umkehrbarkeit}{}
     \begin{enumerate}
         \item Die Funktion $f: (-\infty,\infty) \to (-\infty,\infty)$ mit $x \mapsto x^2$ ist nicht surjektiv, denn es kann keine Abbildung $g: (-\infty,\infty) \to (-\infty,\infty)$ geben. Für diese müsste etwa auch $(f \circ g)(-1) = g(-1)^2 = -1$ gelten, was aber nicht möglich ist, da bei der Quadratbildung nur nichtnegative Werte möglich sind. Durch Einschränkung des Wertebereichs kann dieses Problem wie im nächsten Beispiel illustriert gelöst werden.
         \item Die Funktion $f: (-\infty,\infty) \to [0,\infty)$ mit $x \mapsto x^2$ ist surjektiv, aber nicht injektiv. Sie ist surjektiv, da etwa die Funktion $g: [0,\infty) \to (-\infty,\infty)$ mit $x \mapsto \sqrt{x}$ existiert,  sodass gilt $(f \circ g)(x) = (\sqrt{x})^2 = x$. Die Funktion ist nicht eindeutig, genauso hätten wir $g: x \mapsto -\sqrt{x}$ wählen können, auch hier gilt $(-\sqrt{x})^2 = x$. Allerdings ist $f$ nicht injektiv, für beide Kandidaten einer Umkehrfunktion ist $(g \circ f)(x) = \pm\sqrt{x^2} = \pm|x| \ne x$. Durch Einschränkung des Definitionsbereichs auch wie im nächsten Beispiel auch dieses Problem umgangen werden.
@@ -364,7 +364,7 @@ Man beachte hierbei, dass die Wahl der Begriffe \emph{achsensymmetrisch} und \em
     \centering
     \includegraphics[width=0.45\textwidth]{./svg/axis-symmetric-fun}
     \includegraphics[width=0.45\textwidth]{./svg/point-symmetric-fun}
-    \caption{Links: Achsensymmetrische Funktion. Der rechte Teile der Parabel geht unter Spiegelung an der Ordinate in den linken Teil über. Rechts: Punktsymmetrische Funktion: Der rechte Teil der kubischen Parabel geht unter Punktspiegelung am Ursprung in den linken Teil über.}
+    \caption[Gerade und ungerade Funktionen]{Links: Achsensymmetrische Funktion. Der rechte Teile der Parabel geht unter Spiegelung an der Ordinate in den linken Teil über. Rechts: Punktsymmetrische Funktion: Der rechte Teil der kubischen Parabel geht unter Punktspiegelung am Ursprung in den linken Teil über.}
     \label{fig:ExAxisSymFun}
 \end{figure}
 
@@ -487,7 +487,7 @@ Ein Beispiel für eine hebbare Definitionslücke und eine Sprungstelle ist berei
 \begin{figure}
     \centering
     \includegraphics[width=0.6\textwidth]{./gnuplot/example-special-points}
-    \caption{Beispiel einer Funktion mit Nullstelle, y-Achsenschnittpunkt und Polstelle}
+    \caption[Nullstelle, y-Achsenschnittpunkt und Polstelle]{Beispiel einer Funktion mit Nullstelle, y-Achsenschnittpunkt und Polstelle}
     \label{fig:SpecValFun}
 \end{figure}
 
@@ -564,7 +564,7 @@ Mit der letzten Definition lässt sich nun der Begriff einer diagonalen Asymptot
     \centering
     \includegraphics[width=0.45\textwidth]{./gnuplot/diagonal-asymptote}
     \includegraphics[width=0.45\textwidth]{./gnuplot/example-little-o}
-    \caption{Beispiele für das Verhalten von Funktionen im Unendlichen. Links: Diagonale Asymptote. Rechts: Eine Polynom ist in Klein-O jeder Exponentialfunktion.}
+    \caption[Verhalten im Unendlichen]{Beispiele für das Verhalten von Funktionen im Unendlichen. Links: Diagonale Asymptote. Rechts: Eine Polynom ist in Klein-O jeder Exponentialfunktion.}
     \label{fig:BehLargeValFun}
 \end{figure}
 
@@ -676,7 +676,7 @@ In diesem Abschnitt betrachten wir zuerst einige grundlegende Funktionen und sch
 \begin{figure}
     \centering
     \includegraphics[width=0.45\textwidth]{./gnuplot/log-scale-plot}
-    \caption{Graph von $10^x$ mit logarithmischer Einteilung der Ordinate}
+    \caption[Logarithmische Achseneinteilung]{Graph von $10^x$ mit logarithmischer Einteilung der Ordinate}
     \label{fig:LogScalePlot}
 \end{figure}
 
@@ -695,11 +695,11 @@ In diesem Abschnitt betrachten wir zuerst einige grundlegende Funktionen und sch
 
 So ist etwa $x^3+2x$ ein Polynom dritten Grads mit den Koeffizienten $a_3 = 1, a_2 = 0, a_1 = 2, a_0=0$.
 
-Polynome sind für alle rellen Zahlen erklärt und immer stetig. Sie sind gerade (achsensymmetrisch), wenn sie nur aus gerade Potenzen bestehen und ungerade (punktsymmetrisch), wenn sie nur aus ungerade Potenzen bestehen. Dieser Zusammenhang ist auch eine Motivation für die Bezeichnung "gerade" und "ungerade" Funktion. Ihr Verhalten im Unendlichen bestimmt sich alleine durch ihren Grad $n$ und das Vorzeichen des höchsten Koeffizienten $a_n$. Ist der Grad des Polynoms gerade, dann streben die Funktionswerte für $x\to\pm\infty$ beide gegen $+\infty$ bei $a_n > 0$ beziehungsweise beide gegen $-\infty$ bei $a_n < 0$. Für Polynome, deren Grad ungerade ist, streben die Funktionswerte für $x \to -\infty$ gegen $-\infty$ bei $a_n > 0$ ($\infty$ bei $a_n < 0$) und für $x \to \infty$ gegen $+\infty$ bei $a_n > 0$ ($-\infty$ bei $a_n < 0$).
+Polynome sind für alle reellen Zahlen erklärt und immer stetig. Sie sind gerade (achsensymmetrisch), wenn sie nur aus gerade Potenzen bestehen und ungerade (punktsymmetrisch), wenn sie nur aus ungerade Potenzen bestehen. Dieser Zusammenhang ist auch eine Motivation für die Bezeichnung "gerade" und "ungerade" Funktion. Ihr Verhalten im Unendlichen bestimmt sich alleine durch ihren Grad $n$ und das Vorzeichen des höchsten Koeffizienten $a_n$. Ist der Grad des Polynoms gerade, dann streben die Funktionswerte für $x\to\pm\infty$ beide gegen $+\infty$ bei $a_n > 0$ beziehungsweise beide gegen $-\infty$ bei $a_n < 0$. Für Polynome, deren Grad ungerade ist, streben die Funktionswerte für $x \to -\infty$ gegen $-\infty$ bei $a_n > 0$ ($\infty$ bei $a_n < 0$) und für $x \to \infty$ gegen $+\infty$ bei $a_n > 0$ ($-\infty$ bei $a_n < 0$).
 
 Eine Aussage über die Gleichheit zweier Polynome macht der folgende Satz:
 
-\begin{statement}{Gleicheit zweier Polynome}{EqPoly}
+\begin{statement}{Gleichheit zweier Polynome}{EqPoly}
     Zwei Polynome $p_n(x) = \sum\limits_{i=0}^n a_i x^i$ und $q_m(x) = \sum\limits_{i=0}^m b_i x^i$ sind dann und nur genau dann gleich, wenn sie den gleichen Grad haben und all ihre Koeffizienten gleich sind, also wenn gilt: $n=m$ und $a_i = b_i$ für $i=0,1,2,\dots,n$.
 \end{statement}
 
@@ -728,7 +728,7 @@ Weiterhin kann anhand der Vielfachheit einer Nullstelle eine Aussage über die A
 \begin{figure}
     \centering
     \includegraphics[width=0.55\textwidth]{./gnuplot/polynom-root-multiplicity}
-    \caption{Nullstelle mit ungerader Vielfachheit (links) und gerader Vielfachheit (rechts)}
+    \caption[Vielfachheit von Nullstellen]{Nullstelle mit ungerader Vielfachheit (links) und gerader Vielfachheit (rechts)}
     \label{fig:PolyRootMulti}
 \end{figure}
 
