@@ -20,10 +20,11 @@ do
             echo "  $0.sh";
             echo 'To process only part of the files, use:';
             echo "  $0  -m plot|pdf";
-            echo '  -m plot : Only renders the gnuplot graphs';
-            echo '  -m pdf  : Only renders the PDF via LaTeX';
-            echo '  -m svg  : Only render all SVG images';
-            echo '  -m clean: Removes all generated files';
+            echo '  -m plot   : Only renders the gnuplot graphs';
+            echo '  -m pdf    : Only renders the PDF via LaTeX';
+            echo '  -m svg    : Only render all SVG images';
+            echo '  -m clean  : Removes all generated files';
+            echo '  -m release: Create a ZIP archive with all built files';
             echo 'To process only a specified sub directory, use';
             echo "  $0.sh -d <DIRECTORY>";
             echo 'To remove all generated files:';
@@ -103,3 +104,8 @@ do
     
     cd ..;
 done
+
+if [ "$mode" = "release" ] || [ -z "$mode" ]
+then
+    zip release.zip **/*.pdf;
+fi

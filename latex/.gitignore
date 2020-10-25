@@ -1,2 +1,5 @@
 # Generated PDF documents
 *.pdf
+
+# Zipped PDF documents
+release.zip
