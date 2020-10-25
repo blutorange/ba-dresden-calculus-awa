@@ -1,17 +1,19 @@
 #!/usr/bin/env bash
 
-defaultDirs="lecture-notes exercises"
+set -e;
+shopt -s nullglob;
+shopt -s globstar;
 
-set -e
+DEFAULT_DIRS="lecture-notes exercises"
 
 # CLI flags
 mode="";
-dirs=$defaultDirs;
-while getopts :m:dhc flag
+dirs=$DEFAULT_DIRS;
+while getopts :m:d:hc flag
 do
     case "${flag}" in
         m)
-            mode=${OPTARG}
+            mode=${OPTARG};
         ;;
         h)
             echo 'To process all files and render the PDF from scratch, use';
@@ -30,7 +32,7 @@ do
             exit;
         ;;
         d)
-            dirs=${OPTARG}
+            dirs=${OPTARG};
         ;;
         c)
             mode="clean";
@@ -51,16 +53,23 @@ do
     if [ "$mode" = "clean" ] 
     then
         rm -f gnuplot/*.png;
-        rm -f svg/*.png;
         rm -f gnuplot/*.dat;
-        rm -f "lecture.aux" "lecture.fdb_latexmk" "lecture.fls" "lecture.log" "lecture.pdf" "lecture.out" "lecture.toc";
-        rm -rf "_minted-lecture";
+        rm -f svg/*.png;
+        rm -f **/*.aux;
+        rm -f **/*.fdb_latexmk;
+        rm -f **/*.fls;
+        rm -f **/*.log;
+        rm -f **/*.pdf;
+        rm -f **/*.out;
+        rm -f **/*.toc;
+        rm -rf **/_minted-*;
+        bash "./clear.sh";
     else
         # Render all SVG images
         if [ "$mode" = "svg" ] || [ -z "$mode" ]
         then
         cd svg;
-        for svgfile in $(ls *.svg)
+        for svgfile in *.svg
         do
           svgimage="$(basename $svgfile .svg).png";
           inkscape \
@@ -77,7 +86,7 @@ do
         if [ "$mode" = "plot" ] || [ -z "$mode" ]
         then
             cd gnuplot;
-            for plotfile in $(ls *.gnuplot)
+            for plotfile in *.gnuplot
             do
                 plotimage="$(basename $plotfile .gnuplot)";
                 gnuplot -e "filename='$plotimage'" "$plotfile";
