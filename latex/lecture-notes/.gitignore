@@ -1,3 +1,6 @@
 gnuplot/*.png
 svg/*.png
 gnuplot/*.dat
+lecture.definition
+lecture.example
+lecture.statement
