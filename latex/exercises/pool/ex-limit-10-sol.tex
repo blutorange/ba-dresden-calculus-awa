@@ -1,0 +1,39 @@
+\item Zur Erinnerung: Eine Folge $(a_n)$ heißt Konvergent für $n\to\infty$ mit dem Grenzwert $\alpha$, wenn gilt:
+
+$$
+\forall \epsilon > 0 \exists n_0\in\N: \forall n > n_0 : |a_n - \alpha| < \epsilon
+$$
+
+Nun ist $\alpha=1$. Unsere Aufgabe besteht darin, zu zeigen, dass es für jedes vorgegebene $\epsilon$ ein $N=N(\epsilon)$ gibt, was obige Bedingung erfüllt. Dazu betrachten wir die Ungleichung:
+
+\begin{alignat*}{1}
+	|a_n - 1| &< \epsilon \\
+	\left|\frac{n-1}{n+1} - 1\right| &< \epsilon \\
+	\left|1 - \frac{n-1}{n+1}\right| &< \epsilon	
+\end{alignat*}
+
+Zuerst müssen wir den Betrag auswerten. Für $n \ge 0$ ist der Ausdruck $\frac{n-1}{n+1}$ kleiner $1$, denn
+
+\begin{alignat*}{1}
+	\frac{n-1}{n+1} &< 1 \\
+	n -1 &< n + 1 \\
+	0 &< 2
+\end{alignat*}
+
+
+Weiterhin ist für alle $n>1$ der Ausdruck $\frac{n-1}{n+1}$ positiv (Quotient von positiven Zahlen). Da wir nur große $n$ betrachten, sind die ersten Glieder der Zahlenfolge für Grenzwertbetrachtungen irrelevant. Somit können wir im Folgenden davon ausgehen, dass $1 - \frac{n-1}{n+1} > 0$ gilt und wir erhalten:
+
+$$
+	1 - \frac{n-1}{n+1} < \epsilon
+$$
+
+Diese Ungleichung können wir lösen und erhalten:
+
+\begin{alignat*}{1}
+	1-\epsilon &< \frac{n-1}{n+1} \\
+	(1-\epsilon)(n+1) &< n -1 \\
+	-\epsilon n &< \epsilon - 2 \\
+	n &> \frac{2-\epsilon}{\epsilon} = \frac{2}{\epsilon} - 1
+\end{alignat*}
+
+Für alle $\epsilon > 0$ erhalten wir so einen endlichen Wert. Damit ist die Definition des Grenzwerts für $N(\epsilon) = \frac{2}{\epsilon} - 1$ erfüllt, $\alpha = 1$ ist also tatsächlich Grenzwert.

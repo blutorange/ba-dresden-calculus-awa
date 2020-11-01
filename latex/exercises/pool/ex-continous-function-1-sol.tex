@@ -1,0 +1,55 @@
+\item Zur Erinnerung: $\alpha$ heißt Grenzwert von $f$, wenn gilt:
+
+$$
+\forall \epsilon > 0 \exists \delta > 0 : f(S_\delta(x_0)) \subset S_\epsilon(\alpha)
+$$
+
+Nun ist $x_0=0$. Wir müssen zeigen, dass obige Aussage für kein $\alpha$ wahr ist. Um uns der Lösung zu nähern, nehmen wir zuerst an, $\alpha=0$ wäre ein Grenzwert. Dann müssen wir folgende Aussage auf ihren Wahrheitsgehalt prüfen:
+
+$$
+\forall \epsilon > 0 \exists \delta > 0 : f(S_\delta(0)) \subset S_\epsilon(0)
+$$
+
+Da wir eine einstellige Funktion betrachten, sind die $\delta$- und $\epsilon$-Kugeln hier Intervalle.
+
+\begin{alignat*}{1}
+S_\delta(0) &= (-\delta, \delta) \\
+S_\epsilon(0) &= (-\epsilon, \epsilon)
+\end{alignat*}
+
+
+Da $\delta > 0$, enthält das Intervall $(-\delta, \delta)$ wenigstens eine positive und eine negative Zahl, zudem enthält es auch die $0$. Wenden wir die Funktion $\sgn$ auf $S_\delta(0)$ an, erhalten wir
+
+$$
+	f(S_\delta(0)) = \lbrace -1, 0, 1 \rbrace
+$$
+
+Da die Aussage für alle $\epsilon$ gelten muss, reicht es ein Gegenbeispiel anzugeben um die Aussage zu widerlegen. Sei $\epsilon = 0.5$, dann ist $S_{0.5}(0) = (-0.5, 0.5)$ und wir erhalten die Aussage:
+
+$$
+\exists \delta > 0 : \lbrace -1, 0, 1 \rbrace  \subset (-0.5, 0.5)
+$$
+
+Diese Aussage ist offensichtlich falsch, also ist $0$ kein Grenzwert von $\sgn$ für $x \to 0$.
+
+Doch kann es ein anderes $\alpha\in\R$ geben, welches Grenzwert ist? Um das zu überprüfen, bauen wir auf diesem Beweis auf. Wir nehmen an, es gebe ein solches $\alpha$, das Grenzwert von $\sgn$ für $x \to 0$ sei. Für den Fall $\alpha=0$ haben wir von diesem konkreten Wert nur an wenigen Stellen Gebrauch gemacht. Unabhängig des Wertes von $\alpha$ gilt weiterhin:
+
+$$
+f(S_\delta(0)) = \lbrace -1, 0, 1 \rbrace
+$$
+
+Wir wählen nun erneut $\epsilon = 0.5$. Dann lautet die $\epsilon$-Kugel:
+
+$$
+	S_{0.5}(\alpha, \alpha) = ( \alpha - 0.5, \alpha + 0.5 )
+$$
+
+Die Aussage(-form), welche wir untersuchen müssen, lautet jetzt:
+
+$$
+	\lbrace -1, 0, 1 \rbrace \subset ( \alpha - 0.5, \alpha + 0.5 )
+$$
+
+Aber das kann für kein $\alpha\in\R$ der Fall sein. Das sehen wir etwa daran, wenn wir die Differenz zweier Werte einer Menge betrachten. Für das linke Intervall $\lbrace -1, 0, 1 \rbrace$ ist der höchste Wert dieser Differenz $1-(-1) = 2$, während für das rechte Intervall $( \alpha - 0.5, \alpha + 0.5 )$ diese Differenz unabhängig von $\alpha$ nie größer als $1$ sein kann. Folglich kann das linke Intervall keine Teilmenge des rechten sein, denn sonst müsste das rechte Intervall auch 2 Elemente enthalten, deren Differenz $2$ ist. 
+
+Zusammengefasst: Für die Funktion $\sgn$ an der Stelle $x_0=0$ gibt es kein $\alpha\in\R$, sodass die Definition des Grenzwerts für $x\to 0$ erfüllt wäre. Damit haben wir gezeigt, dass die Vorzeichen-Funktion keinen Grenzwert für $x\to 0$ hat und somit dort eine Unstetigkeitsstelle besitzt.

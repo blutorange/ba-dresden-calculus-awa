@@ -1,0 +1,46 @@
+\item Die notwendige Bedingung lautet, dass die Folge der Summanden eine Nullfolge bilden muss. Wir betrachten den Grenzwert der Folge:
+
+$$
+	a_n = \frac{(-1)^n}{n+\cos(n\pi)}
+$$
+
+Der Faktor $(-1)^k$ bewirkt einen Vorzeichenwechsel, sodass die Glieder $a_n$  abgeschätzt werden können durch
+
+$$
+ -\left|\frac{1}{n+\cos(n\pi)}\right| \le a_n \le \left|\frac{1}{n+\cos(n\pi)}\right|
+$$
+
+Für ausreichend große $n$ ist der Term $\frac{1}{n+\cos(n\pi)}$ stets positiv und wir können den Betrag weglassen. Also suchen wir nun den Grenzwert von
+
+$$
+ b_n = \frac{1}{n+\cos(n\pi)}
+$$
+
+Das $-1 \le \cos(\dots) \le 1$, können wir $b_n$ abschätzen durch:
+
+$$
+	\underbrace{\frac{1}{n+1}}_{\to 0} \le b_n \le \underbrace{\frac{1}{n-1}}_{\to 0}
+$$
+
+Die linke und die rechte Seite gehen gegen $0$, mithin konvergiert nach dem Sandwich-Kriterium auch $b_n$ gegen $0$. Zusammengefasst erhalten wir damit:
+
+$$
+-\underbrace{\left|\frac{1}{n+\cos(n\pi)}\right|}_{\to 0} \le a_n \le \underbrace{\left|\frac{1}{n+\cos(n\pi)}\right|}_{\to 0}
+$$
+
+Also konvergiert $a_n \to 0$ und die notwendige Bedingung ist erfüllt.
+
+Als nächstes wenden wir das Quotientenkriterium an und betrachten den Grenzwert der Folge
+
+\begin{alignat*}{1}
+	c_n &= \left| \frac{(-1)^{n+1}}{n+1+\cos((n+1)\pi)} \cdot \frac{n+\cos(n\pi)}{(-1)^n} \right| \\
+	    &= \left| \frac{n+\cos(n\pi)}{n+1+\cos((n+1)\pi)} \right|
+\end{alignat*}
+
+Erneut sind für ausreichend große $n$ die Terme im Zähler und Nenner positiv und wir können die Betragsstriche weglassen. Weiterhin können wir wegen $-1 \le \cos(\dots) \le 1$ erneut abschätzen (ein Quotient wird groß, wenn der Nenner möglichst groß und der Zähler möglichst klein wird, und umgedreht):
+
+$$
+ \underbrace{\frac{n-1}{n+1+1}}_{\to 1}	\le c_n \le \underbrace{\frac{n+1}{n+1-1}}_{\to 1}
+$$
+
+Beide Terme konvergieren gegen $1$, also konvergiert auch $c_n \to 1$. Nach dem Wurzelkriterium ist damit keine Aussage über die Konvergenz der unendlichen Reihe $\sum\limits a_n$ möglich.
