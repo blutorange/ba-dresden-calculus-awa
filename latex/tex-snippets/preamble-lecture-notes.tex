@@ -39,6 +39,32 @@
 
 \usepackage{wrapfig} % Wrap text around figures
 
+%%% ENVIROMENT VARIABLES
+\ExplSyntaxOn
+
+\usepackage{xparse}
+
+\NewDocumentCommand{\getenv}{om}
+{
+	\sys_get_shell:nnN { kpsewhich ~ --var-value ~ #2 } { } \l_tmpa_tl
+	\tl_trim_spaces:N \l_tmpa_tl
+	\IfNoValueTF { #1 }
+	{
+		\tl_use:N \l_tmpa_tl
+	}
+	{
+		\tl_set_eq:NN #1 \l_tmpa_tl
+	}
+}
+
+\ExplSyntaxOff
+
+
+\getenv[\TEXPRINT]{TEXPRINT}
+\def\apar{\par}
+
+%%%------------------------------------------------------------------------------
+
 
 %%% PAGE LAYOUT
 %%%------------------------------------------------------------------------------
@@ -163,29 +189,81 @@
 %%%% NEW THEOREMS
 %%%------------------------------------------------------------------------------
 
-\newtcbtheorem[list inside={example}]{example}{Beispiel}{
-	colback=blue!5!white,
-	colbacktitle={blue!25!white},
-	coltitle={black},
-	fonttitle=\bfseries
-}{ex}
+\ifx\TEXPRINT\apar
+	\newtcbtheorem[list inside={example}]{example}{Beispiel}{
+		colback=blue!5!white,
+		colbacktitle={blue!25!white},
+		coltitle={black},
+		fonttitle=\bfseries
+	}{ex}
 
+	\newtcbtheorem[list inside={definition}]{definition}{Definition}{
+		colback=yellow!20!white,
+		colbacktitle={yellow!40!white},
+		coltitle={black},
+		fontupper=\slshape,
+		fonttitle=\bfseries
+	}{def}
+	
+	\newtcbtheorem[list inside={statement}]{statement}{Aussage}{
+		colback=red!5!white,
+		colbacktitle={red!25!white},
+		coltitle={black},
+		fontupper=\slshape,
+		fonttitle=\bfseries
+	}{stmt}
+\else
+	\newtcbtheorem[list inside={example}]{example}{Beispiel}{
+		breakable,
+		fonttitle=\bfseries,
+		colback=white,
+		colbacktitle=white,
+		coltitle=black,
+		colframe=white,
+		boxrule=0mm,boxsep=0mm,
+		toprule=0mm,bottomrule=0mm,leftrule=0mm,rightrule=0mm,titlerule=0mm,
+		left=0mm,lefttitle=0mm,leftupper=4mm,leftlower=0mm,
+		right=0mm,righttitle=0mm,rightupper=0mm,rightlower=0mm,
+		top=4mm,toptitle=0mm,
+		bottom=0mm,bottomtitle=0mm,
+		middle=0mm
+	}{ex}
+	
+	\newtcbtheorem[list inside={definition}]{definition}{Definition}{
+		breakable,
+		colback=white,
+		colbacktitle=white,
+		coltitle=black,
+		colframe=white,
+		fontupper=\slshape,
+		fonttitle=\bfseries,
+		boxrule=0mm,boxsep=0mm,
+		toprule=0mm,bottomrule=0mm,leftrule=0mm,rightrule=0mm,titlerule=0mm,
+		left=0mm,lefttitle=0mm,leftupper=4mm,leftlower=0mm,
+		right=0mm,righttitle=0mm,rightupper=0mm,rightlower=0mm,
+		top=4mm,toptitle=0mm,
+		bottom=0mm,bottomtitle=0mm,
+		middle=0mm
+	}{def}
+	
+	\newtcbtheorem[list inside={statement}]{statement}{Aussage}{
+		breakable,
+		colback=white,
+		colbacktitle=white,
+		coltitle=black,
+		colframe=white,
+		fontupper=\slshape,
+		fonttitle=\bfseries,
+		boxrule=0mm,boxsep=0mm,
+		toprule=0mm,bottomrule=0mm,leftrule=0mm,rightrule=0mm,titlerule=0mm,
+		left=0mm,lefttitle=0mm,leftupper=4mm,leftlower=0mm,
+		right=0mm,righttitle=0mm,rightupper=0mm,rightlower=0mm,
+		top=4mm,toptitle=0mm,
+		bottom=0mm,bottomtitle=0mm,
+		middle=0mm
+	}{stmt}
 
-\newtcbtheorem[list inside={definition}]{definition}{Definition}{
-	colback=yellow!20!white,
-	colbacktitle={yellow!40!white},
-	coltitle={black},
-	fontupper=\slshape,
-	fonttitle=\bfseries
-}{def}
-
-\newtcbtheorem[list inside={statement}]{statement}{Aussage}{
-	colback=red!5!white,
-	colbacktitle={red!25!white},
-	coltitle={black},
-	fontupper=\slshape,
-	fonttitle=\bfseries
-}{stmt}
+\fi
 
 %%% TABLE OF CONTENTS
 %%%------------------------------------------------------------------------------
@@ -199,13 +277,20 @@
 %%%-------------------------------------------------------------------------------
 
 \usepackage{hyperref}   % Internal hyperlinks
-\hypersetup{
-    colorlinks,
-    linkcolor={red!50!black},
-    citecolor={blue!50!black},
-    urlcolor={blue!80!black},
-    pdfauthor={Andre Wachsmuth}
-}
+\ifx\TEXPRINT\apar
+	\hypersetup{
+		colorlinks,
+		linkcolor={red!50!black},
+		citecolor={blue!50!black},
+		urlcolor={blue!80!black},
+		pdfauthor={Andre Wachsmuth}
+	}
+\else
+	\hypersetup{
+		hidelinks,
+		pdfauthor={Andre Wachsmuth}
+	}
+\fi
 \usepackage{memhfixc}   %
 
 %%% Colors

@@ -1,0 +1,186 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[a4paper]{geometry}
+\usepackage[pdftex]{hyperref}
+\usepackage[german]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{csquotes}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{indentfirst}
+\usepackage{polynom}
+\usepackage{multicol}
+
+\geometry{
+  headheight=14px,
+  left=1.54cm,
+  right=1.54cm,
+  bottom=2cm,
+  top=1cm
+}
+
+\setlength{\marginparsep}{1 cm}
+\setlength{\topmargin}{-0.6in}
+\setlength{\textheight}{9.5in}
+\pagestyle{plain}
+
+\input{../../tex-snippets/commons.tex}
+
+\begin{document}
+
+\begin{center}
+{\bf {\huge Wichtige mathematische Zusammenhänge}}
+\end{center}
+
+\section {Rechenregeln}
+
+\begin{multicols}{2}
+
+\begin{itemize}
+\item Kommutativgesetz $x \circ y = y \circ x$
+\item Assoziativgesetz $x \circ (y \circ z) = (x \circ y) \circ z$
+\item Distributivgesetz $x \circ (y \star z) = (x \circ y) \star (x \circ z)$
+\item Bruch $\frac{a}{b} + \frac{c}{d} = \frac{ad+bc}{bd}$
+\item Binom $(x+y)^2=x^2+y^2+2xy$
+\item Binom $x^2-y^2=(x-y)(x+y)$
+\item Potenz $a^{-x} = \frac{1}{a^x}$
+\item Potenz $a^x\cdot a^y = a^{x+y}$
+\item Potenz $a^x\cdot b^x = (a\cdot b)^x$
+\item Potenz $\left(x^y\right)^z = x^{y\cdot z}$
+\item Wurzel $\sqrt{x} \cdot \sqrt{y} = \sqrt{x\cdot y}$
+\item Wurzel $\sqrt[\leftroot{-2}\uproot{2}b]{x^a} = x^{a/b}$
+\item Wurzel $\sqrt{x^2} = |x|$
+\item Logarithmus $\log_c(a\cdot b) = \log_c(a) + \log_c(b)$
+\item Logarithmus $\log_c(a ^ b) = b\cdot \log_c(a)$
+\item Logarithmus $\log_b(a) = \frac{\log_c(a)}{\log_c(b)}$
+\item Trigonometrie $\tan(x) = \frac{\sin(x)}{\cos(x)}$
+\item Trigonometrie $1 = \sin^2(x) + \cos^2(x)$
+\end{itemize}
+
+\section {Funktionsgraphen}
+\begin{itemize}
+\item Definition: $f: \mathbb{D}  \to \mathbb{B}$, $f: x \mapsto x^2$
+\item Verschiebung: $f(x-c)$, $f(x)+c$
+\item Skalierung: $f(a\cdot x)$, $a\cdot f(x)$
+\item Achsensymmetrisch: $f(-x) = f(x)$
+\item Punktsymmetrisch: $f(-x) = -f(x)$
+\item Monotonie $y > x \implies f(y) > f(x)$
+\item Periodizität: $f(x+p) = f(x)$
+\item Verkettung: $h = f \circ g$, $h(x) = f(g(x))$
+\item Nullstelle: $f(x) = 0$
+\item Lokale Extrema: $f'(x) = 0$, $f''(x) \ne 0$
+\end{itemize}
+
+\section {Gleichungen}
+\begin{itemize}
+\item Polynom (Grad $n$): $p_n(x)=\sum_{i=0}^n a_i x^i$
+\item Linearfaktoren: $p_n(x) = \sum_{i=0}^k (x-x_i)^{a_i}$, $\sum_k a_i = n$
+\item $x^2+px+q=0 \implies x_{1,2} = -p/2 \pm \sqrt{p^2/4-q}$
+\item Gebrochenrat. Fkt: $f(x) = \frac{p_n(x)}{q_m(x)}$
+\item für $n\ge m$ unecht gebrochen, sonst echt gebrochen
+\item Polynomdivision: $\frac{x^3-2x^2-4x+8}{x-1} = x^2-x-5 + \frac{3}{x-1}$
+\item Partialbruchzerlegung: $\frac{x}{x^2-1} = \frac{1}{2}\cdot\frac{1}{x-1} + \frac{1}{2}\cdot\frac{1}{x+1}$
+\end{itemize}
+
+\section {Ableiten und Integrieren}
+\begin{itemize}
+\item $\int f(x) \diff{x} = F(x) +C$, $\dd{x}{x} F(x) = f(x)$
+\item $\int_a^b f(x) = F(b) - F(a)$
+\item Summenregel: $(f+g)' = f'+g'$
+\item Produktregel: $(f\cdot g)' = f'g+fg'$
+\item Kettenregel: $(f_1\circ f_2)' = f_1' \cdot f_2'$
+\item Umkehrfunktion: $(f^{-1})' \cdot f' = 1$
+\item Partielle Integration: $\int (f \cdot g) \d x = Fg - \int Fg' \d x$
+\item Integration mit Substitution: Substitution ableiten und einsetzen
+\end{itemize}
+
+\end{multicols}
+
+\newpage
+\noindent
+
+\begin{multicols}{2}
+
+
+\section {Mehrstellige Funktionen}
+\begin{itemize}
+\item Definitionsbereich ist kartesisches Produkt
+\item Mengenschreibweise: $\{ x \in \mathbb{R} | x > 0\}$
+\item Mengenschreibweise: $\mathbb{R}\setminus[0,\infty)$
+\item Mengenschreibweise: $[0,\infty) \times (-2,3]$
+\item partielle Ableitung: $\frac{\partial f}{\partial x}(x,y) = f_x(x,y)$
+\item Tangente: $t(x) = f(x_0) + (x-x_0)f'(x_0)$
+\item Tangentialebene: $t(x,y) = $ \\
+$f(x_0,y_0) + (x-x_0)f_x(x_0,y_0) + (y-y_0)f_y(x_0,y_0)$
+\item Satz von Schwarz: $f_{xy} = f_{yx}$
+\item Extremwerte (1-stellig) $f' = 0, f'' \ne 0$
+\item Extremwerte (2-stellig) $f_x = f_y = 0$
+\item Extremwerte (2-stellig) $f_{xx} f_{yy} - f_{xy}f_{yx} > 0$
+\end{itemize}
+
+\section {Grenzwerte}
+\begin{itemize}
+\item Grenzwert: $\lim_{n \to \infty} 1/x = 0$
+\item Grenzwert: $\lim_{n \to \infty} q^n = 0$ ($|q| < 1$)
+\item Grenzwert: $\lim_{n \to \infty} \sqrt[\leftroot{-2}\uproot{2}n]{q} = 1$ $(q > 0)$
+\item Grenzwert: $\lim_{n \to \infty} \sqrt[\leftroot{-2}\uproot{2}n]{n} = 1$
+\item GW-Satz: $\lim (a_n+b_n) = \lim (a_n) + \lim (b_n)$
+\item GW-Satz: $\lim (a_n\cdot b_n) = \lim(a_n) \cdot \lim(b_n)$
+\item GW-Satz: $\lim (f(a_n)) = f(\lim(a_n))$ (f stetig)
+\item L'Hôpital: $\lim \frac{f}{g} = \lim \frac{f'}{g'}$
+\item Arithmetische Reihe $s_n = 1 + 4 + 7 + 10 + ...$
+\item Arithmetische Reihe $s_n = \sum_{i=1}^n{i} = \frac{n(n+1)}{2}$
+\item Geometrische Reihe $s_n = 0{,}5 + 0{,}5^2 + 0{,}5^3 + ...$
+\item Geometrische Reihe $s_n = \sum_{i=1}^n q^i = q\frac{1-q^n}{1-q}$
+\item Quotientenkriterium $\lim_{n\to\infty} |a_{n+1} / a_n| < 1$
+\item Wurzelkriterium $\lim_{n\to\infty} \nroot{n}{|a_n|} < 1$
+\end{itemize}
+
+\section {Potenzreihen}
+\begin{itemize}
+\item Potenzreihe: $s_n = \sum_{i=0}^n a_i x^i$
+\item Konvergenzradius: $R = 1/\lim_{n \to \infty} |\frac{a_{n+1}}{a_n}|$
+\item Taylorentwicklung: $f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(x_0)}{n!} (x-x_0)^n$
+\item Taylorentwicklung ist Näherung einer Funktion durch ein Polynom n-ten Grads
+\item Restgliedabschätzung: $R_n(x) \le \frac{|x-x_0|^{n+1}}{(n+1)!} \max_{\vartheta \in [x_0,x]} f(\vartheta)$
+\item Fourierreihe ist Entwicklung in ein Frequenzspektrum
+\end{itemize}
+
+\section {Differentialgleichung}
+\begin{itemize}
+\item Allgemeine Lösung $y_A$ ist Funktionsschar
+\item Partikuläre Lösung $y_P$ für Anfangsbedingungen
+\item Ordnung: höchste Ableitung
+\item Gewöhnliche und partielle DGL
+\item Explizit (höchste Ableitung alleine) und implizit
+\item Gewöhnliche DGL n-ter Ordnung:\\
+$\phi(y,y',...,y^{(n)},x) = 0$
+\item Homogenität: Liegt vor, wenn $\phi$ homogene Funktion in den Argumenten $y$, $y'$, $...$, $y^{(n)}$ ist
+\item $\phi(ty,ty',...,ty^{(n)},x) = t^\alpha \phi(y,y',...,y^{(n)},x)$
+\item Zerlegung in homogenen und inhomogenen Anteil $\phi_H(y,y',...,y^{(n)},x) + \psi(x) = 0$
+\item Lineare DGL: Hat homogenen Anteil mit Homogenitätsgrad 1
+\end{itemize}
+
+\section {Lösen von DGL}
+\begin{itemize}
+\item Grafische Lösung mittels Richtungsfeld (für DGL 1. Ordnung)
+\item Probe, ob Funktion Lösung einer DGL ist: Einsetzen
+\item Lösung mittels direkter Integration
+\item Lösung mittels Trennung der Variablen
+\item Lösung mittels Variation der Konstanten
+\item Lineare DLG n-ter Ordnung: $\sum_{k=0}^n a_k(x) y^{(k)}(x) = q(x)$
+\item Homogen für $q(x) = 0$, sonst inhomogen
+\item Spezialfall: Lineare DGL mit konstanten Koeffizienten: $a_k = const.$
+\item Allgemeine Lösung homogener Anteil: Charakteristische Gleichung
+\item Partikuläre Lösung inhomogener DGL: Koeffizientenvergleich in Ansatz
+\item Allgemeine Lösung inhomogener DGL: Summe obiger beider Lösungen
+\end{itemize}
+
+\end{multicols}
+
+
+\end{document}
+

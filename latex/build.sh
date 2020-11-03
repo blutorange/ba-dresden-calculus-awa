@@ -9,7 +9,7 @@ DEFAULT_DIRS="lecture-notes exercises"
 # CLI flags
 mode="";
 dirs=$DEFAULT_DIRS;
-while getopts :m:d:hc flag
+while getopts :m:d:hpc flag
 do
     case "${flag}" in
         m)
@@ -19,12 +19,14 @@ do
             echo 'To process all files and render the PDF from scratch, use';
             echo "  $0.sh";
             echo 'To process only part of the files, use:';
-            echo "  $0  -m plot|pdf";
+            echo "  $0 -m plot|pdf";
             echo '  -m plot   : Only renders the gnuplot graphs';
             echo '  -m pdf    : Only renders the PDF via LaTeX';
             echo '  -m svg    : Only render all SVG images';
             echo '  -m clean  : Removes all generated files';
             echo '  -m release: Create a ZIP archive with all built files';
+            echo 'To create a print-friendly version of the PDF files, use';
+            echo "  $0 -p";
             echo 'To process only a specified sub directory, use';
             echo "  $0.sh -d <DIRECTORY>";
             echo 'To remove all generated files:';
@@ -37,6 +39,9 @@ do
         ;;
         c)
             mode="clean";
+        ;;
+        p)
+            export TEXPRINT="true";
         ;;
         \?)
             echo "Illegal options, use $0 -h ";

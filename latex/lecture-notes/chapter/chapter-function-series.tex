@@ -324,7 +324,7 @@ $$
 
 \section{Fourier-Entwicklung}
 
-Eine weitere bedeutende Funktionsreihe ist die sogenannte \emph{Fourier-Reihe}. Hat man mit einem Mikrofon ein Audiosignal aufgenommen, ist dieses durch den Wert des Luftdrucks zu jedem Zeitpunkt gegeben. Von Interesse ist aber oft, welche Frequenzen in dem Audio-Signal mit welcher Amplitude enthalten sind. Etwa erzeugt ein Musikinstrument einen Ton, welcher eine Überlagerung einer harmonischen Grundschwindung mit einem oder mehreren Obertönen ist. Diese einzelnen Töne sind sinus- und kosinusförmige Schwingungen. Mathematisch kann man daher die Frequenzen eines Signals erhalten, indem man versucht, es als Funktionsreihe darzustellen, bei der die einzelnen Funktion Sinus- und Kosinusfunktionen sind.
+Eine weitere bedeutende Funktionsreihe ist die sogenannte \emph{Fourier-Reihe}. Hat man mit einem Mikrofon ein Audiosignal aufgenommen, ist dieses durch den Wert des Luftdrucks zu jedem Zeitpunkt gegeben. Von Interesse ist aber oft, welche Frequenzen in dem Audio-Signal mit welcher Amplitude enthalten sind. Etwa erzeugt ein Musikinstrument einen Ton, welcher eine Überlagerung einer harmonischen Grundschwingung mit einem oder mehreren Obertönen ist. Diese einzelnen Töne sind sinus- und kosinusförmige Schwingungen. Mathematisch kann man daher die Frequenzen eines Signals erhalten, indem man versucht, es als Funktionsreihe darzustellen, bei der die einzelnen Funktion Sinus- und Kosinusfunktionen sind.
 
 \begin{definition}{Trigonometrische Reihe}{TriSum}
     Eine \textbf{trigonometrische Reihe} ist eine Funktionsreihe, deren Einzelfunktionen Sinus- und Kosinusfunktionen sind:
@@ -456,7 +456,11 @@ Zum Zweiten ist es so, dass man in der Praxis ein Signal nicht für jeden belieb
 
 Ein Beispiel für das diskrete Frequenz-Spektrum eines Audio-Signals findet sich im Anhang in Abbildung \ref{fig:SpeechFreq}.
 
-Bis hierher haben wir immer nur diskrete Frequenzen (Grundfrequenz $\frac{1}{T}$ und Vielfache) betrachtet. Abschließend sei noch angemerkt, dass es für einen kontinuierlichen Frequenz-Bereich noch die die sogenannte Fourier-Transformation gibt, welche einer Funktion ihre Fourier-Transformierte zuordnet:
+Abschließend seien noch zwei Anmerkungen gemacht.
+
+Zum einen haben wir bisher nur einstellige Funktionen betrachtet. Die Idee der Fourier-Reihe lässt sich auf zwei- und mehrstellige Funktionen übertragen. Fourier-Reihen zweistelliger Funktionen sind etwa die Grundlage für die \mention{Jpeg}-Transformation. Bei dieser werden Helligkeitswerte, welche von der $x$- und $y$-Position des Pixels im Bild abhängen, umgewandelt in die entsprechenden Amplituden der Grundschwingungen in $x$- und $y$-Richtung. Eine Grundschwingung der Frequenz $0$ in beiden Richtungen entspricht einem grauen Bild, eine Grundschwingung mit geringer Frequenz in $x$-Richtung und Frequenz 0 in $y$-Richtung entspricht breiten vertikalen Streifen, eine Grundschwingung mit geringer Frequenz in $x$-Richtung und hoher Frequenz in $y$-Richtung entspricht einem Mosaik mit Kacheln, die breiter sind als lang. Da hohe Frequenzen im Bild weniger wahrgenommen werden, speichert die \mention{Jpeg}-Komprimierung hohe Frequenzen mit geringere Auflösung. Durch dieses Vorgehen wird, zusammen mit weiteren Verfahren, ein Reduktion der Datenmenge erreicht.
+
+Zum Zweiten haben wir bisher immer nur diskrete Frequenzen (Grundfrequenz $\frac{1}{T}$ und Vielfache) betrachtet. Abschließend sei noch angemerkt, dass es für einen kontinuierlichen Frequenz-Bereich noch die die sogenannte Fourier-Transformation gibt, welche einer Funktion ihre Fourier-Transformierte zuordnet:
 
 $$
     \mathcal{F}[f(t)](\omega) = \frac{1}{\sqrt{2\pi}} \int\limits_{-\infty}^\infty f(t) e^{-j \omega t} \diff{t}
