@@ -1,0 +1,22 @@
+\item Der Definitionsbereich einer dreistelligen Funktion besteht aus 3-Tupeln von reellen Zahlen, welche ein kartesisches Produkt darstellen: $\R\times\R\times\R=\R^3$. Der Wertebereich besteht wie bei einstelligen Funktionen aus reellen Zahlen.
+
+Wir betrachten die Funktion
+
+$$
+	f(x,y,z) = \frac{y^z}{\ln(|x-2|)\sqrt{x+4})}
+$$
+
+Folgende Einschränkungen gelten:
+
+\begin{itemize}
+	\item Das Argument des Logarithmus muss positiv sein, also $x\ne 2$
+	\item Das Argument der Wurzel darf nicht negativ sein, also $x \ge -4$
+	\item Der Nenner darf nicht identisch $0$ sein. Damit darf das Argument des Logarithmus nicht 1 sein (da $\ln(1) = 0$), also $x \ne 3$ und $x \ne 1$. Andererseits darf auch das Argument der Wurzel nicht $0$ sein, also $x > -4$.
+	\item Der Ausdruck $0^0$ ist nicht definiert, daher dürfen $y$ und $z$ nicht beide gleichzeitig identisch $0$ sein.
+\end{itemize}
+
+Zusammengefasst erhalten wir also folgenden Definitionsbereich:
+
+$$
+	\mathbb{D} = \lbrace (x,y,z) \in \R^3 \hskip 2mm | \hskip 2mm  [x \in (-4,\infty) \setminus \lbrace 1,2,3 \rbrace ] \land [ y \ne 0 \lor z \ne 0 ] \rbrace
+$$
