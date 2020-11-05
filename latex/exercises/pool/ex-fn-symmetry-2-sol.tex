@@ -1,0 +1,32 @@
+\item Da $\cosh$ per Definition symmetrisch ist, gilt z.B. $\cosh(1) = \cosh(-1)$. Damit ist aber die Injektivität verletzt, da ein Funktionswert doppelt angenommen wird. Schränken wir den Definitionsbereich auf die nichtnegativen Zahlen ein, ist $\cosh$ streng monoton steigend, denn für $x>y>0$ gilt:
+
+\begin{alignat*}{1}
+	\implies x &> y \\
+	\implies e^x &> e^y \text{ da Exponentialfunktion streng monoton steigend} \\
+	\implies e^x (1-e^{-x-y}) &> e^y (1-e^{-x-y}) \\
+	\implies e^x-e^{-y} &> e^y - e^{-x} \\
+	\implies e^x + e^{-x} &> e^y + e^{-y} \\
+	\implies \cosh(x) &> cosh(y)
+\end{alignat*}
+
+Der Übergang von der zweiten zur dritten Zeile ist korrekt, das Vorzeichen dreht sich nicht um, da $-x-y<0$ und damit $e^{-x-y} < 1$ , also $1-e^{-x-y} > 0$ ist.
+
+Der minimale Wert für $\cosh(x)$ im Intervall $[0, \infty)$ muss aufgrund der steigenden Monotonie bei $x=0$ liegen, hier ist der Funktionswert $\cosh(0) = \frac{e^0+e^0}{2} = 1$. Schränken wir daher noch den Funktionsbereich auf $[1, \infty]$, werden alle Funktionswerte angenommen und die Surjektivität ist erfüllt.
+
+Zusammengefasst: $\cosh$ ist für $x \in [0, \infty)$ und $y \in [1,\infty]$ injektiv und surjektiv und damit umkehrbar.
+
+Die Umkehrfunktion finden wir durch Umstellen:
+
+\begin{alignat*}{1}
+	\frac{e^x+e^{-x}}{2} &= y \\
+	 e^x+e^{-x} &= 2y \\
+	 e^x \cdot e^x + e^{-x} e^x &= 2ye^x \\
+	 (e^x)^2 - 2ye^x + 1 &= 0 \\
+	 e^x &= y \pm \sqrt{y^2-1} \\
+\end{alignat*}
+
+Nun ist $y^2-1 < y^2$ und damit $\sqrt{y^2-1} < \sqrt{y^2}$. Für $y \in [1,\infty]$ gilt damit besonders $\sqrt{y^2-1} < y$, also ist $y - \sqrt{y^2-1} < 0$. Da aber $x \in [0, \infty)$ gelten soll, ist nur die zweite Lösung möglich und wir erhalten für die Umkehrfunktion:
+
+$$
+	\cosh^{-1}(y) = \ln(y + \sqrt{y^2-1})
+$$

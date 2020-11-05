@@ -1,0 +1,24 @@
+\item Zur Erinnerung: $f \in \mathcal{O}(g)$ bedeutet, dass der Quotient $\frac{f(x)}{g(x)}$ für große $x$ endlich bleibt, also der Grenzwert $x\to\infty$ existiert.
+
+Die geordnete Liste lautet:
+
+$$
+  \ln(\sqrt{x}) \simeq \ln(x) \simeq \ln(x^2) \prec (\ln(x))^2 \prec \sqrt{x} \prec x \simeq 10^{100}x  \prec x\ln(x)  \prec x^2 \prec x^{100} \prec 2^x \prec 3^x
+$$
+
+Dabei bedeutet $f \prec g$, dass $f$ langsamer wächst als $g$ ($g \notin \mathcal{O}(f)$); während $f \simeq g$ bedeutet, dass beide Funktionen ähnlich schnell wachsen ($g \in \mathcal{O}(f)$).
+
+Zum Beweis (im Folgenden ist immmer der Grenzwert $x \to \infty$ gemeint)
+
+\begin{itemize}
+	\item Wegen $\ln(\sqrt{x}) = \frac{1}{2}$ und $\ln(x^2)=2\ln(x)$ unterscheiden sich die ersten drei Funktionen nur um einen Vorfaktor, ihr Quotient ist also konstant.
+	\item $\frac{\ln(x)}{\ln(x)\ln(x)} = \frac{1}{\ln(x)}$ konvergiert gegen $0$.
+	\item Regel von L'Hôpital: $\lim \frac{\ln(x)^2}{x^{1/2}} = \lim \frac{2\ln(x)\frac{1}{x}}{\frac{1}{2}x^{-1/2}} = 4 \lim \frac{\ln(x)}{x^{1/2}}$. Erneut Regel von L'Hôpital: $\lim \frac{\ln(x)}{x^{1/2}} = \lim \frac{1/x}{\frac{1}{2} x^{-1/2}} = 2 \lim \frac{1}{\sqrt{x}} = 0$
+	\item $\frac{\sqrt{x}}{x} = \frac{1}{\sqrt{x}}$ konvergiert gegen $0$.
+	\item Alle linearen Funktion $c*x$ für $c\in\R\lbrace0\rbrace$ unterscheiden sich nur um einen konstanten Vorfaktor, ihre Quotienten sind konstant.
+	\item $\frac{x}{x\ln(x)} = \frac{1}{\ln(x)}$ konvergiert gegen $0$.
+	\item $\frac{x\ln(x)}{x^2} = \frac{\ln(x)}{x}$. Regel von L'Hôpital: $\lim \frac{\ln(x)}{x} = \lim \frac{1/x}{1} = 0$
+	\item $\frac{x^2}{x^{100}} = \frac{1}{x^{98}}$ konvergiert gegen $0$.
+	\item Für $\lim \frac{x^{100}}{2^x}$ liefert die Regel von L'Hôpital $\frac{100}{\ln(2)} \lim \frac{x^{99}}{2^x}$. Setzt man die Anwendung der Regel von L'Hôpital fort, erhält man schließlich $\frac{100!}{\ln(2)^{100}} \lim \frac{1}{2^x} = 0$.
+	\item $\lim \frac{2^x}{3^x} = \lim \left(\frac{2}{3}\right)^x = 0$ (geometrische Folge).
+\end{itemize}

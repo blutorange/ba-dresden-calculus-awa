@@ -1,0 +1,55 @@
+\item Nach dem Fundamentalsatz der Algebra wissen wir, dass der Nenner in Linearfaktoren zerlegbar ist:
+
+$$
+	x^4-2x^2+1 = (x-1)(x-1)(x-a)(x-b)
+$$
+
+Die rechten beiden Faktoren bilden ein Polynom. Dieses ergibt sich zu $\frac{x^4-2x^2+1}{(x-1)(x-1)}$. Da $(x-1)(x-1)=x^2-2x+1$ können wir eine Polynomdivision durchführen:
+
+\[\polylongdiv{x^4-2x^2+1}{x^2-2x+1}\]
+
+Dieses Polynom hat die doppelte Nullstelle $a=b=-1$. Wir können für die Partialbruchzerlegung ansetzen:
+
+$$
+	\frac{3x^3+10x^2-x}{(x-1)^2(x+1)^2} = \frac{A}{x-1} + \frac{B}{(x-1)^2} + \frac{C}{x+1} + \frac{D}{(x+1)^2}
+$$
+
+Wir bringen zuerst alle Brüche auf einen gemeinsamen Nenner
+
+\begin{alignat*}{3}
+	\frac{A}{x-1}     \cdot && \frac{(x-1)(x+1)^2}{(x-1)(x+1)^2} &= \frac{Ax^3+Ax^2-Ax-A}{(x-1)^2(x+1)^2} \\
+	\frac{B}{(x-1)^2} \cdot && \frac{(x+1)^2}{(x+1)^2}           &= \frac{Bx^2+2Bx+B}{(x-1)^2(x+1)^2} \\
+	\frac{C}{x+1}     \cdot && \frac{(x+1)(x-1)^2}{(x+1)(x-1)^2} &= \frac{Cx^3-Cx^2-Cx+C}{(x-1)^2(x+1)^2} \\
+	\frac{D}{(x+1)^2} \cdot && \frac{(x-1)^2}{(x-1)^2}           &= \frac{Dx^2-2Dx+D}{(x-1)^2(x+1)^2} 
+\end{alignat*}
+
+Zusammenfassen nach gleichen Potenzen liefert:
+
+$$
+	\frac{(A+C)x^3+(A+B-C+D)x^2+(-A+2B-C-2D)x+(-A+B+C+D)}{(x-1)^2(x+1)^2}
+$$
+
+Durch Koeffizientenvergleich mit $\frac{3x^3+10x^2-x}{(x-1)^2(x+1)^2}$ erhalten wir
+
+\begin{alignat*}{7}
+	3  &= A  &   &    & + & C &   &    \\
+	10 &= A  & + &  B & - & C & + &  D \\
+	-1 &= -A & + & 2B & - & C & - & 2D \\
+	0  &= -A & + &  B & + & C & + &  D
+\end{alignat*}
+
+Dieses lineare Gleichungssystem kann etwa mit dem Gauß-Algorithmus oder dem Basisaustauschverfahren gelöst werden und hat die Lösung $A=4$, $B=3$, $C=-1$ und $D=2$.
+
+Damit lautet die Partialbruchzerlegung:
+
+$$
+	\frac{3x^3+10x^2-x}{(x-1)^2(x+1)^2} = \frac{4}{x-1} + \frac{3}{(x-1)^2} - \frac{1}{x+1} + \frac{2}{(x+1)^2}
+$$
+
+Die Nullstellen von $f$ erhält man durch Gleichsetzen des Zählers $3x^3+10x^2-x$ mit $0$. Da kein konstantes Glied vorkommt, ist $x_1=0$ eine Nullstelle und es verbleibt, die quadratische Gleichung $3x^2+10x-1=0$ zu lösen. Diese hat die Lösungen
+
+$$
+	x_{2,3} = -\frac{5}{3} \pm \sqrt{\frac{25}{9}+\frac{3}{9}} = -\frac{5}{3} \pm \frac{1}{3}\sqrt{28} = = -\frac{5}{3} \pm \frac{2}{3}\sqrt{7}
+$$
+
+Die Nullstellen des Nenner sind verschieden von den Nullstellen des Nenners. Somit hat $f$ die zwei (doppelten) Polstellen $-1$ und $1$ sowie die drei Nullstellen $0$ und $-\frac{5}{3} \pm \frac{2}{3}\sqrt{7}$.

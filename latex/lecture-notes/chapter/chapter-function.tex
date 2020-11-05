@@ -496,14 +496,21 @@ Ein Beispiel für eine hebbare Definitionslücke und eine Sprungstelle ist berei
 In der Praxis ist es oft von Bedeutung, herauszufinden, wann eine abhängige Größe ihren kleinsten oder größten Wert annimmt. Etwa will man die zu produzierende Stückzahl bestimmen, wo der zu erwartende Gewinn maximiert ist. Bei der Herstellung von Cola-Dosen will man diese so dimensionieren, dass das Verhältnis von Oberfläche zu Volumen besonders klein ist, damit man möglichst wenig Material verbraucht.
 
 \begin{definition}{Extremstelle einer reellwertigen Funktion}{ExtrFun}
-    Sei $f: \R^n \to \R$ eine $n$-stellige reellwertige Funktion. Eine Stelle $x_0\in\mathbb{D}$ ein \textbf{Maximum} (\textbf{Minimum}) von $f$ bezüglich $M$, falls es eine offene Umgebung $U_{x_0}$ um diese Stelle gibt, in der alle Funktionswerte kleiner oder gleich (größer oder gleich) dem Funktionswert an dieser Stelle sind:
+    Sei $f: \R^n \to \R$ eine $n$-stellige reellwertige Funktion. Eine Stelle $x_0\in\mathbb{D}$ heißt ein \textbf{globales Maximum} (\textbf{globales Minimum}) von $f$ bezüglich einer Menge $M\subset\mathbb{D}$, falls der Funktionswert an dieser Stelle kleiner oder gleich (größer oder gleich) aller Funktionswerte in $M$ ist:
+    $$
+		\forall x \in M: f(x) \le f(x_0)
+	$$
+	$$
+		(\forall x \in M: f(x) \ge f(x_0))
+	$$
+    
+    Falls es nur eine offene Umgebung $U_{x_0}\subset M$ um diese Stelle gibt, in der dies gilt, heißt $x_0$ ein \textbf{lokales Maximum} (\textbf{lokales Minimum}) bezüglich $M$:
     $$
         \forall x \in U_{x_0}: f(x) \le f(x_0)
     $$
     $$
         (\forall x \in U_{x_0}: f(x) \ge f(x_0))
     $$
-    Eine Extremstelle $x_0 \in \mathbb{D}$ heißt \textbf{globale Extremstelle} in $M\subseteq\mathbb{D}$, wenn für die Umgebung die gesamte Menge $M$ gewählt werden kann. Ansonsten heißt sie \textbf{lokale Extremstelle}.
 \end{definition}
 
 Diese Definition ist in Abbildung \ref{fig:ExtrValFun} veranschaulicht. Dort ist eine Funktion $f$ mit Definitionsbereich $\mathbb{D} = [-4.5, 4.5]$ dargestellt. Bei den Stellen \circled{1} und \circled{5} handelt es sich um globale Minima, denn im gesamten Definitionsbereich $[-4.5,4.5]$ gibt es keinen kleineren Funktionswert. Analog dazu handelt es sich bei den Stellen \circled{2} und \circled{4} um globale Maxima, denn im gesamten Definitionsbereich $[-4.5,4.5]$ gibt es keinen größeren Funktionswert. Die Stelle \circled{3} ist keine globale Extremstelle, denn im Definitionsbereich existieren sowohl kleinere als auch größere Funktionswerte. Allerdings handelt es sich um ein lokales Minimum, denn der Funktionswert ist etwa in der offenen Umgebung $(-1:1)$ der kleinste. Schließlich sind die mit \circled{x} markierten Stellen bei $x=\pm 2$ gar keine Extremstellen, denn in jeder noch so kleinen Umgebung um $2$ beziehungsweise $-2$ gibt es sowohl größere als auch kleinere Funktionswerte.
@@ -555,7 +562,7 @@ Mit der letzten Definition lässt sich nun der Begriff einer diagonalen Asymptot
     \begin{enumerate}
         \item Die Funktion $x \mapsto 1/x$ hat die horizontale Asymptote $y=0$, da die Funktionswerte für $x \to \pm\infty$ gegen $0$ streben.
         \item Die Funktion $f: x \mapsto 10x$ wächst nicht wesentlich schneller als $g: x \mapsto 0.1x$, da $f \in \mathcal{O}(g)$, denn es gilt: $\lim\limits_{x\to\infty} \frac{10x}{0.1x} = 100 < \infty$. Dies mag auf den ersten Blick verwirrend erscheinen. Man führe sich aber vor Augen, dass beide Funktionen das gleiche Wachstumsverhalten zeigen: Eine Verdoppelung des Arguments für sowohl bei $f$ als auch bei $g$ zu einer Verdoppelung des Funktionswerts.
-        \item Jede Polynomfunktion $f: x \mapsto x^n, n \in \N^+$ wächst langsamer als jede Exponentialfunktion $g: x \mapsto e^{ax}, a > 0$, also $f \in o(g)$. Dies zeigt man leicht durch Betrachtung des Grenzwerts $\lim\limits_{x\to\infty} \frac{x^n}{e^{ax}}$. Dieser ergibt $0$, wie sich durch $n$-faches Anwenden der Regeln von L'Hôpital zeigen lässt. Algorithmen mit polynomielle Laufzeit sind also solchen mit exponentieller Laufzeit gegenüber zu bevorzugen. Wenn das Argument nur ausreichend groß ist, wird die Exponentialfunktion größere Werte annehmen als das Polynom, siehe hierzu auch Abbildung \ref{fig:BehLargeValFun}.
+        \item Jede Polynomfunktion $f: x \mapsto x^n, n \in \N^+$ wächst langsamer als jede Exponentialfunktion $g: x \mapsto e^{ax}, a > 0$, also $f \in o(g)$. Dies zeigt man leicht durch Betrachtung des Grenzwerts $\lim\limits_{x\to\infty} \frac{x^n}{e^{ax}}$. Dieser ergibt $0$, wie sich durch $n$-faches Anwenden der Regel von L'Hôpital zeigen lässt. Algorithmen mit polynomielle Laufzeit sind also solchen mit exponentieller Laufzeit gegenüber zu bevorzugen. Wenn das Argument nur ausreichend groß ist, wird die Exponentialfunktion größere Werte annehmen als das Polynom, siehe hierzu auch Abbildung \ref{fig:BehLargeValFun}.
         \item Die Funktion $f: x \mapsto \frac{16x^2-16x-2}{10x+2}$ lässt sich mittels \emph{Polynomdivision} umformen zu $f: x \mapsto \frac{8}{5}x - \frac{48}{25} + \frac{46/25}{10x+2}$. Daraus lies man ab, dass $g: x \mapsto \frac{8}{5}x - \frac{48}{25}$ eine diagonale Asymptote darstellt, also $f \sim g$, denn es gilt: $\lim\limits_{x\to\infty} \frac{f(x)}{g(x)} = \lim\limits_{x\to\infty} 1 + \frac{46/25}{(10x+2)\cdot(\frac{8}{5}x - \frac{48}{25})} = 1$.
     \end{enumerate}
 \end{example}
