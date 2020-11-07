@@ -41,7 +41,7 @@ In der praktischen Berechnung wird als Approximation statt der Grenzfunktion man
 Ein Beispiel für eine solche Funktionsreihe haben wir bereits im Kapitel zu Funktionen anhand der \emph{Blancmange-Funktion} gesehen. Diese stellte eine Beispiel für eine stetige, aber nirgends differenzierbare Funktion dar und ist in Abbildung \ref{fig:BlancmangeFunction} dargestellt.
 
 \begin{example}{Funktionsreihe und Grenzfunktion}{FunSumAndLim}
-    Durch $fn(x) = x^2 (1-x^2)^n$ ist für jedes $n=0,1,2,\dots$ eine Funktion im Intervall $[-1,1]$ gegeben. Durch Summation erhalten wir die Partialsummen $F_n(x) = \sum\limits_{i=0}^n x^2 (1-x^2)^i$. Die ersten Glieder lauten demnach
+    Durch $f_n(x) = x^2 (1-x^2)^n$ ist für jedes $n=0,1,2,\dots$ eine Funktion im Intervall $[-1,1]$ gegeben. Durch Summation erhalten wir die Partialsummen $F_n(x) = \sum\limits_{i=0}^n x^2 (1-x^2)^i$. Die ersten Glieder lauten demnach
     \begin{alignat*}{1}
         F_0(x) &= x^2 \\
         F_1(x) &= x^2 + x^2 (1-x^2) = x^2 (2-x^2) \\
@@ -223,7 +223,7 @@ Das ist genau die Formel für die Tangente an die Funktion $f$ im Punkt $x_0$.
         Diese Taylor-Reihe kann man etwa benutzen, um Wert der Sinusfunktion mit beliebiger Genauigkeit zu berechnen.
         \item Analog gilt für die Kosinusfunktion:
         \begin{equation}
-            \cos(x) = 1 - \frac{1}{2}x^2 + \frac{1}{4!} x^4 \pm \dots
+            \cos(x) = 1 - \frac{1}{2}x^2 + \frac{1}{4!} x^4 \mp \dots
         \end{equation}
     \end{enumerate}
 \end{example}
@@ -370,7 +370,7 @@ Nun müssen wir noch berücksichtigen, dass wir bisher davon ausgegangen waren, 
 \begin{definition}{Fourier-Reihe}{FourierExpansion}
     Die durch eine Funktion $f$ mit der Periode $T$ erzeugte \textbf{Fourier-Reihe} ist gegeben durch:
     $$
-        f(x) = \underbrace{\sum\limits_{i=0}^n a_i \cos(\frac{2\pi}{T}ix) + b_n \sin(\frac{2\pi}{T}ix)}_{\text{Fourier-Reihe}} + \underbrace{R_n(x)}_{\text{Restglied}}
+        f(x) = \underbrace{\sum\limits_{i=0}^n a_i \cos(\frac{2\pi}{T}ix) + b_i \sin(\frac{2\pi}{T}ix)}_{\text{Fourier-Reihe}} + \underbrace{R_n(x)}_{\text{Restglied}}
     $$
     Die Koeffizienten $a_n$ und $b_n$ lauten dabei:
     \begin{alignat*}{1}
@@ -417,7 +417,7 @@ Mithilfe dieser Fourier-Reihe können wir ein Signal nehmen und es in die Freque
     \label{fig:ExUnitStepFourier}
 \end{figure}
 
-Nun ist es im Gegensatz zu Potenzreihen nicht so, dass die trigonometrische Reihe immer gleichmäßig konvergiert. Es gilt allerdings, dass wenn die Fourier-Reihe einer $f$ gleichmäßig konvergent ist, dass sie dann auch $f$ als Grenzfunktion hat, das Restglied also verschwindet. Diese Bedingung ist eine hinreichende, jedoch keine notwendige. Eine für die Praxis meist bessere Bedingung gibt der folgende Satz:
+Nun ist es im Gegensatz zu Potenzreihen nicht so, dass die trigonometrische Reihe immer gleichmäßig konvergiert. Es gilt allerdings, dass wenn die Fourier-Reihe einer Funktion $f$ gleichmäßig konvergent ist, dass sie dann auch $f$ als Grenzfunktion hat, das Restglied also verschwindet. Diese Bedingung ist eine hinreichende, jedoch keine notwendige. Eine für die Praxis meist bessere Bedingung gibt der folgende Satz:
 
 \begin{statement}{Dirichletsche Bedingung}{DirchCondFourier}
     Sei $f$ ein beschränkte, periodische Funktion mit der Periode $T$ und definiert im Intervall $[0,T)$. Wenn sich das Intervall $(0,2\pi)$ zerlegen lässt in endlich viele Teilintervalle, in derem jeden die Funktion $f$ stetig und monoton ist, so konvergiert die durch die Funktion $f$ erzeugte Fourier-Reihe für jede Stetigkeitsstelle $x_0$ gegen den Funktionswert $f(x_0)$ und für jede Sprungstelle $x_S$ gegen das arithmetische Mittel aus links- und rechtsseitigen Grenzwert $\frac{1}{2} \cdot \left(\lim\limits_{x\to x_S^-} + \lim\limits_{x\to x_S^+}\right)$.

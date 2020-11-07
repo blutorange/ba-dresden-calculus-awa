@@ -1,0 +1,28 @@
+\item Wir führen zunächst zweimal partielle Integration durch:
+
+\begin{alignat*}{1}
+	I &= \int \sin nx \cos mx \diff{x} \\
+	  &= -\frac{1}{n} \cos nx \cos mx - \int \frac{m}{n} \cos nx \sin mx \diff{x} \\
+	  &= -\frac{1}{n} \cos nx \cos mx - \frac{m}{n} \left\lbrace \frac{1}{n} \sin nx \sin mx - \int \frac{m}{n} \sin nx \cos mx \right\rbrace \\
+	  &= -\frac{1}{n} \cos nx \cos mx - \frac{m}{n^2} \sin nx \sin mx + \frac{m^2}{n^2} \int \sin nx \cos mx \diff{x} \\
+	  &= -\frac{1}{n} \cos nx \cos mx - \frac{m}{n^2} \sin nx \sin mx + \frac{m^2}{n^2} I
+\end{alignat*}
+
+Wir stellen nach dem gesuchten Integral $I$ um:
+
+\begin{alignat*}{1}
+	\left( 1-\frac{m^2}{n^2} \right) I &= -\frac{1}{n} \cos nx \cos mx - \frac{m}{n^2} \sin nx \sin mx \\
+	\frac{n^2-m^2}{n^2} I              &= -\frac{1}{n} \cos nx \cos mx - \frac{m}{n^2} \sin nx \sin mx \\
+									 I &= -\frac{m}{n^2-m^2} \sin nx \sin mx - \frac{n}{n^2-m^2} \cos nx \cos mx \\
+		 \int \sin nx \cos mx \diff{x} &= \frac{m \sin nx \sin mx + n \cos nx \cos mx}{m^2-n^2} + C
+\end{alignat*}
+
+Wichtig hierbei ist die Voraussetzung, dass $n \ne m$, da wir sonst eine Division durch $0$ im Nenner durchführen würden. Für das bestimmte Integral erhalten wir, da $\sin(2\pi n) = 0$ und $\cos(2\pi n) = 1$ ist:
+
+$$
+	\int\limits_0^{2\pi} \sin nx \cos mx \diff{x} = 0 (\text{ für } n \ne m)
+$$
+
+Diese Art der Integrale haben wir bei der Herleitung der Fourier-Reihe benötigt.
+
+Anmerkung: Für $n=m$ ergibt sich das Integral $\int \sin(nx)\cos(nx)\diff{x}$. Mit dem aus der Vorlesung bekannten Integral $\int \sin(x)\cos(x)\diff{x} = \frac{1}{2}\sin^2(x)+C$ und linearer Substitution erhalten wir $\int \sin(nx)\cos(nx)\diff{x} = \frac{1}{2n}\sin^2(nx) + C$. Auch hier ist das bestimmte Integral von $0$ bis $2\pi$ also $0$.

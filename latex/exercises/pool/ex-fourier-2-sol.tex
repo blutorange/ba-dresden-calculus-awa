@@ -1,0 +1,112 @@
+\item Die Periode ist $T=3$. Mithilfe der Formel aus der Vorlesung folgt für den Fourier-Koeffizienten $a_0$:
+
+\begin{alignat*}{1}
+	a_0 &= \frac{1}{T} \int\limits_0^T f(x) \diff{x} \\
+	    &= \frac{1}{3} \int\limits_0^3 \frac{1}{3}x \diff{x} \\
+	    &= \frac{1}{3} \cdot \frac{1}{6} x^2 \Biggr|_0^3 \\
+	    &= \frac{1}{3} \cdot \frac{9}{6} \\
+	    &= \frac{1}{2}
+\end{alignat*}
+
+Dies hätten wir uns auch geometrisch überlegen können, da $a_0$ den Durchschnittswert der Funktion darstellt.
+
+Für $a_n$ folgt:
+
+\begin{alignat*}{1}
+	a_n &= \frac{2}{T} \int\limits_0^T f(x) \cos(\frac{2\pi}{T}nx) \diff{x} \\
+	    &= \frac{2}{3} \cdot \frac{1}{3} \int\limits_0^3 x \cos(\frac{2\pi}{3}nx) \diff{x}
+\end{alignat*}
+
+Dieses Integral lösen wir, indem wir zuerst lineare Substitution $z=\frac{2\pi}{3}nx$ anwenden:
+
+$$
+	\int\limits_0^3 x \cos(\frac{2\pi}{3}nx) \diff{x} = \left(\frac{3}{2\pi n}\right)^2 \int\limits_0^{2\pi n} z \cos(z) \diff{z}
+$$
+
+Und anschließend partielle Integration anwenden:
+
+\begin{alignat*}{1}
+	\int\limits_0^{2\pi n} z \cos(z) \diff{z} &= z \sin(z)\biggr|_0^{2\pi n} - \int\limits_0^{2\pi n} \sin(z) \diff{z} \\
+	                                          &= 0 + \cos(z)\biggr|_0^{2\pi n} \\
+	                                          &= 0
+\end{alignat*}
+
+Damit sind alle $a_1,a_2,\dots=0$. Schließlich berechnen wir noch die Koeffizienten $b_n$:
+
+\begin{alignat*}{1}
+	b_n &= \frac{2}{T} \int\limits_0^T f(x) \sin(\frac{2\pi}{T}nx) \diff{x} \\
+	    &= \frac{2}{3} \cdot \frac{1}{3} \int\limits_0^3 x \sin(\frac{2\pi}{3}nx) \diff{x}
+\end{alignat*}
+
+Auch hier wenden wir lineare Substitution an:
+
+$$
+	\int\limits_0^3 x \sin(\frac{2\pi}{3}nx) \diff{x} = \left(\frac{3}{2\pi n}\right)^2 \int\limits_0^{2\pi n} z \sin(z) \diff{z}
+$$
+
+Und weiter mit partieller Integration:
+
+\begin{alignat*}{1}
+	\int\limits_0^{2\pi n} z \sin(z) \diff{x} &= -z \cos(z)\biggr|_0^{2\pi n} + \int\limits_0^{2\pi n} \cos(z) \diff{z} \\
+	                                          &= -z \cos(z)\biggr|_0^{2\pi n} + \sin(x)\biggr|_0^{2\pi n} \\
+	                                          &= -2\pi n
+\end{alignat*}
+
+Somit folgt für das Integral
+
+\begin{alignat*}{1}
+	\int\limits_0^3 x \sin(\frac{2\pi}{3}nx) \diff{x} &= \left( \frac{3}{2\pi n}\right)^2 \int\limits_0^{2\pi n} z \sin(z) \diff{z} \\
+	                                                  &= \frac{3}{2\pi n}  \cdot \frac{3}{2\pi n} \cdot (-2\pi n) \\
+	                                                  &= -\frac{9}{2\pi n}
+\end{alignat*}
+
+Nun erhalten wir endlich für $b_n$:
+
+\begin{alignat*}{1}
+	b_n &= \frac{2}{3} \cdot \frac{1}{3} \int\limits_0^3 x \sin(\frac{2\pi}{3}nx) \diff{x} \\
+	    &= \frac{2}{3} \cdot \frac{1}{3} \cdot \left(-\frac{9}{2\pi n}\right) \\
+	    &= -\frac{1}{\pi n}
+\end{alignat*}
+
+Die Grenzfunktion $F$ der Fourier-Reihe lautet damit:
+
+$$
+	F(x) = \frac{1}{2} - \sum\limits_{n=1}^\infty \frac{\sin(\frac{2\pi}{3}nx)}{\pi n}
+$$
+
+An der Stelle $x=0$ liegt eine Unstetigkeitsstelle vor. Während die Funktion dort den Wert $f(0)=1$ besitzt, weist die Grenzfunktion der Taylor-Reihe wegen der Dirichletschen Bedingung den Wert $F(0)=\frac{1}{2}$ auf (dieser Wert ergibt sich auch, wenn man in die Formel oben explizit $x=0$ einsetzt.)
+
+In Abbildung \ref{fig:FourierChainsaw} sind die ersten Glieder dieser Fourier-Reihe dargestellt.
+
+Für $x=\frac{3}{2\pi}$ erhalten wir (da $F(x)=\frac{1}{3}x$ in $(0,3]$):
+
+\begin{alignat*}{1}
+	F(\frac{3}{2\pi}) &= \frac{1}{2} - \sum\limits_{n=1}^\infty \frac{\sin(\frac{2\pi}{3}n\frac{3}{2\pi})}{\pi n} \\
+	                  &= \frac{1}{2} - \sum\limits_{n=1}^\infty \frac{\sin(n)}{\pi n} \\
+	                  &= \frac{1}{3} \cdot \frac{3}{2\pi} \\
+	                  &= \frac{1}{2\pi}
+\end{alignat*}
+
+Umgestellt nach der Summe erhalten wir so:
+
+$$
+	\sum\limits_{n=1}^\infty \frac{\sin(n)}{\pi n} = \frac{1}{2}-\frac{1}{2\pi}
+$$
+
+Nach Multiplikation mit $\pi$ ergibt sich schließlich:
+
+$$
+	\sum\limits_{n=1}^\infty \frac{\sin(n)}{n} = \frac{\pi-1}{2}
+$$
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.48\textwidth]{../gnuplot/ex-fourier-2-img-a-1}
+	\includegraphics[width=0.48\textwidth]{../gnuplot/ex-fourier-2-img-a-2}
+	\includegraphics[width=0.48\textwidth]{../gnuplot/ex-fourier-2-img-a-3}
+	\includegraphics[width=0.48\textwidth]{../gnuplot/ex-fourier-2-img-a-4}
+	\includegraphics[width=0.48\textwidth]{../gnuplot/ex-fourier-2-img-a-5}
+	\includegraphics[width=0.48\textwidth]{../gnuplot/ex-fourier-2-img-a-6}
+	\caption{Die ersten $n$ Glieder der Fourier-Reihe einer Sägezahnfunktion}
+	\label{fig:FourierChainsaw}
+\end{figure}

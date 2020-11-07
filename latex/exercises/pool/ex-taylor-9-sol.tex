@@ -1,0 +1,16 @@
+\item Für die Sinusfunktion gilt:
+
+$$
+	\sin(x) = x - \frac{1}{3!}x^3 + \frac{1}{5!} x^5 \mp \dots
+$$
+
+Da Potenzreihen gleichmäßig konvergieren, können wir sie gliedweise ableiten. Wir erhalten
+
+\begin{alignat*}{1}
+	\dd{}{x} \sin(x) &= \dd{}{x} \left(x - \frac{1}{3!}x^3 + \frac{1}{5!} x^5 \mp \dots \right) \\
+					 &= 1-\frac{3}{3!}x^2 + \frac{5}{5!} x^4 \mp \dots \\
+					 &= 1-\frac{1}{2}x^2 + \frac{1}{4} x^4 \mp \dots \\
+					 &= \cos(x)
+\end{alignat*}
+
+Analog lässt sich zeigen, dass $\dd{}{x} \cos(x) = -\sin(x)$ gilt.
