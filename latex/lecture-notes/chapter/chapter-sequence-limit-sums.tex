@@ -2,7 +2,7 @@
 
 Der moderne Grenzwertbegriff stellt die Grundlage der Infinitesimalrechnung dar. In diesem Kapitel betrachten wir zuerst Zahlenfolgen und Reihen, definieren dann Konvergenz sowie Grenzwert und lernen abschließend einige wichtige Regeln zur Konvergenz und Grenzwertbestimmung kennen.
 
-Um die Wichtigkeit zu illustrieren, warum eine exakte Definition der Konvergenz notwendig ist, sei Zenons Paradoxon von Achilles und der Schildkröte angeführt. \emph{Zeno of Elea} (etwa 500 BC) hat dieses Paradoxon angeführt, um zu zeigen, dass der naive Begriff von Wandel und Bewegung nur eine Illusion wäre. Zur besseren Veranschaulichung wählen für die folgende Erklärung (willkürlich gewählte) Größenabgaben. In dem Paradox nun veranstalten Achilles und eine Schildkröte ein Wettrennen, wie in Abbildung \ref{fig:ZenoAchilles} dargestellt. Achilles ist in der Lage, mit einer Geschwindigkeit von $25\ukmh$ zu rennen, während die Schildkröte nur $5\ukmh$ schafft. Der Fairness halber erhält die Schildkröte daher einen Vorsprung von $100\ukm$. Die Frage ist nun, wann Achilles die Schildkröte überholt. Der geläufige physikalische Ansatz wäre, ein Koordinatensystem zu definieren, die Bewegungsgleichungen beider Partizipanten aufzustellen und den Schnittpunkt zu berechnen. Zenon argumentiert allerdings wie folgt:
+Um die Wichtigkeit zu illustrieren, warum eine exakte Definition der Konvergenz notwendig ist, sei Zenons Paradoxon von Achilles und der Schildkröte angeführt. \emph{Zeno of Elea} (etwa 500 BC) hat dieses Paradoxon angeführt, um zu zeigen, dass der naive Begriff von Wandel und Bewegung nur eine Illusion wäre. Zur besseren Veranschaulichung wählen für die folgende Erklärung (willkürlich gewählte) Größenabgaben. In dem Paradox nun veranstalten Achilles und eine Schildkröte ein Wettrennen, wie in Abbildung \ref{fig:ZenoAchilles} dargestellt. Achilles ist in der Lage, mit einer Geschwindigkeit von $25\ukmh$ zu rennen, während die Schildkröte nur $5\ukmh$ schafft. Der Fairness halber erhält die Schildkröte daher einen Vorsprung von $100\ukm$. Die Frage ist nun, wann Achilles die Schildkröte überholt. Der geläufige physikalische Ansatz wäre, ein Koordinatensystem zu definieren, die Bewegungsgleichungen beider Wettläufer aufzustellen und den Schnittpunkt zu berechnen. Zenon argumentiert allerdings wie folgt:
 
 \begin{enumerate}
 	\item Damit Achilles die Schildkröte überholen kann, muss er zunächst den Vorsprung von $100\ukm$ aufholen. Dazu benötigt er $4$ Stunden.
@@ -104,12 +104,12 @@ Eine weitere Eigenschaft von fundamentaler Bedeutung ist das sogenannte Konverge
 \begin{definition}{Konvergenz und Grenzwert}{Convergence}
 	Eine Folge $(a_n)$ heißt \textbf{konvergent} mit dem \textbf{Grenzwert} $\alpha$, wenn der Abstand der Folgenglieder zum Grenzwert beliebig klein wird und klein bleibt. Andernfalls heißt sie \textbf{divergent}.
 
-	$\forall \epsilon > 0 \exists n_0\in\N: \forall n > n_0 : |a_n - \alpha| < \epsilon$
+	$\forall \varepsilon > 0 \exists n_0\in\N: \forall n > n_0 : |a_n - \alpha| < \varepsilon$
 
 	Man schreibt dann: $\lim\limits_{n\to\infty} a_n = \alpha$.
 \end{definition}
 
-Anders formuliert kann man auch sagen, die Folge $(a_n)$ heißt konvergent mit dem Grenzwert $\alpha$, wenn man zu jedem noch so kleinen Abstand zum Grenzwert (bezeichnet mit $\epsilon$) immer eine Position in der Zahlenfolge finden kann, sodass alle Folgenglieder rechts von dieser Position innerhalb dieses Abstands liegen. Visuell wird diese Definition durch Abbildung \ref{fig:VisLimit} illustriert.
+Anders formuliert kann man auch sagen, die Folge $(a_n)$ heißt konvergent mit dem Grenzwert $\alpha$, wenn man zu jedem noch so kleinen Abstand zum Grenzwert (bezeichnet mit $\varepsilon$) immer eine Position in der Zahlenfolge finden kann, sodass alle Folgenglieder rechts von dieser Position innerhalb dieses Abstands liegen. Visuell wird diese Definition durch Abbildung \ref{fig:VisLimit} illustriert.
 
 \begin{figure}
 	\centering
@@ -121,11 +121,11 @@ Anders formuliert kann man auch sagen, die Folge $(a_n)$ heißt konvergent mit d
 In Beispiel \ref{ex:ConvGeoSeq} und \ref{ex:ConvConstSeq} wird gezeigt, wie man anhand dieser Definition nachweisen kann, ob eine Folge konvergent ist und welchen Grenzwert sie hat. Ebenfalls wie in Beispiel \ref{ex:ConvAltSeq} kann man zeigen, dass eine Folge divergent ist. Für die praktische Bestimmung von Grenzwerten ist diese Definition sehr umständlich, wir werden daher in Kürze Rechenregeln kennen lernen, um die Berechnung von Grenzwerten zu vereinfachen.
 
 \begin{example}{Konvergenz der geometrischen Folge}{ConvGeoSeq}
-	Wir betrachten noch einmal die geometrische Folge $a_n = (\frac{1}{2})^n$. Wir vermuten, dass $\alpha=0$ der Grenzwert ist. Um dies zu beweisen, benutzen wir die obige Definition. Sei $\epsilon>0$. Wir müssen
-	nun ein $n_0$ finden, sodass $|a_n-\alpha|=(\frac{1}{2})^n < \epsilon$ gilt, wenn $n > n_0$. Durch Umstellen der Ungleichung erhalten wir $n > \log_{1/2}(\epsilon)$ (man beachte, dass sich das Ungleichheitszeichen umkehrt, da $\log_{1/2}$ eine monoton fallende Abbildung ist). Die Ungleichung ist also erfüllt, solange wir Folgenglieder $a_n$ betrachten, wo $n$ größer als $\log_{1/2}(\epsilon)$ ist. Abschließend setzen wir $n_0 = \floor{\log_{1/2}(\epsilon)}$, wobei die Klammer mit dem unteren Hacken für die Operation "Abrunden" stehen. Damit können wir schreiben:
+	Wir betrachten noch einmal die geometrische Folge $a_n = (\frac{1}{2})^n$. Wir vermuten, dass $\alpha=0$ der Grenzwert ist. Um dies zu beweisen, benutzen wir die obige Definition. Sei $\varepsilon>0$. Wir müssen
+	nun ein $n_0$ finden, sodass $|a_n-\alpha|=(\frac{1}{2})^n < \varepsilon$ gilt, wenn $n > n_0$. Durch Umstellen der Ungleichung erhalten wir $n > \log_{1/2}(\varepsilon)$ (man beachte, dass sich das Ungleichheitszeichen umkehrt, da $\log_{1/2}$ eine monoton fallende Abbildung ist). Die Ungleichung ist also erfüllt, solange wir Folgenglieder $a_n$ betrachten, wo $n$ größer als $\log_{1/2}(\varepsilon)$ ist. Abschließend setzen wir $n_0 = \floor{\log_{1/2}(\varepsilon)}$, wobei die Klammer mit dem unteren Hacken für die Operation "Abrunden" stehen. Damit können wir schreiben:
 
 	$$
-	\forall \epsilon > 0 \exists n_0 = \floor{\log_{1/2}(\epsilon)} : \forall n > n_0 : |a_n - 0| < \epsilon
+	\forall \varepsilon > 0 \exists n_0 = \floor{\log_{1/2}(\varepsilon)} : \forall n > n_0 : |a_n - 0| < \varepsilon
 	$$
 
 	Also ist die geometrische Folge $a_n = (\frac{1}{2})^n$ konvergent und hat den Grenzwert $\alpha=\lim\limits_{n\to\infty}(\frac{1}{2})^n=0$.
@@ -133,12 +133,12 @@ In Beispiel \ref{ex:ConvGeoSeq} und \ref{ex:ConvConstSeq} wird gezeigt, wie man 
 
 
 \begin{example}{Konvergenz der konstanten Folge}{ConvConstSeq}
-	Die konstante Folge $a_n = 1$ ist ebenfalls konvergent und hat den Grenzwert $\alpha = 1$, denn für den Abstand gilt $|a_n-\alpha|=|1-1|=0<\epsilon$. Wir erkennen an diesem Beispiel, dass es nicht von Relevant ist, ob die Folgenglieder den Grenzwert erreichen oder nicht -- entscheidend ist lediglich der Abstand zum Grenzwert, und dieser kann auch $0$ betragen kann.
+	Die konstante Folge $a_n = 1$ ist ebenfalls konvergent und hat den Grenzwert $\alpha = 1$, denn für den Abstand gilt $|a_n-\alpha|=|1-1|=0<\varepsilon$. Wir erkennen an diesem Beispiel, dass es nicht von Relevant ist, ob die Folgenglieder den Grenzwert erreichen oder nicht -- entscheidend ist lediglich der Abstand zum Grenzwert, und dieser kann auch $0$ betragen kann.
 \end{example}
 
 
 \begin{example}{Divergenz der alternierenden Folge}{ConvAltSeq}
-	Die Folge $a_n = (-1)^n$ mit den Gliedern $1,-1,1,-1,...$ heißt alternierende Folge. Diese ist zwar nach oben und unten beschränkt (durch $L=-1$ und $U=1$), besitzt allerdings keinen Grenzwert. Wählt man etwa $\alpha=1$, erhält man für den Abstand $(d_n) = |a_n-\alpha|=(-1)^n-1| = (0, 2, 0, 2, 0, 2)$. Ist $\epsilon$ nun genügend klein, etwa $0.5$, so findet man immer wieder ein Folgenglied, dessen Abstand zum Grenzwert größer ist als $\epsilon$. Egal, welchen Grenzwertkandidaten man wählt, es ist nicht möglich, den Abstand zum Grenzwertkandidaten beliebig klein zu halten.
+	Die Folge $a_n = (-1)^n$ mit den Gliedern $1,-1,1,-1,...$ heißt alternierende Folge. Diese ist zwar nach oben und unten beschränkt (durch $L=-1$ und $U=1$), besitzt allerdings keinen Grenzwert. Wählt man etwa $\alpha=1$, erhält man für den Abstand $(d_n) = |a_n-\alpha|=(-1)^n-1| = (0, 2, 0, 2, 0, 2)$. Ist $\varepsilon$ nun genügend klein, etwa $0.5$, so findet man immer wieder ein Folgenglied, dessen Abstand zum Grenzwert größer ist als $\varepsilon$. Egal, welchen Grenzwertkandidaten man wählt, es ist nicht möglich, den Abstand zum Grenzwertkandidaten beliebig klein zu halten.
 \end{example}
 
 Ist eine Folge nicht konvergent, so heißt Sie wie erwähnt divergent und besitzt folglich auch keinen Grenzwert. Nun gibt es eine besondere Art der Divergenz, bei der man gelegentlich auch davon spricht, der Grenzwert sei $\pm\infty$. Diese Aussage ist immer im Sinne der folgenden Definition zu verstehen:
@@ -169,7 +169,7 @@ Ist eine Folge nicht konvergent, so heißt Sie wie erwähnt divergent und besitz
 \end{example}
 
 
-\section{Reihe}
+\section{Reihen}
 
 Bei einer Reihe handelt es sich um eine ganz bestimmte Form einer Zahlenfolge, die eine eigene Bezeichnung erhalten hat, da sie in der Praxis häufig vorkommt. Etwa wird der von Achilles aufgeholte Vorsprung der Schildkröte in jedem Schritt durch eine geometrische Zahlenfolge beschrieben. Der gesamte zurückgelegte Weg ergibt sich durch Addition der einzelnen Teilwege und stellt eine geometrische Reihe dar.
 
@@ -296,7 +296,7 @@ Bisher haben wir nur Grenzwerte betrachtet, wo $n$ gegen $\infty$ lief. Es ist n
 \begin{definition}{Grenzwert einer Funktion}{LimFun}
     Sei $f: \R^n \to \R$ eine Funktion, welche $n$-dimensionale Punkte auf reelle Zahlen abbildet, und sei $x_0\in\R^n$ eine Stelle des Definitionsbereichs. Die Zahl $\alpha\in\R$ heißt Grenzwert von $f$ gegen $x_0$, wenn es für jede noch so kleine Epsilon-Kugel um $\alpha$ eine Delta-Kugel um $x_0$ gibt, sodass die Funktionswerte der Delta-Kugel in der Epsilon-Kugel liegen.
     $$
-        \forall \epsilon > 0 \exists \delta > 0 : f(S_\delta(x_0)) \subset S_\epsilon(\alpha)
+        \forall \varepsilon > 0 \exists \delta > 0 : f(S_\delta(x_0)) \subset S_\varepsilon(\alpha)
     $$
     Man schreibt dann $\lim\limits_{x\to x_0} = \alpha$.
 \end{definition}

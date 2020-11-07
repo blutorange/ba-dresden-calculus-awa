@@ -1,0 +1,29 @@
+\item Wir müssen zuerst $\vec{\nabla} V$ bilden, also $-\frac{G m}{\sqrt{x^2+y+^2+z^2}}$ nach den drei Variablen $x,y,z$ ableiten:
+
+\begin{alignat*}{1}
+	\pdd{}{x} - \frac{G m}{\sqrt{x^2+y+^2+z^2}} &= Gm \frac{x}{\left(x^2+y^2+z^2\right)^{3/2}} \\
+	\pdd{}{y} - \frac{G m}{\sqrt{x^2+y+^2+z^2}} &= Gm \frac{y}{\left(x^2+y^2+z^2\right)^{3/2}} \\
+	\pdd{}{z} - \frac{G m}{\sqrt{x^2+y+^2+z^2}} &= Gm \frac{z}{\left(x^2+y^2+z^2\right)^{3/2}}
+\end{alignat*}
+
+Die Gravitationskraft an der Stelle $(x,y,z)$ lautet damit:
+
+$$
+	F(x,y,z)= -M \cdot \vec{\nabla} V(x,y,z) = -\frac{GMm}{\left(x^2+y^2+z^2\right)^{3/2}} \cdot \rvec{x}{y}{z}
+$$
+
+In dem obigen Ausdruck kommt $x^2+y^2+z^2$ vor, dies ist aber nichts weiter als der Abstand $r$ vom Ursprung. Damit können wir $F$ nur noch in Abhängigkeit vom Ortsvektor $\vec{r}=(x,y,z)$ schreiben:
+
+$$
+	F(\vec{r}) = -\frac{GMm}{r^3} \vec{r} = - \frac{GMm}{r^2} \frac{\vec{r}}{r}
+$$
+
+Physikalisch lässt sich diese Formel für $F(x,y,z)$ wie folgt interpretieren:
+
+\begin{itemize}
+	\item Der Teil $\frac{\vec{r}}{r}$ ist der Einheitsvektor, welcher radial vom Ursprung wegzeigt und gibt die Richtung der Gravitationskraft an: Diese wirkt immer in Richtung der Verbindungslinie zweier Körper.
+	\item Das Minuszeichen $-$ sagt aus, dass die Gravitationskraft in Richtung des Ursprungs zeigt, also anziehend ist.
+	\item Der Teil $\frac{GMm}{r^2}$ gibt die Stärke der Gravitationskraft an. Die Stärke ist nur abhängig vom Abstand der beiden Körper, nicht aber von ihrer genauen Position. Diese ist abhängig von den Massen beider Körper. Zudem ist Sie indirekt proportional zum Quadrat des Abstands der beiden Körper -- verdoppelt man ihren Abstand, fällt die Gravitationskraft auf ein Viertel.
+\end{itemize}
+
+Setzt man die gegebenen Werte in die Formel für $F(r)$ ein, erhält man etwa $F(10m) \approx 5.3\cdot 10^{-12} N$.

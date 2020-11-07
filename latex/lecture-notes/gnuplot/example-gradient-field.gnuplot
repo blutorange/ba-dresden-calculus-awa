@@ -9,6 +9,6 @@ set ytics 1
 set samples 20
 set isosamples 20
 
-f(x,y) = x*x+y*y
+f(x,y) = 1-x*x-y*y
 
-@gplotmono 0.35 0.08 20 60 3 "z=x^2+y^2"
+@gplotmono 0.35 0.08 20 60 3 "z=1-x^2-y^2"

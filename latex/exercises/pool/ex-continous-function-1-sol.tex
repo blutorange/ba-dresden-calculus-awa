@@ -1,20 +1,20 @@
 \item Zur Erinnerung: $\alpha$ heißt Grenzwert von $f$, wenn gilt:
 
 $$
-\forall \epsilon > 0 \exists \delta > 0 : f(S_\delta(x_0)) \subset S_\epsilon(\alpha)
+\forall \varepsilon > 0 \exists \delta > 0 : f(S_\delta(x_0)) \subset S_\varepsilon(\alpha)
 $$
 
 Nun ist $x_0=0$. Wir müssen zeigen, dass obige Aussage für kein $\alpha$ wahr ist. Um uns der Lösung zu nähern, nehmen wir zuerst an, $\alpha=0$ wäre ein Grenzwert. Dann müssen wir folgende Aussage auf ihren Wahrheitsgehalt prüfen:
 
 $$
-\forall \epsilon > 0 \exists \delta > 0 : f(S_\delta(0)) \subset S_\epsilon(0)
+\forall \varepsilon > 0 \exists \delta > 0 : f(S_\delta(0)) \subset S_\varepsilon(0)
 $$
 
-Da wir eine einstellige Funktion betrachten, sind die $\delta$- und $\epsilon$-Kugeln hier Intervalle.
+Da wir eine einstellige Funktion betrachten, sind die $\delta$- und $\varepsilon$-Kugeln hier Intervalle.
 
 \begin{alignat*}{1}
 S_\delta(0) &= (-\delta, \delta) \\
-S_\epsilon(0) &= (-\epsilon, \epsilon)
+S_\varepsilon(0) &= (-\varepsilon, \varepsilon)
 \end{alignat*}
 
 
@@ -24,7 +24,7 @@ $$
 	f(S_\delta(0)) = \lbrace -1, 0, 1 \rbrace
 $$
 
-Da die Aussage für alle $\epsilon$ gelten muss, reicht es ein Gegenbeispiel anzugeben um die Aussage zu widerlegen. Sei $\epsilon = 0.5$, dann ist $S_{0.5}(0) = (-0.5, 0.5)$ und wir erhalten die Aussage:
+Da die Aussage für alle $\varepsilon$ gelten muss, reicht es ein Gegenbeispiel anzugeben um die Aussage zu widerlegen. Sei $\varepsilon = 0.5$, dann ist $S_{0.5}(0) = (-0.5, 0.5)$ und wir erhalten die Aussage:
 
 $$
 \exists \delta > 0 : \lbrace -1, 0, 1 \rbrace  \subset (-0.5, 0.5)
@@ -38,7 +38,7 @@ $$
 f(S_\delta(0)) = \lbrace -1, 0, 1 \rbrace
 $$
 
-Wir wählen nun erneut $\epsilon = 0.5$. Dann lautet die $\epsilon$-Kugel:
+Wir wählen nun erneut $\varepsilon = 0.5$. Dann lautet die $\varepsilon$-Kugel:
 
 $$
 	S_{0.5}(\alpha, \alpha) = ( \alpha - 0.5, \alpha + 0.5 )

@@ -74,7 +74,7 @@ Bisher haben wir nur den Grenzwert der Partialsummen für ein gegebenes $x$ betr
 \begin{definition}{Gleichmäßige Konvergenz einer Funktionsreihe}{UniformConv}
     Eine Funktionsreihe $F_n$ heißt auf einem Konvergenzintervall $\mathbb{K}$ \textbf{gleichmäßig konvergent} gegen die Grenzfunktion $F$, wenn in der Epsilon-Definition des Grenzwerts (siehe \ref{def:Convergence}) das erste Folgenglied, ab dem alle weiteren Folgenglieder einen Abstand von weniger als Epsilon vom Grenzwert haben, nur von dem gewählten Epsilon, aber nicht vom konkreten Argument $x\in\mathbb{K}$ abhängt.
     $$
-        \forall \epsilon > 0 \exists n_0: \forall n > n_0, x \in \mathbb{K}: |F-F_n(x)| = |R_n(x)| < \epsilon
+        \forall \varepsilon > 0 \exists n_0: \forall n > n_0, x \in \mathbb{K}: |F-F_n(x)| = |R_n(x)| < \varepsilon
     $$
 \end{definition}
 
@@ -285,9 +285,9 @@ Schafft man es nun zu zeigen, dass diese Restgliedabschätzung im Grenzwert vers
 \begin{example}{Grenzfunktion der Taylor-Reihe der Exponentialfunktion}{LimTaylorExp}
     Die durch die Exponentialfunktion erzeugte Taylor-Reihe ist überall konvergent und lautet $F_n(x) = \sum\limits_{i=0}^n \frac{x^i}{i!} + R_n(x)$. Für das Restglied gilt nach der Abschätzung:
     $$
-        |R_n(x)| \le  \frac{|x|^{n+1}}{(n+1)!} \underbrace{\max\limits_{|\vartheta| < x} e^(\vartheta)}_{=e^x}
+        |R_n(x)| \le  \frac{|x|^{n+1}}{(n+1)!} \underbrace{\max\limits_{|\vartheta| < x} e^{\vartheta}}_{=e^x}
     $$
-    Nach Formel \ref{eq:LimitPowerFactorial} gilt $\lim\limits_{n\to\infty} \frac{a^n}{n!} = 0$ für alle $a$, daher folgt für das Restglied $\lim\limits_{n\to\infty} R_n(x) = $. Somit konvergent die Taylor-Reihe überall gegen die Grenzfunktion $e^x$.
+    Nach Formel \ref{eq:LimitPowerFactorial} gilt $\lim\limits_{n\to\infty} \frac{a^n}{n!} = 0$ für alle $a$, daher folgt für das Restglied $\lim\limits_{n\to\infty} R_n(x) = 0$. Somit konvergent die Taylor-Reihe überall gegen die Grenzfunktion $e^x$.
 \end{example}
 
 \begin{example}{Fehlerabschätzung mittels Restglied}{ErrTermApprox}

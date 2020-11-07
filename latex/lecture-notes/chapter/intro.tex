@@ -51,9 +51,9 @@ Mengen kann man aus allen möglichen Elementen bilden. In dieser Vorlesung betra
 Damit lassen sich noch einige wichtige Arten von Mengen definieren:
 
 \begin{definition}{Epsilon-Kugel um einen Punkt}{EpsilonSphere}
-    Sei $x_0\in\R^n$ ein Punkt und $\epsilon > 0$. Dann heißt die Menge
+    Sei $x_0\in\R^n$ ein Punkt und $\varepsilon > 0$. Dann heißt die Menge
     $$
-        S_\epsilon(x_0) = \lbrace x \in M \hspace{3mm} | \hspace{3mm} |x-x_0| < \epsilon \rbrace
+        S_\varepsilon(x_0) = \lbrace x \in M \hspace{3mm} | \hspace{3mm} |x-x_0| < \varepsilon \rbrace
     $$
     eine (offene) \textbf{Epsilon-Kugel} um den Punkt $x_0$.
 \end{definition}
@@ -61,7 +61,7 @@ Damit lassen sich noch einige wichtige Arten von Mengen definieren:
 \begin{definition}{Offene Menge}{OpenSet}
     Eine Teilmenge $M \subseteq \R^n$ der reellen Zahlen heißt \textbf{offene Menge}, wenn es für jeden Punkt der Menge eine Epsilon-Kugel gibt, die vollständig in der Menge liegt:
     $$
-        \forall x \in M \exists \epsilon > 0: S_\epsilon(x) \subseteq M
+        \forall x \in M \exists \varepsilon > 0: S_\varepsilon(x) \subseteq M
     $$
 \end{definition}
 
@@ -145,7 +145,7 @@ eine Formel angeben, um immer bessere Näherungswerte für $x^2=2$ zu finden. Al
 	Eine \textbf{Fundamentalfolge} (Cauchy-Folge) ist eine Zahlenfolge $a_i$, bei der der Abstand zweier Folgenglieder beliebig klein wird:
 
     \begin{equation}
-        \forall \epsilon > 0: \exists N \in \N: \forall m,q>N: |a_m-a_q|<\epsilon
+        \forall \varepsilon > 0: \exists N \in \N: \forall m,q>N: |a_m-a_q|<\varepsilon
     \end{equation}
 \end{definition}
 

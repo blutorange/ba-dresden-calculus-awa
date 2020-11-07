@@ -1,0 +1,23 @@
+\item Wir gehen vor wie beschrieben:
+
+\begin{alignat*}{1}
+	y(x) &= x^x \\
+	\ln(y(x)) &= \ln(x^x) = x\ln(x) \\
+	\dd{}{x} \ln(y(x)) &= \dd{}{x} x\ln(x)
+\end{alignat*}
+
+Die rechte Seite kann normal per Produktregel abgeleitet werden. Auf der linken Seite müssen wir aufpassen, dass $y(x)$ eine Funktion von $x$ ist. Die äußere Ableitung bei der Kettenregel lautet $\frac{1}{y}$, die innere Ableitung $y'(x)$, insgesamt gilt also $\dd{}{x} \ln(y(x)) = \frac{y'}{y}$. Damit erhalten wir:
+
+\begin{alignat*}{1}
+	\frac{y'(x)}{y(x)} = \ln(x)+1 \\
+	y'(x) = y(x)\cdot(\ln(x+1)) \\
+	y'(x) = x^x \cdot (\ln(x)+1)
+\end{alignat*}
+
+Anmerkung: Die Weise des Ableitens nennt sich auch "logarithmisches Differenzieren". Auf die gleiche Weise lässt sich zeigen, dass allgemein die Ableitung von $f(x)^{g(x)}$, wobei $f,g$ zwei beliebige Funktionen sind, lautet:
+
+$$
+	\dd{}{x} f^g = f^g \cdot \left( g'\ln(f) + f' \frac{g}{f} \right)
+$$
+
+Aus dieser allgemeinen Regel lässt sich etwa mit $f=x, g=n$ die Ableitungsregeln für Monome gewinnen: $\dd{}{x}x^n = x^n(0+1\cdot\frac{n}{x}) = nx^{n-1}$. Für $f=a, g=x$ folgt die Regeln zum Ableiten von Exponentialfunktionen: $\dd{}{x} a^x = a^x (1\cdot\ln(a) + 0) = \ln(a)a^x$.

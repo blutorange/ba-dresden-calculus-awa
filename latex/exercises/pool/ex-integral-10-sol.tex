@@ -1,0 +1,10 @@
+\item Wir substituieren $z=mx+n$. Es ist $z'(x)=mx$, also $\diff{x} = \diff{z}/m$. Eingesetzt in das Integral folgt:
+
+\begin{alignat*}{1}
+	\int f(mx+n) \diff{x} &= \int f(z) \frac{\diff{z}}{m} \\
+	                      &= \frac{1}{m} \int f(z) \diff{z} \\
+	                      &= \frac{1}{m} F(z) + C\\
+	                      &= \frac{1}{m} f(mx+n) + C
+\end{alignat*}
+
+Dies war zu zeigen. Obige Regel nennt man auch lineare Substitution und ermöglicht, das Integral von verschobenen und skalierten Funktion einfach zu berechnen. Beispielsweise folgt damit sofort $\int (3x-5)^{100} \diff{x} = \frac{1}{3\cdot 101} (3x-5)^{101} + C$

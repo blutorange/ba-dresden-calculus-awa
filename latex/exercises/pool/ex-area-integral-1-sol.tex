@@ -1,0 +1,19 @@
+\item Die $x$-Werte laufen im von $0$ bis $\pi$. Die $y$-Werte fangen immer bei $0$ an und hören abhängig vom $x$-Wert bei $\sin(x)$ auf. Der Bereich ist also gegeben durch den ersten Bauch der Sinus-Funktion, siehe Abbildung \ref{fig:Area}.
+
+Wir integrieren also zuerst über $y$ und anschließend über $x$, um die Masse $M$ zu berechnen:
+
+\begin{alignat*}{1}
+	M  &= \int\limits_0^\pi \left( \int_0^{\sin(x)} 1+x+4y \diff{y} \right) \diff{x} \\
+	   &= \int\limits_0^\pi \left( \left[ y + xy + 2y^2 \right]\Biggr|_{y=0}^{y=\sin(x)} \right) \diff{x} \\
+	   &= \int\limits_0^\pi  \sin(x)+x\sin(x)+2\sin^2(x) \diff{x} \\
+	   &= [-\cos(x)]\Biggr|_{0}^{\pi} + [\sin(x)-x\cos(x)]\Biggr|_{0}^{\pi} + [x-\cos(x)\sin(x)]\Biggr|_{0}^{\pi} \\
+	   &= 1 - (-1) + \pi + \pi \\
+	   &= 2 + 2\pi
+\end{alignat*}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\textwidth]{../gnuplot/ex-area-integral-img-a}
+	\caption{Gebiet $0 \le x \le \pi$ und $0 \le y \le \sin(x)$}
+	\label{fig:Area}
+\end{figure}

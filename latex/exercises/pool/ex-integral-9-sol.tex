@@ -1,0 +1,30 @@
+\item Wir wenden zuerst einmal partielle Integration an
+
+$$
+	\int \sin(x) \sin(x) \diff{x} = -\cos(x)\sin(x) + \int \cos^2(x) \diff{x}
+$$
+
+Als nächstes nutzen wir die trigonometrische Identität $\sin^2(x)+\cos^2(x)=1$ in der Form $\cos^2(x) = 1-\sin^2(x)$:
+
+\begin{alignat*}{1}
+	\int \sin^2(x) \diff{x} &= -\cos(x)\sin(x) + \int 1-\sin^2(x) \diff{x} \\
+	                        &= -\cos(x)\sin(x) + x - \int \sin^2(x) \diff{x}
+\end{alignat*}
+
+Auf der linken und rechten Seite der Gleichung steht das zu bestimmende Integral $\int \sin^2(x)\diff{x}$. Wenn wir nach diesem umstellen, erhalten wir:
+
+\begin{alignat*}{1}
+	\int \sin^2(x) \diff{x} = \frac{1}{2} (x-\cos(x)\sin(x))
+\end{alignat*}
+
+Analog können wir vorgehen, um $\int \cos^2(x) \diff{x}$ zu berechnen. Eine weitere Möglichkeit besteht darin, dass oben in der ersten Gleichung ein Zusammenhang zwischen dem Integral von $\cos^2(x)$ und $\sin^2(x)$ hergestellt wird. Wenn wir diese Gleichung umstellen, erhalten wir:
+
+$$
+	\int \sin^2(x) \diff{x} + \cos(x)\sin(x) = \int \cos^2(x) \diff{x}
+$$
+
+Da Integral über $\sin^2(x)$ kennen wir bereits und erhalten:
+
+$$
+	\int \cos^2(x) \diff{x} =  \frac{1}{2} (x-\cos(x)\sin(x)) + \cos(x)\sin(x) = \frac{1}{2} (x+\cos(x)\sin(x))
+$$

@@ -11,12 +11,12 @@ Motivation für den Ableitungsbegriff war es, beschreiben zu können, in welcher
 \begin{definition}{Differenzierbarkeit und Ableitung}{DiffFun}
     Eine Funktion $f: \R \to \R$ heißt an der Stelle $x_0\in\mathbb{D}$ \textbf{ableitbar} (differenzierbar), wenn der Differenzenquotient konvergiert:
     $$
-        \alpha = \lim\limits_{\epsilon\to 0} \frac{f(x+\epsilon) - f(x)}{\epsilon}
+        \alpha = \lim\limits_{\varepsilon\to 0} \frac{f(x+\varepsilon) - f(x)}{\varepsilon}
     $$
     Dieser Grenzwert heißt dann \textbf{Ableitung der Funktion an der Stelle $x_0$} und man schreibt: $f'(x_0) = \alpha$.
     Falls eine Funktion auf ihrem gesamten Definitionsbereich differenzierbar ist, heißt sie \textbf{differenzierbare Funktion} und die durch
     $$
-    f': x \mapsto \lim\limits_{\epsilon\to 0} \frac{f(x+\epsilon) - f(x)}{\epsilon}
+    f': x \mapsto \lim\limits_{\varepsilon\to 0} \frac{f(x+\varepsilon) - f(x)}{\varepsilon}
     $$
     definiert Funktion die \textbf{Ableitung} von $f$ nach $x$. Man schreibt auch dann gelegentlich auch $\dd{f}{x}$.
 \end{definition}
@@ -44,10 +44,10 @@ Man kann sich auch vorstellen, man wählt sich eine Stelle $x_0$ und vergrößer
 \begin{example}{Bestimmung der Ableitung per Differenzenquotient}{DerivDiffQuot}
     Gesucht ist die Ableitung der Funktion $f(x) = x^2$ an einer Stelle $x_0$. Wir setzen in die Definition ein:
     \begin{alignat}{1}
-        f'(x_0) &= \lim\limits_{\epsilon\to 0} \frac{f(x_0+\epsilon) - f(x_0)}{\epsilon} \\
-                &= \lim\limits_{\epsilon\to 0} \frac{(x_0+\epsilon)^2-x_0^2}{\epsilon} \\
-                &= \lim\limits_{\epsilon\to 0} \frac{x_0^2+2x_0\epsilon+\epsilon^2-x_0^2}{\epsilon} \\
-                &= \lim\limits_{\epsilon\to 0} 2x_0+\epsilon \\
+        f'(x_0) &= \lim\limits_{\varepsilon\to 0} \frac{f(x_0+\varepsilon) - f(x_0)}{\varepsilon} \\
+                &= \lim\limits_{\varepsilon\to 0} \frac{(x_0+\varepsilon)^2-x_0^2}{\varepsilon} \\
+                &= \lim\limits_{\varepsilon\to 0} \frac{x_0^2+2x_0\varepsilon+\varepsilon^2-x_0^2}{\varepsilon} \\
+                &= \lim\limits_{\varepsilon\to 0} 2x_0+\varepsilon \\
                 &= 2x_0
     \end{alignat}
     Damit haben wir gezeigt, dass die quadratische Funktion überall differenzierbar ist und $f'(x) = \dd{}{x} x^2 = 2x$ gilt.
@@ -63,7 +63,7 @@ Eine wichtige Aussage über den Zusammenhang zwischen Stetigkeit und Differenzie
     Die Betragsfunktion $f(x) = |x|$ ist für alle reellen Zahlen definiert und dort überall stetig. Speziell ist sie auch an der Stelle $x_0=0$ stetig. Allerdings ist sie dort nicht differenzierbar, denn
     der Grenzwert
     $$
-        \lim\limits_{\epsilon\to 0} \frac{f(0+\epsilon) - f(0)}{\epsilon} = \lim\limits_{\epsilon\to 0} \frac{|\epsilon|}{\epsilon} = \lim\limits_{\epsilon\to 0} \text{sgn}(\epsilon)
+        \lim\limits_{\varepsilon\to 0} \frac{f(0+\varepsilon) - f(0)}{\varepsilon} = \lim\limits_{\varepsilon\to 0} \frac{|\varepsilon|}{\varepsilon} = \lim\limits_{\varepsilon\to 0} \text{sgn}(\varepsilon)
     $$
     existiert nicht (siehe Beispiel \ref{ex:ExamContUnivarFun}). Graphisch betrachtet hat die Betragsfunktion bei $0$ einen Knick, der bestehen bleibt, egal, wie weit man den Knick vergrößert (sich also nicht als Gerade annähern lässt).
 \end{example}
@@ -120,7 +120,7 @@ Für mehrstellige Funktionen definiert man noch den sogenannten \mention{Nabla}-
 
 Dieser Operator ist nützlich, da er viele Formeln der Infinitesimalrechnung mehrstelliger Funktionen vereinfacht. Im letzten Kapitel haben wir bereits gesehen, dass man das Gradientenfeld einer mehrstelligen Funktion damit bündig schreiben kann als $\vec\nabla f$. Besonders bei Funktionen $\R^n \to \R^n$ wird der Nabla-Operator häufig verwendet. Da wir uns in dieser Vorlesung auf Funktionen $\R^n\to\R$ beschränken, werden wir den Nabla-Operator im Rahmen dieser Vorlesung kaum brauchen.
 
-Schließlich können wir analog zur Tangenten für einstellige Funktionen noch eine sogenannten \emph{Tangentialebene} für zweistellige Funktionen definieren, also eine Ebene, die sich an die Funktion in einem Punkt anschmiegt. Diese Tangentialebene erhalten wir, wenn wir eine Ebene aufspannen, welche in $x$- und$y$-Richtung jeweils den Anstieg der Funktion in dieser Richtung hat. Dieser Anstieg ist durch die partiellen Ableitungen gegeben. Dieses Vorgehen lässt sich allgemein auf $n$-stellige Funktionen erweitern.
+Schließlich können wir analog zur Tangenten für einstellige Funktionen noch eine sogenannten \emph{Tangentialebene} für zweistellige Funktionen definieren, also eine Ebene, die sich an die Funktion in einem Punkt anschmiegt. Diese Tangentialebene erhalten wir, wenn wir eine Ebene aufspannen, welche in $x$- und $y$-Richtung jeweils den Anstieg der Funktion in dieser Richtung hat. Dieser Anstieg ist durch die partiellen Ableitungen gegeben. Dieses Vorgehen lässt sich allgemein auf $n$-stellige Funktionen erweitern.
 
 \begin{definition}{Lineare Näherung einer mehrstelligen Funktion}{LinApproxMultivarFun}
     Sei $f: \R^n\to\R$ ein $n$-stellige, partiell differenzierbare Funktion. Dann heißt $t$ die \textbf{lineare Näherung} der Funktion in einer kleinen Umgebung um einen Punkt $\vec{r_0}\in\R^n$ und ist gegeben durch:
@@ -148,6 +148,31 @@ Man beachte besonders, dass diese Formel für die lineare Näherung einer mehrst
     \end{alignat*}
 \end{example}
 
+Mittels der partiellen Ableitung lassen sich auch einige geometrische Sachverhalte ausdrücken. Als Beispiel wollen wir einen Berggipfel betrachten. Wir nehmen an, dass wir dessen Form in ersten Näherung durch $f(x,y)=1-x^2-y^2$ beschreiben können. Wenn wir nun eine Kugel nehmen, an eine Stelle platzieren und loslassen, wird die Kugel nach unten rollen. Doch in welche Richtung genau wird sie rollen? Aus der Erfahrung wissen wir, dass die Kugel nicht spiralförmig nach unten rollt, sondern auf dem direkten Weg nach unten. Diese Richtung entspricht der Richtung des stärksten Abfalls des Berggipfels. Mathematisch können wir diese Richtung durch den sogenannten Gradient berechnen, welcher aus den partiellen Ableitungen besteht:
+
+\begin{definition}{Gradient}{Gradient}
+	Der \textbf{Gradient} einer $n$-stelligen Funktion $f: \R^n \to  \R$ an einer Stelle $\vec{r}$ ist ein $n$-stelliger Vektor, welcher in die Richtung des stärksten Anstiegs an dieser Stelle zeigt und dessen Betrag ein Maß für die Größe des Anstiegs ist:
+	$$
+		\grad(f)(\vec{r}) = \vec\nabla f(\vec{r}) = \rvec{\pdd{f}{x_1}(\vec{r})}{\vdots}{\pdd{f}{x_n}(\vec{r})}
+	$$
+\end{definition}
+
+Dabei müssen wir beachten, dass der Gradient in die Richtung des stärksten Anstiegs (nicht Abfalls) zeigt. Für unser Beispiel mit dem Berggipfel wird die Kugel also in die entgegengesetzt Richtung des Gradienten rollen, siehe Beispiel \ref{ex:GradField}. Der Gradient entspricht auch der mathematischen Definition des Richtungsfelds, welches wir im letzten Kapitel in Definition \ref{def:GradField} kennengelernt haben.
+
+\begin{example}{Richtungsfeld einer Funktion}{GradField}
+	Gesucht ist das Richtungsfeld der zweistelligen Funktion $f(x,y) = 1-x^2-y^2$. Gemäß Definition müssen wir zuerst die beiden partiellen Ableitungen nach $x$ und $y$ berechnen:
+	\begin{alignat*}{1}
+	\pdd{}{x} x^2+y^2 &= -2x \\
+	\pdd{}{y} x^2+y^2 &= -2y
+	\end{alignat*}
+	Damit lässt sich das Richtungsfeld $G: \R^2 \to \R^2$ nun angeben als:
+	$$
+	G(x,y) = \grad f = \tvec{-2x}{-2y}
+	$$
+	Die Richtung des stärksten Anstiegs verläuft wie in Abbildung \ref{fig:ExGradField} zu sehen also immer radial weg vom Koordinatenursprung. Aus der Anschauung ist dies unmittelbar klar, bei dem Graphen von $f$ handelt es sich um einen nach unten geöffnete Kesselform beziehungsweise einen "Berggipfel". An der Stelle $(1,1)$ etwa ergibt sich $G(1,1) = \tvec{-2}{-2}$. Das ist aber bergauf in Richtung des Berggipfels. Die Richtung des stärksten Abfalls ist genau entgegengesetzt: $-G(1,1) = \tvec{2}{2}$. 	
+\end{example}
+
+Abschließend sei erwähnt, dass es auch weitere Operationen gibt, wie etwa der sogenannten Divergenz $\text{div} \vec{F} = \vec{\nabla} \cdot \vec{F}$ oder der Rotation $\text{rot} \vec{F} = \vec{\nabla} \times \vec{F}$. Diese operieren auf vektorwertigen Funktionen (Feldern), also Funktionen, bei denen die Funktionswerte nicht reelle Zahlen sind, sondern aus Vektoren bestehen. In der Physik sind etwa das elektrische und magnetische Feld Funktionen $f: \R^3 \to \R^3$, die jedem Punkt im Raum einen Feldvektor zuordnen. Diese Art von Funktionen werden wir aber im Rahmen dieser Vorlesung nicht weiter betrachten.
 
 \section{Begriff des Integrals}
 
@@ -386,11 +411,11 @@ Um nun auch praktisch Ableitungen berechnen zu können, benötigen wir Zweierlei
 Um ein Produkt oder Quotienten zweier Funktionen $h(x) = f(x) \cdot g(x)$ abzuleiten, betrachten wir den Grenzwert des Differenzenquotienten für $h$:
 
 \begin{alignat*}{1}
-    \dd{h}{x} &= \lim\limits_{\epsilon\to 0} \frac{h(x+\epsilon)-h(x)}{\epsilon} \\
-              &= \lim\limits_{\epsilon \to 0} \frac{f(x+\epsilon)g(x+\epsilon)-f(x)g(x)}{\epsilon} \\
-               &= \lim\limits_{\epsilon \to 0} \frac{f(x+\epsilon)g(x+\epsilon) \overbrace{-f(x)g(x+\epsilon) + f(x)g(x+\epsilon)}^{=0} - f(x)g(x)}{\epsilon} \\
-               &= \lim\limits_{\epsilon \to 0} \frac{[f(x+\epsilon)-f(x)]\cdot g(x+\epsilon) + f(x) \cdot [g(x+\epsilon) - g(x)]}{\epsilon} \\
-               &= \underbrace{\lim\limits_{\epsilon \to 0} \frac{f(x+\epsilon)-f(x)}{\epsilon}}_{=f'(x)} \underbrace{\lim\limits_{\epsilon\to 0} g(x+\epsilon)}_{=g(x)\text{, da g stetig}} + f(x) \underbrace{\lim\limits_{\epsilon \to 0} \frac{g(x+\epsilon)-g(x)}{\epsilon}}_{=g'(x)} \\
+    \dd{h}{x} &= \lim\limits_{\varepsilon\to 0} \frac{h(x+\varepsilon)-h(x)}{\varepsilon} \\
+              &= \lim\limits_{\varepsilon \to 0} \frac{f(x+\varepsilon)g(x+\varepsilon)-f(x)g(x)}{\varepsilon} \\
+               &= \lim\limits_{\varepsilon \to 0} \frac{f(x+\varepsilon)g(x+\varepsilon) \overbrace{-f(x)g(x+\varepsilon) + f(x)g(x+\varepsilon)}^{=0} - f(x)g(x)}{\varepsilon} \\
+               &= \lim\limits_{\varepsilon \to 0} \frac{[f(x+\varepsilon)-f(x)]\cdot g(x+\varepsilon) + f(x) \cdot [g(x+\varepsilon) - g(x)]}{\varepsilon} \\
+               &= \underbrace{\lim\limits_{\varepsilon \to 0} \frac{f(x+\varepsilon)-f(x)}{\varepsilon}}_{=f'(x)} \underbrace{\lim\limits_{\varepsilon\to 0} g(x+\varepsilon)}_{=g(x)\text{, da g stetig}} + f(x) \underbrace{\lim\limits_{\varepsilon \to 0} \frac{g(x+\varepsilon)-g(x)}{\varepsilon}}_{=g'(x)} \\
                &= f'(x)g(x) + f(x) g'(x)
 \end{alignat*}
 

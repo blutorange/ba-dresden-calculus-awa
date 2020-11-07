@@ -1,0 +1,45 @@
+\item Per Definition gilt für Ableitung:
+
+\begin{alignat*}{1}
+	\dd{}{x}e^x &= \lim\limits_{\varepsilon\to 0} \frac{e^{x+\varepsilon}-e^x}{\varepsilon}\\
+	            &= \lim\limits_{\varepsilon\to 0} e^x \frac{e^\varepsilon -1}{\varepsilon}
+\end{alignat*}
+
+Für ein gegebenes $x$ ist $e^x$ eine Konstante und kann vor die Grenzwertbildung gezogen werden. Um den verbleibenden Grenzwert zu berechnen, substituieren wir:
+
+\begin{alignat*}{1}
+	z &= e^\varepsilon - 1 \\
+	\varepsilon &= \ln(z+1)
+\end{alignat*}
+
+Für $\varepsilon \to 0$ gilt ebenfalls $z \to 0$. Jetzt müssen wir folgenden Grenzwert berechnen:
+
+\begin{alignat*}{1}
+	  & \lim\limits_{z\to 0} \frac{z}{\ln(z+1)} \\
+	= & \lim\limits_{z\to 0} \frac{1/\frac{1}{z}}{\ln(z+1)} \\
+	= & \lim\limits_{z\to 0} \frac{1}{\frac{1}{z}\ln(z+1)} \\
+	= & \lim\limits_{z\to 0} \frac{1}{\ln([z+1]^\frac{1}{z})} \\
+	= & \frac{1}{\ln(\lim\limits_{z\to 0}[z+1]^\frac{1}{z})}
+\end{alignat*}
+
+Der letzte Schritt ist richtig, da nach den Grenzwertregeln für stetige Funktion die Grenzwertbildung und die Funktionsanwendung vertauscht werden können.
+
+Statt den Grenzwert für $z\to 0$ auszuwerten, können wir auch $n=\frac{1}{z}$ setzen und stattdessen den Grenzwert $n\to\infty$ auswerten:
+
+\begin{alignat*}{1}
+	    \lim\limits_{z\to 0}[z+1]^\frac{1}{z} \\
+	= & \lim\limits_{n \to \infty}[1+\frac{1}{n}]^n \\
+	= & e
+\end{alignat*}
+	
+Im letzten Schritt haben wir dabei von dem entsprechenden Grundgrenzwert Gebrauch gemacht (welchen man auch als Definition der Zahl $e$ verstehen kann). Damit ergibt sich  zusammengefasst für die Ableitung der Exponentialfunktion:
+
+\begin{alignat*}{1}
+	\dd{}{x}e^x &= e^x \cdot \lim\limits_{\varepsilon\to 0} \frac{e^\varepsilon -1}{\varepsilon} \\ 
+	            &= e^x \cdot \frac{1}{\ln(\lim\limits_{z\to 0}[z+1]^\frac{1}{z})} \\
+	            &= e^x \cdot \frac{1}{\ln(e)} \\
+	            &= e^x \cdot \frac{1}{1} \\
+	            &= e^x
+\end{alignat*}
+	
+Dies war zu zeigen.

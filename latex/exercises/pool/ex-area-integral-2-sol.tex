@@ -1,0 +1,10 @@
+\item Bei dem Gebiet handelt es sich um einen Kreisring mit Innenradius $1$ und Außenradius $2$, welcher von $\degrees{0}$ bis $\degrees{45}$ läuft. Über geometrische Beziehungen am Kreis erhält man $x=r\cos(\varphi)$ und $y=r\sin(\varphi)$. Somit müssen wir berechnen:
+
+\begin{alignat*}{1}
+	  & \int\limits_a^b \left( \int\limits_0^{\pi/2} r \cdot r^2 \sin(\varphi)\cos(\varphi) \diff{\varphi} \right) \diff{r} \\
+	= & \int\limits_a^b r^3 \left( \int\limits_0^{\pi/2} \sin(\varphi)\cos(\varphi) \diff{\varphi} \right) \diff{r} \\
+	= & \int\limits_a^b r^3 \left( \frac{1}{2}\sin^2(x) \right) \Biggr|_{0}^{\pi/2} \diff{r} \\
+	= & \int\limits_a^b \frac{1}{2} r^3  \diff{r} \\
+	= & \frac{1}{2} \cdot \frac{r^4}{4}\Biggr|_a^b \\
+	= & \frac{1}{8} (b^4-a^4)
+\end{alignat*}

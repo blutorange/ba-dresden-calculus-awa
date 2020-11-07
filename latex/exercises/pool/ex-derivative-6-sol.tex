@@ -1,0 +1,25 @@
+\item Wir setzen die Definition für den Hyperbelkosinus und Hyperbelsinus ein und vereinfachen:
+
+\begin{alignat*}{1}
+	\cosh^2(x)-\sinh^2(x) &= \left(\frac{e^x+e^{-x}}{2}\right)^2 + \left(\frac{e^x-e^{-x}}{2}\right)^2 \\
+	                      &= \frac{\left(e^x+e^{-x}\right)^2 - \left(e^x-e^{-x}\right)^2}{4} \\
+	                      &= \frac{\left(e^{2x}+e^{-2x}+2e^xe^{-x}\right) - \left(e^{2x}+e^{-2x}-2e^xe^{-x}\right)}{4} \\
+	                      &= \frac{2+2}{4} \\
+	                      &= 1
+\end{alignat*}
+
+Wobei wir $e^xe^{-x} = e^0 = 1$ benutzt haben.
+
+Für die Ableitung des Hyperbeltangens $\tanh$ folgt damit analog zur Ableitung des Tangens über die Produkt- beziehungsweise Quotientenregel:
+
+\begin{alignat*}{1}
+	\dd{}{x} \tanh(x) &= \dd{}{x} \frac{\sinh(x)}{\cosh(x)} \\
+	                  &= \frac{\cosh^2(x)-\sinh^2(x)}{\cosh^2(x)} \\
+	                  &= \frac{1}{\cosh^2(x)}
+\end{alignat*}
+
+Alternativ hätten wir im letzten Schritt auch vereinfachen können:
+
+$$
+	\dd{}{x} \tanh(x) = 1 - \frac{\sinh^2(x)}{\cosh^2(x)} = 1-\tanh^2(x)
+$$

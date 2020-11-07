@@ -1,0 +1,52 @@
+\item Für die Zeitpunkte $t_1,t_2$ gilt, dass dort $s=0$ sein muss. Wir suchen also die Nullstellen von $0=t^3-15t^2+54t$. Da kein konstanter Faktor vorkommt, lautet eine Nullstelle $t_0=0$, dies ist der Abwurfzeitpunkt. Wir können faktorisieren $0=t^3-15t^2+54t=t \cdot (t^2-15t+54)$. Der zweite Faktor ist eine quadratische Gleichung:
+
+$$
+	t_{1,2} = \frac{15}{2} \pm \sqrt{\frac{15^2}{2^2} - 54} = \frac{15}{2} \pm \sqrt{\frac{225}{4} - \frac{216}{4}} = \frac{15}{2} \pm  \sqrt{\frac{9}{4}} = \frac{15}{2} \pm \frac{3}{2}
+$$
+
+Wir erhalten also $t_1 = 6$ und $t_2 = 9$.
+
+Als nächstes leiten wir ab:
+
+\begin{alignat*}{1}
+	s(t) &= t^3-15t^2+54t \\
+	v(t) &= 3t^2-30t+54 \\
+	a(t)&= 6t-30
+\end{alignat*}
+
+Die Maximal- und Minimalgeschwindigkeit erhalten wir, in dem wir die Extremstellen der Geschwindigkeit $v$ betrachten. Für lokale Extremstellen muss $\dd{}{t}v=a=0$ gelten, also $6t-30=0$. Wir erhalten als Kandidat $t=5$. Da es sich bei $v$ um eine nach oben geöffnete Parabel handelt, liegt bei $t=0$ ein lokales Minima vor (was wir auch bestätigen könnten durch die dritte Ableitung: $a'(t)=6>0$). Die Geschwindigkeit zu diesem Zeitpunkt beträgt $v(5)=3\cdot 25-30\cdot 5+54=75-150+54=-21$ Zudem kann es aber auch noch globale Extremstellen geben. Dazu müssen wir die Grenzen des betrachteten Zeitraums betrachten. Für $t_0=0$ erhalten wir $v(0)=54$, für $t_2=9$ ergibt sich $v(9)=3\cdot 81-30\cdot 9+54 = 3\cdot(81-3\cdot 30)+54 = 3\cdot (-9) + 54 = 27$.
+
+Also lautet die Minimalgeschwindigkeit $v(5)=-21$, die Maximalgeschwindigkeit $v(0)=54$.
+
+Für die Durchschnittsgeschwindigkeit im Zeitraum $[0,6]$ müssen wir über den Betrag der Geschwindigkeit teilen. Dazu teilen wir das Integrationsintervall an der Nullstelle. Die Nullstellen von $v(t)=3t^2-30t+54$ lauten:
+
+\begin{alignat*}{1}
+	0 &= t^2-10t+18 \\
+	t &= 5 \pm \sqrt{25-18} = 5 \pm \sqrt{7}
+\end{alignat*}
+
+Es kommt nur die Lösung $5 - \sqrt{7}$ in Betracht, da die andere Lösung außerhalb des betrachteten Intervalls liegt.
+
+Die Durchschnittsgeschwindigkeit berechnet sich nun -- unter Beachtung der Tatsache, dass $s$ eine Stammfunktion von $v$ ist und dass die Geschwindigkeit $v$ links der Nullstelle positiv und rechts davon negativ ist -- zu:
+
+\begin{alignat*}{1}
+	\bar{v} &= \frac{1}{6} \left( \int\limits_0^6 |v(t)| \diff{t} \right) \\
+	        &= \frac{1}{6} \left( \int\limits_0^{5-\sqrt{7}} v(t) \diff{t} - \int\limits_{5-\sqrt{7}}^6 v(t) \diff{t} \right) \\
+	        &= \frac{1}{6} \left( s(5-\sqrt{7}) -s(0) - s(6) + s(5-\sqrt{7}) \right) \\
+	        &= \frac{s(5-\sqrt{7})}{3}
+\end{alignat*}
+
+Im letzten Schritt haben wir davon Gebrauch gemacht, dass $s(0)=s(6)=0$ gilt, da es sich um die Nullstellen von $s$ handelt. Es verbleibt, $s(5-\sqrt{7})$ zu berechnen:
+
+\begin{alignat*}{1}
+	s(5-\sqrt{7}) &= (5-\sqrt{7})^3 -15 (5-\sqrt{7})^2+54(5-\sqrt{7}) \\
+	              &= (230-82\sqrt{7}) -15(32-10\sqrt{7})+54(5-\sqrt{7}) \\
+	              &= 230-82\sqrt{7}-480+150\sqrt{7}+270-54\sqrt{7} \\
+	              &= 20+14\sqrt{7}
+\end{alignat*}
+
+Damit erhalten wir für die Durchschnittsgeschwindigkeit:
+
+$$
+	\bar{v} = \frac{20+14\sqrt{7}}{3}
+$$

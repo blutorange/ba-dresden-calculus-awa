@@ -127,8 +127,9 @@ Für zweistellige Funktionen gibt es auch noch weitere Darstellungsformen, die m
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.6\textwidth]{./gnuplot/example-contour-plot}
-    \caption[Konturlinien einer zweistelligen Funktion]{Konturlinien der Funktion aus Beispiel \ref{ex:ContLine}}
+    \includegraphics[width=0.45\textwidth]{./gnuplot/example-contour-plot}
+    \includegraphics[width=0.45\textwidth]{./gnuplot/example-pot-function}
+    \caption[Konturlinien einer zweistelligen Funktion]{Konturlinien der Funktion $f(x,y)=x^2+y^2$ (links) und ihr Graph (rechts)}
     \label{fig:ExContLine}
 \end{figure}
 
@@ -138,33 +139,17 @@ Als zweite Darstellungsform gibt es noch das sogenannte Gradientenfeld, wobei du
 
 \begin{definition}{Richtungsfeld einer mehrstelligen Funktion}{GradField}
     Unter dem \textbf{Richtungsfeld} (Gradientenfeld) einer $n$-stelligen Funktion $f: \R^n \to  \R$ versteht man die Funktion $G_f: \R^n \to \R^n$, welche jedem Punkt $\vec{r}=(x_1,x_2,...,x_n)$ des Definitionsbereichs von $f$ eine Richtung (einen $n$-dimensionalen Vektor) zuordnet, welcher in Richtung des stärksten Anstiegs von $f$ im Punkt $\vec{r}$ zeigt.
-
-    $$
-        G_f(\vec{r}) = \vec\nabla f(\vec{r}) = \rvec{\pdd{f}{x_1}(\vec{r})}{\vdots}{\pdd{f}{x_n}(\vec{r})}
-    $$
 \end{definition}
 
-\begin{example}{Richtungsfeld einer Funktion}{GradField}
-    Gesucht ist das Gradientenfeld der zweistelligen Funktion $f: (x,y) \mapsto x^2+y^2$. Gemäß Definition müssen wir zuerst die beiden partiellen Ableitungen nach $x$ und $y$ berechnen:
+Mathematisch entspricht das Richtungsfeld dem Gradienten $\grad{f}$ der Funktion. Wie genau dieser berechnet wird, lernen wir im nächsten Kapitel kennen. 
 
-    \begin{alignat*}{1}
-        \pdd{}{x} x^2+y^2 &= 2x \\
-        \pdd{}{y} x^2+y^2 &= 2y
-    \end{alignat*}
-
-    Damit lässt sich das Gradientenfeld $G: \R^2 \to \R^2$ nun angeben als:
-
-    $$
-        G(x,y) = \tvec{2x}{2y}
-    $$
-
-    Die Richtung des stärksten Anstiegs verläuft wie in Abbildung \ref{fig:ExGradField} zu sehen also immer radial weg vom Koordinatenursprung. Aus der Anschauung ist dies unmittelbar klar, bei dem Graphen von $f$ handelt es sich um einen nach oben geöffnete Kesselform.
-\end{example}
+In Abbildung \ref{fig:ExGradField} ist das Richtungsfeld für die Funktion $f(x,y) = 1-x^2-y^2$ eingezeichnet. Die Richtung des stärksten Anstiegs verläuft immer radial in Richtung zum Koordinatenursprung. Aus der Anschauung ist dies unmittelbar klar, bei dem Graphen von $f$ handelt es sich um einen nach oben geöffnete Kesselform beziehungsweise einen "Berggipfel".
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.65\textwidth]{./gnuplot/example-gradient-field}
-    \caption[Gradientenfeld einer zweistelligen Funktion]{Gradientenfeld der Funktion aus Beispiel \ref{ex:GradField}}
+    \includegraphics[width=0.35\textwidth]{./gnuplot/example-gradient-field}
+    \includegraphics[width=0.55\textwidth]{./gnuplot/example-hill-function}
+    \caption[Gradientenfeld einer zweistelligen Funktion]{Gradientenfeld der Funktion $f(x,y) = 1-x^2-y^2$ (links) und ihr Graph (rechts).}
     \label{fig:ExGradField}
 \end{figure}
 
