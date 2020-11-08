@@ -1,0 +1,27 @@
+\item Wir berechnen zuerst die Ableitungen, setzen dann in die Gleichung ein und prüfen, ob diese erfüllt ist.
+
+Ableitung nach $x$:
+
+\begin{alignat*}{1}
+	\pdd{}{x} A\sin(x\pm vt)     &= A \cos(x\pm vt) \\
+	\pddn{2}{}{x} A\sin(x\pm vt) &= -A\sin(x\pm vt)
+\end{alignat*}
+
+
+Ableitung nach $t$:
+
+\begin{alignat*}{1}
+	\pdd{}{t} A\sin(x\pm vt)     &= A \cdot (\pm v) \cdot \cos(x\pm vt) \\
+	\pddn{2}{}{t} A\sin(x\pm vt) &= -A \cdot (\pm v)^2 \cdot \sin(x\pm vt) \\
+	                             &= -A v^2 \sin(x\pm vt)
+\end{alignat*}
+
+Eingesetzt in die DGL:
+
+\begin{alignat*}{1}
+	\pddn{2}{y}{x}                 &= \frac{1}{v^2}\pddn{2}{y}{t} \\
+	\left( -A\sin(x\pm vt) \right) &= \left( \frac{1}{v^2} \right) \cdot \left( -A v^2 \sin(x\pm vt) \right) \\
+	       -A\sin(x\pm vt)         &= -A \sin(x\pm vt)
+\end{alignat*}
+
+Beide Seiten der Gleichung sind identisch, also sind $y(x,t)=A\sin(x\pm vt)$ für beliebige Konstanten $A$ Lösungen der Wellengleichung. Anmerkung: Diese DGL beschreibt die Schwingung eines idealen Seils.

@@ -10,29 +10,49 @@ $$\phi(ty,ty',x) = (ty)'-(ty) = t^1\cdot(y'-y) = t^1\cdot\phi(y,y',x))$$
 
 $$\phi(ty,ty',x) = (ty)'-(ty)-\sin(x) = t^1 \cdot(y'-y) -\sin(x) \ne t^1\cdot\phi(y,y',x))$$
 
-Die zugehörige homogene DGL ist $\phi_h = y'-y = 0$, die Inhomogenität ist $\psi=-\sin(x)$.
+Die zugehörige homogene DGL ist $H = y'-y = 0$, die Inhomogenität ist $F=-\sin(x)$.
 
 \item Die DGL $x''y''-2y'+y=0$ ist homogen vom Grad $1$, denn:
 
 $$x''(ty)''-2(ty)'+(ty) = t^1\cdot(x''y''-2y'+y)$$
 
+Da der Grad der Homogenität $1$ beträgt, ist diese DGL linear.
+
 \item Die DGL $0=\frac{y''+2y}{y'''-3y}$ ist homogen vom Grad $0$, denn (beachte, dass $t^0=1$):
 
 $$\frac{(ty)''+2(ty)}{(ty)'''-3(ty)} = \frac{t(y''+2y)}{t(y'''-3y)} = t^0 \frac{y''+2y}{y'''-3y}$$
+
+Da der Grad der Homogenität $0$ beträgt, ist diese DGL nicht linear.
 
 \item Die DGL $y'-xy-1=0$ ist inhomogen, denn:
 
 $$(ty)'-x(ty)-1=t^1 (y'-xy)-1 \ne t^1 (y'-xy-1)$$
 
-Die zugehörige homogene DGL ist $\phi_h = y'-xy=0$, die Inhomogenität ist $\psi = -1$.
+Die zugehörige homogene DGL ist $H = y'-xy=0$, die Inhomogenität ist $F = -1$. Da der Grad der Homogenität $-1$ beträgt, ist diese DGL nicht linear.
 
 \item Die DGL $(y'')^2-\ln(x)(yy') = 0$ ist homogen vom Grad $2$, denn:
 
 $$((ty)'')^2-\ln(x)((ty)(ty)') = t^2\cdot((y'')^2-\ln(x)(yy'))$$
 
+Da der Grad der Homogenität $2$ beträgt, ist diese DGL nicht linear.
+
 \item Die DGL $\sqrt{y'+y}=0$ ist homogen vom Grad $\frac{1}{2}$, denn:
 
 $$\sqrt{(ty)'+(ty)} = \sqrt{t(y'+y)} = t^{\frac{1}{2}}\sqrt{y'+y}$$
+
+Da der Grad der Homogenität $1/2$ beträgt, ist diese DGL nicht linear.
+
+\item Die DGL ist inhomogen, denn:
+
+$$ (ty)''-2(ty)'+(ty)-\sin(x) \ne t \cdot (y''-2y'+y-\sin(x)) $$
+
+Die zugehörige homogene DGL ist $y''-2y'+y=0$, die Inhomogenität ist $F=\sin(x)$. Da der Grad der Homogenität $1$ beträgt, ist diese DGL linear.
+
+\item Die DGL ist homogen vom Grad $1$, denn:
+
+$$ \ln(x)(ty)''+ \frac{1}{x}(ty)' = t^1 (\ln(x)y''+\frac{1}{x}y') $$
+
+Da der Grad der Homogenität $1$ beträgt, ist diese DGL linear.
 
 \end{enumerate}
 
