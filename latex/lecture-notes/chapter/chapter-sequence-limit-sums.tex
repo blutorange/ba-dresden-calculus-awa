@@ -200,7 +200,7 @@ Anhand der arithmetischen und geometrischen Folge und der daraus induzierten Rei
 \end{example}
 
 \begin{example}{Partialsummen der geometrischen Reihe}{PartSumGeoSer}
-	Die geometrische Folge lautet $a_n = p \cdot q^n$ mit $p,q\in\R$. Um die Partialsummen $s_n = \sum\limits_{i=0}^n p\cdot q^i$ zu bestimmen, bedienen wir uns eines kleinen Umformungstricks. Die Partialsumme wird mit der konstanten $q$ multipliziert und von der ursprünglichen Partialsumme abgezogen, sodass sich fast alle Summanden aufheben:
+	Die geometrische Folge lautet $a_n = p \cdot q^n$ mit $p,q\in\R$. Um die Partialsummen $s_n = \sum\limits_{i=0}^n p\cdot q^i$ zu bestimmen, bedienen wir uns eines kleinen Umformungstricks. Die Partialsumme wird mit der Konstanten $q$ multipliziert und von der ursprünglichen Partialsumme abgezogen, sodass sich fast alle Summanden aufheben:
 
 	\begin{alignat*}{4}
 		        s_n       &= p \cdot ( & q^0 + & q^1 + q^2 + q^3 + ... + q^n           &) \\
@@ -253,7 +253,7 @@ Komplexe Terme sind durch Rechenoperationen aus einfacheren Termen aufgebaut. Zu
 Ein wichtiger Satz, der manchmal bei schwierigen Grenzwerten hilft, ist das sogenannte \emph{Sandwich-Kriterium}. Schafft man es zu zeigen, dass eine Folge zwischen zwei anderen Folgen liegt, so muss auch der Grenzwert der Folgen zwischen den Grenzwerten der anderen beiden Folgen liegen. Haben diese beiden Folgen den gleichen Grenzwert, kennt man damit den Grenzwert der zu untersuchenden Folge.
 
 \begin{statement}{Sandwich-Kriterium}{SandwichTheo}
-	Gegeben sei eine Folge $(a_n)$. Gibt es zwei konvergente Folgen $(l_n)$ und $(u_n)$, die beide gegen den gleichen Grenzwert $\alpha$ konvergieren, und gilt ab einem bestimmten Folgenglied $n_0$ die Ungleichung $l_n \le a_n \le u_n, n \ge n_0$, dann konvergiert auch die Folge $a_n$ gegen $\alpha$.
+	Gegeben sei eine Folge $(a_n)$. Gibt es zwei konvergente Folgen $(l_n)$ und $(u_n)$, die beide gegen den gleichen Grenzwert $\alpha$ konvergieren, und gilt ab einem bestimmten Folgenglied $n_0$ die Ungleichung $l_n \le a_n \le u_n \forall n \ge n_0$, dann konvergiert auch die Folge $a_n$ gegen $\alpha$.
 \end{statement}
 
 \begin{example}{Anwendung des Sandwich-Kriteriums}{SandwichTheo}
@@ -342,7 +342,7 @@ Die Grenzwertregeln, die wir bisher kennengelernt haben, sind analog auch auf Gr
     Sei $f(x) = \frac{p_n(x)}{q_m(x)}$ eine gebrochenrationale Funktion, also der Quotient zweier Polynome $p_n, q_m$ vom Grad $n$ und $m$. Der Grenzwert existiert, wenn der Grad des Zählerpolynoms nicht kleiner ist als der Grad des Nennerpolynoms. Es gilt:
 
     \begin{equation}
-    \lim\limits_{x\to\infty}\frac{p_n(x)}{q_m(x)} = \lim\limits_{x\to\infty}\frac{a_0 + a_1 x + a_2 x^2 + ... + a_n x^n}{b_0 + b_1 x + b_2 x^2 + ... + b_n x^n} = \begin{cases}
+    \lim\limits_{x\to\infty}\frac{p_n(x)}{q_m(x)} = \lim\limits_{x\to\infty}\frac{a_0 + a_1 x + a_2 x^2 + ... + a_n x^n}{b_0 + b_1 x + b_2 x^2 + ... + b_m x^m} = \begin{cases}
     0 &\text{falls $n < m$} \\
     \frac{a_n}{b_m} &\text{falls $ n = m$} \\
     \pm \infty  &\text{falls $ n > m$}
@@ -364,7 +364,7 @@ Einige Beispiele für solche unbestimmten Ausdrücke finden sich in \ref{ex:Inde
 
 \begin{example}{Unbestimmte Ausdrücke}{IndetForms}
 	\begin{itemize}
-		\item $\lim\limits_{x\to\infty} \frac{\sin(n)}{e^x}$ ist ein unbestimmter Ausdruck der Form $\frac{\infty}{\infty}$
+		\item $\lim\limits_{x\to\infty} \frac{\sin(x)}{e^x}$ ist ein unbestimmter Ausdruck der Form $\frac{\infty}{\infty}$
 		\item $\lim\limits_{x\to\infty} e^{-x} \cdot x^2$ ist ein unbestimmter Ausdruck der Form $0 \cdot \infty$.
 		\item $\lim\limits_{x\to 0} x^x$ ist ein unbestimmter Ausdruck der Form $0 ^ 0$.
 	\end{itemize}
@@ -445,7 +445,7 @@ Zwei Kriterien, die bei der praktischen Entscheidung, ob eine Reihe konvergent i
 Diese beiden Kriterien werden später noch einmal im Zusammenhang mit Potenzreihen und der sogenannten Taylorentwicklung eine wichtige Rolle spielen.
 
 \begin{example}{Anwendung des Quotientenkriteriums}{RatioTest}
-    Untersucht werden soll, ob $s_n = \sum\limits_{i=1}^\infty \frac{n!}{n^n}$ existiert. Das Wurzelkriterium liefert (Betragsstriche sind weggelassen, da alle Glieder positiv):
+    Untersucht werden soll, ob $s_n = \sum\limits_{i=1}^\infty \frac{n!}{n^n}$ existiert. Das Quotientenkriterium liefert (Betragsstriche sind weggelassen, da alle Glieder positiv):
 
     \begin{alignat*}{1}
         q &= \lim\limits_{n\to\infty} \frac{(n+1)! \cdot n^n}{(n+1)^{n+1} \cdot n!} \\
