@@ -7,17 +7,17 @@ Eine Funktion ist eindeutig definiert durch ihre Rechenvorschrift, etwa $\sin(x)
 Wir nähern uns dem Begriff der Funktionsreihen, indem wir zuerst endliche Reihen betrachten, also eine Reihe, welche die Summe einer endlichen Anzahl von Funktionen ist. Anschließend überlegen wir uns, was es bedeutet, eine Grenzwertbildung auszuführen. Im Gegensatz zu Zahlenreihen ist hier etwa mehr Vorsicht notwendig, da das Konvergenzverhalten anders sein kann, je nachdem, welches Argument man in die Funktionen einsetzt.
 
 \begin{definition}{Endliche Funktionsreihe}{FunSum}
-    Sei $f_n: \R \to \R, n\in\N$  eine Folge von Funktionen, welche alle den Definitionsbereich $\mathbb{D}$ besitzen. Dann versteht man unter der zugehörigen \textbf{endlichen Funktionsreihe} (Partialsummen) $F_n$ die Folge von Funktionen, welche durch Summation der ersten $n+1$-Glieder entsteht:
+    Sei $f_n: \R \to \R, n\in\N$  eine Folge von Funktionen, welche alle den Definitionsbereich $\mathcal{D}$ besitzen. Dann versteht man unter der zugehörigen \textbf{endlichen Funktionsreihe} (Partialsummen) $F_n$ die Folge von Funktionen, welche durch Summation der ersten $n+1$-Glieder entsteht:
     $$
         F_n(x) = \sum\limits_{i=0}^n f_(x)
     $$
-    Alle Glieder $F_n$ der Funktionsreihe haben den gleichen Definitionsbereich $\mathbb{D}$.
+    Alle Glieder $F_n$ der Funktionsreihe haben den gleichen Definitionsbereich $\mathcal{D}$.
 \end{definition}
 
 Für jedes $n$ ist damit eine Funktion definiert, in die wir Argumente aus dem Definitionsbereich einsetzen können und eindeutig einen Funktionswert erhalten. Anders ausgedrückt hängt der Funktionswert also von zwei Variablen ab, dem Index $n$ und dem Argument $x$. Um nun die unendliche Reihe als Grenzwert für große $n$ definieren zu können, müssen wir zuerst den Wert für $x$ festlegen.
 
 \begin{definition}{Grenzfunktion einer Funktionsreihe}{LimFunSum}
-    Sei $F_n: \R \to \R$ eine endliche Funktionsreihe mit Definitionsbereich $\mathbb{D}$. Für jedes Argument $x$ ist dann eine Reihe gegeben, welche entweder konvergent ist oder nicht. Die Menge aller Argumente $x$, für welche diese Reihe konvergiert, nennt man das \textbf{Konvergenzintervall} $K$. Die \textbf{Grenzfunktion} ist dann die Abbildung der Argumente aus dem Definitionsbereich zu dem jeweiligen Grenzwert der Funktionsreihe für dieses Argument:
+    Sei $F_n: \R \to \R$ eine endliche Funktionsreihe mit Definitionsbereich $\mathcal{D}$. Für jedes Argument $x$ ist dann eine Reihe gegeben, welche entweder konvergent ist oder nicht. Die Menge aller Argumente $x$, für welche diese Reihe konvergiert, nennt man das \textbf{Konvergenzintervall} $K$. Die \textbf{Grenzfunktion} ist dann die Abbildung der Argumente aus dem Definitionsbereich zu dem jeweiligen Grenzwert der Funktionsreihe für dieses Argument:
     $$
         F(x) = F_\infty(x) = \lim\limits_{n\to\infty} \sum\limits_{i=0}^n f_i(x)
     $$
@@ -32,9 +32,9 @@ In der praktischen Berechnung wird als Approximation statt der Grenzfunktion man
     $$
         R_n(x) = F(x) - F_n(x) = F(x) - \sum\limits_{i=0}^n f_(x)
     $$
-    Im Grenzwert verschwindet das Restglied für alle Argumente aus dem Konvergenzintervall $\mathbb{K}$:
+    Im Grenzwert verschwindet das Restglied für alle Argumente aus dem Konvergenzintervall $\mathcal{K}$:
     $$
-        \lim\limits_{n\to\infty}(x) = 0 \forall x \in \mathbb{K}
+        \lim\limits_{n\to\infty}(x) = 0 \forall x \in \mathcal{K}
     $$
 \end{definition}
 
@@ -47,7 +47,7 @@ Ein Beispiel für eine solche Funktionsreihe haben wir bereits im Kapitel zu Fun
         F_1(x) &= x^2 + x^2 (1-x^2) = x^2 (2-x^2) \\
         F_2(x) &= x^2 (2-x^2) + x^2 (1-x^2)^2 = x^2 (x^4-3x^2+3)
     \end{alignat*}
-    Um nun die Grenzfunktion zu erhalten, müssen wir für einen festen Wert $x$ den Grenzübergang $n \to \infty$ durchführen. Wenn wir den Funktionsterm $F_n$ genauer anschauen, stellen wir fest, dass es sich für ein festes $x$ um eine geometrische Reihe mit $p=x^2$ und $q=(1-x^2)$ handelt. Wir wissen, dass diese für $|q|=|1-x^2|<1$ konvergiert, also für $x \in [-1,1]$. Für $x=0$ ergibt sich $q=1$, doch da dann auch $p=0$ ist, konvergiert die Reihe für $x=0$ ebenfalls. Somit lautet der Konvergenzbereich der Funktionsreihe $\mathbb{K} = [-1,1]$ und der Grenzwert ergibt sich zu:
+    Um nun die Grenzfunktion zu erhalten, müssen wir für einen festen Wert $x$ den Grenzübergang $n \to \infty$ durchführen. Wenn wir den Funktionsterm $F_n$ genauer anschauen, stellen wir fest, dass es sich für ein festes $x$ um eine geometrische Reihe mit $p=x^2$ und $q=(1-x^2)$ handelt. Wir wissen, dass diese für $|q|=|1-x^2|<1$ konvergiert, also für $x \in [-1,1]$. Für $x=0$ ergibt sich $q=1$, doch da dann auch $p=0$ ist, konvergiert die Reihe für $x=0$ ebenfalls. Somit lautet der Konvergenzbereich der Funktionsreihe $\mathcal{K} = [-1,1]$ und der Grenzwert ergibt sich zu:
     $$
         \lim\limits_{n\to\infty} \sum\limits_{i=0}^n x^2 (1-x^2)^i = \frac{p}{1-q} = \frac{x^2}{1-(1-x^2)} = 1
     $$
@@ -72,16 +72,16 @@ Ein Beispiel für eine solche Funktionsreihe haben wir bereits im Kapitel zu Fun
 Bisher haben wir nur den Grenzwert der Partialsummen für ein gegebenes $x$ betrachtet. Das Konvergenzintervall ist die Menge von Argumenten, wo dieser Grenzwert existiert. Diese Art der Konvergenz nennt man die sogenannte \textbf{punktweise Konvergenz}, da immer nur ein konkretes $x$ betrachtet wird. Jetzt kann es aber sein, dass die Partialsummen für ein bestimmtes $x$ sich dem Grenzwert nur sehr langsam nähern und für ein anderes $x$ sich sehr schnell nähern. Für viele Schlussfolgerungen im Zusammenhang mit Funktionsreihen benötigt man noch eine stärkere Art der Konvergenz. Man fordert, dass die Partialsummen für alle Argument gleich schnell, also \emph{gleichmäßig}, gegen ihren Grenzwert laufen.
 
 \begin{definition}{Gleichmäßige Konvergenz einer Funktionsreihe}{UniformConv}
-    Eine Funktionsreihe $F_n$ heißt auf einem Konvergenzintervall $\mathbb{K}$ \textbf{gleichmäßig konvergent} gegen die Grenzfunktion $F$, wenn in der Epsilon-Definition des Grenzwerts (siehe \ref{def:Convergence}) das erste Folgenglied, ab dem alle weiteren Folgenglieder einen Abstand von weniger als Epsilon vom Grenzwert haben, nur von dem gewählten Epsilon, aber nicht vom konkreten Argument $x\in\mathbb{K}$ abhängt.
+    Eine Funktionsreihe $F_n$ heißt auf einem Konvergenzintervall $\mathcal{K}$ \textbf{gleichmäßig konvergent} gegen die Grenzfunktion $F$, wenn in der Epsilon-Definition des Grenzwerts (siehe \ref{def:Convergence}) das erste Folgenglied, ab dem alle weiteren Folgenglieder einen Abstand von weniger als Epsilon vom Grenzwert haben, nur von dem gewählten Epsilon, aber nicht vom konkreten Argument $x\in\mathcal{K}$ abhängt.
     $$
-        \forall \varepsilon > 0 \exists n_0: \forall n > n_0, x \in \mathbb{K}: |F-F_n(x)| = |R_n(x)| < \varepsilon
+        \forall \varepsilon > 0 \exists n_0: \forall n > n_0, x \in \mathcal{K}: |F-F_n(x)| = |R_n(x)| < \varepsilon
     $$
 \end{definition}
 
 Manchmal ist es einfacher, eine Funktion als Grenzfunktion einer Funktionsreihe darzustellen. Wie können wir von der Grenzfunktion Ableitung und Integral berechnen? Naiv könnte man jetzt auf die Idee kommen, einfach die Summanden der Funktionsreihe separat abzuleiten oder zu integrieren. Es zeigt sich aber, dass dies im allgemeinen aufgrund der Grenzwertbildung nicht möglich ist. Für gleichmäßig konvergente Funktionsreihen gilt aber die folgende Aussage:
 
 \begin{statement}{Gliedweise Differenzierbarkeit und Integrierbarkeit}{DiffIntByParts}
-    Eine auf einem Konvergenzintervall $\mathbb{K}$ gegen eine Grenzfunktion $F$ gleichmäßig konvergente Funktionsreihe $F_n$ kann gliedweise differenziert und integriert werden.
+    Eine auf einem Konvergenzintervall $\mathcal{K}$ gegen eine Grenzfunktion $F$ gleichmäßig konvergente Funktionsreihe $F_n$ kann gliedweise differenziert und integriert werden.
     \begin{alignat*}{1}
         \dd{}{x} F(x)      &= \lim\limits_{n\to\infty} \sum\limits_{i=0}^n \dd{}{x} f_i(x) \\
         \int F(x) \diff{x} &= \lim\limits_{n\to\infty} \sum\limits_{i=0}^n \int f_i(x) \diff{x}

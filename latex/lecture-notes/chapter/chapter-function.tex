@@ -5,11 +5,11 @@ Funktionen oder Abbildungen sind die wesentlichen mathematischen Objekte, die in
 \section{Funktionsbegriff}
 
 \begin{definition}{Begriff der Funktion}{Function}
-    Eine \textbf{Funktion} $f$ ist eine eindeutige Abbildung beziehungsweise Zuordnung von Elementen einer Grundmenge $\mathbb{S}$ zu Elementen einer Bildmenge $\mathbb{C}$. Die Elemente der Grundmenge heißen \textbf{Argumente}, die Elemente der Bildmenge \textbf{Funktionswerte}. Eindeutigkeit meint hierbei, dass keinem Argument mehr als ein Funktionswert zugeordnet ist.
+    Eine \textbf{Funktion} $f$ ist eine eindeutige Abbildung beziehungsweise Zuordnung von Elementen einer Grundmenge $\mathcal{S}$ zu Elementen einer Bildmenge $\mathcal{C}$. Die Elemente der Grundmenge heißen \textbf{Argumente}, die Elemente der Bildmenge \textbf{Funktionswerte}. Eindeutigkeit meint hierbei, dass keinem Argument mehr als ein Funktionswert zugeordnet ist.
 
-    Wird jedem Argument ein Funktionswert zugeordnet, spricht man von einer \textbf{totalen Funktion}. Besteht die Zuordnung nur für manche Argumente, spricht man von einer \textbf{partiellen Funktion}. Die Menge $\mathbb{D} \subseteq \mathbb{S}$, für die ein Funktionswert erklärt ist, heißt Definitionsbereich.
+    Wird jedem Argument ein Funktionswert zugeordnet, spricht man von einer \textbf{totalen Funktion}. Besteht die Zuordnung nur für manche Argumente, spricht man von einer \textbf{partiellen Funktion}. Die Menge $\mathcal{D} \subseteq \mathcal{S}$, für die ein Funktionswert erklärt ist, heißt Definitionsbereich.
 
-    Man schreibt: $f: \mathbb{S} \to \mathbb{C}$.
+    Man schreibt: $f: \mathcal{S} \to \mathcal{C}$.
 \end{definition}
 
 Diese Definition macht noch keine Aussage darüber, von welcher Art die Elemente sind. Wählt man reelle Zahlen als Elemente, erhält man die aus der Schulmathematik bekannten reellwertige Funktion. Es können aber auch Abbildungen anderer Elemente betrachtet werden. Beispielsweise werden in der Booleschen Algebra logische Verknüpfungen (\emph{and}, \emph{or}) als Abbildung zwischen Wahrheitswerten (\emph{true}, \emph{false}) betrachtet. Der Differentialoperator ist eine Abbildung auf Funktionen, die einer Funktion ihre Ableitung zuweist.
@@ -17,16 +17,16 @@ Diese Definition macht noch keine Aussage darüber, von welcher Art die Elemente
 An dieser Stelle eine wichtige Anmerkung zum Funktionsbegriff. Der mathematische Funktionsbegriff darf nicht mit dem Funktionsbegriff in der Programmierung verwechselt werden. Eine mathematische Funktion ist deterministisch in dem Sinne, das der Rückgabewert vollständig vom Ein- oder Übergabewert abhängt. Dies ist in der Programmierung nicht üblich -- dort kann der Rückgabewert etwa auch von globalen Konstanten, Umgebungsvariablen, Input-Operationen oder bei Methoden in der objektorientierten Programmierung auch vom aktuellen Zustand des Objekt abhängen. Weiterhin sind mathematische Funktionen pur, sie liefern einen Wert zurück und machen sonst nichts. Andererseits können Funktionen in der Programmierung noch sogenannten \emph{Seiteneffekte} aufweisen, etwa das Senden eines \mention{Http}-Requests, das Modifizieren eines Zustands, oder das Schreiben von Log-Ausschriften. Ein Programmier-Paradigma, dass sich stark an mathematischen Funktionen anlehnt, ist die \emph{funktionale Programmierung}.
 
 \begin{example}{Definitionsbereich und Wertebereich}{DomainCodomain}
-    Durch die Zuweisung $x\mapsto\frac{1}{x}$ ist eine Abbildung $f: \R \to \R$ zwischen reellen Zahlen definiert. Für die Zahl $0$ ist keine Zuordnung möglich, da hier der Ausdruck $1/0$ nicht erklärt ist. Es handelt sich also um eine partielle Funktion mit dem Definitionsbereich $\mathbb{D} = \lbrace x \in \R | x \ne 0 \rbrace = \R \setminus \lbrace 0 \rbrace$. Außer der $0$ kann jeder Funktionswert angenommen werden, mithin lautet der Wertebereich ebenfalls $\mathbb{C} = \R \setminus \lbrace 0 \rbrace$.
+    Durch die Zuweisung $x\mapsto\frac{1}{x}$ ist eine Abbildung $f: \R \to \R$ zwischen reellen Zahlen definiert. Für die Zahl $0$ ist keine Zuordnung möglich, da hier der Ausdruck $1/0$ nicht erklärt ist. Es handelt sich also um eine partielle Funktion mit dem Definitionsbereich $\mathcal{D} = \lbrace x \in \R | x \ne 0 \rbrace = \R \setminus \lbrace 0 \rbrace$. Außer der $0$ kann jeder Funktionswert angenommen werden, mithin lautet der Wertebereich ebenfalls $\mathcal{C} = \R \setminus \lbrace 0 \rbrace$.
 \end{example}
 
 Eine wichtige Funktion ist die Identität, welche jedes Argument sich selbst zuordnet.
 
 \begin{definition}{Identitätsfunktion}{IdFun}
-    Sei $M$ eine Menge. Die Funktion $id_M: M \to M$ heißt \textbf{Identitätsfunktion} auf der Menge $M$ und ist gegeben durch $id_M: x \mapsto x$.
+    Sei $\mathcal{M}$ eine Menge. Die Funktion $id_\mathcal{M}: \mathcal{M} \to \mathcal{M}$ heißt \textbf{Identitätsfunktion} auf der Menge $\mathcal{M}$ und ist gegeben durch $id_\mathcal{M}: x \mapsto x$.
 \end{definition}
 
-Sie wird auch geschrieben als $\mathbbm{1}_M$ geschrieben, oder, wenn die Menge $M$ aus dem Kontext heraus bekannt ist, auch nur als $id$ beziehungsweise $\mathbbm{1}$.
+Sie wird auch geschrieben als $\mathbbm{1}_\mathcal{M}$ geschrieben, oder, wenn die Menge $\mathcal{M}$ aus dem Kontext heraus bekannt ist, auch nur als $id$ beziehungsweise $\mathbbm{1}$.
 
 Unabhängig der Art der Elemente besteht eine Möglichkeit zur Veranschaulichung von Funktionen in der Darstellung als Wertetafel oder Pfeildarstellung wie in Abbildung \ref{fig:FunAsArrows}. Links in der Abbildung ist eine Funktion $f: \N \to \N$ dargestellt, die jeder natürlichen Zahl ihre Quadratzahl zuweist. Rechts ist der boolesche Operator \emph{Exklusives Oder} abgebildet, der eine Funktion zwischen einem Paar von Wahrheitswerten zu einem Wahrheitswert ist.
 
@@ -245,27 +245,27 @@ Bisher haben wir Funktionen nur als allgemeine Zuordnung von Elemente einer Meng
 Mittels einer Funktionsgleichung lässt sich berechnen, welcher Funktionswert zu einem Argument gehört. Für die Praxis ist es oft auch relevant, zu einem gegebenen Funktionswert das zugehörige Argument zu berechnen. In der Analyse von radioaktiven Zerfällen kann man sich etwa fragen, wie lange man warten muss, bis die Strahlungsdosis auf die Hälfte oder auf ein Drittel abgefallen ist. Mathematisch entspricht dies der Umkehrfunktion, welche eine Abbildung von den Funktionswerten zu den Argumenten vermittelt. Nun ist es so, dass nicht jede Funktion umkehrbar ist. Um beschreiben zu können, wann dies möglich ist, müssen wir zuerst die Begriffe \emph{Injektivität} und \emph{Surjektivität} einer Funktion definieren. Dies werden wir allgemeingültig für alle Funktionen tun, nicht nur für reellwertige oder einstellige Funktionen.
 
 \begin{definition}{Injektivität einer Funktion}{Injective}
-    Sei $f: \mathbb{S} \to \mathbb{C}$ eine Funktion mit Grundmenge $\mathbb{S}$ und Zielmenge $\mathbb{C}$. $f$ heißt \textbf{injektiv}, wenn eine Funktion $g: \mathbb{C} \to \mathbb{S}$ existiert mit der Eigenschaft:
+    Sei $f: \mathcal{S} \to \mathcal{C}$ eine Funktion mit Grundmenge $\mathcal{S}$ und Zielmenge $\mathcal{C}$. $f$ heißt \textbf{injektiv}, wenn eine Funktion $g: \mathcal{C} \to \mathcal{S}$ existiert mit der Eigenschaft:
     $$
-    g \circ f = \mathbbm{1}_\mathbb{S}
+    g \circ f = \mathbbm{1}_S
     $$
-    Äquivalent dazu ist die Forderung, dass kein Funktionswert doppelt angenommen wird, sich also gleiche Funktionswerte nur aus gleichen Argumenten ergeben: $\forall x_1,x_2\in\mathbb{S}: f(x_1)=f(x_2) \implies x_1=x_2$.
+    Äquivalent dazu ist die Forderung, dass kein Funktionswert doppelt angenommen wird, sich also gleiche Funktionswerte nur aus gleichen Argumenten ergeben: $\forall x_1,x_2\in\mathcal{S}: f(x_1)=f(x_2) \implies x_1=x_2$.
 \end{definition}
 
 \begin{definition}{Surjektivität einer Funktion}{Surjective}
-    Sei $f: \mathbb{S} \to \mathbb{C}$ eine Funktion mit Grundmenge $\mathbb{S}$ und Zielmenge $\mathbb{C}$. $f$ heißt \textbf{surjektiv}, wenn eine Funktion $g: \mathbb{C} \to \mathbb{S}$ existiert mit der Eigenschaft:
+    Sei $f: \mathcal{S} \to \mathcal{C}$ eine Funktion mit Grundmenge $\mathcal{S}$ und Zielmenge $\mathcal{C}$. $f$ heißt \textbf{surjektiv}, wenn eine Funktion $g: \mathcal{C} \to \mathcal{S}$ existiert mit der Eigenschaft:
     $$
-    f \circ g = \mathbbm{1}_\mathbb{C}
+    f \circ g = \mathbbm{1}_C
     $$
-    Äquivalent dazu ist die Forderung, dass jeder Funktionswert wenigstens einem Argument zugeordnet ist, dass also $f(\mathbb{S}) = \mathbb{C}$ gilt. Dabei bezeichnet $f(\mathbb{S})$ die Menge aller Elemente, die man erhält wenn man auf jedes Argument die Funktion anwendet.
+    Äquivalent dazu ist die Forderung, dass jeder Funktionswert wenigstens einem Argument zugeordnet ist, dass also $f(\mathcal{S}) = \mathcal{C}$ gilt. Dabei bezeichnet $f(\mathcal{S})$ die Menge aller Elemente, die man erhält wenn man auf jedes Argument die Funktion anwendet.
 \end{definition}
 
 Anhand dieser beiden Definitionen können wir nun ein Kriterium dafür angeben, wann die Umkehrfunktion zu einer Funktion existiert.
 
 \begin{statement}{Umkehrbarkeit einer Funktion}{InverseFun}
-    Sei $f: \mathbb{S} \to \mathbb{C}$ eine Funktion mit Grundmenge $\mathbb{S}$ und Zielmenge $\mathbb{C}$. $f$ heißt \textbf{bijektiv}, wenn $f$ sowohl injektiv als auch surjektiv ist. Dann existiert genau eine Funktion $f^{-1}: \mathbb{C} \to \mathbb{S}$, welche die Bedingungen für Injektivität und Surjektivität erfüllt:
+    Sei $f: \mathcal{S} \to \mathcal{C}$ eine Funktion mit Grundmenge $\mathcal{S}$ und Zielmenge $\mathcal{C}$. $f$ heißt \textbf{bijektiv}, wenn $f$ sowohl injektiv als auch surjektiv ist. Dann existiert genau eine Funktion $f^{-1}: \mathcal{C} \to \mathcal{S}$, welche die Bedingungen für Injektivität und Surjektivität erfüllt:
     $$
-    f^{-1} \circ f = \mathbbm{1}_\mathbb{S}, f \circ f^{-1} = \mathbbm{1}_\mathbb{C}
+    f^{-1} \circ f = \mathbbm{1}_S, f \circ f^{-1} = \mathbbm{1}_C
     $$
     Es heißt dann $f^{-1}$ die \textbf{Umkehrfunktion} zu $f$.
 \end{statement}
@@ -356,7 +356,7 @@ Man beachte hierbei, dass die Wahl der Begriffe \emph{achsensymmetrisch} und \em
 Von besonderer Bedeutung sind diese beiden Symmetrieeigenschaften, da sich alle Funktionen, sofern sie denn für positive und negative Argumente überhaupt definiert sind, zerlegen lassen in die Summe aus einem geraden und einem ungerade Anteil.
 
 \begin{statement}{Gerader und ungerader Anteil einer Funktion}{SplitEvenOddFun}
-    Sei $f: \R \to \R$ eine einstellige reellwertige Funktion mit einem Definitionsbereich $\mathbb{D}$ derart, dass $x\in\mathbb{D} \iff -x\in\mathbb{D}$ gilt, also zu jedem Argument auch sein Negiertes zum Definitionsbereich gehört. Seien weiterhin $e$ und $o$ wie folgt definierte Funktionen:
+    Sei $f: \R \to \R$ eine einstellige reellwertige Funktion mit einem Definitionsbereich $\mathcal{D}$ derart, dass $x\in\mathcal{D} \iff -x\in\mathcal{D}$ gilt, also zu jedem Argument auch sein Negiertes zum Definitionsbereich gehört. Seien weiterhin $e$ und $o$ wie folgt definierte Funktionen:
 
     \begin{alignat*}{1}
         e(x) &= \frac{f(x) + f(-x)}{2} \\
@@ -377,9 +377,9 @@ Dass die Funktionen $e$ und $o$ gerade beziehungsweise ungerade sind, zeigt man 
 Die Periodizität ist eine Eigenschaft von periodischen Funktionen, deren Funktionswerte sich nach einer bestimmten Periode immer wiederholen. Die Sinus- und Kosinusfunktionen sind ein bekanntes Beispiel für periodische Funktionen.
 
 \begin{definition}{Periode einer einstelligen Funktion}{PeriodUnivarFun}
-    Sei $f: \R \to \R$ eine einstellige reellwertige Funktion mit Definitionsbereich $\mathbb{D}$. $f$ heißt \textbf{periodisch}, wenn es eine reelle Zahl $p>0$ derart gibt, dass gilt:
+    Sei $f: \R \to \R$ eine einstellige reellwertige Funktion mit Definitionsbereich $\mathcal{D}$. $f$ heißt \textbf{periodisch}, wenn es eine reelle Zahl $p>0$ derart gibt, dass gilt:
     $$
-        \forall x \in \mathbb{D}: f(x) = f(x+p)
+        \forall x \in \mathcal{D}: f(x) = f(x+p)
     $$
     Jede solche Zahl $p$ heißt dann \textbf{Periode}. Die kleinste solche Zahl $p$ nennt man \textbf{primitive Periode} der Funktion.
 \end{definition}
@@ -398,7 +398,7 @@ Aus dieser Definition erkennt man sofort, dass wenn $p$ eine Periode der Funktio
 In der Analysis wollen wir Funktionen mittels der Infinitesimalrechnung analysieren. Eine wesentliche Voraussetzung dafür ist, dass eine Funktion ausreichend "glatt" verläuft und ihre Funktionswerte nicht plötzlich springen. Graphisch kann man sich dies so vorstellen, dass man den Graphen der Funktion zeichnen kann, ohne den Stift absetzen zu müssen. Diese Eigenschaft, welche eine solche Funktionen erfüllen muss, nennt man die \emph{Stetigkeit}. Um diese mathematisch fassen zu können, benötigen wir erneut den Begriff der Grenzwertbildung für mehrstellige Funktonen, den wir bereits in \ref{def:LimFun} kennengelernt haben.
 
 \begin{definition}{Stetigkeit einer reellwertigen Funktion}{ContFun}
-    Sei $f: \R^n \to \R$ eine $n$-stellige, reellwertige Funktion mit Definitionsbereich $\mathbb{D}$. $f$ heißt \textbf{stetig} an der Stelle $x_0\in\mathbb{D}$, wenn der Grenzwert für diese Stelle existiert und dem dem Funktionswert gleich ist, also gilt:
+    Sei $f: \R^n \to \R$ eine $n$-stellige, reellwertige Funktion mit Definitionsbereich $\mathcal{D}$. $f$ heißt \textbf{stetig} an der Stelle $x_0\in\mathcal{D}$, wenn der Grenzwert für diese Stelle existiert und dem dem Funktionswert gleich ist, also gilt:
     $$
         \lim\limits_{x_0\to x} f(x) = f(x_0)
     $$
@@ -408,14 +408,14 @@ In der Analysis wollen wir Funktionen mittels der Infinitesimalrechnung analysie
 Im engen Zusammenhang mit der Stetigkeit steht die sogenannte stetige Ergänzung einer Funktion. Manche Funktionen sind aufgrund ihrer Struktur (Quotient) für einen einzelne Stelle (Definitionslücke) nicht erklärt. Dennoch kann es vorkommen, dass die Funktionen für alle Argumente in der Nähe der Definitionslücke Funktionswerte besitzt, die nahe beieinander liegen. Man kann dann die Definitionslücke schließen, in dem man als Funktionswert für diese Stelle den Grenzwert nimmt.
 
 \begin{definition}{Stetige Ergänzung einer Funktion}{ContinousContinuation}
-    Sei $f: \R^n\to\R$ eine mehrstellige Funktion mit Definitionsbereich $\mathbb{D}\subseteq\R^n$ und $x_0\notin\mathbb{D}$ eine Stelle außerhalb des Definitionsbereichs (\textbf{Definitionslücke}). Falls der Grenzwert $\lim\limits_{x\to x_0} = \alpha$ existiert, heißt die Funktion $\bar{f}$, welche durch Hinzunahme des Grenzwert aus $f$ entsteht, die \textbf{stetige Ergänzung} von $f$:
+    Sei $f: \R^n\to\R$ eine mehrstellige Funktion mit Definitionsbereich $\mathcal{D}\subseteq\R^n$ und $x_0\notin\mathcal{D}$ eine Stelle außerhalb des Definitionsbereichs (\textbf{Definitionslücke}). Falls der Grenzwert $\lim\limits_{x\to x_0} = \alpha$ existiert, heißt die Funktion $\bar{f}$, welche durch Hinzunahme des Grenzwert aus $f$ entsteht, die \textbf{stetige Ergänzung} von $f$:
     $$
         \bar{f}: x \to \begin{cases}
-            f(x) & , x \in \mathbb{D} \\
+            f(x) & , x \in \mathcal{D} \\
             \alpha & , x = x_0
         \end{cases}
     $$
-    $\bar{f}$ hat somit nun den Definitionsbereich $\mathbb{D} \cup \lbrace x_0 \rbrace$.
+    $\bar{f}$ hat somit nun den Definitionsbereich $\mathcal{D} \cup \lbrace x_0 \rbrace$.
 \end{definition}
 
 \begin{example}{Untersuchen der Stetigkeit einstelliger Funktionen}{ExamContUnivarFun}
@@ -442,13 +442,13 @@ In Abbildung \ref{fig:NonContFun} sind zwei unstetige Funktionen abgebildet. Bei
 Es gibt einige Punkte und Stellen von Funktionen, die von besonderem Interesse sind:
 
 \begin{definition}{Besondere Stellen einer reellwertigen Funktion}{SpecValues}
-    Sei $f: \R^n\to\R$ eine Funktion mit Definitionsbereich $\mathbb{D}$. Dann heißt
+    Sei $f: \R^n\to\R$ eine Funktion mit Definitionsbereich $\mathcal{D}$. Dann heißt
     \begin{itemize}
-        \item $x_0\in\mathbb{D}$ eine \textbf{Nullstelle}, wenn gilt $f(x_0) = 0$.
+        \item $x_0\in\mathcal{D}$ eine \textbf{Nullstelle}, wenn gilt $f(x_0) = 0$.
         \item $(0, f(0))$ der \textbf{y-Achsenschnittpunkt}, falls $0$ zum Definitionsbereich gehört.
         \item $x_0$ eine \textbf{hebbare Definitionslücke}, wenn $f$ bei $x_0$ stetig ergänzt werden kann.
         \item $x_0$ eine \textbf{Sprungstelle}, wenn $f$ bei $x_0$ nicht stetig ergänzt werden kann.
-        \item $x_0 \notin \mathbb{D}$ eine \textbf{Polstelle}, wenn der links- oder rechtsseitige Grenzwert bestimmt divergent ist.
+        \item $x_0 \notin \mathcal{D}$ eine \textbf{Polstelle}, wenn der links- oder rechtsseitige Grenzwert bestimmt divergent ist.
     \end{itemize}
 \end{definition}
 
@@ -481,7 +481,7 @@ Ein Beispiel für eine hebbare Definitionslücke und eine Sprungstelle ist berei
 In der Praxis ist es oft von Bedeutung, herauszufinden, wann eine abhängige Größe ihren kleinsten oder größten Wert annimmt. Etwa will man die zu produzierende Stückzahl bestimmen, wo der zu erwartende Gewinn maximiert ist. Bei der Herstellung von Cola-Dosen will man diese so dimensionieren, dass das Verhältnis von Oberfläche zu Volumen besonders klein ist, damit man möglichst wenig Material verbraucht.
 
 \begin{definition}{Extremstelle einer reellwertigen Funktion}{ExtrFun}
-    Sei $f: \R^n \to \R$ eine $n$-stellige reellwertige Funktion. Eine Stelle $x_0\in\mathbb{D}$ heißt ein \textbf{globales Maximum} (\textbf{globales Minimum}) von $f$ bezüglich einer Menge $M\subset\mathbb{D}$, falls der Funktionswert an dieser Stelle kleiner oder gleich (größer oder gleich) aller Funktionswerte in $M$ ist:
+    Sei $f: \R^n \to \R$ eine $n$-stellige reellwertige Funktion. Eine Stelle $x_0\in\mathcal{D}$ heißt ein \textbf{globales Maximum} (\textbf{globales Minimum}) von $f$ bezüglich einer Menge $M\subset\mathcal{D}$, falls der Funktionswert an dieser Stelle kleiner oder gleich (größer oder gleich) aller Funktionswerte in $M$ ist:
     $$
 		\forall x \in M: f(x) \le f(x_0)
 	$$
@@ -498,7 +498,7 @@ In der Praxis ist es oft von Bedeutung, herauszufinden, wann eine abhängige Gr�
     $$
 \end{definition}
 
-Diese Definition ist in Abbildung \ref{fig:ExtrValFun} veranschaulicht. Dort ist eine Funktion $f$ mit Definitionsbereich $\mathbb{D} = [-4.5, 4.5]$ dargestellt. Bei den Stellen \circled{1} und \circled{5} handelt es sich um globale Minima, denn im gesamten Definitionsbereich $[-4.5,4.5]$ gibt es keinen kleineren Funktionswert. Analog dazu handelt es sich bei den Stellen \circled{2} und \circled{4} um globale Maxima, denn im gesamten Definitionsbereich $[-4.5,4.5]$ gibt es keinen größeren Funktionswert. Die Stelle \circled{3} ist keine globale Extremstelle, denn im Definitionsbereich existieren sowohl kleinere als auch größere Funktionswerte. Allerdings handelt es sich um ein lokales Minimum, denn der Funktionswert ist etwa in der offenen Umgebung $(-1:1)$ der kleinste. Schließlich sind die mit \circled{x} markierten Stellen bei $x=\pm 2$ gar keine Extremstellen, denn in jeder noch so kleinen Umgebung um $2$ beziehungsweise $-2$ gibt es sowohl größere als auch kleinere Funktionswerte.
+Diese Definition ist in Abbildung \ref{fig:ExtrValFun} veranschaulicht. Dort ist eine Funktion $f$ mit Definitionsbereich $\mathcal{D} = [-4.5, 4.5]$ dargestellt. Bei den Stellen \circled{1} und \circled{5} handelt es sich um globale Minima, denn im gesamten Definitionsbereich $[-4.5,4.5]$ gibt es keinen kleineren Funktionswert. Analog dazu handelt es sich bei den Stellen \circled{2} und \circled{4} um globale Maxima, denn im gesamten Definitionsbereich $[-4.5,4.5]$ gibt es keinen größeren Funktionswert. Die Stelle \circled{3} ist keine globale Extremstelle, denn im Definitionsbereich existieren sowohl kleinere als auch größere Funktionswerte. Allerdings handelt es sich um ein lokales Minimum, denn der Funktionswert ist etwa in der offenen Umgebung $(-1:1)$ der kleinste. Schließlich sind die mit \circled{x} markierten Stellen bei $x=\pm 2$ gar keine Extremstellen, denn in jeder noch so kleinen Umgebung um $2$ beziehungsweise $-2$ gibt es sowohl größere als auch kleinere Funktionswerte.
 
 \begin{figure}
     \centering
