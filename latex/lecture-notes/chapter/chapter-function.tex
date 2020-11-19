@@ -245,27 +245,27 @@ Bisher haben wir Funktionen nur als allgemeine Zuordnung von Elemente einer Meng
 Mittels einer Funktionsgleichung lässt sich berechnen, welcher Funktionswert zu einem Argument gehört. Für die Praxis ist es oft auch relevant, zu einem gegebenen Funktionswert das zugehörige Argument zu berechnen. In der Analyse von radioaktiven Zerfällen kann man sich etwa fragen, wie lange man warten muss, bis die Strahlungsdosis auf die Hälfte oder auf ein Drittel abgefallen ist. Mathematisch entspricht dies der Umkehrfunktion, welche eine Abbildung von den Funktionswerten zu den Argumenten vermittelt. Nun ist es so, dass nicht jede Funktion umkehrbar ist. Um beschreiben zu können, wann dies möglich ist, müssen wir zuerst die Begriffe \emph{Injektivität} und \emph{Surjektivität} einer Funktion definieren. Dies werden wir allgemeingültig für alle Funktionen tun, nicht nur für reellwertige oder einstellige Funktionen.
 
 \begin{definition}{Injektivität einer Funktion}{Injective}
-    Sei $f: \mathbb{D} \to \mathbb{C}$ eine Funktion mit Definitionsbereich $\mathbb{D}$ und Wertebereich $\mathbb{C}$. $f$ heißt \textbf{injektiv}, wenn eine Funktion $g: \mathbb{C} \to \mathbb{D}$ existiert mit der Eigenschaft:
+    Sei $f: \mathbb{S} \to \mathbb{C}$ eine Funktion mit Grundmenge $\mathbb{S}$ und Zielmenge $\mathbb{C}$. $f$ heißt \textbf{injektiv}, wenn eine Funktion $g: \mathbb{C} \to \mathbb{S}$ existiert mit der Eigenschaft:
     $$
-    g \circ f = \mathbbm{1}_\mathbb{D}
+    g \circ f = \mathbbm{1}_\mathbb{S}
     $$
-    Äquivalent dazu ist die Forderung, dass kein Funktionswert doppelt angenommen wird, sich also gleiche Funktionswerte nur aus gleichen Argumenten ergeben: $\forall x_1,x_2\in\mathbb{D}: f(x_1)=f(x_2) \implies x_1=x_2$.
+    Äquivalent dazu ist die Forderung, dass kein Funktionswert doppelt angenommen wird, sich also gleiche Funktionswerte nur aus gleichen Argumenten ergeben: $\forall x_1,x_2\in\mathbb{S}: f(x_1)=f(x_2) \implies x_1=x_2$.
 \end{definition}
 
 \begin{definition}{Surjektivität einer Funktion}{Surjective}
-    Sei $f: \mathbb{D} \to \mathbb{C}$ eine Funktion mit Definitionsbereich $\mathbb{D}$ und Wertebereich $\mathbb{C}$. $f$ heißt \textbf{surjektiv}, wenn eine Funktion $g: \mathbb{C} \to \mathbb{D}$ existiert mit der Eigenschaft:
+    Sei $f: \mathbb{S} \to \mathbb{C}$ eine Funktion mit Grundmenge $\mathbb{S}$ und Zielmenge $\mathbb{C}$. $f$ heißt \textbf{surjektiv}, wenn eine Funktion $g: \mathbb{C} \to \mathbb{S}$ existiert mit der Eigenschaft:
     $$
     f \circ g = \mathbbm{1}_\mathbb{C}
     $$
-    Äquivalent dazu ist die Forderung, dass jeder Funktionswert wenigstens einem Argument zugeordnet ist, dass also $f(\mathbb{D}) = \mathbb{C}$ gilt. Dabei bezeichnet $f(\mathbb{D})$ die Menge aller Elemente, die man erhält wenn man auf jedes Argument die Funktion anwendet.
+    Äquivalent dazu ist die Forderung, dass jeder Funktionswert wenigstens einem Argument zugeordnet ist, dass also $f(\mathbb{S}) = \mathbb{C}$ gilt. Dabei bezeichnet $f(\mathbb{S})$ die Menge aller Elemente, die man erhält wenn man auf jedes Argument die Funktion anwendet.
 \end{definition}
 
 Anhand dieser beiden Definitionen können wir nun ein Kriterium dafür angeben, wann die Umkehrfunktion zu einer Funktion existiert.
 
 \begin{statement}{Umkehrbarkeit einer Funktion}{InverseFun}
-    Sei $f: \mathbb{D} \to \mathbb{C}$ eine Funktion mit Definitionsbereich $\mathbb{D}$ und Wertebereich $\mathbb{C}$. $f$ heißt \textbf{bijektiv}, wenn $f$ sowohl injektiv als auch surjektiv ist. Dann existiert genau eine Funktion $f^{-1}: \mathbb{C} \to \mathbb{D}$, welche die Bedingungen für Injektivität und Surjektivität erfüllt:
+    Sei $f: \mathbb{S} \to \mathbb{C}$ eine Funktion mit Grundmenge $\mathbb{S}$ und Zielmenge $\mathbb{C}$. $f$ heißt \textbf{bijektiv}, wenn $f$ sowohl injektiv als auch surjektiv ist. Dann existiert genau eine Funktion $f^{-1}: \mathbb{C} \to \mathbb{S}$, welche die Bedingungen für Injektivität und Surjektivität erfüllt:
     $$
-    f^{-1} \circ f = \mathbbm{1}_\mathbb{D}, f \circ f^{-1} = \mathbbm{1}_\mathbb{C}
+    f^{-1} \circ f = \mathbbm{1}_\mathbb{S}, f \circ f^{-1} = \mathbbm{1}_\mathbb{C}
     $$
     Es heißt dann $f^{-1}$ die \textbf{Umkehrfunktion} zu $f$.
 \end{statement}
@@ -446,8 +446,8 @@ Es gibt einige Punkte und Stellen von Funktionen, die von besonderem Interesse s
     \begin{itemize}
         \item $x_0\in\mathbb{D}$ eine \textbf{Nullstelle}, wenn gilt $f(x_0) = 0$.
         \item $(0, f(0))$ der \textbf{y-Achsenschnittpunkt}, falls $0$ zum Definitionsbereich gehört.
-        \item $x_0 \in\mathbb{D}$ eine \textbf{hebbare Definitionslücke}, wenn $f$ stetig ist in $x_0$.
-        \item $x_0 \in\mathbb{D}$ eine \textbf{Sprungstelle}, wenn $f$ nicht stetig ist in $x_0$.
+        \item $x_0$ eine \textbf{hebbare Definitionslücke}, wenn $f$ bei $x_0$ stetig ergänzt werden kann.
+        \item $x_0$ eine \textbf{Sprungstelle}, wenn $f$ bei $x_0$ nicht stetig ergänzt werden kann.
         \item $x_0 \notin \mathbb{D}$ eine \textbf{Polstelle}, wenn der links- oder rechtsseitige Grenzwert bestimmt divergent ist.
     \end{itemize}
 \end{definition}
