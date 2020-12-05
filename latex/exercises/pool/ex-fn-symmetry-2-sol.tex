@@ -6,7 +6,7 @@
 	\implies e^x (1-e^{-x-y}) &> e^y (1-e^{-x-y}) \\
 	\implies e^x-e^{-y} &> e^y - e^{-x} \\
 	\implies e^x + e^{-x} &> e^y + e^{-y} \\
-	\implies \cosh(x) &> cosh(y)
+	\implies \cosh(x) &> \cosh(y)
 \end{alignat*}
 
 Der Übergang von der zweiten zur dritten Zeile ist korrekt, das Vorzeichen dreht sich nicht um, da $-x-y<0$ und damit $e^{-x-y} < 1$ , also $1-e^{-x-y} > 0$ ist.
@@ -25,7 +25,21 @@ Die Umkehrfunktion finden wir durch Umstellen:
 	 e^x &= y \pm \sqrt{y^2-1} \\
 \end{alignat*}
 
-Nun ist $y^2-1 < y^2$ und damit $\sqrt{y^2-1} < \sqrt{y^2}$. Für $y \in [1,\infty]$ gilt damit besonders $\sqrt{y^2-1} < y$, also ist $y - \sqrt{y^2-1} < 0$. Da aber $x \in [0, \infty)$ gelten soll, ist nur die zweite Lösung möglich und wir erhalten für die Umkehrfunktion:
+Jetzt ist die Frage, welche dieser beiden Lösungen die richtige ist.
+
+Es ist $y^2-1 < y^2$ und damit $\sqrt{y^2-1} < \sqrt{y^2}$. Für $y \in [1,\infty]$ gilt damit besonders $\sqrt{y^2-1} < y$, also ist $y - \sqrt{y^2-1} > 0$. Weiterhin muss $x$ im Intervall $x \in [0, \infty)$ liegen. Das ist aber nur für die zweite Lösung mit $y+\dots$ möglich, für $y \ge 1$ gilt $y - \sqrt{y^2-1} \le 1$ (siehe unten). Dann wäre aber $e^x \le 1$ und $y\le 0$, was nicht im erlaubten Intervall für $y$ liegt.
+
+\begin{alignat*}{2}
+              & y - \sqrt{y^2-1} \le  1 \\
+	\iff & y-1  \le   \sqrt{y^2-1} \\
+	\iff & (y-1)^2  \le   y^2-1 \\
+	\iff & y^2-2y+1  \le   y^2-1 \\
+	\iff & -2y  \le   -2 \\
+	\iff & 2y  \ge   2 \\
+	\iff & y  \ge   1 \\
+\end{alignat*}
+
+Somit erhalten wir für die Umkehrfunktion:
 
 $$
 	\cosh^{-1}(y) = \ln(y + \sqrt{y^2-1})
