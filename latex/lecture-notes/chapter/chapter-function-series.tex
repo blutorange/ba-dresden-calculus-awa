@@ -9,7 +9,7 @@ Wir nähern uns dem Begriff der Funktionsreihen, indem wir zuerst endliche Reihe
 \begin{definition}{Endliche Funktionsreihe}{FunSum}
     Sei $f_n: \R \to \R, n\in\N$  eine Folge von Funktionen, welche alle den Definitionsbereich $\mathcal{D}$ besitzen. Dann versteht man unter der zugehörigen \textbf{endlichen Funktionsreihe} (Partialsummen) $F_n$ die Folge von Funktionen, welche durch Summation der ersten $n+1$-Glieder entsteht:
     $$
-        F_n(x) = \sum\limits_{i=0}^n f_(x)
+        F_n(x) = \sum\limits_{i=0}^n f_{i}(x)
     $$
     Alle Glieder $F_n$ der Funktionsreihe haben den gleichen Definitionsbereich $\mathcal{D}$.
 \end{definition}
@@ -41,7 +41,7 @@ In der praktischen Berechnung wird als Approximation statt der Grenzfunktion man
 Ein Beispiel für eine solche Funktionsreihe haben wir bereits im Kapitel zu Funktionen anhand der \emph{Blancmange-Funktion} gesehen. Diese stellte eine Beispiel für eine stetige, aber nirgends differenzierbare Funktion dar und ist in Abbildung \ref{fig:BlancmangeFunction} dargestellt.
 
 \begin{example}{Funktionsreihe und Grenzfunktion}{FunSumAndLim}
-    Durch $f_n(x) = x^2 (1-x^2)^n$ ist für jedes $n=0,1,2,\dots$ eine Funktion im Intervall $[-1,1]$ gegeben. Durch Summation erhalten wir die Partialsummen $F_n(x) = \sum\limits_{i=0}^n x^2 (1-x^2)^i$. Die ersten Glieder lauten demnach
+    Durch $f_{n}(x) = x^2 (1-x^2)^n$ ist für jedes $n=0,1,2,\dots$ eine Funktion im Intervall $[-1,1]$ gegeben. Durch Summation erhalten wir die Partialsummen $F_n(x) = \sum\limits_{i=0}^n x^2 (1-x^2)^i$. Die ersten Glieder lauten demnach
     \begin{alignat*}{1}
         F_0(x) &= x^2 \\
         F_1(x) &= x^2 + x^2 (1-x^2) = x^2 (2-x^2) \\
@@ -49,7 +49,9 @@ Ein Beispiel für eine solche Funktionsreihe haben wir bereits im Kapitel zu Fun
     \end{alignat*}
     Um nun die Grenzfunktion zu erhalten, müssen wir für einen festen Wert $x$ den Grenzübergang $n \to \infty$ durchführen. Wenn wir den Funktionsterm $F_n$ genauer anschauen, stellen wir fest, dass es sich für ein festes $x$ um eine geometrische Reihe mit $p=x^2$ und $q=(1-x^2)$ handelt. Wir wissen, dass diese für $|q|=|1-x^2|<1$ konvergiert, also für $x \in [-1,1]$. Für $x=0$ ergibt sich $q=1$, doch da dann auch $p=0$ ist, konvergiert die Reihe für $x=0$ ebenfalls. Somit lautet der Konvergenzbereich der Funktionsreihe $\mathcal{K} = [-1,1]$ und der Grenzwert ergibt sich zu:
     $$
-        \lim\limits_{n\to\infty} \sum\limits_{i=0}^n x^2 (1-x^2)^i = \frac{p}{1-q} = \frac{x^2}{1-(1-x^2)} = 1
+        \lim\limits_{n\to\infty} \sum\limits_{i=0}^n x^2 (1-x^2)^i = \frac{p}{1-q} = \frac{x^2}{1-(1-x^2)} = \begin{cases}
+          1, x \ne 0 \\ 0, x = 0
+        \end{cases}
     $$
     Der Graph für einige Glieder dieser Funktionsreihe findet sich in Abbildung \ref{fig:ExFunSum}. Das Restglied ist ein Maß dafür, wie nah die Partialsummen $F_n$ an der Grenzfunktion $F(x) = 1$ liegen, dies ist in Abbildung \ref{fig:ExFunErrTerm} illustriert.
 \end{example}
@@ -178,14 +180,14 @@ Also lautet der zweite Koeffizient $a_1 = f'(0)$ Durch erneutes Ableiten ergeben
     f'''(0) &= 6 a_3
 \end{alignat*}
 
-Spätestens erkennen wir ein Muster. Der Koeffizient $a_n$ ergibt sich immer als Wert der $n$-ten Ableitung von $f$ an der Stelle $0$, geteilt durch $n!$ (welches sich durch $n$-faches Ableiten des Monoms $x^n$ ergibt).
+Spätestens jetzt erkennen wir ein Muster. Der Koeffizient $a_n$ ergibt sich immer als Wert der $n$-ten Ableitung von $f$ an der Stelle $0$, geteilt durch $n!$ (welches sich durch $n$-faches Ableiten des Monoms $x^n$ ergibt).
 
 Nun sind wir bisher immer von einer Potenzreihe ausgegangen, welche um die Stelle $0$ zentriert war. Aus dem vorigen Abschnitt zu Funktionen wissen wir aber, dass wir Funktionen entlang der x-Achse um $x_0$ verschieben können, in wir das Argument durch $x \to x-x_0$ ersetzen. Damit ergibt sich die allgemeine Form der Taylor-Entwicklung:
 
 \begin{definition}{Taylor-Reihe}{TaylorExpansion}
     Die durch eine Funktion $f$ an der \textbf{Entwicklungsstelle} $x_0$ erzeugte \textbf{Taylor-Reihe} vom \textbf{Grad n} ist gegeben durch:
     $$
-        f(x) = \underbrace{\sum\limits_{i=0}^n \frac{f^{(n)}(x_0)}{n!} (x-x_0)^n}_{\text{Taylor-Reihe}} + \underbrace{R_n(x)}_{\text{Restglied}}
+        f(x) = \underbrace{\sum\limits_{i=0}^n \frac{f^{(i)}(x_0)}{i!} (x-x_0)^i}_{\text{Taylor-Reihe}} + \underbrace{R_n(x)}_{\text{Restglied}}
     $$
     Konvergiert das Restglied gegen $0$, dann hat die Taylor-Reihe $f$ als Grenzfunktion. Man sagt dann, die Funktion $f$ sei in eine Taylor-Reihe oder Potenzreihe entwickelbar.
 \end{definition}
@@ -420,7 +422,7 @@ Mithilfe dieser Fourier-Reihe können wir ein Signal nehmen und es in die Freque
 Nun ist es im Gegensatz zu Potenzreihen nicht so, dass die trigonometrische Reihe immer gleichmäßig konvergiert. Es gilt allerdings, dass wenn die Fourier-Reihe einer Funktion $f$ gleichmäßig konvergent ist, dass sie dann auch $f$ als Grenzfunktion hat, das Restglied also verschwindet. Diese Bedingung ist eine hinreichende, jedoch keine notwendige. Eine für die Praxis meist bessere Bedingung gibt der folgende Satz:
 
 \begin{statement}{Dirichletsche Bedingung}{DirchCondFourier}
-    Sei $f$ ein beschränkte, periodische Funktion mit der Periode $T$ und definiert im Intervall $[0,T)$. Wenn sich das Intervall $(0,2\pi)$ zerlegen lässt in endlich viele Teilintervalle, in derem jeden die Funktion $f$ stetig und monoton ist, so konvergiert die durch die Funktion $f$ erzeugte Fourier-Reihe für jede Stetigkeitsstelle $x_0$ gegen den Funktionswert $f(x_0)$ und für jede Sprungstelle $x_S$ gegen das arithmetische Mittel aus links- und rechtsseitigen Grenzwert $\frac{1}{2} \cdot \left(\lim\limits_{x\to x_S^-} + \lim\limits_{x\to x_S^+}\right)$.
+    Sei $f$ ein beschränkte, periodische Funktion mit der Periode $T$ und definiert im Intervall $[0,T)$. Wenn sich das Intervall $[0,T)$ zerlegen lässt in endlich viele Teilintervalle, in derem jeden die Funktion $f$ stetig und monoton ist, so konvergiert die durch die Funktion $f$ erzeugte Fourier-Reihe für jede Stetigkeitsstelle $x_0$ gegen den Funktionswert $f(x_0)$ und für jede Sprungstelle $x_S$ gegen das arithmetische Mittel aus links- und rechtsseitigen Grenzwert $\frac{1}{2} \cdot \left(\lim\limits_{x\to x_S^-} + \lim\limits_{x\to x_S^+}\right)$.
 \end{statement}
 
 Das heißt also, dass wir im Gegensatz zur Taylor-Entwicklung mit der Fourier-Entwicklung auch unstetige Funktionen darstellen können. Beispielsweise werden in der Tontechnik und Elektrotechnik Rechteckimpulse verwendet, der dadurch gekennzeichnet ist, dass er innerhalb eines Intervalls den Wert $1$ und außerhalb davon den Wert $0$ besitzt. An der Grenze liegt also eine Sprungstelle vor. Dennoch kann man eine Fourier-Entwicklung durchführen und die Frequenzen des Rechteckimpulses ermitteln. In Abbildung \ref{fig:ExFourierDirichlet} ist dies am Beispiel einer Funktion mit mehreren Unstetigkeitsstellen dargestellt.

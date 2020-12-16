@@ -29,6 +29,16 @@ undefined;
 undefined;
 
 /**
+ * @typedef {{time: Interval, position: Interval, velocity: Interval}} Bounds
+ */
+undefined;
+
+/**
+ * @typedef {{min: number, max: number}} Interval
+ */
+undefined;
+
+/**
  * @param {PendulumConfig} config
  * @return {PendulumDataPoint[]}
  */
@@ -51,6 +61,34 @@ function simulatePendulum(config) {
     });
   }
   return result;
+}
+
+/**
+ * @template T
+ * @param {T[]} data
+ * @param {(datum: T) => number} mapper
+ * @return {Interval}
+ */
+function minMax(data, mapper) {
+  /** @type {Interval} */
+  const result = {max: mapper(data[0]), min: mapper(data[0])};
+  for (const datum of data) {
+    result.max = Math.max(mapper(datum), result.max);  
+    result.min = Math.min(mapper(datum), result.min);  
+  }
+  return result;
+}
+
+/**
+ * @param {PendulumDataPoint[]} dataPoints
+ * @return {Bounds}
+ */
+function computeBounds(dataPoints) {
+  return {
+    position: minMax(dataPoints, p => p.position),
+    time: minMax(dataPoints, p => p.time),
+    velocity: minMax(dataPoints, p => p.velocity),
+  };
 }
 
 /**
@@ -83,11 +121,17 @@ function tmpFile(ext) {
 /**
  * @param {string} filename 
  * @param {string[]} data
- * @param {string} tempFile
+ * @param {Bounds} bounds
  * @param {string} dataType
  * @return {string}
  */
-function createGnuplotScript(filename, data, tempFile, dataType) {
+function createGnuplotScript(filename, data, bounds, dataType) {
+  const minX = Math.floor(bounds.time.min);
+  const maxX = Math.floor(bounds.time.max);
+  const minY = Math.floor(Math.min(bounds.position.min, bounds.velocity.min));
+  const maxY = Math.ceil(Math.max(bounds.position.max, bounds.velocity.max));
+  const xTics = (maxX-minX) / 5;
+  const yTics = (maxY-minY) / 8;
   return `
   # Default for plotting a univariate function
 
@@ -116,23 +160,29 @@ function createGnuplotScript(filename, data, tempFile, dataType) {
     ${data.join("\n")}
 EOD
 
-  set xrange [${0}:${5}]
-  set yrange [${-6}:${6}]
+  set xrange [${minX}:${maxX}];
+  set yrange [${minY}:${maxY}];
 
-  set xtics 1
-  set ytics 2
+  set xtics ${xTics};
+  set ytics ${yTics};
 
   plot \
     4*cos(x) lw 6 lc "#aa3333" title "Exakte Lösung", \
-    '${tempFile}' u 1:2 lw 4 ps 3 pt 7 lc "#33aa33" w ${dataType} title "Ort", \
-    '${tempFile}' u 1:3 lw 4 ps 3 pt 7 lc "#3333aa" w ${dataType} title "Geschwindigkeit"
+    $data u 1:2 lw 4 ps 3 pt 7 lc "#33aa33" w ${dataType} title "Ort", \
+    $data u 1:3 lw 4 ps 3 pt 7 lc "#3333aa" w ${dataType} title "Geschwindigkeit"
 `;
 }
 
-const filename = process.argv[2];
-const tempFile = tmpFile(".gnuplot");
-const deltaTime = parseFloat(process.argv[3]);
-const dataType = process.argv[4] || "linespoints";
+if (process.argv.length <= 2) {
+  console.log("Simple spring simulation. Usage:");
+  console.log(`${process.argv[0]} ${process.argv[1]} <OutputFilename> <DeltaTime> [lines|points|linespoints]` );
+  process.exit();
+}
+
+const filename = process.argv[2] ?? "output";
+const tempFile = tmpFile("gnuplot");
+const deltaTime = parseFloat(process.argv[3] ?? "0.1");
+const dataType = process.argv[4] ?? "linespoints";
 
 const result = simulatePendulum({
   mass: 1,
@@ -144,7 +194,8 @@ const result = simulatePendulum({
   initialVelocity: 0,
 });
 const data = printPendulumCurve(result, Math.max(deltaTime/2, 0.1));
-const gnuplotScript = createGnuplotScript(filename, data, tempFile, dataType);
+const bounds = computeBounds(result);
+const gnuplotScript = createGnuplotScript(filename, data, bounds, dataType);
 
 fs.writeFileSync(tempFile, gnuplotScript, { encoding: "utf-8" });
 spawnSync("gnuplot", [tempFile], {
