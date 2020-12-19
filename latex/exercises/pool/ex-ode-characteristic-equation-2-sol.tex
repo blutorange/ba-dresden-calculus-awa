@@ -1,0 +1,35 @@
+\item Nach der Eulerschen Formel gilt
+
+$$
+	e^{jx} = \cos(x) + j \sin(x)
+$$
+
+Angewandt auf $C_1e^{-\omega_0 j x} + C_2e^{\omega_0 j x}$ ergibt sich
+
+$$
+	C_1 \left\lbrace \cos(-\omega_0 x) + j \sin(-\omega_0 x) \right\rbrace + C_2 \left\lbrace \cos(\omega_0 x) + j \sin(\omega_0 x) \right\rbrace
+$$
+
+Da der Kosinus eine gerade (achsensymmetrische) Funktion und der Sinus eine ungerade (punktsymmetrische) Funktion ist, also $\cos(-x) = \cos(x)$ und $\sin(-x) = -\sin(x)$ gilt, folgt:
+
+$$
+	C_1 \cos(\omega_0 x) - C_1 j \sin(-\omega_0 x) + C_2 \cos(\omega_0 x) + C_2 j \sin(\omega_0 x)
+$$
+
+Das fassen wir zusammen und erhalten
+
+$$
+	\underbrace{(C_1 + C_2)}_{=K_1} \cos(\omega_0 x) + \underbrace{(C_2-C_1) j}_{=K_2} \sin(\omega_0 x)
+$$
+
+Mit den so neudefinierten Konstanten, die sich aus den komplexen Konstanten ergeben, haben wir wie gefordert eine rein reelle Lösung gefunden.
+
+Anmerkung: Streng genommen ist noch zu zeigen, dass jedes Paar reeller Zahlen $(K_1,K_2)\in\R^2$ sich aus einer bestimmten Kombination $(C_1,C_2)\in\C^2$ erhalten lässt. Die Gleichungen sind $(C_1 + C_2) = K_1$ und $(C_2-C_1) j = K_2$. Aus zweiter Gleichung folgt $C_2 = C_1-jK_2$, eingesetzt in die erste Gleichung ergibt sich $C_1 = \frac{1}{2}(K_1+jK_2)$. Wieder eingesetzt in die zweite Gleichung ergibt sich $C_2 = \frac{1}{2}(K_1-jK_2)$. Also kann für jede Wahl von $K_1,K_2$ jeweils ein Paar $C_1, C_2$ komplexer Zahlen gefunden werden.
+
+Anmerkung 2: Es lässt sich unter Anwendung trigonometrischer Identitäten sogar noch weiter umformen:
+
+$$
+	K_1  \cos(\omega_0 x) + K_2  \sin(\omega_0 x) = A \sin(\omega_0 x + \varphi)
+$$
+
+Dabei ist $A>0$ die Amplitude der Schwingung und $\varphi$ der (Null-)phasenwinkel bzw. die Phasenverschiebung.

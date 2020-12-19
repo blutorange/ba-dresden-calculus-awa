@@ -1,0 +1,90 @@
+\item Dem physikalischen Zusammenhang entnehmen wir zuerst, dass die Konstanten $k,m,r$ alle positiv, also $>0$, sind. Daraus ergibt sich zudem, dass auch $\omega_0,\gamma>0$ gilt.
+
+\begin{enumerate}
+	\item Die charakt. Gleichung lautet $\lambda^2+\frac{r}{m}\lambda+\frac{k}{m}$. Mittels p-q-Formel folgt $\lambda_{1,2} = -\frac{r}{2m} \pm \sqrt{\left(\frac{r}{2m}\right)^2 - \frac{k}{m}}$. Mit den gegebenen Ersetzungen sehen wir sofort, dass $- \frac{k}{m} = - \omega_0^2$ ist. Wir bilden $\omega_0\gamma = \sqrt{\frac{k}{m}} \cdot \frac{r}{2\sqrt{mk}} = \frac{r}{2m}$. Mit dieser Ersetzung folgt aus der Lösung für die charakt. Gleichung $\lambda_{1,2} = -\omega_0\gamma \pm \sqrt{(\omega_0\gamma)^2-\omega_0^2} = -\omega_0\gamma \pm \omega_0 \sqrt{\gamma^2-1}$. Die Wurzel $\sqrt{\omega_0^2}$ konnten wir auflösen, da $\omega_0>0$ gilt. Anmerkung: $\omega_0$ ist dabei die Eigenfrequenz des Pendels, also die Frequenz, mit der es schwingt, wenn es weder geämpft ist noch durch eine externe Anregung in eine erzwungene Schwingung versetzt wird. $\gamma$ ist ein Maß dafür, wie stark die Schwingung effektiv gedämpft ist.
+	\item In Abhängigkeit der Lösungen der charakt. Gleichung unterscheiden wir nun 3 Fälle.
+	\begin{enumerate}
+		\item Die charakt. Gleichung hat 2 verschiedene reelle Lösungen. Das ist dann der Fall, wenn der Term $\gamma^2-1$ unter der Wurzel positiv ist. Es muss also $\gamma^2-1 > 0$ gelten, also $\gamma>1$. Dann lautet die allgemeine Lösung 
+		\begin{alignat*}{2}
+			x(t) &= C_1 e^{\left(-\omega_0\gamma - \omega_0\sqrt{\gamma^2-1}\right)t} + C_2 e^{\left(-\omega_0\gamma + \omega_0 \sqrt{\gamma^2-1}\right)t} \\
+			     &= e^{-\omega_0\gamma } \left( C_1 e^{-t \cdot \omega_0\sqrt{\gamma^2-1}} + C_2 e^{t \cdot \omega_0\sqrt{\gamma^2-1}} \right)
+		\end{alignat*}
+		Die Lösung besteht aus 2 Exponentialfunktionen, welche (wie in der nächsten Teilaufgabe gezeigt) aufgrund des negativen Exponenten eine übergedämpfte "Schwingung" beschreiben, die langsam zur Ruhelage zurückkehrt und nie schwingt.
+		\item Die charakt. Gleichung hat 2 (konjugiert) komplexe Lösungen. Dass ist dann der Fall, wenn der Term unter der Wurzel $\gamma^2-1$ negativ ist, also $\gamma<1$ gilt. Dann ist $\sqrt{\gamma^2-1} = \sqrt{1-\gamma^2}j$ und wir können wie in einer vorigen Aufgabe besprochen mittels der Eulerschen Formel die Lösung mittels Sinus- und Kosinusfunktionen schreiben:
+		$$
+			x(t) = e^{-\omega_0\gamma t} \left\lbrace C_1 e^{\omega_0\sqrt{1-\gamma^2}jt} + C_2 e^{-\omega_0 \sqrt{1-\gamma^2}jt} \right\rbrace
+ 		$$ 		
+ 		$$
+			x(t) = e^{-\omega_0\gamma t} \left\lbrace C_1 \cos(\omega t) + \sin(\omega t)\right\rbrace
+		$$
+		Dabei ist $\omega = \omega_0 \sqrt{1-\gamma^2}$ die effektive (Kreis-)frequenz, mit der das gedämpfte Pendel schwingt. Die Amplitude der Schwingung ist durch den Vorfaktor $e^{-\omega_0\gamma t}$ gegeben, welche im Laufe der Zeit immer geringer wird. Das Pendel schwingt also aufgrund der Dämpfung immer schwächer und kehrt schließlich zur Ruhelage zurück.
+		\item Der (sogenannte "aperiodische") Grenzfall zwischen den beiden vorigen tritt ein, wenn die charakt. Gleichung eine doppelte Nullstelle hat. Das ist dann der Fall, wenn $\gamma = 1$ gilt. Dann ist $\lambda_{1,2} = -\omega_0$. Für die allg. Lösung müssen wir daher noch mit einer Potenz von $t$ multiplizieren und erhalten:
+		$$
+			x(t) = C_1 e^{-\omega_0 t} + C_2 t e^{-\omega_0 t}
+		$$
+		Dieser Fall beschreibt ein Pendel, welches gerade so stark gedämpft ist, dass es keine Schwingung ausführt. Wäre die Dämpfung geringer, würde es schwingen. Wäre die Dämpfung höher, würde es länger brauchen, um in die Ruhelage zurückzukehren. Dieser Fall ist also der Fall, in dem das Pendel am schnellsten in die Ruhelage zurückkehrt. In der Praxis ist dies oft der erstrebenswerte Fall, wenn man bei einem mechanischen System (wie etwa erdbebensicheren Gebäuden) Schwingungen vermeiden möchte und Auslenken so schnell wie möglich in die Ruhelage zurückversetzen möchte.
+	\end{enumerate}
+	\item Wir betrachten noch einmal die 3 Fälle:
+	\begin{enumerate}
+		\item $\gamma > 1$. Das Verhalten im Unendlichen wird festgelegt durch die beiden Exponentialfunktionen in der Lösung:
+		$$
+		    e^{\left(-\omega_0\gamma - \omega_0\sqrt{\gamma^2-1}\right)t}
+  		$$
+  		$$
+  			e^{\left(-\omega_0\gamma + \omega_0\sqrt{\gamma^2-1}\right)t}
+		$$
+		Wir werden zeigen, dass der Vorfaktor vor dem $t$ im Exponenten stets negativ ist, sodass dann $x \to 0$ für $t \to \infty$ gilt.
+		Zuerst halten wir dazu fest, dass $-\omega_0\gamma - \omega_0\sqrt{\gamma^2-1}$ sicherlich negativ ist, da $\omega_0,\gamma>0$ sind und damit von einer negativen Zahl eine positive Zahl abgezogen wird. Für den anderen Vorfaktor im Exponenten stellen wir zunächst fest, dass
+		$$
+			\gamma^2 - 1 < \gamma^2
+		$$
+		eine wahre Aussage ist. Da $\omega_0 > 0$ können wir weiter umformen zu:
+		$$
+			\omega_0^2 (\gamma^2 - 1) < \omega_0^2 \gamma^2
+		$$
+		Da nach Voraussetzung $\gamma > 1$, können wir die Wurzel ziehen:
+		$$
+			\omega_0 \sqrt{\gamma^2 - 1} < \omega_0 \gamma
+		$$
+		Schließlich bringen wir die Terme auf die linke Seite und erhalten
+		$$
+			- \omega_0 \gamma + \omega_0 \sqrt{\gamma^2 - 1} < 0
+		$$
+		Dies war zu zeigen.
+		\item $\gamma < 1$. Kosinus und Sinus oszillieren nur zwischen 2 Werten, die Amplitude wird durch den Vorfaktor $e^{-\omega_0\gamma t}$ gegeben. Da $\omega_0, \gamma > 0$ gilt, ist der Exponent in¸ der Exponentialfunktion negativ und es gilt $x \to 0$ für $t \to \infty$.	
+		\item $\gamma = 1$. Da $\omega_0 > 0$ gilt, ist der Exponent in der Exponentialfunktion $e^{-\omega_0 t}$ negativ und es gilt $x \to 0$ für $t \to \infty$.	
+	\end{enumerate}
+	\item Wie bereits diskutiert, ist zu erwarten, dass im Grenzfall $\gamma = 1$ die Schwingung am Schnellsten abklingt, da für kleinere Dämpfungen das Pendel längert schwingt ("Schwingfall", $\gamma < 1$) und für größere Dämpfungen das Pendel nur langsam in die Ruhelage zurückkriecht ("Kriechfall", $\gamma > 1$). Mathematisch beschreibt der Exponent $\alpha$ in der Exponentialfunktion $e^{-\alpha t}$, wie schnell die Schwingung abklingt. Je größer $\alpha$, desto schneller klingt die Schwingung ab. Im Grenzfall lautete die Exponentialfunktion $e^{-\omega_0 t}$, der Koeffizient ist also $\alpha_1=\omega_0$. Wir müssen zeigen, dass dieses $\alpha$ in den anderen Fällen kleiner ist als $\alpha_1$.
+	\begin{enumerate}
+		\item $\gamma > 1$ ("Kriechfall"). Die Bewegung des Pendels wird durch zwei Exponentialfunktionen beschrieben mit
+		$$
+			\alpha^+ = \omega_0\gamma + \omega_0\sqrt{\gamma^2-1}
+		$$
+		bzw.
+		$$
+			\alpha^- = \omega_0\gamma - \omega_0\sqrt{\gamma^2-1}
+		$$
+		Es ist $\alpha^+ > \alpha^-$. Zudem ist wegen $\gamma>1$ nun $\omega_0\gamma > \omega_0$ und damit $\alpha^+ > \omega_0$. Dieser Teil der Lösung klingt also schneller ab als im Kriechfall. Da die Lösung aber eine Summe aus 2 Exponentialfunktionen ist, entscheidet die Exponentialfunktion mit dem kleineren $\alpha$, wie schnell die Schwingung insgesamt abklingt. Offensichtlich ist $\alpha^- < \alpha^+$. Wir werden zeigen, dass $\alpha^- < \alpha_1 < \alpha^+$ gilt. Es ist
+		$$
+			\gamma -1 < \gamma + 1
+		$$
+		Da $\gamma>1$, können wir mit $\gamma-1$ multiplizieren, ohne dass sich das Ungleichheitszeichen ändert:
+		$$
+			(\gamma -1) (\gamma -1) < (\gamma -1) (\gamma + 1) = \gamma^2 - 1
+		$$
+		Da ebenfalls wegen $\gamma>1$ die entsprechenden Terme positiv sind, können wir die Wurzel ziehen:
+		$$
+			\gamma -1 < \sqrt{\gamma^2 - 1}		
+		$$
+		Umordnung der Terme ergibt:
+		$$
+			\gamma - \sqrt{\gamma^2 - 1} < 1
+		$$
+		Da $\omega_0$, können wir damit multiplizieren, ohne dass sich das Ungleichheitszeichen ändert:
+		$$
+			\omega_0 \gamma - \omega_0  \sqrt{\gamma^2 - 1} < \omega_0
+		$$
+		Damit haben wir gezeigt, dass $\alpha^- < \alpha_1$ gilt, im Kriechfall klingt die Schwingung also langsamer ab.
+		\item $\gamma < 1$ ("Schwingfall"). Die Exponentialfunktion ist $e^{-\omega_0\gamma t}$, also $\alpha = \omega_0\gamma$. Da nach Voraussetzung $\gamma < 1$, gilt $\alpha = \omega_0\gamma < \omega_0 = \alpha_1$.
+	\end{enumerate}
+\end{enumerate}

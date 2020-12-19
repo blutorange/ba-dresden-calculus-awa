@@ -50,9 +50,9 @@ Dabei ist $\Delta t$ ein kleines Zeitintervall oder Zeitschritt. Jetzt setzen wi
     x(t + \Delta t) &\approx x(t) + \Delta t \cdot v(t)
 \end{alignat*}
 
-Damit haben wir eine Näherungslösung bekommen, welche wir etwa mit einem Computerprogramm lösen können. Wenn wir den Ort $x$ und die Geschwindigkeit $v$ zu einem Zeitpunkt $t$ kennen, können wir mittels der obigen beiden Gleichungen den Ort und die Geschwindigkeit zum Zeitpunkt $t+\Delta t$ berechnen. Je kleiner wir dabei $\Delta T$ wählen, desto besser wir unsere Näherung sein.
+Damit haben wir eine Näherungslösung bekommen, welche wir etwa mit einem Computerprogramm lösen können. Wenn wir den Ort $x$ und die Geschwindigkeit $v$ zu einem Zeitpunkt $t$ kennen, können wir mittels der obigen beiden Gleichungen den Ort und die Geschwindigkeit zum Zeitpunkt $t+\Delta t$ berechnen. Je kleiner wir dabei $\Delta t$ wählen, desto besser wird unsere Näherung sein.
 
-Für eine nummerische Lösung mit einem Computerprogramm müssen wir zudem noch festlegen, an welchen Ort sich das Federpendel zur Startzeit $t=0$ befindet und welche Geschwindigkeit es dabei hat. Dies sind unsere Startwerte für den ersten Iterationsschritt. Beispielsweise können wir wählen:
+Für eine nummerische Lösung mit einem Computerprogramm müssen wir zudem noch festlegen, an welchem Ort sich das Federpendel zur Startzeit $t=0$ befindet und welche Geschwindigkeit es dabei hat. Dies sind unsere Startwerte für den ersten Iterationsschritt. Beispielsweise können wir wählen:
 
 \begin{alignat*}{1}
     k = 1 \ukgss \\
@@ -104,7 +104,7 @@ So sind etwa folgende Gleichungen alle DGL:
     \item $y' = y$ beziehungsweise $\dd{}{x} y = y$. Diese hat die Ordnung $1$, da $y'$ die höchste vorkommende Ableitung ist.
     \item $(y')^2 + 3 y' = \sin(y)$. Diese hat ebenfalls die Ordnung $1$.
     \item $y''+y'+4y=x^2$. Diese hat die Ordnung $2$, da $y''$ die höchste vorkommende Ableitung ist.
-    \item $\pdd{f}{x} = \pdd{f}{y}$. Diese hat die Ordnung $1$, da nur erste partielle Ableitung nach $x$ und $y$ vorkommen.
+    \item $\pdd{f}{x} = \pdd{f}{y}$. Diese hat die Ordnung $1$, da nur erste partielle Ableitungen nach $x$ und $y$ vorkommen.
 \end{itemize}
 
 Anmerkung zur Schreibweise: Um Schreibarbeit zu sparen, lässt man in oft das Argument der Funktion aus, also etwa $y'=y$ statt $y'(x) = y(x)$.
@@ -126,7 +126,7 @@ Im letzten Beispiel kamen partielle Ableitungen vor. Man unterscheidet allgemein
 In dieser Vorlesung werden wir uns auf DGL mit einstelligen Funktionen beschränken.
 
 \begin{definition}{Lösungen einer DGL}{DeqSol}
-    Eine \textbf{Lösung} einer DGL $n$-ter Ordnung ist eine Funktion derart, dass die Gleichung für alle Argumente aus dem Definitionsbereich erfüllt ist. Die Menge aller Lösungen nenn man \textbf{allgemeine Lösung}, welche eine Kurvenschar mit $n$ willkürlichen wählbaren Parametern darstellt. Eine konkrete Lösungsfunktion aus dieser Schar entsteht durch eine konkrete Wahl der $n$ Parameter und wird \textbf{partikuläre Lösung} genannt. Eine Lösungsfunktion, welche nicht aus der allgemeinen Lösung durch Wahl durch eine bestimmte Belegung der Parameter entsteht, nennt man \textbf{singuläre Lösung}.
+    Eine \textbf{Lösung} einer DGL $n$-ter Ordnung ist eine Funktion derart, dass die Gleichung für alle Argumente aus dem Definitionsbereich erfüllt ist. Die Menge aller Lösungen, welche als Kurvenschar mit $n$ willkürlichen wählbaren Parametern darstellbar ist, nennt man \textbf{allgemeine Lösung}. Eine konkrete Lösungsfunktion aus dieser Schar entsteht durch eine konkrete Wahl der $n$ Parameter und wird \textbf{partikuläre Lösung} genannt. Eine Lösungsfunktion, welche nicht aus der allgemeinen Lösung durch Wahl durch eine bestimmte Belegung der Parameter entsteht, nennt man \textbf{singuläre Lösung}.
 \end{definition}
 
 \begin{example}{Probe für die Lösung einer DGL}{SolDeqCheck}
@@ -158,7 +158,7 @@ Um nun eine Lösung einer DGL zu finden, gibt es gewissen Rechenverfahren, die w
 \end{definition}
 
 \begin{example}{Ermittlung des Richtungsfelds}{CompSlopeField}
-    Wir wollen graphisch die Lösung von $-x \cdot y'=y$ bestimmen. Um das Richtungsfeld zeichnen zu können, müssen wir sie zuerst in die Form $y'(x) = g(y,x)$ umformen -- also nach $y'$ umstellen. Für $x \ne 0$ gilt $y' = -y/x$. Das Richtungsfeld ergibt sich also, indem wir in einem zweidimensionalen Koordinatensystem an jedem Punkt $(x,y)$ einen Pfeil in Richtung des Anstieg einzeichnen. Wenn wir etwa $\Delta x$ Einheiten nach rechts gehen, müssen wir $y' \cdot \Delta x = -\frac{y}{x} \cdot \Delta x$ Einheiten nach oben gehen. Etwa für $Delta x = 1$ ergibt sich, dass der Richtungspfeil am Punkt $(x,y)$ lauten muss: $(1,-frac{y}{x})$. Zweckmäßigerweise normiert man alle Richtungspfeilen so, dass sie die gleiche Länge haben und sich gegenseitig nicht überlappen.
+    Wir wollen graphisch die Lösung von $-x \cdot y'=y$ bestimmen. Um das Richtungsfeld zeichnen zu können, müssen wir sie zuerst in die Form $y'(x) = g(y,x)$ umformen -- also nach $y'$ umstellen. Für $x \ne 0$ gilt $y' = -y/x$. Das Richtungsfeld ergibt sich also, indem wir in einem zweidimensionalen Koordinatensystem an jedem Punkt $(x,y)$ einen Pfeil in Richtung des Anstieg einzeichnen. Wenn wir etwa $\Delta x$ Einheiten nach rechts gehen, müssen wir $y' \cdot \Delta x = -\frac{y}{x} \cdot \Delta x$ Einheiten nach oben gehen. Etwa für $\Delta x = 1$ ergibt sich, dass der Richtungspfeil am Punkt $(x,y)$ lauten muss: $(1,-\frac{y}{x})$. Zweckmäßigerweise normiert man alle Richtungspfeilen so, dass sie die gleiche Länge haben und sich gegenseitig nicht überlappen.
     Um die Arbeit beim Zeichnen des Richtungsfelds zu verringern, können wir uns noch überlegen, wo sich Linien gleichen Anstieg befinden. Damit $y'=const.$ gilt, muss der Quotient $y/x$ konstant sein, $y$ muss also ein Vielfaches von $x$ sind. Daher gilt, dass auf allen Geraden durch den Ursprung (etwa $y=2x$ oder $y=-5x$) die Richtungspfeile in die gleiche Richtung zeigen. Solche Linien gleichen Anstieg nennt man auch Isokline, von \emph{ísos} ("gleich") und \emph{inclination} ("Neigung").
 \end{example}
 
@@ -169,7 +169,7 @@ Um nun eine Lösung einer DGL zu finden, gibt es gewissen Rechenverfahren, die w
     \label{fig:ExSlopField}
 \end{figure}
 
-In Abbildung \ref{fig:ExSlopField} ist solch ein Richtungsfeld dargestellt. Wir erkennen in dieser Abbildung auch noch etwa anderes. Um im Richtungsfeld eine partikuläre Lösungen einzuzeichnen, müssen wir den Pfeilen folgen. Doch dazu benötigen wir einen Startpunkt. Je nachdem, welchen Startpunkt wir wählen, erhalten wir eine andere Kurve. Oder anders ausgedrückt: das Richtungsfeld zeigt alle möglichen Lösungen (\emph{allgemeine Lösung}), eine konkrete Lösung (\emph{partikuläre Lösung}) wird dadurch ausgewählt, dass wir einen Punkt $(x,y)$ vorgeben, durch den die Kurve verlaufen soll.
+In Abbildung \ref{fig:ExSlopField} ist solch ein Richtungsfeld dargestellt. Wir erkennen in dieser Abbildung auch noch etwas Anderes. Um im Richtungsfeld eine partikuläre Lösungen einzuzeichnen, müssen wir den Pfeilen folgen. Doch dazu benötigen wir einen Startpunkt. Je nachdem, welchen Startpunkt wir wählen, erhalten wir eine andere Kurve. Oder anders ausgedrückt: das Richtungsfeld zeigt alle möglichen Lösungen (\emph{allgemeine Lösung}), eine konkrete Lösung (\emph{partikuläre Lösung}) wird dadurch ausgewählt, dass wir einen Punkt $(x,y)$ vorgeben, durch den die Kurve verlaufen soll.
 
 \begin{definition}{Anfangs- und Randbedingungen}{InitBoundCond}
     Um eine partikuläre Lösung einer DGL $n$-ter Ordnung eindeutig zu bestimmen, werden neben der DGL noch zusätzliche Einschränkungen (im allgemeinen $n$ Stück) an die Lösungsfunktion benötigt. Dabei gibt es zwei wesentliche Arten von Bedingungen:
@@ -190,6 +190,8 @@ Ein physikalisches Beispiel für ein Anfangswertproblem ist etwa der freie Fall,
     Damit erhalten wir das lineare Gleichungssystem
     $$
         C_1+C_2=2\sqrt{2}
+    $$
+    $$
         C_1-C_2=-2\sqrt{2}
     $$
     Daraus ergibt sich $C_1=0$ und $C_2=2\sqrt{2}$ und die partikuläre für die gegebene Anfangsbedingung lautet:
@@ -236,14 +238,14 @@ Um die eben erwähnten Begriffe genau zu definieren, benötigen wir zunächst er
 Mithilfe der Notation $\Phi(y,y',y'',y''',\dots,y^{(n)},x) = 0$, also dass wir die DGL als einen Term auffassen können, in dem das Argument, die Funktion und ihre Ableitungen vorkommen, können wir nun die nächste Eigenschaft einer DGL formulieren.
 
 \begin{definition}{Homogenität}{HomogenousDeq}
-    Eine DGL $n$-ter Ordnung $\Phi(y,y',y'',y''',\dots,y^{(n)},x) = 0$ heißt \textbf{homogen}, falls sie eine homogene Gleichung in der gesuchten Funktion $y$ und ihren Ableitung ist, das heißt, falls es ein $\alpha\in¸N_0$ gibt, sodass gilt:
+    Eine DGL $n$-ter Ordnung $\Phi(y,y',y'',y''',\dots,y^{(n)},x) = 0$ heißt \textbf{homogen}, falls sie eine homogene Gleichung in der gesuchten Funktion $y$ und ihren Ableitung ist, das heißt, falls es ein $\alpha\in N_0$ gibt, sodass gilt:
     $$
         \forall t: \Phi(ty,ty',ty'',ty''',\dots,ty^{(n)},x) = t^\alpha \cdot \Phi(y,y',y'',y''',\dots,y^{(n)},x)
     $$
     $\alpha$ heißt dann \textbf{Grad der Homogenität}. Andernfalls heißt die DGL \textbf{inhomogen}.
 \end{definition}
 
-Anders formuliert bedeutet die Gleichung in obiger Definition, dass wir, wenn wir alle $y$ mit einer Konstante multiplizieren, diese Konstante aus der gesamten Gleichung ausklammern können. Der Begriff der Homogenität ("Gleichförmigkeit") geht auf die Definition sogenannten \emph{homogener Funktionen} zurück. Eine Funktion heißt beispielsweise homogen, falls sich ihr Funktionswert verdoppelt, wenn man das Argument verdoppelt -- der Funktionswert also gleichmäßig mit dem Argument skaliert. Lineare Gleichungen der Form $y=mx$ sind homogen (vom Grad 1). Ein anderes Beispiel für homogene Funktionen sind Parabeln $y=ax^2$. Wenn wir das Argument verdoppeln, vervierfacht sich der Funktionswert. Allgemeiner können wir sagen, dass wenn wir das Argument mit $t$ multiplizieren (skalieren), der Funktionswert mit $t^2$ multipliziert wird: $f(tx)=t^2f(x)$. Noch allgemeiner heißt eine Funktion $f$ homogen vom Grad $\alpha$, wenn $f(tx) = t^\alpha f(x)$ gilt. Bei einer homogenen Funktionen steht also die Skalierung entlang der Abszisse (x-Achse) in einem Zusammenhang mit der Skalierung entlang der Ordinate (y-Achse). Wenn wir jetzt nochmal an die Definition für homogene DGL zurückdenken, so stellen wir fest, dass sie der Definition einer homogenen Funktion ähnelt, nur mit dem Unterschied, dass wir jetzt mehrere Argumente gleichzeitig skalieren.
+Anders formuliert bedeutet die Gleichung in obiger Definition, dass wir, wenn wir alle $y$ mit einer Konstante multiplizieren, diese Konstante aus der gesamten Gleichung ausklammern können. Der Begriff der Homogenität ("Gleichförmigkeit") geht auf die Definition sogenannten \emph{homogener Funktionen} zurück. Eine Funktion heißt beispielsweise homogen, falls sich ihr Funktionswert verdoppelt, wenn man das Argument verdoppelt -- der Funktionswert also gleichmäßig mit dem Argument skaliert. Lineare Gleichungen der Form $y=mx$ sind homogen (vom Grad 1). Ein anderes Beispiel für homogene Funktionen vom Grad 2 sind Parabeln $y=ax^2$. Wenn wir das Argument verdoppeln, vervierfacht sich der Funktionswert. Allgemeiner können wir sagen, dass wenn wir das Argument mit $t$ multiplizieren (skalieren), der Funktionswert mit $t^2$ multipliziert wird: $f(tx)=t^2f(x)$. Noch allgemeiner heißt eine Funktion $f$ homogen vom Grad $\alpha$, wenn $f(tx) = t^\alpha f(x)$ gilt. Bei einer homogenen Funktionen steht also die Skalierung entlang der Abszisse (x-Achse) in einem Zusammenhang mit der Skalierung entlang der Ordinate (y-Achse). Wenn wir jetzt nochmal an die Definition für homogene DGL zurückdenken, so stellen wir fest, dass sie der Definition einer homogenen Funktion ähnelt, nur mit dem Unterschied, dass wir jetzt mehrere Argumente gleichzeitig skalieren.
 
 \begin{example}{Überprüfung der Homogenität}{ExHomoDeq}
     \begin{itemize}
@@ -503,7 +505,7 @@ Dabei ist $C_1 \in \R$ eine beliebige Konstante. Wir setzen nun das so gewonnene
     $$
 \end{statement}
 
-Diese Formel lässt sich schwer auswendig lernen. Für die praktische Berechnung ist es daher oft besser, sich nicht die fertige Formel zu merken, sonder das Vorgehen:
+Diese Formel lässt sich schwer auswendig lernen. Für die praktische Berechnung ist es daher oft besser, sich nicht die fertige Formel zu merken, sondern das Vorgehen:
 
 \begin{itemize}
     \item Lösen der homogenen DGL
@@ -805,7 +807,7 @@ Ohne Beweis sei dazu folgende Aussage angegeben:
 
 Auch wenn diese Aussage auf den ersten Blick schwer verständlich erscheinen mag, besteht die Aussage nur darin, welchen Ansatz man für welche Inhomogenität wählen soll.
 
-\begin{example}{Finden partikulärer Lösungen inhomogener lineare DGL (Fall a)}{FindPartSolNonhomLinDeqA}
+\begin{example}{Finden partikulärer Lösungen inhomogener linearer DGL (Fall a)}{FindPartSolNonhomLinDeqA}
     Fall (a). Gegeben ist $y''+4y'+4y = 4x^2+6e^x$. Die allgemeine Lösung der homogenen DGL lautet $y_H(x) = C_1 e^{-2x}+ C_2 x e^{-2x}$. Beide Summanden der Inhomogenität $x^2$ und $e^x$ sind kein Vielfaches einer der Fundamentallösungen $1$ und $e^{-2x}$. Damit ergibt sich die partikuläre Lösung als Linearkombination von $4x^2$ und $6e^x$ sowie allen linear unabhängigen Ableitungen davon. Beim Ableiten von $6e^x$ entstehen keine weiteren linear unabhängigen Ableitungen. Beim Ableiten von $4x^2$ erhalten wir $8x$ und $8$. Damit bekommen wir für den Ansatz der partikulären Lösung:
     $$
         y_P(x) = Ax^2+Bx+C+De^x
@@ -852,7 +854,7 @@ Auch wenn diese Aussage auf den ersten Blick schwer verständlich erscheinen mag
 \end{example}
 
 \begin{example}{Finden partikulärer Lösungen inhomogener lineare DGL (Fall c)}{FindPartSolNonhomLinDeqC}
-    Fall (c). Gegeben ist die DGL $y''+4y'+4y=3xe^{-2x}$. Die allgemeine Lösung der homogenen DGL ist $y_H(x) = C_1 e^{-2x} + C_2 x e^{-2x}$. Die homogene DGL enthält die Nullstelle $-2$ mit der Vielfachheit $k=2$. Die Inhomogenität enthält einen Summanden, der ein Vielfaches der die zu dieser Nullstelle gehörenden Fundamentallösung multipliziert mit $x^1$ ist, nämlich $3xe^{-2x}$. Somit $k=1$. Die partikuläre muss also eine Linearkombination von $x^{2+1} e^{-2x}$ und allen ihren linear unabhängigen Ableitungen sein. Wir erhalten damit als Ansatz:
+    Fall (c). Gegeben ist die DGL $y''+4y'+4y=3xe^{-2x}$. Die allgemeine Lösung der homogenen DGL ist $y_H(x) = C_1 e^{-2x} + C_2 x e^{-2x}$. Die homogene DGL enthält die Nullstelle $-2$ mit der Vielfachheit $k=2$. Die Inhomogenität enthält einen Summanden, der ein Vielfaches der die zu dieser Nullstelle gehörenden Fundamentallösung multipliziert mit $x^1$ ist, nämlich $3xe^{-2x}$. Somit $k=1$. Die partikuläre Lösung muss also eine Linearkombination von $x^{2+1} e^{-2x}$ und allen ihren linear unabhängigen Ableitungen sein. Wir erhalten damit als Ansatz:
     $$
         y_P(x) = Ax^3e^{-2x}+Bx^2 e^{-2x}
     $$
@@ -877,7 +879,7 @@ Auch wenn diese Aussage auf den ersten Blick schwer verständlich erscheinen mag
 Abschließend seien noch zwei Bemerkungen gemacht:
 
 \begin{itemize}
-    \item Für das Auffinden der partikulären Lösung sind wir davon ausgegangen, dass die Inhomogenität nur Summanden enthält, die eine endliche Anzahl linear unabhängiger Ableitungen besitzt. Das ist nicht immer der Fall, beispielsweise für die Inhomogenität $F(x) = \sin(e^{-x})$. Um auch in diesem Fall eine partikuläre Lösung zu finden, können wir die Variation der Konstanten auf die homogene Lösung der DGL anwenden. Wir ersetzen jeder der $n$ Konstanten $C_i$ in der homogenen Lösung durch eine Funktion $C_i(x)$ und versuchen durch Einsetzen in die inhomogene DGL passende Funktionen $C_i(x)$ zu finden.
+    \item Für das Auffinden der partikulären Lösung sind wir davon ausgegangen, dass die Inhomogenität nur Summanden enthält, die eine endliche Anzahl linear unabhängiger Ableitungen besitzt. Das ist nicht immer der Fall, beispielsweise für die Inhomogenität $F(x) = \sin(e^{-x})$. Um auch in diesem Fall eine partikuläre Lösung zu finden, können wir die Variation der Konstanten auf die homogene Lösung der DGL anwenden. Wir ersetzen jede der $n$ Konstanten $C_i$ in der homogenen Lösung durch eine Funktion $C_i(x)$ und versuchen durch Einsetzen in die inhomogene DGL passende Funktionen $C_i(x)$ zu finden.
     \item Eine andere Möglichkeit, um eine inhomogene lineare DGL direkt zu lösen, besteht darin, die DGL mithilfe des Polynomdifferentialoperators zu faktorisieren und schrittweise zu integrieren. Die DGL lässt sich allgemein schreiben als:
     $$
         (D-\lambda_1) (D-\lambda_2) \dots (D-\lambda_n) y = F(x)

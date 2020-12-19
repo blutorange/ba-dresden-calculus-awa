@@ -6,10 +6,25 @@
 \item $2\lambda^2+\frac{10}{3}\lambda-\frac{4}{3}=0 \implies \lambda_1 = -2, \lambda_2 = \frac{1}{3}$
 \item $2\lambda^4+2\lambda^2-12=0 \implies \lambda_1=-\sqrt{2}, \lambda_2=\sqrt{2}, \lambda_3=-\sqrt{3}j, \lambda_4=\sqrt{3}j \rbrace$
 \item $\lambda^5-\lambda = 0 \implies \lambda_1 = 0, \lambda_2 = -1, \lambda_3 = 1, \lambda_4 = -j, \lambda_5 = j$
-\item Homogene Lösung ist aus Aufgabe (a) bekannt. Partikuläre Lösung mit Ansatz $y_p=1$, $y_p'=0$. Einsetzen in DGL liefert $0+2k=1$, also $k=\frac{1}{2}$. Somit ist die allgemeine Lösung $y(x) = C_1 e^{-2x} + \frac{1}{2}$. 
+\item $\lambda^3-8\lambda^2+\lambda+42=0$. Nach Abspalten des Linearfaktors $(\lambda-3)$ per Polynomdivision ergibt sich $\lambda^2-5\lambda-14=0$. Also nach Vorgabe $\lambda_1 = 3$ und aus der quadratischen Gleichung $\lambda_2 = -2$, $\lambda_3=7$.
+\item $\lambda^2-4\lambda+4=0 \implies \lambda_{1,2} = 2$
+\item $\lambda^5 = 0 \implies \lambda_{1,2,3,4,5} = 0$
+\item Bezeichne $T_1=D^2+6D+9$ und $T_2=D^2+2D+1$. Sei $y_1$ die allg. Lösung von $T_1y_1=0$ und $y_2$ die allg. Lösung von $T_2y_2=0$. Dann gilt $(T_1T_2)(y_1+y_2) = (T_1T_2)y_1 + (T_1T_2)y_2 = T_2(T_1y_1)+T_1(T_2y_2) = 0$. Also ist $y=y_1+y_2$ die allg. Lösung von der zu lösenden DGL $T_1T_2y=0$. Für $T_1y_1=0$ ist die charakt. Gleichung $\lambda^2+6\lambda+9=0 \implies \lambda_{1,2} = -3$ und für $T_2y_2=0$ ergibt sich $\lambda^2+2\lambda+1=0 \implies \lambda_{3,4} = -1$
 \end{enumerate}
 
-Die allgemeine Lösung ergibt sich nach dem Schema $y(x) = \sum\limits_{i=1}^{n} \left( C_n \cdot e^{\lambda_n x} \right)$. Also etwa für (b):
+Die allgemeine Lösung ergibt sich nach dem Schema $y(x) = \sum\limits_{i=1}^{n} \left( C_i \cdot e^{\lambda_i x} \right)$. Bei mehrfachen Nullstellen muss noch mit Potenzen von $x$ multipliziert werden. Man erhält:
 
-$$ y(x) = C_1 + C_2 e^{3x}$$
+\begin{enumerate}
+	\item $ y(x) = C_1 e^{-2x}$
+	\item $ y(x) = C_1 + C_2 e^{3x}$
+	\item $ y(x) = C_1 e^{-2x} + C_2 e^{\frac{1}{3}x}$
+	\item $ y(x) = C_1 e^{-\sqrt{2}x} + C_2 e^{\sqrt{2}x} + C_3 e^{-\sqrt{3}jx} + C_4 e^{\sqrt{3}jx}$
+	\item $ y(x) = C_1 + C_2 e^{-x} + C_3 e^{x} + C_4 e^{-jx} + C_5 e^{jx} $
+	\item $ y(x) = C_1 e^{3x} + C_2 e^{-2x} + C_3 e^{7x} $ 
+	\item $ y(x) = C_1 e^{2x} + C_2 x e^{2x}$
+	\item $ y(x) = C_1 + C_2 x + C_3 x^2 + C_4 x^3 + C_4 x^4$
+	\item $ y(x) = C_1 e^{-3x} + C_2 x e^{-3x} + C_3 e^{-x} + C_4 x e^{-x} $
+\end{enumerate}
+
+
 

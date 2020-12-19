@@ -1,0 +1,7 @@
+\item Die allgemeine Lösung der inhomogenen DGL ergibt sich als die allgemeine Lösung der homogenen DGL plus irgendeiner partikulären Lösung der inhomogenen DGL. Die allgemeine Lösung der homogenen DGL ergibt sich als lineare Hülle der Fundamentallösungen, welche sich wiederum aus der charakteristischen Gleichung (Ansatz $e^{\lambda x}$) ergeben.
+
+\begin{enumerate}
+	\item Alle Informationen sind gegeben: $y(x) = C_1e^{-2x}+C_2e^{x}+\cos(x)+3\sin(x)$
+	\item $7$ ist eine doppelte Nullstelle der charakteristischen Gleichung. Um die partikuläre Lösung zu finden, setzen wir den gegebenen Ansatz $y=x^2+C$ in die DGL ein. Mit $y'=2x$ und $y''=2$ folgt $y''-14y'+49y=49x^2-28x+49C+2 = 49x^2-28x$. Also $2+49C=0$ und damit $C=-\frac{2}{49}$. Die allgemeine Lösung ist $y(x) = C_1 e^{7x} + C_2 x e^{7x} + x^2 - \frac{2}{49}$
+	\item Um die Fundamentallösungen zu bestimmen, setzen wir den Ansatz $y=x^n$ in die homogene Gleichung ein. Mit $y'=nx^{n-1}$ und $y''=n(n-1)x^{n-2}$ ergibt sich $x^2y''-4xy'+4y = x^n (n^2-5n+4) = 0$. Also $n^2-5n+4 = 0$ und damit $n_1 = 1, n_2 = 4$. Das bedeutet, $x$ und $x^4$ sind Fundamentallösungen der homogenen DGL. Um nun noch eine partikuläre Lösung zu finden, setzen wir den Ansatz $ax^n$ in die inhomogene DGL ein und erhalten: $x^2y''-4xy'+4y = x^n (an^2-5an+4a) = x^8$. Daraus lesen wir ab $n=8$. Durch Koeffizientenvergleich folgt $an^2-5an+4a = 64a-40a+4a=28a=1$ und damit schließlich $a=\frac{1}{28}$. Die allgemeine Lösung der DGL lautet mithin $y(x) = C_1x+C_2x^4+\frac{1}{28}x^8$
+\end{enumerate}

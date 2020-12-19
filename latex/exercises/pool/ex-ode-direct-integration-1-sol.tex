@@ -1,0 +1,8 @@
+\item
+
+\begin{enumerate}
+	\item Es wird dreimal integriert und man erhält: $y = \frac{1}{8} \cos(2x) + C_1 x^2 + C_2 x + C_3$
+	\item Durch Umstellen erhält man $y' = x \ln(x)$. Durch einmalige Integration mittels partieller Integration ($x$ integrieren, $\ln(x)$ ableiten) ergibt sich $y = \frac{1}{4}x^2(2\ln(x) - 1) + C_1$
+	\item Wir halten fest, dass es sich um ein Produkt handelt, welches $0$ sein soll. Dazu muss einer der Faktoren $0$ sein. Aus $y''-x=0$ folgt durch zweifache Integration $y_1 = \frac{1}{6}x^3 + C_1 x + C_2$. Aus $(y')^2+x^2=0$ folgt $y_2=-\frac{1}{3}x^3 + C_3$. Die allgemeine Lösung ist damit also die Vereingung der beiden Kurvenscharenmengen $y_1$ und $y_2$.
+	\item Analog zur vorigen Teilaufgabe versuchen wir zuerst, die DGL zu faktorisieren. Die Gleichung $x^2-x-6=0$ hat die Lösungen $-2$ und $+3$. also gilt nach Fundamentalsatz der Algebra $x^2-x-6=(x-3)(x+2)$. Übertragen auf die DGL bedeutet das $(y')^2-y'-6 = (y'-3)(y'+2) = 0$. Aus $y'-3=0$ folgt $y_1 = 3x+C_1$ und aus $y'+2=0$ folgt $y_2 = -2x+C_2$.
+\end{enumerate}

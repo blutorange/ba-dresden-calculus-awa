@@ -1,0 +1,6 @@
+\item
+
+\begin{enumerate}
+	\item Die homogene DGL $\dd{y}{x} + y = 0$ wird umgestellt zu $\frac{\text{dy}}{y} = -\text{dx}$. Durch Integration ergibt sich $ln|y| = -x + C$ und damit $y = C e^{-x}$. Für die Variation der Konstanten setzen wir an $y = C(x) e^{-x}$. Um diesen Ansatz in die DGL einzusetzen, bilden wir die 1. Ableitung: $y' = C' e^{-x} - C e^{-x}$. Eingesetzt in $y'+y=x^2$ folgt $C'e^{-x}-Ce^{-x}+Ce^{-x}=C'e^{-x}=x^2$. Für $C$ erhalten wir durch direkte Integration damit $C(x) = \int e^{x}x^2 \diff{x}$. Durch zweimalige partielle Integration folgt $C(x) = e^x (x^2-2x+2) + C_1$. Somit lautet die allgemeine Lösung also $y = C e^{-x} = (e^x (x^2-2x+2) + C_1) e^{-x} = x^2-2x+2 + C_1 e^{-x}$
+	\item Die Lösungformel lautet $y =  e^{-\int P \diff{x}} \int Q e^{\int P \diff{x}} \diff{x}   + C e^{-\int P \diff{x}}$. In unserem Fall ist dabei $P=1$ und $Q=x^2$. Dann ist $\int P \diff{x} = x$. Für das Integral $\int Q e^{\int P \diff{x}} \diff{x} = \int x^2 e^{x} \diff{x}$ folgt wie in der vorigen Teilaufgabe $e^x (x^2-2x+2)$. Eingesetzt in die Lösungsformel lautet die allgemeine Lösung $y = e^{-x} (e^x (x^2-2x+2)) + C e^{-x} = x^2-2x+2 + C e^{-x}$. Dies ist das gleiche Ergebnis.
+\end{enumerate}

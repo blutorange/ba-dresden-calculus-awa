@@ -1,0 +1,11 @@
+\item
+
+\begin{enumerate}
+	\item Ordnung 1, da $y'$ höchste vorkommende Ableitung ist. Homogen, da $xty'-\sin(x)ty = t^1 (xy'-\sin(x)y)$ gilt. Linear, da Grad der Homogenität wegen $t^1$ gleich $1$ ist.
+	\item Aus $x\dd{y}{x} = \sin(x) y$ folgt $\frac{\diff{y}}{y} = \frac{\sin(x)}{x} \diff{x}$ und damit $\int \frac{\diff{y}}{y} = \int \frac{\sin(x)}{x} \diff{x}$
+	\item Mit $y=\sin(x)$, $y'=\cos(x)$, $y''=-\sin(x)$ und $y=-\cos(x)$ ergibt sich $y(0)=0$, $y'(0)=1$, $y''(0)=0$ und $y'''(0)=-1$. Damit folgt näherungsweise $\sin(x) \approx x-\frac{1}{6}x^3$. Das Integral über $x$ lautet damit $\int \frac{\sin(x)}{x} \diff{x} = \int 1 - \frac{1}{6} x^2 \diff{x}$
+	\item Wir lösen die Integrale und erhalten $\int 1 - \frac{1}{6} x^2 \diff{x} = x - \frac{1}{18}x^3 + C$ sowie $\int \frac{\diff{y}}{y} = \ln|y|$. Durch Gleichsetzen ergibt sich $\ln|y|=x - \frac{1}{18}x^3 + C$ und damit $y(x) = C e^{x - \frac{1}{18}x^3}$
+\end{enumerate}
+
+
+Anmerkung: Die nichtgenäherte Lösung der DGL lautet $y(x) = C e^{\text{Si(x)}}$, wobei $\text{Si}(x)$ der sogenannte "Integralsinus" ist und definiert wird als das Integral von $\frac{\sin(x)}{x}$. In anderen Worten, da man dieses Integral nicht mittels elementarer Funktionen ausdrücken kann, defniert man eine neue Funktion. Unsere Näherungslösung $x - \frac{1}{18}x^3$ ist der Beginn der Taylorentwicklung des "Integralsinus".

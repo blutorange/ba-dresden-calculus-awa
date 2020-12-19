@@ -1,0 +1,38 @@
+\item Faktorisieren liefert
+
+$$
+	(D-2)(D+1) y = 2 e^{3x}
+$$
+
+Mit der Ersetzung $u = (D+1) y$ erhalten wir die DGL
+
+$$
+	(D-2)u = 2 e^{3x}
+$$
+
+Mit der Lösungsformel für $P=-2$ und $Q=2 e^{3x}$ sowie $\hat{P} = -2x$ folgt
+
+\begin{alignat*}{2}
+	u &=  e^{-\hat{P}} \int Q e^{\hat{P}} \diff{x} + C_1 e^{-\hat{P}} \\
+	  &= e^{2x} \int 2e^{3x} e^{-2x} \diff{x} + C_1 e^{2x} \\
+	  &= e^{2x} \int 2e^{x} \diff{x} + C_1 e^{2x} \\
+	  &= 2e^{3x} + C_1 e^{2x}
+\end{alignat*}
+
+Eingesetzt in $u = (D+1) y$ ergibt sich
+
+$$
+	(D+1) y = 2e^{3x} + C_1 e^{2x}
+$$
+
+Erneut mit der Lösungsformel für $P=1$ und $Q=2e^{3x} + C_1 e^{2x}$ sowie $\hat{P} = x$ folgt:
+
+\begin{alignat*}{2}
+	y &=  e^{-\hat{P}} \int Q e^{\hat{P}} \diff{x} + C_2 e^{-\hat{P}} \\
+	  &= e^{-x} \left( \int (2e^{3x} + C_1 e^{2x}) e^{x} \diff{x} \right ) + C_2 e^{-x} \\
+	  &= e^{-x} \left( \int 2e^{4x} \diff{x} + \int C_1 e^{3x} \diff{x}\right) + C_2 e^{-x} \\
+	  &= e^{-x} \left( \frac{1}{2} e^{4x} + \frac{1}{3}C_1 e^{3x} \right ) + C_2 e^{-x} \\
+	  &= \frac{1}{2} e^{3x} + C_1^* e^{2x} + C_2 e^{-x}
+\end{alignat*}
+
+Dabei haben wir im letzten Schritt den Vorfaktor $\frac{1}{3}$ in der Konstanten $C_1$ subsumiert.

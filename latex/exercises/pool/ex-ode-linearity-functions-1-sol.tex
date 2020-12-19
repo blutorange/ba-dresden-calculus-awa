@@ -1,0 +1,37 @@
+\item
+
+\begin{enumerate}
+	\item Linear unabhängig, da nur eine Funktion enthalten ist. Aus $c_1 x = 0$ folgt $c_1 = 0$. Die lineare Hülle lautet $a_1x$.
+	\item Linear abhängig, denn $c_1 0 + c_2 x = 0$ wird etwa durch $c_1=1, c_2 = 0$ gelöst. Die lineare Hülle lautet $a_1x$.
+	\item Linear unabhängig, denn $c_1 + c_2 x = 0$ hat nur $c_1=c_2 = 0$ als Lösung (per Koeffizientvergleich zweier Polynome). Die lineare Hülle lautet $a_1+a_2x$ (also die Menge aller linearen Funktionen).
+	\item Linear unabhängig, denn $c_1 x^{1/2} + c_2 x^{1/2} = 0$ hat nur $c_1=c_2 = 0$ als Lösung (ebenfalls per Koeffizientvergleich). Die lineare Hülle lautet $a_1x^{-1/2}+a_2x^{1/2}$.
+	\item Linear unabhängig, denn $c_1 x + c_2 x^2 + c_3 (2x^3) = 0$ hat nur $c_1=c_2=c_3= 0$ als Lösung (ebenfalls per Koeffizientvergleich). Die lineare Hülle lautet $a_1x+a_2x^2+a_3x^3$.
+	\item Linear abhängig, denn $c_1 x + c_2 x^2 + c_3 (3x^2) = 0$ kann geschrieben werden als $c_1 x + (c_2 + 9c_3)x^2 = 0$ und per Koeffizientenvergleich ergibt sich $c_1=0$ und $c_2 + 9c_3=0$. Letztere Gleichung hat etwa auch $c_2=-9, c_3=3$ als Lösung. Die lineare Hülle lautet $a_1x+a_2x^2$.
+	\item Linear abhängig, denn aus $c_1 \sqrt{x} + c_2 \sqrt{2x} = (c_1 + \sqrt{2}c_2)\sqrt{x} = 0$ folgt $c_1 + \sqrt{2} c_2 = 0$. Dies hat etwa auch $c_1=-2, c_2=\sqrt{2}$. Die lineare Hülle lautet $a_1\sqrt{x}$.
+	\item Linear unabhängig (siehe unten). Die lineare Hülle lautet $a_1+a_2\ln(x)$.
+	\item Linear abhängig (siehe unten). Die lineare Hülle lautet $a_1+a_2\ln(x)$.
+\end{enumerate}
+
+Zu den letzten beiden Aufgaben. Mit Logarithmenrechenregeln gilt:
+
+$$
+	\ln(2x) = \ln(2) + \ln(x)
+$$
+
+$\ln(2x)$ ist also eine Summe aus einer konstanten Funktion und der Funktion $\ln(x)$. Diese beiden sind linear unabhängig, damit wird auch deren Summe mit einem der Summanden unabhängig sein. Die beiden Funktionen zusammen mit ihrer Summe sind dann aber wieder linear abhängig (man ersetze in den vorigen Sätzen "Funktion" durch "Vektor" und erinnere sich an die lineare Algebra!)
+
+Rein mathematisch betrachtet gilt für die vorletzte Aufgabe:
+
+$$
+	c_1 \ln(x) + c_2 \ln(2x) = (c_1+c_2) \ln(x) + c_2 \ln(2) = 0
+$$
+
+Also $c_1+c_2=0$ und $c_2\ln(2) = 0$. Daraus folgt $c_2=0$ und damit $c_1=0$.
+
+Und für die letzte Aufgabe:
+
+$$
+	c_1 \ln(x) + c_2 \ln(2x) + c_3 4 = (c_1+c_2) \ln(x) + (c_2 \ln(2) + 4c_3) = 0
+$$
+
+Also $c_1+c_2=0$ und $c_2\ln(2) + 4c_3 = 0$. Daraus folgt durch Umstellen $c_2=-c_1$ und $c_3=\frac{1}{4} c_1 \ln(2)$. Etwa für $c_1=1$ findet man $c_2=-1$ und $c_3=\frac{\ln(2)}{4}$ und damit eine Lösung, wo nicht alle $c_i$ gleich $0$ sind.
