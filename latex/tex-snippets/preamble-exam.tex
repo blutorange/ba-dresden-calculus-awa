@@ -1,0 +1,44 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper]{geometry}
+\usepackage[pdftex]{hyperref}
+\usepackage[german]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{vwcol}
+\usepackage{fancyhdr}
+\usepackage{indentfirst}
+\usepackage{polynom}
+
+\geometry{
+	headheight=14px,
+	left=2.54cm,
+	right=2.54cm,
+	bottom=2cm,
+	top=2cm
+}
+
+% For horizontally centering text in Y column
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\setlength{\parindent}{0cm}
+
+\setlength{\marginparsep}{1 cm}
+\setlength{\topmargin}{-0.6in}
+\setlength{\textheight}{9.5in}
+\pagestyle{fancy}
+
+\fancypagestyle{firstpage}{ %
+	\lhead{\bf Staatliche Studienakademie Dresden\\
+		Studienrichtung: Informationstechnologie}
+	\rhead{\bf Datum: \examdate}
+}
+
+\input{../tex-snippets/commons.tex}
+
+\cfoot{\thepage\ of \pageref*{LastTask}}

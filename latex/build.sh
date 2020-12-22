@@ -4,7 +4,7 @@ set -e;
 shopt -s nullglob;
 shopt -s globstar;
 
-DEFAULT_DIRS="lecture-notes exercises"
+DEFAULT_DIRS="lecture-notes exercises exam"
 
 # CLI flags
 mode="";

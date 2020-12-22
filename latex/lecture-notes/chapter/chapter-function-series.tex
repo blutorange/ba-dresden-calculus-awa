@@ -185,9 +185,9 @@ Spätestens jetzt erkennen wir ein Muster. Der Koeffizient $a_n$ ergibt sich imm
 Nun sind wir bisher immer von einer Potenzreihe ausgegangen, welche um die Stelle $0$ zentriert war. Aus dem vorigen Abschnitt zu Funktionen wissen wir aber, dass wir Funktionen entlang der x-Achse um $x_0$ verschieben können, in wir das Argument durch $x \to x-x_0$ ersetzen. Damit ergibt sich die allgemeine Form der Taylor-Entwicklung:
 
 \begin{definition}{Taylor-Reihe}{TaylorExpansion}
-    Die durch eine Funktion $f$ an der \textbf{Entwicklungsstelle} $x_0$ erzeugte \textbf{Taylor-Reihe} vom \textbf{Grad n} ist gegeben durch:
+    Die durch eine Funktion $f$ an der \textbf{Entwicklungsstelle} $x_0$ erzeugte \textbf{Taylor-Reihe} vom \textbf{Grad n} $T_n[f]$ ist gegeben durch:
     $$
-        f(x) = \underbrace{\sum\limits_{i=0}^n \frac{f^{(i)}(x_0)}{i!} (x-x_0)^i}_{\text{Taylor-Reihe}} + \underbrace{R_n(x)}_{\text{Restglied}}
+        f(x) = \underbrace{\sum\limits_{i=0}^n \frac{f^{(i)}(x_0)}{i!} (x-x_0)^i}_{\text{Taylor-Reihe }T_n[f](x)} + \underbrace{R_n(x)}_{\text{Restglied}}
     $$
     Konvergiert das Restglied gegen $0$, dann hat die Taylor-Reihe $f$ als Grenzfunktion. Man sagt dann, die Funktion $f$ sei in eine Taylor-Reihe oder Potenzreihe entwickelbar.
 \end{definition}
@@ -370,9 +370,9 @@ Analog dazu können wir auch mit $\cos(0x)$, $\cos(2x)$, $\cos(3x)$, \dots sowie
 Nun müssen wir noch berücksichtigen, dass wir bisher davon ausgegangen waren, dass $f$ die Periode $2\pi$ hätte. Ist dies nicht der Fall und besitzt $f$ eine andere Periode $T$, können wir die obigen Formeln modifizieren, indem wir entlang der Abszisse entsprechend skalieren. Wir erhalten damit die Fourier-Reihe:
 
 \begin{definition}{Fourier-Reihe}{FourierExpansion}
-    Die durch eine Funktion $f$ mit der Periode $T$ erzeugte \textbf{Fourier-Reihe} ist gegeben durch:
+    Die durch eine Funktion $f$ mit der Periode $T$ erzeugte \textbf{Fourier-Reihe} $F[f]$ ist gegeben durch:
     $$
-        f(x) = \underbrace{\sum\limits_{i=0}^n a_i \cos(\frac{2\pi}{T}ix) + b_i \sin(\frac{2\pi}{T}ix)}_{\text{Fourier-Reihe}} + \underbrace{R_n(x)}_{\text{Restglied}}
+        f(x) = \underbrace{\sum\limits_{i=0}^n a_i \cos(\frac{2\pi}{T}ix) + b_i \sin(\frac{2\pi}{T}ix)}_{\text{Fourier-Reihe } F[f](x)} + \underbrace{R_n(x)}_{\text{Restglied}}
     $$
     Die Koeffizienten $a_n$ und $b_n$ lauten dabei:
     \begin{alignat*}{1}
