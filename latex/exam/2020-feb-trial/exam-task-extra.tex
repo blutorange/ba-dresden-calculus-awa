@@ -1,0 +1,14 @@
+Bei der sogenannten Heaviside-Distribution $H$ und der Dirac-Distribution $\delta$ handelt es sich um lineare Funktionale. Diese werden durch ihre Wirkung bei der Integration mit Testfunktionen $\varphi$ definiert:
+
+\begin{itemize}
+\item $\int\limits_{-\infty}^\infty \varphi(x) H(x) \diff{x} := \int\limits_{0}^\infty \varphi(x) \diff{x}$
+\item $\int\limits_{-\infty}^\infty \varphi(x) \delta(x) \diff{x} := \varphi(0)$
+\end{itemize}
+
+Jede Testfunktion $\varphi$ hat unter anderem die Eigenschaft, dass sie außerhalb eines Intervalls um den Ursprung identisch $0$ ist, speziell also auch $\lim\limits_{x\to\pm\infty} \varphi(x) = 0$ gilt.
+
+Zeigen Sie durch partielle Integration, dass die Dirac-Distribution $\delta$ die Ableitung $H'$ der Heaviside-Distribution ist, d.h. dass folgende Beziehung gilt:
+
+\bigskip
+ 
+$\int\limits_{-\infty}^\infty \varphi(x) H'(x) \diff{x} = \varphi(0)$
