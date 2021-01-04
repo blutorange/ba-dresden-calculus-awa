@@ -1,5 +1,12 @@
 # Planned exams
 **/*2021-feb*
+!**/*2021-feb-trial*
+*.aux
+*.log
+*.out
+*.fls
+*.pdf
+*.fdb_latexmk
 
 # Automatically generated
 **/*.png

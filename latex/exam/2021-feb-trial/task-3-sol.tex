@@ -1,0 +1,20 @@
+\item
+	\begin{enumerate}
+	
+	\item
+		\begin{itemize}
+			\item $f_y = \frac{1}{\cos(x)} \cdot \pdd{}{y} \sin(yx^2)$
+			\item $= \frac{1}{\cos(x)} \cdot \pdd{\sin(yx^2)}{(yx^2)} \cdot \pdd{(yx^2)}{y}$
+			\item $= \frac{1}{\cos(x)} \cdot \cos(yx^2) \cdot x^2 = x^2 \frac{\cos(y) \cdot x^2}{\cos(4x)}$			
+		\end{itemize}
+	
+	\item $x=\pi/4$, $y=0$
+		\begin{itemize}
+			\item $yx^2 = 0 = \degrees{0}$, $4x=\pi = \degrees{180}$
+			\item $f(\pi/4,0) = \frac{\sin(0)}{\cos(\degrees{180})} = 0$
+			\item $f_x(\pi/4,0) = 2 \cdot \frac{\pi/4 \cdot 0 \cdot \cos(0)+2\sin(0)\tan(\degrees{180})}{\cos(\degrees{180})} = 2 \cdot \frac{0+0}{-1} = 0$
+			\item $f_y(\pi/4,0) = (\frac{\pi}{4})^2 \cdot \frac{\cos(0)}{\cos(\degrees{180})} = - \frac{\pi^2}{16}$
+			\item $t(\pi/4,0) = 0 + 0 (x-\frac{\pi}{4}) - \frac{\pi^2}{16} (y-0) = - \frac{\pi^2}{16} y$
+		\end{itemize}
+		
+	\end{enumerate}

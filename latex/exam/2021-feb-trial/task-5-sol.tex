@@ -1,0 +1,20 @@
+\item
+	\begin{enumerate}
+	
+	\item
+		\begin{itemize}
+			\item partik. Lsg. ist eine konkrete Funktion, welche eingesetzt in DGL wahre Aussage ergibt
+			\item allg. Lsg. ist die Menge aller solcher Funktionen
+			\item außer DGL werden für partik. Lsg. noch Anfangs- oder Randwerte benötigt
+		\end{itemize}
+	
+	\item Hinweis: Betrag kann weggelassen werden, da $y^2+1 > 0$ ist für reelle Zahlen
+		\begin{itemize}
+			\item Umformung: $y' = \frac{dy}{dx} = \frac{(y^2+1)\cos(x)}{y}$
+			\item $\implies \int \cos(x) \diff{x} = \int \frac{y}{y^2+1} \diff{y}$
+			\item Substitution: $z=y^2+1$, $\diff{z} = 2y \diff{y}$
+			\item $\int \frac{y}{y^2+1} \diff{y} = \int \frac{y}{2y z} \diff{z} = \frac{1}{2} \int \frac{1}{z} \diff{z} = \frac{1}{2} \ln(|z|) = \frac{1}{2} \ln(|y^2+1|)$
+			\item $\sin(x) + C' = \frac{1}{2} \ln(|y^2+1|) \implies y(x) = \pm\sqrt{e^{2\sin(x)+C}-1}$
+		\end{itemize}
+		
+	\end{enumerate}

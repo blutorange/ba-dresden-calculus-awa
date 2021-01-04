@@ -1,0 +1,19 @@
+\item
+	\begin{enumerate}
+	
+	\item Produktregel
+		\begin{itemize}
+			\item $\dd{}{x} (x+a)e^x = e^x\dd{}{x}(x+a)+(x+a)\dd{}{x}e^x$
+			\item $= e^x+(x+a)e^x$
+			\item $= (x+a+1)e^x$
+		\end{itemize}
+	
+	\item
+		\begin{itemize}
+			\item Setze $x_0=0$, nutze die gegebene Aussage $f^{(n)}(x) = \ddn{n}{}{x} (xe^x) = (x+n)e^x$
+			\item $f^{(n)}(0) = (0+n)e^0 = n$
+			\item $\sum\limits_{n=0}^{\infty} \frac{f^{(n)}(x_0)}{n!} (x-x_0)^n = \sum\limits_{n=0}^{\infty} \frac{n}{n!} x^n = \sum\limits_{n=0}^{\infty} \underbrace{\frac{1}{(n-1)!}}_{=a_n} x^n$
+			\item $1/R = \lim\limits_{n\to\infty} \left|\frac{a_{n+1}}{a_n}\right| = \lim\limits_{n\to\infty} \left|\frac{1/n!}{1/(n-1)!}\right| =\lim\limits_{n\to\infty} \left|\frac{(n-1)!}{n!}\right| = \lim\limits_{n\to\infty} |\frac{1}{n}| = 0$
+			\item Also $R=\infty$
+		\end{itemize}
+	\end{enumerate}
