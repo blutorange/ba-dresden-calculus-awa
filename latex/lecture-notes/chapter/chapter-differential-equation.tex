@@ -358,7 +358,7 @@ $$
     \int \frac{1}{g(u)} \diff{u} = \int \frac{1}{g(u(t)} u'(t) \diff{t}
 $$
 
-Mit der Umbenennung $t \to x$ und $u \ to y$ wird daraus:
+Mit der Umbenennung $t \to x$ und $u \to y$ wird daraus:
 
 \begin{equation}
     \int \frac{1}{g(y)} \diff{y} = \int \frac{1}{g(y(x)} y'(x) \diff{x} \label{eq:SepVarProof2}
@@ -398,7 +398,7 @@ Es sei noch angemerkt, dass dieses Verfahren zwei Probleme hat. Während wir zwa
     $$
     Um diese implizite Funktionsgleichung für $y$ aufzulösen, wenden wir die Exponentialfunktion an:
     \begin{alignat}{1}
-        e^{\ln(|y|)} &= e{\ln(|x|) + C} \\
+        e^{\ln(|y|)} &= e^{\ln(|x|) + C} \\
         |y|          &= e^C |x| \\
         y            &= \pm e^C |x|
     \end{alignat}
@@ -450,7 +450,7 @@ Man beachte auch den Unterschied zwischen den DGL aus Beispiel \ref{ex:CompSlope
 
 \section{Variation der Konstanten}
 
-Oft ist es bei der Lösung von DGL, dass man aufgrund der Erfahrung oder der Form einer DGL einen Ansatz macht, den noch freie Parameter oder Funktionen enthält, und dann durch Einsetzen in die DGL versucht, diese zu bestimmen. Gelingt dies, hat man eine Lösung der DGL gefunden. Ein solches Verfahren ist die Variation der Konstanten, welche beim Lösen einer inhomogenen DGL hilft. Man beginnt mit der allgemeinen Lösung der zugehörigen homogenen DGL, welche $n$ freie Konstanten $C_i$ enthält und tut dann so, als ob diese Konstanten nicht konstant wären, sondern ebenfalls Funktionen $C_i(x)$ des Arguments $x$. Diesen Ansatz setzt man dann in die inhomogene DGL ein und versucht die $C_i(x)$ so zu bestimmen, dass die DGL erfüllt ist.
+Oft kommt es beim Lösen einer DGL vor, dass man aufgrund der Erfahrung oder der Form einer DGL einen Ansatz macht, den noch freie Parameter oder Funktionen enthält, und dann durch Einsetzen in die DGL versucht, diese zu bestimmen. Gelingt dies, hat man eine Lösung der DGL gefunden. Ein solches Verfahren ist die Variation der Konstanten, welche beim Lösen einer inhomogenen DGL hilft. Man beginnt mit der allgemeinen Lösung der zugehörigen homogenen DGL, welche $n$ freie Konstanten $C_i$ enthält und tut dann so, als ob diese Konstanten nicht konstant wären, sondern ebenfalls Funktionen $C_i(x)$ des Arguments $x$. Diesen Ansatz setzt man dann in die inhomogene DGL ein und versucht die $C_i(x)$ so zu bestimmen, dass die DGL erfüllt ist.
 
 Im Folgenden wollen wir inhomogene DGL 1. Ordnung der folgenden Form betrachten:
 
@@ -568,7 +568,7 @@ Speziell für den Fall von 2 Funktionen gilt, wie für 2 Vektoren, dass diese li
         \item $y_1=x$ und $y_2=2x$ sind linear abhängig, da $y_2 = 2 y_1$ gilt. Ebenso sind $y_1=x^2$ und $y_2=-3x^2$ linear abhängig.
         \item $y_1=x$ und $y_2=x^2$ sind linear unabhängig, da $c_1 x + c_2 x^2 = 0$ aufgrund des Kriteriums für die Gleichheit von Polynomen (vergleiche Aussage \ref{stmt:EqPoly}) nur gelten kann, wenn $c_1=c_2=0$ gilt. Allgemeine ist jede beliebige Anzahl von Monomen $x^n$ linear unabhängig, solange die Exponenten alle Unterschiedlich sind.
         \item $y_1=e^{2+x}$ und $y_2=4e^x$ sind linear abhängig, da wegen $e^{2+x} = e^2 e^x$ gilt: $y_2 = \frac{4}{e^2} y_1$.
-        \item $y_1=e^{2x}$ und $y_2=e^{4x}$ sind linear unabhängig, denn aus $c_1 e^{2x} = c_2 e^{4x}=0$ folgt $e^{2x}\left(c_1 + c_2 e^{2x}\right) = 0$. Da die Exponentialfunktion den Wert $0$ nicht annehmen kann, muss $c_1 + c_2 e^{2x} = 0$ gelten, woraus folgt $c_1 = - c_2 e^{2x}$. Für ein bestimmtes $c_2$ kann damit ein $c_1$ gewählt werden, sodass sich $0$ ergibt. Da dieser Wert für $c_1$ aber vom Argument $x$ abhängt und die Exponentialfunktion monoton ist, kann es kein $c_1$ geben, was für jedes beliebige Argument $x$ zusammen mit $c_2$ die Gleichung $c_1 e^{2x} = c_2 e^{4x}=0$ erfüllt.
+        \item $y_1=e^{2x}$ und $y_2=e^{4x}$ sind linear unabhängig, denn aus $c_1 e^{2x} + c_2 e^{4x}=0$ folgt mit $z=e^x$ die Gleichung $c_1 z^2 + c_2 z^4 = 0$. Wie bereits diskutiert folgt daraus $c_1=c_2=0$.
         \item $y_1=\sin(x)$ und $y_2 = \cos(x)$ sind linear unabhängig, was aus obigen Ergebnis und der Definition der Sinus- und Kosinusfunktion über die Exponentialfunktion folgt.
     \end{itemize}
 \end{example}
@@ -578,12 +578,12 @@ Aus mehreren Einzelfunktion lässt sich, wie in der linearen Algebra mit Vektore
 \begin{definition}{Linearkombination und lineare Hülle}{LinCombSpan}
     Unter einer \textbf{Linearkombination} $f$ eine Menge von Funktionen $\left\lbrace f_i \right\rbrace$ ($i=1,\dots,n$) versteht man die Summe dieser Funktionen mit einem konstanten Vorfaktor:
     $$
-        f(x) = \sum\limits{i=1}^n a_i f_i(x), a_i \in \R
+        f(x) = \sum\limits_{i=1}^n a_i f_i(x), a_i \in \R
     $$
-    Die Menge aller Linearkombinationen heißt \textbf{lineare Hülle} und wird auch als $\text{span}(f_i)$ oder $\text{Lin}(f_i)$ bezeichnet.
+    Die Menge aller Linearkombinationen heißt \textbf{lineare Hülle} und wird auch als $\text{span}(\lbrace f_i \rbrace)$ oder $\text{Lin}(\lbrace f_i \rbrace)$ bezeichnet.
 \end{definition}
 
-Beispielsweise sind Linearkombinationen der Monome $1$, $x$ und $x^2$ sind Polynome 2. Grads, deren lineare Hülle sind die Menge aller solchen Polynome. Die lineare Hülle von $e^x$ und $e^{2x}$ ist $c_1 e^x + c_2 e^{2x}$.
+Beispielsweise sind Linearkombinationen der Monome $1$, $x$ und $x^2$ Polynome 2. Grads, deren lineare Hülle sind die Menge aller solchen Polynome. Die lineare Hülle von $e^x$ und $e^{2x}$ ist $c_1 e^x + c_2 e^{2x}$.
 
 \subsection{Lösungsstruktur}
 
@@ -591,18 +591,18 @@ Bei der Untersuchung der Lösungsstruktur geht es nicht darum, wie man Lösungen
 
 Wir unterscheiden hierzu zwei Fälle. Zuerst betrachten wir die Lösungen der inhomogenen DGL für $F(x) = 0$ und erweitern diese anschließend, um auch die Inhomogenität einzubeziehen.
 
-Als ersten nehmen wir an, wir hätten bereits $m$ Lösungen $y_i$ der homogenen DGL gefunden, sodass gilt:
+Als ersten nehmen wir an, wir hätten bereits $m$ Lösungen $y_j$ der homogenen DGL gefunden, sodass gilt:
 
 $$
-    \sum\limits_{i=0}^n a_i(x) y^{(i)}(x) = 0, i = 1,\dots,m
+    \sum\limits_{i=0}^n a_i(x) y_j^{(i)}(x) = 0, j = 1,\dots,m
 $$
 
-Dann können wir eine neue Funktion $y_H$ als Linearkombination der $y_i$ bilden. Diese neue Funktion löst ebenfalls die DGL, denn:
+Dann können wir eine neue Funktion $y_H$ als Linearkombination der $y_j$ bilden. Diese neue Funktion $y_H = \sum\limits_{j=1}^m c_j y_j(x)$ löst ebenfalls die DGL, denn:
 
 \begin{alignat*}{1}
-    \sum\limits_{i=0}^n a_i(x) y_H^{(i)}(x) &= \sum\limits_{i=0}^n a_i(x) \left[\sum\limits_{j=1}^m y_i(x)\right]^{(i)} \\
-                                            &= \sum\limits_{i=0}^n \sum\limits_{j=1}^m \left[ a_i(x) y_i^{(i)}(x) \right] \\
-                                            &= \sum\limits_{j=1}^m \underbrace{\sum\limits_{i=0}^n \left[ a_i(x) y_i^{(i)}(x) \right]}_{=0 \text{ nach Voraussetzung}} \\
+    \sum\limits_{i=0}^n a_i(x) y_H^{(i)}(x) &= \sum\limits_{i=0}^n a_i(x) \left[\sum\limits_{j=1}^m c_j y_j(x)\right]^{(i)} \\
+                                            &= \sum\limits_{i=0}^n \sum\limits_{j=1}^m \left[ a_i(x) c_j y_j^{(i)}(x) \right] \\
+                                            &= \sum\limits_{j=1}^m c_j \underbrace{\sum\limits_{i=0}^n \left[ a_i(x) y_j^{(i)}(x) \right]}_{=0 \text{ nach Voraussetzung}} \\
                                             &= 0
 \end{alignat*}
 
@@ -630,9 +630,9 @@ Wie wir für bestimmte lineare DGL diese Fundamentallösungen finden können, se
 Nachdem wir nun den homogenen Fall betrachtet haben, bleibt die Frage, wie wir die inhomogene DGL lösen können. Wir nehmen erneut an, wir hätten bereits eine partikuläre Lösung $y_P$ der inhomogenen DGL gefunden. Durch Addition dieser Lösung zur allgemeinen Lösung der homogenen DGL bilden wir eine neue Funktion $y_A(x) = y_H(x) + y_P(x)$. Um zu überprüfen, ob diese die inhomogene DGL löst, setzen wir ein:
 
 \begin{alignat*}{1}
-    \sum\limits_{i=0}^n a_i(x) y_A^{(i)}(x) &= \sum\limits_{i=0}^n a_i(x) \left[\left(\sum\limits_{j=1}^n y_i(x)\right) + y_P(x)\right]^{(i)} \\
-                                            &= \sum\limits_{i=0}^n \left[ \left(\sum\limits_{j=1}^n a_i(x) y_i(x)^{(i)} \right) + a_i(x) y_P(x)^{(i)} \right] \\
-                                            &=  \underbrace{\left[ \sum\limits_{i=0}^n \sum\limits_{j=1}^n a_i(x) y_i(x)^{(i)} \right]}_{=0 \text{ da Lösung der homogenen DGL}} +  \underbrace{\left[ \sum\limits_{i=0}^n a_i(x) y_P(x)^{(i)}  \right]}_{=F(x) \text{ nach Voraussetzung}} \\
+    \sum\limits_{i=0}^n a_i(x) y_A^{(i)}(x) &= \sum\limits_{i=0}^n a_i(x) \left[\left(\sum\limits_{j=1}^n c_j y_j(x)\right) + y_P(x)\right]^{(i)} \\
+                                            &= \sum\limits_{i=0}^n \left[ \left(\sum\limits_{j=1}^n a_i(x) c_j y_j(x)^{(i)} \right) + a_i(x) y_P(x)^{(i)} \right] \\
+                                            &=  \underbrace{\left[ \sum\limits_{i=0}^n \sum\limits_{j=1}^n a_i(x) c_j y_j(x)^{(i)} \right]}_{=0 \text{ da Lösung der homogenen DGL}} +  \underbrace{\left[ \sum\limits_{i=0}^n a_i(x) y_P(x)^{(i)}  \right]}_{=F(x) \text{ nach Voraussetzung}} \\
                                             &= F(x)
 \end{alignat*}
 
@@ -888,7 +888,7 @@ Abschließend seien noch zwei Bemerkungen gemacht:
     $$
         (D-\lambda_1) u_2 = F(x)
     $$
-    Dies ist aber eine separierbare inhomogene DGL 1. Ordnung, welche wir mit der Formel \ref{stmt:SepInhDeqOrd1} lösen können. Kennen wir nun die Lösung für $u_2(x)$, setzen wir ein die Definition von $u_2$:
+    Dies ist aber eine separierbare inhomogene DGL 1. Ordnung, welche wir mit der Formel \ref{stmt:SepInhDeqOrd1} lösen können. Kennen wir nun die Lösung für $u_2(x)$, können wir diese in die Definition von $u_2$ einsetzen:
     $$
         (D-\lambda_2) (D-\lambda_3) \dots (D-\lambda_n) y = u_2(x)
     $$
