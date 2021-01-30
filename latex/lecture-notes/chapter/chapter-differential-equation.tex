@@ -554,11 +554,11 @@ Zu Beginn wollen wir allgemeine lineare Differentialgleichungen betrachten und d
 Zuerst benötigen wir auch noch die Erweiterung des Konzepts der linearen Unabhängigkeit, welches vielleicht aus der linearen Algebra für Vektoren bekannt ist, auf Funktionen:
 
 \begin{definition}{Lineare Unabhängigkeit}{LinIndepFun}
-    Eine Menge von Funktion $\left\lbrace f_i \right\rbrace$ ($i=1,\dots,n$), welche alle auf einem Definitionsbereich $\mathcal{D}$ erklärt sind, heißt \textbf{linear unabhängig}, wenn es Konstanten $c_i$ gibt, von denen wenigstens eine ungleich $0$ ist, sodass gilt:
+    Eine Menge von Funktion $\left\lbrace f_i \right\rbrace$ ($i=1,\dots,n$), welche alle auf einem Definitionsbereich $\mathcal{D}$ erklärt sind, heißt \textbf{linear abhängig}, wenn es Konstanten $c_i$ gibt, von denen wenigstens eine ungleich $0$ ist, sodass gilt:
     $$
         \forall x \in \mathcal{D}: \sum\limits_{i=1}^n c_i \cdot f_i(x) = 0
     $$
-    Gibt es solche Konstanten nicht, so heißen die Funktionen \textbf{linear abhängig}.
+    Gibt es solche Konstanten nicht (ist die obige Gleichung nur für $c_1=c_2=\dots=c_n=0$ erfüllt), so heißen die Funktionen \textbf{linear unabhängig}.
 \end{definition}
 
 Speziell für den Fall von 2 Funktionen gilt, wie für 2 Vektoren, dass diese linear abhängig sind, wenn sich die eine Funktion als Vielfaches der anderen Funktion schreiben lässt.
@@ -639,7 +639,7 @@ Nachdem wir nun den homogenen Fall betrachtet haben, bleibt die Frage, wie wir d
 Wir haben damit also eine Lösung der inhomogenen DGL gefunden, welche $n$ freie Konstanten hat. Wir wissen, dass die allgemeine Lösung eine DGL $n$-ter Ordnung im Allgemeinen auch nur so viele Konstanten benötigt. Dies ist in der nächsten Aussage zusammengefasst:
 
 \begin{statement}{Allgemeine Lösung der inhomogenen linearen DGL}{GenSolInhomLinDeq}
-    Sei $\sum\limits_{i=0}^n a_i(x) y^{(i)}(x) = F(x)$ eine lineare homogene DGL $n$-ter Ordnung und seien die $a_i$ sowie das $F$ stetige Funktionen. Dann gilt:
+    Sei $\sum\limits_{i=0}^n a_i(x) y^{(i)}(x) = F(x)$ eine lineare inhomogene DGL $n$-ter Ordnung und seien die $a_i$ sowie das $F$ stetige Funktionen. Dann gilt:
     \begin{enumerate}
         \item Für alle Anfangsbedingungen hat die DGL eine eindeutige Lösung $y(x)$.
         \item Die allgemeine Lösung $y_A$ der DGL ergibt sich als die Summe $y_A = y_H + y_P$ der allgemeinen Lösung $y_H$ der zugehörigen homogenen DGL und einer partikulären Lösung $y_P$ der inhomogenen DGL.
@@ -688,7 +688,7 @@ Dabei ist $p_n(\lambda)$ das Polynom $n$-Grads in $\lambda$ mit den Koeffiziente
 
 Nun benötigen wir für die allgemeine Lösung der homogenen DGL von der Ordnung $n$ genau $n$ linear unabhängige Lösungen. Alle Funktionen der Form $e^{\lambda x}$ sind linear unabhängig, solange sie verschiedene Werte für $\lambda$ haben. Nach dem Fundamentalsatz der Algebra \ref{stmt:FundAlg} wissen wir, dass das Polynom $p_n(\lambda)$ auch genau $n$ Nullstellen besitzt. Dabei können allerdings einige Nullstellen eine Vielfachheit größer $1$ haben, also mehrfach auftreten. In dem Fall fehlen uns noch linear unabhängig Fundamentallösungen.
 
-Um uns dieser Problematik zu nähern, schreiben wir die DGL zunächst erstmals etwas um. Wir erinnern uns, dass wir das Ableiten auch als Operator $\dd{}{x}$ auffassen können, der einer Funktion ihre Ableitung zuordnet. Haben wir eine lineare DGL, beispielsweise $y''+4y'+4y'=0$, können wir diese mit dem Differentialoperator auch schreiben als $\ddn{2}{}{x} y + 4\ddn{1}{}{x} y + 4\ddn{0}{}{} y = 0$ oder durch Herausziehen von $y$ und der Konvention $\ddn{2}{}{x} = \left(\dd{}{x}\right)^2$ auch als:
+Um uns dieser Problematik zu nähern, schreiben wir die DGL zunächst erstmals etwas um. Wir erinnern uns, dass wir das Ableiten auch als Operator $\dd{}{x}$ auffassen können, der einer Funktion ihre Ableitung zuordnet. Haben wir eine lineare DGL, beispielsweise $y''+4y'+4y=0$, können wir diese mit dem Differentialoperator auch schreiben als $\ddn{2}{}{x} y + 4\ddn{1}{}{x} y + 4\ddn{0}{}{} y = 0$ oder durch Herausziehen von $y$ und der Konvention $\ddn{2}{}{x} = \left(\dd{}{x}\right)^2$ auch als:
 
 $$
     \left[ \left(\dd{}{x}\right)^2 + 4 \left(\dd{}{x}\right)^1 + 4 \left(\dd{}{x}\right)^0 \right] y = 0
@@ -770,9 +770,9 @@ Der rechte Summand $c_0 e^{\lambda_n x}$ entspricht der uns bereits bekannten Fu
     $$
         p(\lambda) = \sum\limits_{i=0}^n a_i \lambda^i = 0
     $$
-    Die $n$ linear unabhängigen Fundamentallösungen dieser DGL ergeben sich aus den Nullstellen der charakteristische Gleichung. Jede Nullstelle $a_i$ mit der Vielfachheit $k$ erzeugt $k$ Fundamentallösungen $y_j$:
+    Die $n$ linear unabhängigen Fundamentallösungen dieser DGL ergeben sich aus den Nullstellen der charakteristische Gleichung. Jede Nullstelle $\lambda_i$ mit der Vielfachheit $k$ erzeugt $k$ Fundamentallösungen $y_j$:
     $$
-        y_j(x) = x^j \cdot e^{\lambda x}, j = 0, 1, 2, \dots {k-1}
+        y_j(x) = x^j \cdot e^{\lambda_i x}, j = 0, 1, 2, \dots {k-1}
     $$
 \end{statement}
 
