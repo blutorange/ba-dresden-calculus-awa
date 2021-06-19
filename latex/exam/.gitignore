@@ -1,6 +1,6 @@
 # Planned exams
-**/*2021-feb*
-!**/*2021-feb-trial*
+# **/*2021-feb*
+# !**/*2021-feb-trial*
 *.aux
 *.log
 *.out

@@ -17,7 +17,7 @@ do
         ;;
         h)
             echo 'To process all files and render the PDF from scratch, use';
-            echo "  $0.sh";
+            echo "  $0";
             echo 'To process only part of the files, use:';
             echo "  $0 -m plot|pdf";
             echo '  -m plot   : Only renders the gnuplot graphs';
